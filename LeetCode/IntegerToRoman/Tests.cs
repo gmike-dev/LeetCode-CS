@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace LeetCode.Integer_to_Roman;
+namespace LeetCode.IntegerToRoman;
 
 [TestFixture]
 public class Tests
