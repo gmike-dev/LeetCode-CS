@@ -1,4 +1,5 @@
 using System;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetCode.AsteroidCollision;
@@ -11,7 +12,7 @@ public class Tests
   {
     var sln = new Solution();
     var result = sln.AsteroidCollision(new[] { 5, 10, -5 });
-    Assert.That(result, Is.EquivalentTo(new[] { 5, 10 }));
+    result.Should().BeEquivalentTo(new[] { 5, 10 });
   }
 
   [Test]
@@ -19,7 +20,7 @@ public class Tests
   {
     var sln = new Solution();
     var result = sln.AsteroidCollision(new[] { 8, -8 });
-    Assert.That(result, Is.EquivalentTo(Array.Empty<int>()));
+    result.Should().BeEmpty();
   }
 
   [Test]
@@ -27,6 +28,6 @@ public class Tests
   {
     var sln = new Solution();
     var result = sln.AsteroidCollision(new[] { 10, 2, -5 });
-    Assert.That(result, Is.EquivalentTo(new[] { 10 }));
+    result.Should().BeEquivalentTo(new[] { 10 });
   }
 }

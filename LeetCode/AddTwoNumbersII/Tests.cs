@@ -1,3 +1,4 @@
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetCode.AddTwoNumbersII;
@@ -16,7 +17,7 @@ public class Tests
       new ListNode(6,
         new ListNode(4)));
     var result = sln.AddTwoNumbers(num1, num2);
-    Assert.That(result.ToString(), Is.EqualTo("7807"));
+    result.ToString().Should().Be("7807");
   }
   
   [Test]
@@ -26,6 +27,6 @@ public class Tests
     var num1 = new ListNode(5);
     var num2 = new ListNode(5);
     var result = sln.AddTwoNumbers(num1, num2);
-    Assert.That(result.ToString(), Is.EqualTo("10"));
+    result.ToString().Should().Be("10");
   }
 }

@@ -1,3 +1,4 @@
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetCode.PalindromeNumber;
@@ -9,10 +10,10 @@ public class Tests
   public void Test1()
   {
     var sln = new Solution();
-    Assert.That(sln.IsPalindrome(1221), Is.True);
-    Assert.That(sln.IsPalindrome(1222), Is.False);
-    Assert.That(sln.IsPalindrome(1), Is.True);
-    Assert.That(sln.IsPalindrome(12), Is.False);
-    Assert.That(sln.IsPalindrome(-1), Is.False);
+    sln.IsPalindrome(1221).Should().BeTrue();
+    sln.IsPalindrome(1222).Should().BeFalse();
+    sln.IsPalindrome(1).Should().BeTrue();
+    sln.IsPalindrome(12).Should().BeFalse();
+    sln.IsPalindrome(-1).Should().BeFalse();
   }
 }

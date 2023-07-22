@@ -1,3 +1,4 @@
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetCode.TwoSum;
@@ -10,6 +11,6 @@ public class Tests
   {
     var sln = new Solution();
     var result = sln.TwoSum(new[] { -1, 2, 3, 4, 5 }, 5);
-    Assert.That(result, Is.EqualTo(new[] { 1, 2 }));
+    result.Should().BeEquivalentTo(new[] { 1, 2 });
   }
 }

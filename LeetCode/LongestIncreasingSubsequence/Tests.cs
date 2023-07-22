@@ -1,3 +1,4 @@
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetCode.LongestIncreasingSubsequence;
@@ -9,8 +10,8 @@ public class Tests
   public void Test1()
   {
     var sln = new Solution();
-    Assert.That(sln.LengthOfLIS(new[] { 1, 3, 5, 4, 7 }), Is.EqualTo(4));
-    Assert.That(sln.LengthOfLIS(new[] { 2, 2, 2, 2, 2 }), Is.EqualTo(1));
-    Assert.That(sln.LengthOfLIS(new[] { 1, 2, 4, 3, 5, 4, 7, 2 }), Is.EqualTo(5));
+    sln.LengthOfLIS(new[] { 1, 3, 5, 4, 7 }).Should().Be(4);
+    sln.LengthOfLIS(new[] { 2, 2, 2, 2, 2 }).Should().Be(1);
+    sln.LengthOfLIS(new[] { 1, 2, 4, 3, 5, 4, 7, 2 }).Should().Be(5);
   }
 }

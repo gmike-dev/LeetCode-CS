@@ -1,3 +1,4 @@
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetCode.IntegerToRoman;
@@ -9,8 +10,8 @@ public class Tests
   public void Test1()
   {
     var sln = new Solution();
-    Assert.That(sln.IntToRoman(3), Is.EqualTo("III"));
-    Assert.That(sln.IntToRoman(58), Is.EqualTo("LVIII"));
-    Assert.That(sln.IntToRoman(1994), Is.EqualTo("MCMXCIV"));
+    sln.IntToRoman(3).Should().Be("III");
+    sln.IntToRoman(58).Should().Be("LVIII");
+    sln.IntToRoman(1994).Should().Be("MCMXCIV");
   }
 }

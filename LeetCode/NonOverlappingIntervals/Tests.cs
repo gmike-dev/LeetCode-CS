@@ -1,3 +1,4 @@
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetCode.NonOverlappingIntervals;
@@ -16,7 +17,7 @@ public class Tests
       new[] { 3, 4 },
       new[] { 1, 3 }
     });
-    Assert.That(result, Is.EqualTo(1));
+    result.Should().Be(1);
   }
 
   [Test]
@@ -29,7 +30,7 @@ public class Tests
       new[] { 1, 2 },
       new[] { 1, 2 }
     });
-    Assert.That(result, Is.EqualTo(2));
+    result.Should().Be(2);
   }
 
   [Test]
@@ -41,7 +42,7 @@ public class Tests
       new[] { 1, 2 },
       new[] { 2, 3 }
     });
-    Assert.That(result, Is.EqualTo(0));
+    result.Should().Be(0);
   }
   
   [Test]
@@ -55,7 +56,7 @@ public class Tests
       new[] { 1, 11 },
       new[] { 2, 12 }
     });
-    Assert.That(result, Is.EqualTo(2));
+    result.Should().Be(2);
   }
   
   [Test]
@@ -70,6 +71,6 @@ public class Tests
       new[] { 3, 5 },
       new[] { 4, 6 }
     });
-    Assert.That(result, Is.EqualTo(2));
+    result.Should().Be(2);
   }
 }

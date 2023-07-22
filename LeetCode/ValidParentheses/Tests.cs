@@ -1,3 +1,4 @@
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetCode.ValidParentheses;
@@ -9,9 +10,9 @@ public class Tests
   public void Test1()
   {
     var sln = new Solution();
-    Assert.That(sln.IsValid("()"), Is.True);
-    Assert.That(sln.IsValid("()[]{}"), Is.True);
-    Assert.That(sln.IsValid("(]"), Is.False);
-    Assert.That(sln.IsValid("([()[][{}]])[]"), Is.True);
+    sln.IsValid("()").Should().BeTrue();
+    sln.IsValid("()[]{}").Should().BeTrue();
+    sln.IsValid("(]").Should().BeFalse();
+    sln.IsValid("([()[][{}]])[]").Should().BeTrue();
   }
 }
