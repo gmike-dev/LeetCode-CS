@@ -8,20 +8,15 @@ public class Solution
   {
     var result = int.MaxValue;
     var n = nums.Length;
-    for (int l = 0, r = 0, s = 0; l < n; s -= nums[l], l++)
+    var l = 0;
+    var s = 0;
+    for (var r = 0; r < n; r++)
     {
-      while (r < n && s < target)
+      s += nums[r];
+      while (s >= target)
       {
-        s += nums[r];
-        r++;
-      }
-      if (s >= target)
-      {
-        result = Math.Min(result, r - l);
-      }
-      else if (r == n)
-      {
-        break;
+        result = Math.Min(result, r - l + 1);
+        s -= nums[l++];
       }
     }
     return result == int.MaxValue ? 0 : result;
