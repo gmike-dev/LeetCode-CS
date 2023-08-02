@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -6,10 +8,17 @@ namespace LeetCode._77._Combinations;
 [TestFixture]
 public class Tests
 {
-  [Test]
-  public void Test1()
+  private static IEnumerable<Solution.ICombinationGenerator> GetImplementers()
   {
-    new Solution().Combine(4, 2).Should().BeEquivalentTo(
+    yield return new Solution.CombinationGenerator();
+    yield return new Solution.CombinationSimpleGenerator();
+    yield return new Solution.CombinationRecursiveGenerator();
+  }
+
+  [TestCaseSource(nameof(GetImplementers))]
+  public void Test1<T>(T generator) where T : Solution.ICombinationGenerator
+  {
+    generator.Generate(4, 2).Should().BeEquivalentTo(
       new[]
       {
         new[] { 1, 2 },
@@ -21,19 +30,19 @@ public class Tests
       });
   }
 
-  [Test]
-  public void Test2()
+  [TestCaseSource(nameof(GetImplementers))]
+  public void Test2<T>(T generator) where T : Solution.ICombinationGenerator
   {
-    new Solution().Combine(1, 1).Should().BeEquivalentTo(
+    generator.Generate(1, 1).Should().BeEquivalentTo(
       new[]
       {
         new[] { 1 }
       });
   }
-  
-  [Test]
-  public void Test3()
+
+  [TestCaseSource(nameof(GetImplementers))]
+  public void Test3<T>(T generator) where T : Solution.ICombinationGenerator
   {
-    new Solution().Combine(20, 10).Should().HaveCount(184756);
+    generator.Generate(20, 10).Should().HaveCount(184756);
   }
 }
