@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace LeetCode.IntegerToRoman;
+namespace LeetCode._12._Integer_to_Roman;
 
 public class Solution
 {

@@ -1,8 +1,7 @@
-using System;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode.AsteroidCollision;
+namespace LeetCode._735._Asteroid_Collision;
 
 [TestFixture]
 public class Tests

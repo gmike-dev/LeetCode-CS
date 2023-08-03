@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LeetCode.AsteroidCollision;
+namespace LeetCode._735._Asteroid_Collision;
 
 public class Solution
 {
