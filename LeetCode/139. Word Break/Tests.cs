@@ -14,4 +14,12 @@ public class Tests
   {
     new Solution().WordBreak(s, wordDict).Should().Be(expected);
   }
+  
+  [TestCase("leetcode", new[] { "leet", "code" }, true)]
+  [TestCase("applepenapple", new[] { "apple", "pen" }, true)]
+  [TestCase("catsandog", new[] { "cats", "dog", "sand", "and", "cat" }, false)]
+  public void Test2(string s, IList<string> wordDict, bool expected)
+  {
+    new Solution().WordBreak_Recursion(s, wordDict).Should().Be(expected);
+  }
 }

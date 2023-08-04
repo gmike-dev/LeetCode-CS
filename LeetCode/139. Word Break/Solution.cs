@@ -8,6 +8,24 @@ public class Solution
 {
   public bool WordBreak(string s, IList<string> wordDict)
   {
+    var dp = new bool[s.Length + 1];
+    foreach (var word in wordDict)
+      if (s.StartsWith(word))
+        dp[word.Length] = true;
+    for (var i = 1; i < s.Length; i++)
+    {
+      if (dp[i])
+      {
+        foreach (var word in wordDict)
+          if (s.AsSpan(i).StartsWith(word))
+            dp[i + word.Length] = true;
+      }
+    }
+    return dp[^1];
+  }
+  
+  public bool WordBreak_Recursion(string s, IList<string> wordDict)
+  {
     return new WordsChecker(wordDict).CanBuild(s);
   }
 
