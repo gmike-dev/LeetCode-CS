@@ -9,10 +9,8 @@ public class Solution
   public bool WordBreak(string s, IList<string> wordDict)
   {
     var dp = new bool[s.Length + 1];
-    foreach (var word in wordDict)
-      if (s.StartsWith(word))
-        dp[word.Length] = true;
-    for (var i = 1; i < s.Length; i++)
+    dp[0] = true;
+    for (var i = 0; i < s.Length; i++)
     {
       if (dp[i])
       {
