@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode.TwoSum;
+namespace LeetCode._1._Two_Sum;
 
 [TestFixture]
 public class Tests
