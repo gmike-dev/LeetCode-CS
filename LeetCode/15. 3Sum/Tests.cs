@@ -223,6 +223,6 @@ public class Tests
   })]
   public void TestLong(int[] nums)
   {
-    new Solution().ThreeSum(nums).Should().NotBeEmpty();
+    new Solution().ThreeSum(nums).Should().HaveCount(16258);
   }
 }
