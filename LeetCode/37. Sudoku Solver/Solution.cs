@@ -6,18 +6,118 @@ public class Solution
 {
   public void SolveSudoku(char[][] board)
   {
-    if (!new SudokuSolver(board).Solve(0, 0))
+    if (!new SudokuOptimizedRecursionSolver(board).Solve(0, 0))
       throw new InvalidOperationException("Solution not found");
   }
+  
+  public void SolveSudoku_SimpleRecursion(char[][] board)
+  {
+    if (!new SudokuRecursionSolver(board).Solve())
+      throw new InvalidOperationException("Solution not found");
+  }
+  
+  public void SolveSudoku_Bitmasks(char[][] board)
+  {
+    if (!new SudokuBitmaskSolver(board).Solve(0, 0))
+      throw new InvalidOperationException("Solution not found");
+  }
+  
+  private class SudokuOptimizedRecursionSolver
+  {
+    private readonly char[][] _board;
 
-  private class SudokuSolver
+    public SudokuOptimizedRecursionSolver(char[][] board)
+    {
+      _board = board;
+    }
+
+    public bool Solve(int row, int col)
+    {
+      if (row == 9)
+        return true;
+      if (col == 9)
+        return Solve(row + 1, 0);
+      if (_board[row][col] != '.')
+        return Solve(row, col + 1);
+
+      for (var digit = '1'; digit <= '9'; digit++)
+      {
+        if (CanSet(row, col, digit))
+        {
+          _board[row][col] = digit;
+          if (Solve(row, col + 1))
+            return true;
+          _board[row][col] = '.';
+        }
+      }
+      return false;
+    }
+
+    private bool CanSet(int row, int col, char digit)
+    {
+      for (var i = 0; i < 9; i++)
+      {
+        if (_board[row][i] == digit || _board[i][col] == digit ||
+            _board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == digit)
+          return false;
+      }
+      return true;
+    }
+  }
+
+  
+  private class SudokuRecursionSolver
+  {
+    private readonly char[][] _board;
+
+    public SudokuRecursionSolver(char[][] board)
+    {
+      _board = board;
+    }
+
+    public bool Solve()
+    {
+      for (var row = 0; row < 9; row++)
+      for (var col = 0; col < 9; col++)
+      {
+        if (_board[row][col] == '.')
+        {
+          for (var digit = '1'; digit <= '9'; digit++)
+          {
+            if (CanSet(row, col, digit))
+            {
+              _board[row][col] = digit;
+              if (Solve())
+                return true;
+              _board[row][col] = '.';
+            }
+          }
+          return false;
+        }
+      }
+      return true;
+    }
+
+    private bool CanSet(int row, int col, char digit)
+    {
+      for (var i = 0; i < 9; i++)
+      {
+        if (_board[row][i] == digit || _board[i][col] == digit ||
+            _board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == digit)
+          return false;
+      }
+      return true;
+    }
+  }
+
+  private class SudokuBitmaskSolver
   {
     private readonly char[][] _board;
     private readonly int[] _rowDigits = new int[9];
     private readonly int[] _colDigits = new int[9];
     private readonly int[,] _boxDigits = new int[3, 3];
 
-    public SudokuSolver(char[][] board)
+    public SudokuBitmaskSolver(char[][] board)
     {
       _board = board;
 
