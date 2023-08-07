@@ -29,33 +29,26 @@ public class Solution
       }
     }
 
-    public bool Solve(int fromRow, int fromCol)
+    public bool Solve(int row, int col)
     {
-      for (var i = fromRow; i < 9; i++)
-      for (var j = i == fromRow ? fromCol : 0; j < 9; j++)
+      if (row == 9)
+        return true;
+      if (col == 9)
+        return Solve(row + 1, 0);
+      if (_board[row][col] != '.')
+        return Solve(row, col + 1);
+      
+      for (var digit = '1'; digit <= '9'; digit++)
       {
-        if (_board[i][j] == '.')
+        if (CanSet(row, col, digit))
         {
-          for (var digit = '1'; digit <= '9'; digit++)
-          {
-            if (CanSet(i, j, digit))
-            {
-              SetDigit(i, j, digit);
-              var next = Next(i, j);
-              if (Solve(next.row, next.col))
-                return true;
-              UnsetDigit(i, j, digit);
-            }
-          }
-          return false;
+          SetDigit(row, col, digit);
+          if (Solve(row, col + 1))
+            return true;
+          UnsetDigit(row, col, digit);
         }
       }
-      return true;
-    }
-
-    private static (int row, int col) Next(int row, int col)
-    {
-      return col + 1 < 9 ? (row, col + 1) : (row + 1, 0);
+      return false;
     }
 
     private bool CanSet(int row, int col, char digit)
