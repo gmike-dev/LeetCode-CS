@@ -17,6 +17,32 @@ public class Solution
         counter[num] = 1;
     }
 
+    var n = nums.Length;
+    var freq = new List<int>[n + 1];
+    foreach (var (num, count) in counter)
+      (freq[count] ??= new List<int>()).Add(num);
+
+    var result = new int[k];
+    for (var i = n; i > 0 && k > 0; i--)
+    {
+      if (freq[i] != null)
+        for (var j = 0; j < freq[i].Count && k > 0; j++)
+          result[--k] = freq[i][j];
+    }
+    return result;
+  }
+  
+  public int[] TopKFrequent_Queue(int[] nums, int k)
+  {
+    var counter = new Dictionary<int, int>();
+    foreach (var num in nums)
+    {
+      if (counter.TryGetValue(num, out var count))
+        counter[num] = count + 1;
+      else
+        counter[num] = 1;
+    }
+
     var queue = new PriorityQueue<int, int>();
     foreach (var (num, count) in counter)
     {

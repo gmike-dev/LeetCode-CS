@@ -11,6 +11,7 @@ public class Tests
   public void Test1(int[] nums, int k, int[] expected)
   {
     new Solution().TopKFrequent(nums, k).Should().BeEquivalentTo(expected);
+    new Solution().TopKFrequent_Queue(nums, k).Should().BeEquivalentTo(expected);
     new Solution().TopKFrequent_Sorting(nums, k).Should().BeEquivalentTo(expected);
   }
 }
