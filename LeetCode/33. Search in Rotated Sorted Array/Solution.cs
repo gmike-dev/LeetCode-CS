@@ -4,31 +4,28 @@ namespace LeetCode._33._Search_in_Rotated_Sorted_Array;
 
 public class Solution
 {
+  /// <summary>
+  /// https://leetcode.com/problems/search-in-rotated-sorted-array
+  /// </summary>
+  /// <param name="nums">An integer array sorted in ascending order (with distinct values).</param>
   public int Search(int[] nums, int target)
   {
-    return Search(nums, 0, nums.Length - 1, target);
-  }
-
-  private int Search(int[] nums, int l, int r, int target)
-  {
-    if (l > r)
-      return -1;
-
-    if (l == r)
-      return nums[l] == target ? l : -1;
-
-    int result;
-    if (nums[l] >= nums[r])
+    var l = 0;
+    var n = nums.Length;
+    var r = n - 1;
+    while (l <= r)
     {
       var m = l + (r - l) / 2;
-      result = Search(nums, l, m, target);
-      if (result >= 0)
-        return result;
-      result = Search(nums, m + 1, r, target);
-      return result >= 0 ? result : -1;
+      if (nums[m] > nums[^1])
+        l = m + 1;
+      else
+        r = m - 1;
     }
-    
-    result = Array.BinarySearch(nums, l, r - l + 1, target);
-    return result < 0 ? -1 : result;
+
+    var pivot = l;
+    var result = pivot > 0 && target >= nums[0] ? 
+      Array.BinarySearch(nums, 0, pivot, target) : 
+      Array.BinarySearch(nums, pivot, n - pivot, target);
+    return result >= 0 ? result : -1;
   }
 }
