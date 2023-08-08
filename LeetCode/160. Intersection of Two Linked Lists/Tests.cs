@@ -16,5 +16,6 @@ public class Tests
     var listB = new ListNode(5) { next = new ListNode(6) { next = new ListNode(1) { next = intersection } } };
 
     new Solution().GetIntersectionNode(listA, listB).Should().BeSameAs(intersection);
+    new Solution().GetIntersectionNode2(listA, listB).Should().BeSameAs(intersection);
   }
 }

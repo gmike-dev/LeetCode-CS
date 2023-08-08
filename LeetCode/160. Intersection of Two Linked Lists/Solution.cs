@@ -18,6 +18,27 @@ public class Solution
 {
   public ListNode GetIntersectionNode(ListNode headA, ListNode headB)
   {
+    var node = headA;
+    while (node != null)
+    {
+      node.val = -node.val;
+      node = node.next;
+    }
+    node = headB;
+    while (node is { val: > 0 })
+      node = node.next;
+    var intersection = node;
+    node = headA;
+    while (node != null)
+    {
+      node.val = -node.val;
+      node = node.next;
+    }
+    return intersection;
+  }
+  
+  public ListNode GetIntersectionNode2(ListNode headA, ListNode headB)
+  {
     var listA = new List<ListNode>();
     while (headA != null)
     {
