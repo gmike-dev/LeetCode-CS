@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace LeetCode._23._Merge_k_Sorted_Lists;
 
 public class ListNode
@@ -15,6 +17,34 @@ public class ListNode
 public class Solution
 {
   public ListNode MergeKLists(ListNode[] lists)
+  {
+    if (lists.Length == 0)
+      return null;
+
+    var result = new List<int>();
+    for (var i = 0; i < lists.Length; i++)
+    {
+      var list = lists[i];
+      while (list != null)
+      {
+        result.Add(list.val);
+        list = list.next;
+      }
+    }
+
+    if (result.Count == 0)
+      return null;
+    
+    result.Sort();
+
+    var root = new ListNode(result[0]);
+    var current = root;
+    for (var i = 1; i < result.Count; i++)
+      current = current.next = new ListNode(result[i]);
+    return root;
+  }
+  
+  public ListNode MergeKLists_UseLinkedList(ListNode[] lists)
   {
     if (lists.Length == 0)
       return null;
