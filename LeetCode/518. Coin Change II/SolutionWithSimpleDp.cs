@@ -1,28 +1,28 @@
 namespace LeetCode._518._Coin_Change_II;
 
-public class Solution
+public class SolutionWithSimpleDp
 {
   public int Change(int amount, int[] coins)
   {
     var n = coins.Length;
 
-    var prev = new int[amount + 1];
-    var curr = new int[amount + 1];
+    var dp = new int[amount + 1][];
+    for (var i = 0; i < dp.Length; i++)
+      dp[i] = new int[n + 1];
 
     for (var s = 0; s <= amount; s += coins[0])
-      prev[s] = 1;
+      dp[s][0] = 1;
 
     for (var i = 1; i < n; i++)
     {
       for (var s = 0; s <= amount; s++)
       {
         if (s >= coins[i])
-          curr[s] = prev[s] + curr[s - coins[i]];
+          dp[s][i] = dp[s][i - 1] + dp[s - coins[i]][i];
         else
-          curr[s] = prev[s];
+          dp[s][i] = dp[s][i - 1];
       }
-      (curr, prev) = (prev, curr);
     }
-    return prev[amount];
+    return dp[amount][n - 1];
   }
 }
