@@ -4,25 +4,14 @@ public class Solution
 {
   public int Change(int amount, int[] coins)
   {
-    var n = coins.Length;
-
-    var prev = new int[amount + 1];
-    var curr = new int[amount + 1];
-
+    var dp = new int[amount + 1];
     for (var s = 0; s <= amount; s += coins[0])
-      prev[s] = 1;
-
-    for (var i = 1; i < n; i++)
+      dp[s] = 1;
+    for (var i = 1; i < coins.Length; i++)
     {
-      for (var s = 0; s <= amount; s++)
-      {
-        if (s >= coins[i])
-          curr[s] = prev[s] + curr[s - coins[i]];
-        else
-          curr[s] = prev[s];
-      }
-      (curr, prev) = (prev, curr);
+      for (var s = coins[i]; s <= amount; s++)
+        dp[s] += dp[s - coins[i]];
     }
-    return prev[amount];
+    return dp[amount];
   }
 }
