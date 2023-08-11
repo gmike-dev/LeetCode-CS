@@ -8,6 +8,30 @@ public class Solution
   {
     var n = coins.Length;
 
+    var prev = new int[amount + 1];
+    var curr = new int[amount + 1];
+
+    for (var s = 0; s <= amount; s += coins[0])
+      prev[s] = 1;
+
+    for (var i = 1; i < n; i++)
+    {
+      for (var s = 0; s <= amount; s++)
+      {
+        if (s >= coins[i])
+          curr[s] = prev[s] + curr[s - coins[i]];
+        else
+          curr[s] = prev[s];
+      }
+      (curr, prev) = (prev, curr);
+    }
+    return prev[amount];
+  }
+  
+  public int Change_Dp(int amount, int[] coins)
+  {
+    var n = coins.Length;
+
     var dp = new int[amount + 1][];
     for (var i = 0; i < dp.Length; i++)
       dp[i] = new int[n + 1];
