@@ -5,12 +5,11 @@ public class Solution
   public int Change(int amount, int[] coins)
   {
     var dp = new int[amount + 1];
-    for (var s = 0; s <= amount; s += coins[0])
-      dp[s] = 1;
-    for (var i = 1; i < coins.Length; i++)
+    dp[0] = 1;
+    foreach (var coin in coins)
     {
-      for (var s = coins[i]; s <= amount; s++)
-        dp[s] += dp[s - coins[i]];
+      for (var s = coin; s <= amount; s++)
+        dp[s] += dp[s - coin];
     }
     return dp[amount];
   }
