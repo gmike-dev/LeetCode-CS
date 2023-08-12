@@ -16,12 +16,25 @@ public class Tests
         new[] { 0, 1, 0 },
         new[] { 0, 0, 0 }
       }).Should().Be(2);
+    new SolutionClassicDp().UniquePathsWithObstacles(
+      new[]
+      {
+        new[] { 0, 0, 0 },
+        new[] { 0, 1, 0 },
+        new[] { 0, 0, 0 }
+      }).Should().Be(2);
   }
   
   [Test]
   public void Test2()
   {
     new Solution().UniquePathsWithObstacles(
+      new[]
+      {
+        new[] { 0, 1 },
+        new[] { 0, 0 }
+      }).Should().Be(1);
+    new SolutionClassicDp().UniquePathsWithObstacles(
       new[]
       {
         new[] { 0, 1 },
