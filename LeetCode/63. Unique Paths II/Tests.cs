@@ -41,4 +41,21 @@ public class Tests
         new[] { 0, 0 }
       }).Should().Be(1);
   }
+  
+  [Test]
+  public void Test3()
+  {
+    new Solution().UniquePathsWithObstacles(
+      new[]
+      {
+        new[] { 1 },
+        new[] { 0 }
+      }).Should().Be(0);
+    new SolutionClassicDp().UniquePathsWithObstacles(
+      new[]
+      {
+        new[] { 1 },
+        new[] { 0 }
+      }).Should().Be(0);
+  }
 }
