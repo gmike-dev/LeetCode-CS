@@ -11,5 +11,6 @@ public class Tests
   public void Test1(int[] nums, int k, int[] expected)
   {
     new Solution().MaxSlidingWindow(nums, k).Should().BeEquivalentTo(expected);
+    new SolutionWithMinMaxQueue().MaxSlidingWindow(nums, k).Should().BeEquivalentTo(expected);
   }
 }

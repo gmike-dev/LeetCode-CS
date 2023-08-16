@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace LeetCode._239._Sliding_Window_Maximum;
@@ -7,68 +6,56 @@ public class Solution
 {
   public int[] MaxSlidingWindow(int[] nums, int k)
   {
-    var q = new MaxQueue(k);
+    var deque = new Deque<int>(k);
     for (var i = 0; i < k; i++)
-      q.Enqueue(nums[i]);
-    var n = nums.Length;
-    var result = new List<int>(n) { q.Max };
-    for (var i = 0; i < n - k; i++)
     {
-      q.Dequeue();
-      q.Enqueue(nums[(k + i) % n]);
-      result.Add(q.Max);
+      while (deque.Count > 0 && nums[i] >= nums[deque.Back])
+        deque.PopBack();
+      deque.PushBack(i);
+    }
+    var n = nums.Length;
+    var result = new List<int>(n) { nums[deque.Front] };
+    for (var i = k; i < n; i++)
+    {
+      if (deque.Front == i - k)
+        deque.PopFront();
+      while (deque.Count > 0 && nums[i] >= nums[deque.Back])
+        deque.PopBack();
+      deque.PushBack(i);
+      result.Add(nums[deque.Front]);
     }
     return result.ToArray();
   }
 
-  private class MaxStack
+  private class Deque<T>
   {
-    private readonly record struct StackElement(int Value, int Max);
+    private readonly int _size;
+    private readonly T[] _buffer;
+    private int _start;
+    private int _count;
 
-    private readonly Stack<StackElement> _s;
-    
-    public int Count => _s.Count;
+    public int Count => _count;
+    public T Front => _buffer[_start];
+    public T Back => _buffer[Index(_count - 1)];
 
-    public int Max => _s.TryPeek(out var top) ? top.Max : int.MinValue;
+    public void PushBack(T item) => _buffer[Index(_count++)] = item;
 
-    public void Push(int value)
+    public void PopFront()
     {
-      var se = _s.TryPeek(out var top) ?
-        new StackElement(value, Math.Max(value, top.Max)) :
-        new StackElement(value, value);
-      _s.Push(se);
+      _start++;
+      if (_start == _size)
+        _start = 0;
+      _count--;
     }
 
-    public int Pop() => _s.Pop().Value;
+    public void PopBack() => _count--;
 
-    public MaxStack(int capacity) => _s = new Stack<StackElement>(capacity);
-  }
+    private int Index(int index) => (_start + index) % _size;
 
-
-  private class MaxQueue
-  {
-    private readonly MaxStack _front;
-    private readonly MaxStack _back;
-
-    public MaxQueue(int capacity)
+    public Deque(int capacity)
     {
-      _front = new MaxStack(capacity);
-      _back = new MaxStack(capacity);
-    }
-
-    public int Max => Math.Max(_front.Max, _back.Max);
-
-    public void Enqueue(int value) => _front.Push(value);
-
-    public void Dequeue()
-    {
-      if (_back.Count == 0)
-      {
-        while (_front.Count > 0)
-          _back.Push(_front.Pop());
-      }
-      _back.Pop();
+      _size = capacity;
+      _buffer = new T[_size];
     }
   }
-  
 }
