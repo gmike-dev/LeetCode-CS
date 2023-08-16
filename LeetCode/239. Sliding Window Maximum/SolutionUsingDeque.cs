@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace LeetCode._239._Sliding_Window_Maximum;
 
-public class Solution
+public class SolutionUsingDeque
 {
   public int[] MaxSlidingWindow(int[] nums, int k)
   {

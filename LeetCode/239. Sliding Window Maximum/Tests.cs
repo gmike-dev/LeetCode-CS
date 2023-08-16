@@ -10,7 +10,8 @@ public class Tests
   [TestCase(new[] { 1 }, 1, new[] { 1 })]
   public void Test1(int[] nums, int k, int[] expected)
   {
-    new Solution().MaxSlidingWindow(nums, k).Should().BeEquivalentTo(expected);
+    new SolutionUsingLinkedList().MaxSlidingWindow(nums, k).Should().BeEquivalentTo(expected);
+    new SolutionUsingDeque().MaxSlidingWindow(nums, k).Should().BeEquivalentTo(expected);
     new SolutionWithMinMaxQueue().MaxSlidingWindow(nums, k).Should().BeEquivalentTo(expected);
   }
 }
