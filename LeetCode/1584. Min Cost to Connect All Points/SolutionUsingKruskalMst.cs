@@ -36,34 +36,34 @@ public class SolutionUsingKruskalMst
     private readonly int[] _parent;
     private readonly int[] _size;
 
-    public void MakeSet(int v)
+    public void MakeSet(int x)
     {
-      _parent[v] = v;
-      _size[v] = 1;
+      _parent[x] = x;
+      _size[x] = 1;
     }
 
-    public int Find(int v)
+    public int Find(int x)
     {
-      while (_parent[v] != v)
+      while (_parent[x] != x)
       {
-        _parent[v] = _parent[_parent[v]];
-        v = _parent[v];
+        _parent[x] = _parent[_parent[x]];
+        x = _parent[x];
       }
-      return v;
+      return x;
     }
 
-    public bool Union(int v1, int v2)
+    public bool Union(int x, int y)
     {
-      var s1 = Find(v1);
-      var s2 = Find(v2);
-      if (s1 != s2)
+      x = Find(x);
+      y = Find(y);
+      if (x != y)
       {
-        _parent[s1] = s2;
-        if (_size[s1] > _size[s2])
-          (_size[s1], _size[s2]) = (_size[s2], _size[s1]);
-        _size[s1] += _size[s2];
+        if (_size[x] < _size[y])
+          (x, y) = (y, x);
+        _parent[y] = x; // Always add a smaller set to a larger set.
+        _size[x] += _size[y];
       }
-      return s1 != s2;
+      return x != y;
     }
 
     public Dsu(int n)
