@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace LeetCode._1489._Find_Critical_and_Pseudo_Critical_Edges_in_Minimum_Spanning_Tree;
@@ -8,41 +7,38 @@ public class Solution
 {
   public IList<IList<int>> FindCriticalAndPseudoCriticalEdges(int n, int[][] edges)
   {
-    var m = edges.Length;
-    var sortedEdges = Enumerable.Range(0, m).Select(i => new Edge(i, edges[i][0], edges[i][1], edges[i][2])).ToArray();
-    SortByWeight(sortedEdges);
+    var sortedEdges = GetSortedEdges(edges);
     var mst = new Mst(sortedEdges, n);
-    var mstWeight = mst.CalculateWeight();
+    var mstWeight = mst.Weight();
     var criticalEdges = new List<int>();
     var pseudoCriticalEdges = new List<int>();
     foreach (var edge in sortedEdges)
     {
-      mst.Exclude(edge);
-      var mstWeightWithoutEdge = mst.CalculateWeight();
-      mst.UndoExclude();
-      var isCriticalEdge = mstWeightWithoutEdge == -1 || mstWeightWithoutEdge > mstWeight;
-      if (isCriticalEdge)
-      {
+      if (IsCriticalEdge(mst, mstWeight, edge))
         criticalEdges.Add(edge.Index);
-        continue;
-      }
-      mst.Require(edge);
-      var mstWeightWithRequiredEdge = mst.CalculateWeight();
-      mst.UndoRequire();
-      var isPseudoCriticalEdge = mstWeightWithRequiredEdge == mstWeight;
-      if (isPseudoCriticalEdge)
+      else if (IsPseudoCriticalEdge(mst, mstWeight, edge))
         pseudoCriticalEdges.Add(edge.Index);
     }
     return new List<IList<int>> { criticalEdges, pseudoCriticalEdges };
   }
 
-  private static void SortByWeight(Edge[] edges)
+  private static bool IsCriticalEdge(Mst mst, int originalWeight, Edge edge)
   {
-    Array.Sort(edges, Comparer<Edge>.Create((e1, e2) =>
-    {
-      var cmp = e1.Weight.CompareTo(e2.Weight);
-      return cmp != 0 ? cmp : e1.Index.CompareTo(e2.Index);
-    }));
+    var mstWeightWithoutEdge = mst.WeightWithout(edge);
+    return mstWeightWithoutEdge == -1 || mstWeightWithoutEdge > originalWeight;
+  }
+
+  private static bool IsPseudoCriticalEdge(Mst mst, int originalWeight, Edge edge)
+  {
+    return mst.WeightWithRequired(edge) == originalWeight;
+  }
+
+  private static Edge[] GetSortedEdges(int[][] edges)
+  {
+    return Enumerable.Range(0, edges.Length)
+      .Select(i => new Edge(i, edges[i][0], edges[i][1], edges[i][2]))
+      .OrderBy(e => e.Weight)
+      .ToArray();
   }
 
   private readonly record struct Edge(int Index, int From, int To, int Weight);
@@ -51,28 +47,28 @@ public class Solution
   {
     private readonly int _vertexCount;
     private readonly Edge[] _edges;
-    private Edge? _excludedEdge;
-    private Edge? _requiredEdge;
+    
+    public int WeightWithout(Edge excluded) => Weight(excluded);
 
-    public void Require(Edge e) => _requiredEdge = e;
-    public void UndoRequire() => _requiredEdge = null;
-    public void Exclude(Edge e) => _excludedEdge = e;
-    public void UndoExclude() => _excludedEdge = null;
+    public int WeightWithRequired(Edge required) => Weight(null, required);
 
-    public int CalculateWeight()
+    public int Weight(Edge? excluded = null, Edge? required = null)
     {
       var treeIds = new int[_vertexCount];
+      var treesCount = _vertexCount;
       for (var i = 0; i < _vertexCount; i++)
         treeIds[i] = i;
       var weight = 0;
-      if (_requiredEdge is { } requiredEdge)
+      if (required != null)
       {
-        weight += requiredEdge.Weight;
-        treeIds[requiredEdge.From] = treeIds[requiredEdge.To];
+        var edge = required.Value;
+        weight += edge.Weight;
+        treeIds[edge.From] = treeIds[edge.To];
+        treesCount--;
       }
       foreach (var edge in _edges)
       {
-        if (edge.Index != _excludedEdge?.Index)
+        if (edge.Index != excluded?.Index)
         {
           var fromTree = treeIds[edge.From];
           var toTree = treeIds[edge.To];
@@ -82,10 +78,10 @@ public class Solution
             for (var j = 0; j < _vertexCount; j++)
               if (treeIds[j] == fromTree)
                 treeIds[j] = toTree;
+            treesCount--;
           }
         }
       }
-      var treesCount = treeIds.Distinct().Count();
       return treesCount > 1 ? -1 : weight;
     }
 
