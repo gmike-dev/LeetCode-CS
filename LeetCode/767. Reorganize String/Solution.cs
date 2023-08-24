@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace LeetCode._767._Reorganize_String;
 
@@ -7,40 +6,30 @@ public class Solution
 {
   public string ReorganizeString(string s)
   {
-    var count = new int[26];
-    foreach (var c in s)
-      count[c - 'a']++;
-
-    var q = new PriorityQueue<char, int>(Comparer<int>.Create((x, y) => y.CompareTo(x)));
+    var stats = new (int count, char c)[26];
     for (var i = 0; i < 26; i++)
-      if (count[i] > 0)
-        q.Enqueue((char)('a' + i), count[i]);
+      stats[i].c = (char)('a' + i);
+    foreach (var c in s)
+      stats[c - 'a'].count++;
+    stats = stats.OrderByDescending(x => x.count).ToArray(); // Linq uses stable sort. Needed for tests.
 
-    var result = new StringBuilder();
-
-    while (q.Count > 1)
+    var n = s.Length;
+    var result = new char[n];
+    for (int i = 0, j = 0, k = 0; i < n; i++)
     {
-      var c1 = q.Dequeue();
-      var c2 = q.Dequeue();
-      result.Append(c1);
-      result.Append(c2);
-      if (--count[c1 - 'a'] > 0)
-        q.Enqueue(c1, count[c1 - 'a']);
-      if (--count[c2 - 'a'] > 0)
-        q.Enqueue(c2, count[c2 - 'a']);
+      if (stats[k].count == 0)
+        k++;
+      result[j] = stats[k].c;
+      stats[k].count--;
+      j += 2;
+      if (j >= n)
+        j = 1;
     }
 
-    if (q.Count == 0)
-      return result.ToString();
+    for (var i = 0; i < n - 1; i++)
+      if (result[i] == result[i + 1])
+        return string.Empty;
 
-    var last = q.Dequeue();
-    if (count[last - 'a'] > 1)
-      return "";
-
-    if (result.Length > 0 && result[^1] == last)
-      return "";
-
-    result.Append(last);
-    return result.ToString();
+    return new string(result);
   }
 }
