@@ -1,39 +1,28 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode._97._Interleaving_String;
 
 public class Solution
 {
-  private readonly HashSet<(int, int, bool)> _cache = new();
-  
   public bool IsInterleave(string s1, string s2, string s3)
   {
-    return IsInterleave(s1.AsSpan(), s2.AsSpan(), s3.AsSpan(), true) ||
-           IsInterleave(s2.AsSpan(), s1.AsSpan(), s3.AsSpan(), false);
-  }
-
-  private bool IsInterleave(ReadOnlySpan<char> s1, ReadOnlySpan<char> s2, ReadOnlySpan<char> s3, bool first)
-  {
-    var key = (s1.Length, s2.Length, first);
-    if (_cache.Contains(key))
+    var m = s1.Length;
+    var n = s2.Length;
+    if (m + n != s3.Length)
       return false;
-
-    if (s1.Length + s2.Length == s3.Length)
+    var dp = new bool[m + 1][];
+    for (var i = 0; i <= m; i++)
+      dp[i] = new bool[n + 1];
+    dp[0][0] = true;
+    for (var i = 0; i < m && s1[i] == s3[i]; i++)
+      dp[i + 1][0] = true;
+    for (var i = 0; i < n && s2[i] == s3[i]; i++)
+      dp[0][i + 1] = true;
+    for (var i = 0; i < m; i++)
+    for (var j = 0; j < n; j++)
     {
-      if (s2.IsEmpty)
-      {
-        if (s1.SequenceEqual(s3))
-          return true;
-      }
-      else
-      {
-        for (var i = 0; i < Math.Min(s1.Length, s3.Length) && s1[i] == s3[i]; i++)
-          if (IsInterleave(s2, s1.Slice(i + 1), s3.Slice(i + 1), !first))
-            return true;
-      }
+      dp[i + 1][j + 1] = dp[i][j + 1] && s1[i] == s3[i + j + 1] ||
+                         dp[i + 1][j] && s2[j] == s3[i + j + 1];
     }
-    _cache.Add(key);
-    return false;
+    return dp[m][n];
   }
+
 }

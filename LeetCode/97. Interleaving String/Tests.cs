@@ -17,5 +17,6 @@ public class Tests
   public void Test(string s1, string s2, string s3, bool expected)
   {
     new Solution().IsInterleave(s1, s2, s3).Should().Be(expected);
+    new SolutionUsingMemoization().IsInterleave(s1, s2, s3).Should().Be(expected);
   }
 }
