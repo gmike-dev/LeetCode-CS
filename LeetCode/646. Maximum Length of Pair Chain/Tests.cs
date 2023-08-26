@@ -13,12 +13,28 @@ public class Tests
     {
       new[] { 1, 2 }, new[] { 2, 3 }, new[] { 3, 4 }
     }).Should().Be(2);
+    new SolutionDpWithOn2().FindLongestChain(new[]
+    {
+      new[] { 1, 2 }, new[] { 2, 3 }, new[] { 3, 4 }
+    }).Should().Be(2);
+    new SolutionDpWithNLogN().FindLongestChain(new[]
+    {
+      new[] { 1, 2 }, new[] { 2, 3 }, new[] { 3, 4 }
+    }).Should().Be(2);
   }
 
   [Test]
   public void Test2()
   {
     new Solution().FindLongestChain(new[]
+    {
+      new[] { 1, 2 }, new[] { 7, 8 }, new[] { 4, 5 }
+    }).Should().Be(3);
+    new SolutionDpWithOn2().FindLongestChain(new[]
+    {
+      new[] { 1, 2 }, new[] { 7, 8 }, new[] { 4, 5 }
+    }).Should().Be(3);
+    new SolutionDpWithNLogN().FindLongestChain(new[]
     {
       new[] { 1, 2 }, new[] { 7, 8 }, new[] { 4, 5 }
     }).Should().Be(3);
