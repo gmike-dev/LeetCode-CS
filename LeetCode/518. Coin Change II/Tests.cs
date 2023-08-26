@@ -14,7 +14,7 @@ public class Tests
   public void Test1(int amount, int[] coins, int expected)
   {
     new Solution().Change(amount, coins).Should().Be(expected);
-    new SolutionWithMemoization().Change(amount, coins).Should().Be(expected);
-    new SolutionWithSimpleDp().Change(amount, coins).Should().Be(expected);
+    new SolutionUsingMemoization().Change(amount, coins).Should().Be(expected);
+    new SolutionUsingSimpleDp().Change(amount, coins).Should().Be(expected);
   }
 }

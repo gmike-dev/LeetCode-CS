@@ -1,6 +1,6 @@
 namespace LeetCode._518._Coin_Change_II;
 
-public class SolutionWithSimpleDp
+public class SolutionUsingSimpleDp
 {
   public int Change(int amount, int[] coins)
   {
