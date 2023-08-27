@@ -11,5 +11,6 @@ public class Tests
   public void Test(int[] stones, bool expected)
   {
     new Solution().CanCross(stones).Should().Be(expected);
+    new SolutionUsingDp().CanCross(stones).Should().Be(expected);
   }
 }
