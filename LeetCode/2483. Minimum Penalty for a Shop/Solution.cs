@@ -5,23 +5,28 @@ public class Solution
   public int BestClosingTime(string customers)
   {
     var n = customers.Length;
-    var sl = new int[n + 1];
-    var sr = new int[n + 1];
+    var openPenalty = 0;
+    var closePenalty = 0;
     for (var i = 0; i < n; i++)
-      sl[i + 1] += sl[i] + (customers[i] == 'N' ? 1 : 0);
-    for (var i = n - 1; i >= 0; i--)
-      sr[i] += sr[i + 1] + (customers[i] == 'Y' ? 1 : 0);
+      if (customers[i] == 'Y')
+        closePenalty++;
     var minPenalty = int.MaxValue;
     var bestTime = 0;
-    for (var i = 0; i <= n; i++)
+    for (var i = 0; i < n; i++)
     {
-      var penalty = sl[i] + sr[i];
+      var penalty = openPenalty + closePenalty;
       if (penalty < minPenalty)
       {
         minPenalty = penalty;
         bestTime = i;
       }
+      if (customers[i] == 'N')
+        openPenalty++;
+      else
+        closePenalty--;
     }
+    if (openPenalty + closePenalty < minPenalty)
+      bestTime = n;
     return bestTime;
   }
 }

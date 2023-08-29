@@ -12,5 +12,6 @@ public class Tests
   public void Test(string customers, int expected)
   {
     new Solution().BestClosingTime(customers).Should().Be(expected);
+    new SolutionV2().BestClosingTime(customers).Should().Be(expected);
   }
 }
