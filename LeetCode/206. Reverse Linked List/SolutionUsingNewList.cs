@@ -4,15 +4,11 @@ public class SolutionUsingNewList
 {
   public ListNode ReverseList(ListNode head)
   {
-    if (head == null)
-      return null;
-
-    var result = new ListNode(head.val);
-    var next = head.next;
-    while (next != null)
+    var result = (ListNode)null;
+    while (head != null)
     {
-      result = new ListNode(next.val, result);
-      next = next.next;
+      result = new ListNode(head.val, result);
+      head = head.next;
     }
     return result;
   }
