@@ -13,5 +13,6 @@ public class Tests
   public void Test(string s, string[] dictionary, int expected)
   {
     new Solution().MinExtraChar(s, dictionary).Should().Be(expected);
+    new RecursiveSolution().MinExtraChar(s, dictionary).Should().Be(expected);
   }
 }
