@@ -4,29 +4,36 @@ public class MergeSortSolution
 {
   public ListNode SortList(ListNode head)
   {
-    return MergeSort(head);
+    return MergeSort(head, ListSize(head));
   }
 
-  private static ListNode MergeSort(ListNode list, ListNode endNode = null)
+  private static int ListSize(ListNode list)
   {
-    if (list == endNode)
-      return null;
-    
-    if (list.next == endNode)
-      return new ListNode(list.val);
-    
-    var middle = list;
     var count = 0;
-    for (var node = list; node != endNode; node = node.next)
-    {
+    for (; list != null; list = list.next)
       count++;
-      if (count % 2 == 0)
-        middle = middle.next;
-    }
+    return count;
+  }
 
-    var left = MergeSort(list, middle);
-    var right = MergeSort(middle, endNode);
-    return Merge(left, right);
+  private static ListNode MergeSort(ListNode list, int size)
+  {
+    switch (size)
+    {
+      case 0:
+        return null;
+      case 1:
+        return new ListNode(list.val);
+      default:
+      {
+        var middle = list;
+        for (var i = 0; i < size / 2; i++)
+          middle = middle.next;
+
+        var left = MergeSort(list, size / 2);
+        var right = MergeSort(middle, (size + 1) / 2);
+        return Merge(left, right);
+      }
+    }
   }
 
   private static ListNode Merge(ListNode listA, ListNode listB)
@@ -47,10 +54,7 @@ public class MergeSortSolution
       }
       node = node.next;
     }
-    if (listA == null)
-      node.next = listB;
-    if (listB == null)
-      node.next = listA;
+    node.next = listA ?? listB;
     return result.next;
   }
 }
