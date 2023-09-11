@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._118._Pascal_s_Triangle;
+namespace LeetCode._118._Pascal_Triangle;
 
 [TestFixture]
 public class Tests

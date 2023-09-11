@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace LeetCode._118._Pascal_s_Triangle;
+namespace LeetCode._118._Pascal_Triangle;
 
 public class Solution
 {

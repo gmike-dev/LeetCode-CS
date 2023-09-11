@@ -6,9 +6,9 @@ public class Node
   public Node next;
   public Node random;
 
-  public Node(int _val)
+  public Node(int val)
   {
-    val = _val;
+    this.val = val;
     next = null;
     random = null;
   }
