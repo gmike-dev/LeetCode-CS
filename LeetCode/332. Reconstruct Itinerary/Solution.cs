@@ -4,56 +4,38 @@ namespace LeetCode._332._Reconstruct_Itinerary;
 
 public class Solution
 {
-  private Dictionary<string, List<(string, int)>> _flights = new();
-  private bool[] _used;
-  private int _ticketsUsed;
-  private readonly List<string> _itinerary = new();
-  private int _ticketsCount;
-
   public IList<string> FindItinerary(IList<IList<string>> tickets)
   {
-    _ticketsCount = tickets.Count;
-    _used = new bool[_ticketsCount];
-
-    _flights = new Dictionary<string, List<(string, int)>>();
-    for (var i = 0; i < _ticketsCount; i++)
+    var flights = new Dictionary<string, List<string>>();
+    foreach (var ticket in tickets)
     {
-      var (departure, arrival) = (tickets[i][0], tickets[i][1]);
-      if (_flights.TryGetValue(departure, out var arrivals))
-        arrivals.Add((arrival, i));
+      var (departure, arrival) = (ticket[0], ticket[1]);
+      if (flights.TryGetValue(departure, out var arrivals))
+        arrivals.Add(arrival);
       else
-        _flights[departure] = new List<(string, int)> { (arrival, i) };
+        flights[departure] = new List<string> { arrival };
     }
 
-    foreach (var arrivals in _flights.Values)
-      arrivals.Sort();
+    foreach (var arrivals in flights.Values)
+      arrivals.Sort((x, y) => string.CompareOrdinal(y, x));
 
-    _itinerary.Add("JFK");
-    return Dfs("JFK") ? _itinerary : null;
-  }
+    Stack<string> itinerary = new();
 
-  private bool Dfs(string departure)
-  {
-    var arrivals = _flights.GetValueOrDefault(departure);
-    if (arrivals != null)
+    void Dfs(string airport)
     {
-      foreach (var (arrival, ticket) in arrivals)
+      if (flights.TryGetValue(airport, out var arrivals))
       {
-        if (_used[ticket])
-          continue;
-
-        _used[ticket] = true;
-        _ticketsUsed++;
-        _itinerary.Add(arrival);
-
-        if (_ticketsUsed == _ticketsCount || Dfs(arrival))
-          return true;
-
-        _itinerary.RemoveAt(_itinerary.Count - 1);
-        _used[ticket] = false;
-        _ticketsUsed--;
+        while (arrivals.Count > 0)
+        {
+          var next = arrivals[^1];
+          arrivals.RemoveAt(arrivals.Count - 1);
+          Dfs(next);
+        }
       }
+      itinerary.Push(airport);
     }
-    return false;
+
+    Dfs("JFK");
+    return itinerary.ToArray();
   }
 }
