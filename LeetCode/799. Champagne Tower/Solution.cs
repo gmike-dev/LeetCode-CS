@@ -12,7 +12,7 @@ public class Solution
     for (var i = 1; i <= queryRow; i++)
     {
       next.AsSpan().Clear();
-      for (var j = 0; j < i; j++)
+      for (var j = 0; j < Math.Min(i, queryGlass + 1); j++)
       {
         if (prev[j] > 1)
         {
