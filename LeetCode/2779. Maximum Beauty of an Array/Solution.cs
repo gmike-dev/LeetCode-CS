@@ -8,28 +8,14 @@ public class Solution
   {
     Array.Sort(nums);
     var maxBeauty = 1;
-    for (var i = 0; i < nums.Length - 1; i++)
+    var right = 0;
+    for (var i = 0; i < nums.Length - maxBeauty; i++)
     {
-      var upperBound = UpperBound(nums, i, nums.Length, nums[i] + 2 * k);
-      maxBeauty = Math.Max(maxBeauty, upperBound - i);
+      var target = nums[i] + 2 * k;
+      while (right < nums.Length && nums[right] <= target)
+        right++;
+      maxBeauty = Math.Max(maxBeauty, right - i);
     }
     return maxBeauty;
-  }
-  
-  private static int UpperBound(int[] a, int beginIndex, int endIndex, int value)
-  {
-    if (beginIndex >= endIndex)
-      return endIndex;
-    var l = beginIndex;
-    var r = endIndex - 1;
-    while (l < r)
-    {
-      var m = l + (r - l) / 2;
-      if (a[m] <= value)
-        l = m + 1;
-      else
-        r = m;
-    }
-    return a[l] <= value ? endIndex : l;
   }
 }

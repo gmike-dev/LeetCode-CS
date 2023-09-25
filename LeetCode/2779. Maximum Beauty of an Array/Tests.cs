@@ -12,5 +12,6 @@ public class Tests
   public void Test(int[] nums, int k, int expected)
   {
     new Solution().MaximumBeauty(nums, k).Should().Be(expected);
+    new BinarySearchSolution().MaximumBeauty(nums, k).Should().Be(expected);
   }
 }
