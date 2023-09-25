@@ -8,13 +8,12 @@ public class Solution
   {
     Array.Sort(nums);
     var maxBeauty = 1;
-    var right = 0;
-    for (var i = 0; i < nums.Length - maxBeauty; i++)
+    for (int left = 0, right = 0; right < nums.Length; left++)
     {
-      var target = nums[i] + 2 * k;
+      var target = nums[left] + 2 * k;
       while (right < nums.Length && nums[right] <= target)
         right++;
-      maxBeauty = Math.Max(maxBeauty, right - i);
+      maxBeauty = Math.Max(maxBeauty, right - left);
     }
     return maxBeauty;
   }
