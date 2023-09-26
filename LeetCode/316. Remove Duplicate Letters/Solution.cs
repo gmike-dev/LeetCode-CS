@@ -6,19 +6,18 @@ public class Solution
 {
   public string RemoveDuplicateLetters(string s)
   {
-    var cnt = new int[26];
-    foreach (var c in s)
-      cnt[c - 'a']++;
+    var last = new int[26];
+    for (var i = 0; i < s.Length; i++)
+      last[s[i] - 'a'] = i;
     var result = new List<char>();
-    foreach (var c in s)
+    for (var i = 0; i < s.Length; i++)
     {
-      if (!result.Contains(c))
+      if (!result.Contains(s[i]))
       {
-        while (result.Count > 0 && result[^1] > c && cnt[result[^1] - 'a'] != 0)
+        while (result.Count > 0 && result[^1] > s[i] && i < last[result[^1] - 'a'])
           result.RemoveAt(result.Count - 1);
-        result.Add(c);
+        result.Add(s[i]);
       }
-      cnt[c - 'a']--;
     }
     return new string(result.ToArray());
   }
