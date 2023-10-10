@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LeetCode._2009._Minimum_Number_of_Operations;
@@ -7,14 +8,15 @@ public class Solution
 {
   public int MinOperations(int[] nums)
   {
-    var items = nums.Distinct().OrderBy(x => x).ToArray();
+    var items = new SortedSet<int>(nums).ToArray();
     var n = nums.Length;
     var result = int.MaxValue;
-    for (int l = 0, r = 0; l < items.Length; l++)
+    for (int l = 0; l < items.Length; l++)
     {
-      while (r < items.Length && items[r] - items[l] < n)
-        r++;
-      var unique = r - l;
+      var r = Array.BinarySearch(items, items[l] + n - 1);
+      if (r < 0)
+        r = ~r - 1;
+      var unique = r - l + 1;
       result = Math.Min(result, n - unique);
     }
     return result;
