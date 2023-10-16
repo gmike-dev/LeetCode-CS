@@ -15,5 +15,6 @@ public class Tests
   public void Test(int rowIndex, int[] expected)
   {
     new Solution().GetRow(rowIndex).Should().BeEquivalentTo(expected, o => o.WithStrictOrdering());
+    new VectorSolution().GetRow(rowIndex).Should().BeEquivalentTo(expected, o => o.WithStrictOrdering());
   }
 }
