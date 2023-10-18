@@ -12,7 +12,7 @@ public class Solution
     foreach (var rel in relations)
       (g[rel[0]] ??= new List<int>()).Add(rel[1]);
     var mem = new int[n + 1];
-    return Enumerable.Range(1, n).Select(Dfs).Max();
+    return Enumerable.Range(1, n).Max(Dfs);
 
     int Dfs(int v)
     {
