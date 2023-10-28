@@ -12,5 +12,6 @@ public class Tests
   public void Test(int n, int expected)
   {
     new Solution().CountVowelPermutation(n).Should().Be(expected);
+    new FastSolution().CountVowelPermutation(n).Should().Be(expected);
   }
 }
