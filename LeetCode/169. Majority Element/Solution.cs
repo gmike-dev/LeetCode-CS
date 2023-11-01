@@ -5,19 +5,27 @@ namespace LeetCode._169._Majority_Element;
 /// </summary>
 public class Solution
 {
-  public int MajorityElement(int[] nums)
+  /// <summary>
+  /// Return the majority element.
+  /// The majority element is the element that appears more than ⌊n / 2⌋ times.
+  /// </summary>
+  /// <remarks>
+  /// Boyer–Moore majority vote algorithm.
+  /// https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm
+  /// </remarks>
+  public int MajorityElement(int[] a)
   {
-    var n = nums.Length;
-    var major = nums[0];
+    var n = a.Length;
+    var major = a[0];
     var count = 1;
     for (var i = 1; i < n; i++)
     {
       if (count == 0)
       {
-        major = nums[i];
+        major = a[i];
         count = 1;
       }
-      else if (major == nums[i])
+      else if (major == a[i])
       {
         count++;
       }
