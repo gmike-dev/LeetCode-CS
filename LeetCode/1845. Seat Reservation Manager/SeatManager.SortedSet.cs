@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
-namespace LeetCode._1845._Seat_Reservation_Manager;
+namespace LeetCode._1845._Seat_Reservation_Manager.SortedSet;
 
 public class SeatManager
 {
