@@ -14,7 +14,7 @@ public class Tests
         new[] { 2, 1 }, new[] { 3, 4 }, new[] { 3, 2 }
       })
       .Should()
-      .BeEquivalentTo(new[] { 1, 2, 3, 4 }, o => o.WithStrictOrdering());
+      .BeEquivalentTo(new[] { 4, 3, 2, 1 }, o => o.WithStrictOrdering());
   }
 
   [Test]
@@ -25,7 +25,7 @@ public class Tests
         new[] { 4, -2 }, new[] { 1, 4 }, new[] { -3, 1 }
       })
       .Should()
-      .BeEquivalentTo(new[] { -2, 4, 1, -3 }, o => o.WithStrictOrdering());
+      .BeEquivalentTo(new[] { -3, 1, 4, -2 }, o => o.WithStrictOrdering());
   }
 
   [Test]
