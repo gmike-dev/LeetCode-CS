@@ -7,44 +7,50 @@ public class Solution
 {
   public int NumBusesToDestination(int[][] routes, int source, int target)
   {
-    var pointRoutes = new Dictionary<int, List<int>>();
-    for (var bus = 0; bus < routes.Length; bus++)
-    {
-      foreach (var point in routes[bus])
-      {
-        if (pointRoutes.TryGetValue(point, out var list))
-          list.Add(bus);
-        else
-          pointRoutes[point] = new List<int> { bus };
-      }
-    }
-    if (!pointRoutes.ContainsKey(source) || !pointRoutes.ContainsKey(target))
-      return -1;
     if (source == target)
       return 0;
-    var busCount = 1;
-    var currentRoutes = pointRoutes[source].ToHashSet();
-    var processedRoutes = pointRoutes[source].ToHashSet();
+    var pointRoutes = new Dictionary<int, List<int>>();
+    var containsTarget = new bool[routes.Length];
+    for (var route = 0; route < routes.Length; route++)
+    {
+      foreach (var point in routes[route])
+      {
+        if (pointRoutes.TryGetValue(point, out var list))
+          list.Add(route);
+        else
+          pointRoutes[point] = new List<int> { route };
+        if (point == target)
+          containsTarget[route] = true;
+      }
+    }
+    // Quick check in case when we can use 1 route to target point.
+    if (pointRoutes[source].Any(route => containsTarget[route]))
+      return 1;
+    
+    // BFS for routes
+    var currentRoutes = new Queue<(int, int)>();
+    var routeUsed = new bool[routes.Length];
+    foreach (var route in pointRoutes[source])
+    {
+      currentRoutes.Enqueue((route, 1));
+      routeUsed[route] = true;
+    }
     while (currentRoutes.Count > 0)
     {
-      foreach (var route in currentRoutes.ToArray())
+      var (route, busCount) = currentRoutes.Dequeue();
+      if (containsTarget[route])
+        return busCount;
+      foreach (var point in routes[route])
       {
-        currentRoutes.Remove(route);
-        foreach (var point in routes[route])
+        foreach (var nextRoute in pointRoutes[point])
         {
-          if (point == target)
-            return busCount;
-          foreach (var nextRoute in pointRoutes[point])
+          if (!routeUsed[nextRoute])
           {
-            if (!processedRoutes.Contains(nextRoute))
-            {
-              processedRoutes.Add(nextRoute);
-              currentRoutes.Add(nextRoute);
-            }
+            currentRoutes.Enqueue((nextRoute, busCount + 1));
+            routeUsed[nextRoute] = true;
           }
         }
       }
-      busCount++;
     }
     return -1;
   }

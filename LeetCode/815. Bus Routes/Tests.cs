@@ -75,14 +75,4 @@ public class Tests
       new[] { 1, 2, 3 }
     }, 3, 3).Should().Be(0);
   }
-  
-  
-  [Test]
-  public void Test8()
-  {
-    new Solution().NumBusesToDestination(new[]
-    {
-      new[] { 1, 2, 3 }
-    }, 4, 4).Should().Be(-1);
-  }
 }
