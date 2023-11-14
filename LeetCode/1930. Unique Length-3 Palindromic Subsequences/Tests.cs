@@ -12,5 +12,6 @@ public class Tests
   public void Test(string s, int expected)
   {
     new Solution().CountPalindromicSubsequence(s).Should().Be(expected);
+    new BitmasksSolution().CountPalindromicSubsequence(s).Should().Be(expected);
   }
 }
