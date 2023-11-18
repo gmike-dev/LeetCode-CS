@@ -8,17 +8,20 @@ public class Solution
   {
     Array.Sort(nums);
     var count = 1;
-    int j = 0;
+    var left = 0;
     var sum = 0;
-    for (var i = 1; i < nums.Length; i++)
+    for (var right = 1; right < nums.Length; right++)
     {
-      sum += (nums[i] - nums[i - 1]) * (i - j);
-      while (sum > k)
+      sum += (nums[right] - nums[right - 1]) * (right - left);
+      if (sum > k)
       {
-        sum -= nums[i] - nums[j];
-        j++;
+        sum -= nums[right] - nums[left];
+        left++;
       }
-      count = Math.Max(count, i - j + 1);
+      else
+      {
+        count = Math.Max(count, right - left + 1);
+      }
     }
     return count;
   }

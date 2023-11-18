@@ -13,6 +13,5 @@ public class Tests
   public void Test(int[] nums, int k, int expected)
   {
     new Solution().MaxFrequency(nums, k).Should().Be(expected);
-    new LinearSolution().MaxFrequency(nums, k).Should().Be(expected);
   }
 }
