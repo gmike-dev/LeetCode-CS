@@ -1,43 +1,30 @@
-﻿using System.Collections.Generic;
-
-namespace LeetCode._2391._Minimum_Amount_of_Time_to_Collect_Garbage;
+﻿namespace LeetCode._2391._Minimum_Amount_of_Time_to_Collect_Garbage;
 
 public class Solution
 {
   public int GarbageCollection(string[] garbage, int[] travel)
   {
     var n = garbage.Length;
-    var count = new Dictionary<char, int[]>
+    const int full = 0x5040;//  (1 << ('M' - 'A')) | (1 << ('P' - 'A')) | (1 << ('G' - 'A'));
+    var met = 0;
+    var metCnt = 0;
+    var ans = 0;
+    for (var i = n - 1; i >= 0; i--)
     {
-      ['M'] = new int[n],
-      ['P'] = new int[n],
-      ['G'] = new int[n]
-    };
-    var last = new Dictionary<char, int>();
-    for (var i = 0; i < n; i++)
-    {
-      for (var j = 0; j < garbage[i].Length; j++)
+      var s = garbage[i];
+      for (var j = 0; j < s.Length && met != full; j++)
       {
-        var g = garbage[i][j];
-        count[g][i]++;
-        last[g] = i;
-      }
-    }
-
-    var total = 0;
-    foreach (var g in "MPG")
-    {
-      if (last.TryGetValue(g, out var m))
-      {
-        var cnt = count[g];
-        for (var i = 0; i < m; i++)
+        var mask = 1 << (s[j] - 'A');
+        if ((met & mask) == 0)
         {
-          total += cnt[i];
-          total += travel[i];
+          metCnt++;
+          met |= mask;
         }
-        total += count[g][m];
       }
+      ans += s.Length;
+      if (i > 0)
+        ans += metCnt * travel[i - 1];
     }
-    return total;
+    return ans;
   }
 }
