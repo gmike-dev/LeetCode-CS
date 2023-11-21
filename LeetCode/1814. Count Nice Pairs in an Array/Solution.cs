@@ -8,18 +8,15 @@ public class Solution
   {
     const int mod = (int)1e9 + 7;
     var cnt = new Dictionary<int, int>(nums.Length);
+    var ans = 0;
     foreach (var num in nums)
     {
       var n = num - Reverse(num);
-      cnt[n] = cnt.GetValueOrDefault(n, 0) + 1;
+      var count = cnt.GetValueOrDefault(n, 0);
+      ans = (ans + count) % mod;
+      cnt[n] = count + 1;
     }
-    var ans = 0L;
-    foreach (var count in cnt.Values)
-    {
-      var s = (long)count * (count - 1) / 2;
-      ans = (ans + s) % mod;
-    }
-    return (int)ans;
+    return ans;
   }
 
   private static int Reverse(int n)
