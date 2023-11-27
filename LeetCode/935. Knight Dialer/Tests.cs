@@ -13,5 +13,6 @@ public class Tests
   {
     new Solution().KnightDialer(n).Should().Be(expected);
     new SolutionUsingRecursion().KnightDialer(n).Should().Be(expected);
+    new BetterDpSolution().KnightDialer(n).Should().Be(expected);
   }
 }
