@@ -13,18 +13,18 @@ public class Solution
     if (left == n - 1)
       return (long)n * (n + 1) / 2;
 
-    var right = a.Length - 1;
+    var right = n - 1;
     while (a[right - 1] < a[right])
       right--;
 
     if (a[left] < a[right])
     {
       var leftLen = left + 1;
-      var rightLen = a.Length - right;
+      var rightLen = n - right;
       return (long)(leftLen + 1) * (rightLen + 1);
     }
 
-    long count = a.Length - right + 1;
+    long count = n - right + 1;
     for (int i = 0, j = right; i <= left; i++)
     {
       while (j < n && a[j] <= a[i])
