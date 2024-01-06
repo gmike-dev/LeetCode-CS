@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace LeetCode.LongestIncreasingSubsequence;
 
-public class Solution
+public class DpSolution
 {
   public int LengthOfLIS(int[] nums)
   {
