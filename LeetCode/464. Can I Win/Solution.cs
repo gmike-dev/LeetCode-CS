@@ -2,40 +2,32 @@ namespace LeetCode._464._Can_I_Win;
 
 public class Solution
 {
-  private int[] dp;
-
   public bool CanIWin(int maxChoosableInteger, int desiredTotal)
   {
     if (desiredTotal == 0)
       return true;
-    var maxSum = maxChoosableInteger * (maxChoosableInteger + 1) / 2;
-    if (maxSum < desiredTotal)
+
+    if (maxChoosableInteger * (maxChoosableInteger + 1) / 2 < desiredTotal)
       return false;
-    dp = new int[1 << maxChoosableInteger];
-    return F((1 << maxChoosableInteger) - 1, desiredTotal, 1) == 1;
-  }
 
-  private int F(int mask, int target, int player)
-  {
-    if (mask == 0 || target <= 0)
-      return 3 - player;
+    var dp = new int[1 << maxChoosableInteger];
+    return GetWinner(1, (1 << maxChoosableInteger) - 1, desiredTotal) == 1;
 
-    if (dp[mask] != 0)
-      return dp[mask];
-
-    var number = 0;
-    for (var m = mask; m != 0; m >>= 1)
+    int GetWinner(int player, int mask, int target)
     {
-      number++;
-      if ((m & 1) == 0)
-        continue;
-      if (number >= target)
-        return dp[mask] = player;
-      var nextMask = mask ^ (1 << (number - 1));
-      var winner = F(nextMask, target - number, 3 - player);
-      if (winner == player)
-        return dp[mask] = player;
+      if (dp[mask] != 0)
+        return dp[mask];
+
+      if (mask == 0 || target <= 0)
+        return dp[mask] = 3 - player;
+
+      for (var number = 1; number <= maxChoosableInteger; number++)
+      {
+        var m = 1 << (number - 1);
+        if ((mask & m) != 0 && GetWinner(3 - player, mask ^ m, target - number) == player)
+          return dp[mask] = player;
+      }
+      return dp[mask] = 3 - player;
     }
-    return dp[mask] = 3 - player;
   }
 }
