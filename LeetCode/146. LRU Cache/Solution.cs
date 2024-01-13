@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace LeetCode.LRUCache;
+namespace LeetCode._146._LRU_Cache;
 
 public class LRUCache
 {

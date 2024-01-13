@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LeetCode._894._All_Possible_Full_Binary_Trees;
+namespace LeetCode.Binary_Trees._894._All_Possible_Full_Binary_Trees;
 
 public class TreeNode
 {
@@ -19,14 +19,14 @@ public class TreeNode
 
 public class Solution
 {
-  private readonly Dictionary<int, List<TreeNode>> _cache = new(); 
+  private readonly Dictionary<int, List<TreeNode>> cache = new(); 
   
   public IList<TreeNode> AllPossibleFBT(int n)
   {
     if (n % 2 == 0)
       return Array.Empty<TreeNode>();
 
-    if (_cache.TryGetValue(n, out var result))
+    if (cache.TryGetValue(n, out var result))
       return result;
 
     if (n == 1)
@@ -49,7 +49,7 @@ public class Solution
         }
       }
     }
-    _cache[n] = result;
+    cache[n] = result;
     return result;
   }
 }

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LeetCode._515._Find_Largest_Value_in_Each_Tree_Row;
+namespace LeetCode.Binary_Trees._515._Find_Largest_Value_in_Each_Tree_Row;
 
 public class SolutionUsingBfs
 {

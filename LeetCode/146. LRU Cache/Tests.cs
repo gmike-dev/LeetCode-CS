@@ -1,14 +1,14 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode.LRUCache;
+namespace LeetCode._146._LRU_Cache;
 
 public class Tests
 {
   [Test]
   public void Test1()
   {
-    var lruCache = new LRUCache(2);
+    var lruCache = new _146._LRU_Cache.LRUCache(2);
     lruCache.Put(1, 1); // cache is {1=1}
     lruCache.Put(2, 2); // cache is {1=1, 2=2}
     lruCache.Get(1).Should().Be(1);

@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._515._Find_Largest_Value_in_Each_Tree_Row;
+namespace LeetCode.Binary_Trees._515._Find_Largest_Value_in_Each_Tree_Row;
 
 [TestFixture]
 public class Tests

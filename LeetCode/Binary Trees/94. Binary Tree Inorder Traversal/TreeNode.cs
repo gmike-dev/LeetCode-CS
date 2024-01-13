@@ -1,4 +1,4 @@
-namespace LeetCode._94._Binary_Tree_Inorder_Traversal;
+namespace LeetCode.Binary_Trees._94._Binary_Tree_Inorder_Traversal;
 
 public class TreeNode
 {
