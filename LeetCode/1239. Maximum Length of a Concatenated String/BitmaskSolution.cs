@@ -1,5 +1,6 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
 
 namespace LeetCode._1239._Maximum_Length_of_a_Concatenated_String;
 
@@ -7,31 +8,25 @@ public class BitmaskSolution
 {
   public int MaxLength(IList<string> arr)
   {
-    var n = arr.Count;
-    var result = 0;
-    for (var mask = 1; mask < (1 << n); mask++)
-      result = Math.Max(result, TryBuildSubsequence(mask));
-    return result;
+    return Enumerable.Range(1, (1 << arr.Count) - 1).Max(SubsequenceLength);
 
-    int TryBuildSubsequence(int m)
+    int SubsequenceLength(int mask)
     {
-      var usedChars = 0;
-      var length = 0;
-      for (var i = 0; m != 0; m >>= 1, i++)
+      var set = 0u;
+      for (var i = 0; mask != 0; mask >>= 1, i++)
       {
-        if ((m & 1) != 0)
+        if ((mask & 1) != 0)
         {
           foreach (var c in arr[i])
           {
-            var ch = 1 << (c - 'a');
-            if ((usedChars & ch) != 0)
-              return -1;
-            usedChars |= ch;
+            var ch = 1u << (c - 'a');
+            if ((set & ch) != 0)
+              return 0;
+            set |= ch;
           }
-          length += arr[i].Length;
         }
       }
-      return length;
+      return BitOperations.PopCount(set);
     }
   }
 }
