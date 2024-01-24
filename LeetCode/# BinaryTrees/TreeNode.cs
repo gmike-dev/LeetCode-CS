@@ -1,4 +1,6 @@
-namespace LeetCode.Binary_Trees._1026._Maximum_Difference_Between_Node_and_Ancestor;
+// ReSharper disable FieldCanBeMadeReadOnly.Global
+// ReSharper disable InconsistentNaming
+namespace LeetCode.__BinaryTrees;
 
 public class TreeNode
 {

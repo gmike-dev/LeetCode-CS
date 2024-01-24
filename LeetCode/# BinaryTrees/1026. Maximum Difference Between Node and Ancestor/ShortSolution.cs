@@ -2,7 +2,7 @@ using System;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode.Binary_Trees._1026._Maximum_Difference_Between_Node_and_Ancestor;
+namespace LeetCode.__BinaryTrees._1026._Maximum_Difference_Between_Node_and_Ancestor;
 
 public class ShortSolution
 {

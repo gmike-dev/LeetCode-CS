@@ -1,4 +1,6 @@
-namespace LeetCode.Binary_Trees._1367._Linked_List_in_Binary_Tree;
+using LeetCode.Binary_Trees._1367._Linked_List_in_Binary_Tree;
+
+namespace LeetCode.__BinaryTrees._1367._Linked_List_in_Binary_Tree;
 
 public class Solution
 {

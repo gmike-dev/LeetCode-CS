@@ -1,21 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using FluentAssertions;
+using NUnit.Framework;
 
-namespace LeetCode.Binary_Trees._95._Unique_Binary_Search_Trees_II;
-
-public class TreeNode
-{
-  public int val;
-  public TreeNode left;
-  public TreeNode right;
-
-  public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-  {
-    this.val = val;
-    this.left = left;
-    this.right = right;
-  }
-}
+namespace LeetCode.__BinaryTrees._95._Unique_Binary_Search_Trees_II;
 
 public class Solution
 {
@@ -39,5 +27,26 @@ public class Solution
           yield return new TreeNode(i, leftNode, rightNode);
       }
     }
+  }
+}
+
+[TestFixture]
+public class Tests
+{
+  [Test]
+  public void Test1()
+  {
+    new Solution().GenerateTrees(1).Should()
+      .BeEquivalentTo(new[] { new TreeNode(1) });
+
+    new Solution().GenerateTrees(3).Should()
+      .BeEquivalentTo(new[]
+      {
+        new TreeNode(1, null, new TreeNode(2, null, new TreeNode(3))),
+        new TreeNode(1, null, new TreeNode(3, new TreeNode(2))),
+        new TreeNode(2, new TreeNode(1), new TreeNode(3)),
+        new TreeNode(3, new TreeNode(2, new TreeNode(1))),
+        new TreeNode(3, new TreeNode(1, null, new TreeNode(2)))
+      }, config => config.WithoutStrictOrdering());
   }
 }

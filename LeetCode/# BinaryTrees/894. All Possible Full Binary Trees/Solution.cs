@@ -1,21 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LeetCode.Binary_Trees._894._All_Possible_Full_Binary_Trees;
-
-public class TreeNode
-{
-  public int val;
-  public TreeNode left;
-  public TreeNode right;
-
-  public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-  {
-    this.val = val;
-    this.left = left;
-    this.right = right;
-  }
-}
+namespace LeetCode.__BinaryTrees._894._All_Possible_Full_Binary_Trees;
 
 public class Solution
 {
