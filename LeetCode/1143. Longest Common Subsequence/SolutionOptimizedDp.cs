@@ -9,13 +9,13 @@ public class SolutionOptimizedDp
     var n = a.Length;
     var m = b.Length;
     var dp = new int[m + 1];
-    var prevDp = new int[m + 1];
-    for (var i = 0; i < n; i++)
+    var next = new int[m + 1];
+    for (var i = 1; i <= n; i++)
     {
-      for (var j = 0; j < m; j++)
-        dp[j + 1] = a[i] == b[j] ? prevDp[j] + 1 : Math.Max(prevDp[j + 1], dp[j]);
-      (dp, prevDp) = (prevDp, dp);
+      for (var j = 1; j <= m; j++)
+        next[j] = a[i - 1] == b[j - 1] ? dp[j - 1] + 1 : Math.Max(dp[j], next[j - 1]);
+      (next, dp) = (dp, next);
     }
-    return prevDp[m];
+    return dp[m];
   }
 }
