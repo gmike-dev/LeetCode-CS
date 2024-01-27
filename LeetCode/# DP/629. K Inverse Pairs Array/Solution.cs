@@ -20,13 +20,11 @@ public class Solution
     var dp = new int[n + 1][];
     for (var i = 0; i < dp.Length; i++)
       dp[i] = new int[k + 1];
-    dp[2][0] = 1;
-    dp[2][1] = 1;
-    for (var i = 3; i <= n; i++)
-    {
-      for (var j = 1; j <= Math.Min(i - 1, k); j++)
-        dp[i][j] = dp[i][j] + dp[i - 1][k - j];
-    }
+    dp[0][0] = 1;
+    for (var N = 1; N <= n; N++)
+    for (var K = 0; K <= k; K++)
+    for (var i = 0; i <= Math.Min(K, N - 1); i++)
+      dp[N][K] = (dp[N][K] + dp[N - 1][K - i]) % mod;
     return dp[n][k];
   }
 }
