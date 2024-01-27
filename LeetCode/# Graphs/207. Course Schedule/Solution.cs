@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LeetCode._207._Course_Schedule;
+namespace LeetCode.__Graphs._207._Course_Schedule;
 
 public class Solution
 {

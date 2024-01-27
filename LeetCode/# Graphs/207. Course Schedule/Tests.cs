@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._207._Course_Schedule;
+namespace LeetCode.__Graphs._207._Course_Schedule;
 
 [TestFixture]
 public class Tests
