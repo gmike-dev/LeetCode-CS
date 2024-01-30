@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._92._Reverse_Linked_List_II;
+namespace LeetCode.__LinkedLists._92._Reverse_Linked_List_II;
 
 [TestFixture]
 public class Tests

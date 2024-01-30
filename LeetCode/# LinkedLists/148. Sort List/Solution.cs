@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace LeetCode._148._Sort_List;
+namespace LeetCode.__LinkedLists._148._Sort_List;
 
 public class Solution
 {

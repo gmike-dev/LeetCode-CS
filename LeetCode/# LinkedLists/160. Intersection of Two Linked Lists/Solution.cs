@@ -1,18 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LeetCode._160._Intersection_of_Two_Linked_Lists;
-
-public class ListNode
-{
-  public int val;
-  public ListNode next;
-
-  public ListNode(int x)
-  {
-    val = x;
-  }
-}
+namespace LeetCode.__LinkedLists._160._Intersection_of_Two_Linked_Lists;
 
 public class Solution
 {

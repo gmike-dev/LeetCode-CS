@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._148._Sort_List;
+namespace LeetCode.__LinkedLists._148._Sort_List;
 
 [TestFixture]
 public class SolutionTests

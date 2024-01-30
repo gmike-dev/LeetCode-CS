@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._86._Partition_List;
+namespace LeetCode.__LinkedLists._86._Partition_List;
 
 [TestFixture]
 public class Tests
