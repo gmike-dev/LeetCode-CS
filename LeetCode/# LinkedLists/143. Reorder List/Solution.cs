@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace LeetCode._143._Reorder_List;
+namespace LeetCode.__LinkedLists._143._Reorder_List;
 
 public class Solution
 {

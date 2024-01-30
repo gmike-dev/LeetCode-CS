@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._141._Linked_List_Cycle;
+namespace LeetCode.__LinkedLists._141._Linked_List_Cycle;
 
 [TestFixture]
 public class Tests

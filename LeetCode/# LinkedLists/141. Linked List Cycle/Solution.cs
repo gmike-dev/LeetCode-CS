@@ -1,4 +1,4 @@
-namespace LeetCode._141._Linked_List_Cycle;
+namespace LeetCode.__LinkedLists._141._Linked_List_Cycle;
 
 public class Solution
 {

@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._143._Reorder_List;
+namespace LeetCode.__LinkedLists._143._Reorder_List;
 
 [TestFixture]
 public class Tests

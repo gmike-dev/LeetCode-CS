@@ -1,32 +1,4 @@
-using System.Text;
-
-namespace LeetCode.MergeTwoSortedLists;
-
-public class ListNode
-{
-  public int val;
-  public ListNode next;
-
-  public override string ToString()
-  {
-    var sb = new StringBuilder();
-    sb.Append(val);
-    var current = next;
-    while (current != null)
-    {
-      sb.Append(',');
-      sb.Append(current.val);
-      current = current.next;
-    }
-    return sb.ToString();
-  }
-
-  public ListNode(int val = 0, ListNode next = null)
-  {
-    this.val = val;
-    this.next = next;
-  }
-}
+namespace LeetCode.__LinkedLists._21._Merge_Two_Sorted_Lists;
 
 public class Solution
 {
