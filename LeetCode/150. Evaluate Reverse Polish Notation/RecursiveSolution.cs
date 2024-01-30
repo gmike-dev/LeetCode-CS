@@ -6,26 +6,24 @@ public class RecursiveSolution
 {
   public int EvalRPN(string[] tokens)
   {
-    var s = new Stack<int>();
-    foreach (var token in tokens)
+    return Eval(tokens.Length - 1, out _);
+
+    int Eval(int pos, out int next)
     {
-      if ("+-*/".Contains(token))
+      if ("+-*/".Contains(tokens[pos]))
       {
-        var right = s.Pop();
-        var left = s.Pop();
-        s.Push(token switch
+        var right = Eval(pos - 1, out next);
+        var left = Eval(next, out next);
+        return tokens[pos] switch
         {
           "+" => left + right,
           "-" => left - right,
           "*" => left * right,
           _ => left / right
-        });
+        };
       }
-      else
-      {
-        s.Push(int.Parse(token));
-      }
+      next = pos - 1;
+      return int.Parse(tokens[pos]);
     }
-    return s.Peek();
   }
 }
