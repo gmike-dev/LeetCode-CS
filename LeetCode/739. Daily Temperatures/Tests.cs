@@ -17,5 +17,8 @@ public class Tests
     new StackSolution().DailyTemperatures(temperatures)
       .Should()
       .BeEquivalentTo(expected, o => o.WithStrictOrdering());
+    new BestSolution().DailyTemperatures(temperatures)
+      .Should()
+      .BeEquivalentTo(expected, o => o.WithStrictOrdering());
   }
 }

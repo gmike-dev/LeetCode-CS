@@ -6,7 +6,7 @@ public class Solution
 {
   public int[] DailyTemperatures(int[] temperatures)
   {
-    var day = new int[101]; // range [30; 100]
+    var day = new int[101]; // only range [30; 100] is used.
     var n = temperatures.Length;
     var result = new int[n];
     for (var i = n - 1; i >= 0; i--)
