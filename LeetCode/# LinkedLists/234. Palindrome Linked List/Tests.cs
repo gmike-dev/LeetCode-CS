@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._234._Palindrome_Linked_List;
+namespace LeetCode.__LinkedLists._234._Palindrome_Linked_List;
 
 [TestFixture]
 public class Tests

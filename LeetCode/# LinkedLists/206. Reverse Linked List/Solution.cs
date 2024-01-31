@@ -1,4 +1,4 @@
-namespace LeetCode._206._Reverse_Linked_List;
+namespace LeetCode.__LinkedLists._206._Reverse_Linked_List;
 
 public class Solution
 {

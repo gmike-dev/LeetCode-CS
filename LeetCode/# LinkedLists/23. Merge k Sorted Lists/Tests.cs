@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._23._Merge_k_Sorted_Lists;
+namespace LeetCode.__LinkedLists._23._Merge_k_Sorted_Lists;
 
 [TestFixture]
 public class Tests

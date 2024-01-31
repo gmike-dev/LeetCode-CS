@@ -1,18 +1,6 @@
 using System.Collections.Generic;
 
-namespace LeetCode._23._Merge_k_Sorted_Lists;
-
-public class ListNode
-{
-  public int val;
-  public ListNode next;
-
-  public ListNode(int val = 0, ListNode next = null)
-  {
-    this.val = val;
-    this.next = next;
-  }
-}
+namespace LeetCode.__LinkedLists._23._Merge_k_Sorted_Lists;
 
 public class Solution
 {

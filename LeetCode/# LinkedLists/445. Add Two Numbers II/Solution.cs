@@ -1,32 +1,6 @@
 using System.Collections.Generic;
-using System.Text;
 
-namespace LeetCode._445._Add_Two_Numbers_II;
-
-public class ListNode
-{
-  public readonly int val;
-  public readonly ListNode next;
-
-  public override string ToString()
-  {
-    var sb = new StringBuilder();
-    sb.Append(val);
-    var current = next;
-    while (current != null)
-    {
-      sb.Append(current.val);
-      current = current.next;
-    }
-    return sb.ToString();
-  }
-
-  public ListNode(int val = 0, ListNode next = null)
-  {
-    this.val = val;
-    this.next = next;
-  }
-}
+namespace LeetCode.__LinkedLists._445._Add_Two_Numbers_II;
 
 public class Solution
 {

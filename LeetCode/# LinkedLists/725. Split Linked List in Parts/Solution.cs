@@ -1,4 +1,4 @@
-namespace LeetCode._725._Split_Linked_List_in_Parts;
+namespace LeetCode.__LinkedLists._725._Split_Linked_List_in_Parts;
 
 public class Solution
 {

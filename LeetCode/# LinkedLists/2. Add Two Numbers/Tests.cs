@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._2._Add_Two_Numbers;
+namespace LeetCode.__LinkedLists._2._Add_Two_Numbers;
 
 [TestFixture]
 public class Tests
