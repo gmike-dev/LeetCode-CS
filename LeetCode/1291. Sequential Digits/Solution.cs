@@ -16,17 +16,16 @@ public class Solution
   private static IEnumerable<int> EnumerateDigits()
   {
     var div = 1;
-    var first = 1;
+    var start = 1;
     for (var len = 2; len <= 9; len++)
     {
       div *= 10;
-      first = first * 10 + len;
-      yield return first;
-      for (int i = len + 1, n = first; i <= 9; i++)
+      for (int i = len, n = start; i <= 9; i++)
       {
         n = n % div * 10 + i;
         yield return n;
       }
+      start = start * 10 + len;
     }
   }
 }
