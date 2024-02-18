@@ -5,21 +5,35 @@ using NUnit.Framework;
 
 namespace LeetCode._2402._Meeting_Rooms_III;
 
-public class Solution
+public class PriorityQueueSolution
 {
   public int MostBooked(int n, int[][] meetings)
   {
-    var roomAvailabilityTime = new long[n];
+    var usedRooms = new PriorityQueue<int, (long time, int room)>(n);
+    var freeRooms = new PriorityQueue<int, int>(n);
+    for (var i = 0; i < n; i++)
+      freeRooms.Enqueue(i, i);
     var meetCount = new int[n];
     SortMeetingsByStartTime();
     foreach (var meeting in meetings)
     {
-      var room = GetFirstAvailableRoom(meeting[0]);
-      if (roomAvailabilityTime[room] <= meeting[0])
-        roomAvailabilityTime[room] = meeting[1];
+      while (usedRooms.TryPeek(out var room, out var priority) && priority.time <= meeting[0])
+      {
+        usedRooms.Dequeue();
+        freeRooms.Enqueue(room, room);
+      }
+      if (freeRooms.Count > 0)
+      {
+        var room = freeRooms.Dequeue();
+        usedRooms.Enqueue(room, (meeting[1], room));
+        meetCount[room]++;
+      }
       else
-        roomAvailabilityTime[room] += meeting[1] - meeting[0];
-      meetCount[room]++;
+      {
+        usedRooms.TryDequeue(out var room, out var priority);
+        usedRooms.Enqueue(room, (priority.time + meeting[1] - meeting[0], room));
+        meetCount[room]++;
+      }
     }
     return GetMostUsedRoom();
 
@@ -34,22 +48,6 @@ public class Solution
       return mostUsedRoom;
     }
 
-    int GetFirstAvailableRoom(int meetingStartTime)
-    {
-      var room = -1;
-      for (var i = 0; i < n; i++)
-      {
-        if (roomAvailabilityTime[i] <= meetingStartTime)
-        {
-          room = i;
-          break;
-        }
-        if (room == -1 || roomAvailabilityTime[i] < roomAvailabilityTime[room])
-          room = i;
-      }
-      return room;
-    }
-
     void SortMeetingsByStartTime()
     {
       Array.Sort(meetings, (a, b) => a[0] - b[0]);
@@ -58,12 +56,12 @@ public class Solution
 }
 
 [TestFixture]
-public class Tests
+public class PriorityQueueSolutionTests
 {
   [Test]
   public void Test1()
   {
-    new Solution().MostBooked(2, new[]
+    new PriorityQueueSolution().MostBooked(2, new[]
     {
       new[] { 0, 10 },
       new[] { 1, 5 },
@@ -75,7 +73,7 @@ public class Tests
   [Test]
   public void Test2()
   {
-    new Solution().MostBooked(3, new[]
+    new PriorityQueueSolution().MostBooked(3, new[]
     {
       new[] { 1, 20 },
       new[] { 2, 10 },
@@ -88,7 +86,7 @@ public class Tests
   [Test]
   public void Test67()
   {
-    new Solution().MostBooked(4, new[]
+    new PriorityQueueSolution().MostBooked(4, new[]
     {
       new[] { 18, 19 },
       new[] { 3, 12 },
