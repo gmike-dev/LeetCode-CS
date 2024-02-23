@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LeetCode._1631._Path_With_Minimum_Effort;
+namespace LeetCode.__Graphs._1631._Path_With_Minimum_Effort;
 
 public class DijkstraSolution
 {
@@ -17,11 +17,11 @@ public class DijkstraSolution
       effort[i].AsSpan().Fill(int.MaxValue);
     }
     effort[0][0] = 0;
-    
+
     var used = new bool[n][];
     for (var i = 0; i < n; i++)
       used[i] = new bool[m];
-    
+
     var next = new PriorityQueue<(int x, int y), int>();
     next.Enqueue((0, 0), 0);
     while (next.TryDequeue(out var p, out var e))
