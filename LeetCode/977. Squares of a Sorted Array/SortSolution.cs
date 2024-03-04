@@ -17,7 +17,7 @@ public class SortSolutionTests
   [TestCase(new[] { -7, -3, 2, 3, 11 }, new[] { 4, 9, 9, 49, 121 })]
   public void Test(int[] nums, int[] expected)
   {
-    new CountingSortSolution().SortedSquares(nums)
+    new SortSolution().SortedSquares(nums)
       .Should()
       .BeEquivalentTo(expected, o => o.WithStrictOrdering());
   }
