@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace LeetCode.__Strings._791._Custom_Sort_String;
 
-public class Solution
+public class SortSolution
 {
   public string CustomSortString(string order, string s)
   {
@@ -17,12 +17,12 @@ public class Solution
 }
 
 [TestFixture]
-public class Tests
+public class SortSolutionTests
 {
   [TestCase("cba", "abcd", "dcba")]
   [TestCase("bcafg", "abcd", "dbca")]
   public void Test(string order, string s, string expected)
   {
-    new Solution().CustomSortString(order, s).Should().Be(expected);
+    new SortSolution().CustomSortString(order, s).Should().Be(expected);
   }
 }
