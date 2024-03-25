@@ -1,6 +1,6 @@
 using System;
 
-namespace LeetCode._2707._Extra_Characters_in_a_String;
+namespace LeetCode.__Strings._2707._Extra_Characters_in_a_String;
 
 public class Solution
 {

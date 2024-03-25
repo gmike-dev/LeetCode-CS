@@ -1,6 +1,6 @@
 using System;
 
-namespace LeetCode._2707._Extra_Characters_in_a_String;
+namespace LeetCode.__Strings._2707._Extra_Characters_in_a_String;
 
 public class TrieSolution
 {
@@ -9,7 +9,7 @@ public class TrieSolution
     public readonly TrieNode[] Next = new TrieNode[26];
     public bool EndOfWord;
   }
-  
+
   private static TrieNode BuildTrie(string[] dictionary)
   {
     var root = new TrieNode();
@@ -24,7 +24,7 @@ public class TrieSolution
       root = root.Next[value[i] - 'a'] ??= new TrieNode();
     root.EndOfWord = true;
   }
-  
+
   public int MinExtraChar(string s, string[] dictionary)
   {
     var trie = BuildTrie(dictionary);
