@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._2958._Length_of_Longest_Subarray;
+namespace LeetCode.__Sliding_Window._2958._Length_of_Longest_Subarray;
 
 public class Solution
 {

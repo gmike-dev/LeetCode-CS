@@ -2,7 +2,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._930._Binary_Subarrays_With_Sum;
+namespace LeetCode.__Sliding_Window._930._Binary_Subarrays_With_Sum;
 
 public class Solution
 {

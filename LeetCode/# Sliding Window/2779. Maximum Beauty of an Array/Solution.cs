@@ -1,6 +1,6 @@
 using System;
 
-namespace LeetCode._2779._Maximum_Beauty_of_an_Array;
+namespace LeetCode.__Sliding_Window._2779._Maximum_Beauty_of_an_Array;
 
 public class Solution
 {

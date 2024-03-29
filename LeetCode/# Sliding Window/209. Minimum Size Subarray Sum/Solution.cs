@@ -1,6 +1,6 @@
 using System;
 
-namespace LeetCode._209._Minimum_Size_Subarray_Sum;
+namespace LeetCode.__Sliding_Window._209._Minimum_Size_Subarray_Sum;
 
 public class Solution
 {

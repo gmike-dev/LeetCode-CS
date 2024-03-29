@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._713._Subarray_Product_Less_Than_K;
+namespace LeetCode.__Sliding_Window._713._Subarray_Product_Less_Than_K;
 
 [TestFixture]
 public class Tests

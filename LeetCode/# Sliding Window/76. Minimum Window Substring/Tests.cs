@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._76._Minimum_Window_Substring;
+namespace LeetCode.__Sliding_Window._76._Minimum_Window_Substring;
 
 [TestFixture]
 public class Tests

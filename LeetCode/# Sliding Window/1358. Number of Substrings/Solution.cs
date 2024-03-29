@@ -1,4 +1,4 @@
-namespace LeetCode._1358._Number_of_Substrings;
+namespace LeetCode.__Sliding_Window._1358._Number_of_Substrings;
 
 public class Solution
 {

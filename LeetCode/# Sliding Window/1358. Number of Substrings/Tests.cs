@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._1358._Number_of_Substrings;
+namespace LeetCode.__Sliding_Window._1358._Number_of_Substrings;
 
 [TestFixture]
 public class Tests

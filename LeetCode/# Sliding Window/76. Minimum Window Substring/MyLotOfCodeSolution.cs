@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LeetCode._76._Minimum_Window_Substring;
+namespace LeetCode.__Sliding_Window._76._Minimum_Window_Substring;
 
 public class MyLotOfCodeSolution
 {

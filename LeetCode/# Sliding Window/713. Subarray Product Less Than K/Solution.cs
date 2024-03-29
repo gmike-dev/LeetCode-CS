@@ -1,4 +1,4 @@
-namespace LeetCode._713._Subarray_Product_Less_Than_K;
+namespace LeetCode.__Sliding_Window._713._Subarray_Product_Less_Than_K;
 
 public class Solution
 {
@@ -6,7 +6,7 @@ public class Solution
   {
     if (k <= 1)
       return 0;
-    
+
     var n = nums.Length;
     var ans = 0;
     for (int i = 0, j = 0, p = nums[0]; i < n; i++)

@@ -1,7 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._2779._Maximum_Beauty_of_an_Array;
+namespace LeetCode.__Sliding_Window._2779._Maximum_Beauty_of_an_Array;
 
 [TestFixture]
 public class Tests
