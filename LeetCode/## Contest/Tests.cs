@@ -1,7 +1,6 @@
-using FluentAssertions;
 using NUnit.Framework;
 
-namespace LeetCode._Contest;
+namespace LeetCode.___Contest;
 
 [TestFixture]
 public class Tests
