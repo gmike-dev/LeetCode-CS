@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2810._Faulty_Keyboard;
 
 [TestFixture]

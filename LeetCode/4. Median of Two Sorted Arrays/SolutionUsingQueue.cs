@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._4._Median_of_Two_Sorted_Arrays;
 
 /// <summary>

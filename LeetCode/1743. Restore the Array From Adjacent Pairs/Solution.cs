@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._1743._Restore_the_Array_From_Adjacent_Pairs;
 
 public class Solution

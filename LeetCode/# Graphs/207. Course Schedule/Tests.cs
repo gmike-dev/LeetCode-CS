@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode.__Graphs._207._Course_Schedule;
 
 [TestFixture]
@@ -62,7 +59,7 @@ public class Tests
       new[] { 4, 3 }, new[] { 5, 1 }
     }).Should().BeTrue();
   }
-  
+
   [Test]
   public void Test7()
   {

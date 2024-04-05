@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode._1043._Partition_Array_for_Maximum_Sum;
+﻿namespace LeetCode._1043._Partition_Array_for_Maximum_Sum;
 
 public class RecursiveSolution
 {

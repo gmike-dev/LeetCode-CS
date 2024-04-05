@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._664._Strange_Printer;
 
 [TestFixture]

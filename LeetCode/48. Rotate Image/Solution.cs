@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._48._Rotate_Image;
 
 public class Solution
@@ -12,7 +10,7 @@ public class Solution
     for (var j = i + 1; j < n; j++)
       (matrix[i][j], matrix[j][i]) = (matrix[j][i], matrix[i][j]);
   }
-  
+
   public void Rotate2(int[][] matrix)
   {
     foreach (var row in matrix)

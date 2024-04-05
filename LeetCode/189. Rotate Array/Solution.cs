@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._189._Rotate_Array;
 
 public class Solution
@@ -14,7 +12,7 @@ public class Solution
     Array.Reverse(nums, 0, k);
     Array.Reverse(nums, k, n - k);
   }
-  
+
   public void Rotate_UseTempArray(int[] nums, int k)
   {
     var n = nums.Length;

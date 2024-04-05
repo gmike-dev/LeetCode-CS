@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace LeetCode._2610._Convert_an_Array_Into_a_2D_Array;
+﻿namespace LeetCode._2610._Convert_an_Array_Into_a_2D_Array;
 
 public class Solution
 {

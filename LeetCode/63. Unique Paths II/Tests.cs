@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._63._Unique_Paths_II;
 
 [TestFixture]
@@ -24,7 +21,7 @@ public class Tests
         new[] { 0, 0, 0 }
       }).Should().Be(2);
   }
-  
+
   [Test]
   public void Test2()
   {
@@ -41,7 +38,7 @@ public class Tests
         new[] { 0, 0 }
       }).Should().Be(1);
   }
-  
+
   [Test]
   public void Test3()
   {

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._2352._Equal_Row_and_Column_Pairs;
 
 public class TrieSolution
@@ -28,11 +26,11 @@ public class TrieSolution
   private class TrieNode
   {
     private Dictionary<int, TrieNode> _child;
-    
+
     public int MatchCount { get; private set; }
 
     public TrieNode Find(int value) => _child?.TryGetValue(value, out var next) == true ? next : null;
-    
+
     public void Add(int[] values)
     {
       var node = this;
@@ -40,7 +38,7 @@ public class TrieSolution
         node = node.Add(value);
       node.MatchCount++;
     }
-    
+
     private TrieNode Add(int value)
     {
       if (_child == null)

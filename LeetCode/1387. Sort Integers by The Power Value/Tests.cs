@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1387._Sort_Integers_by_The_Power_Value;
 
 [TestFixture]

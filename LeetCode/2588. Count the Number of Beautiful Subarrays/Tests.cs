@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2588._Count_the_Number_of_Beautiful_Subarrays;
 
 [TestFixture]

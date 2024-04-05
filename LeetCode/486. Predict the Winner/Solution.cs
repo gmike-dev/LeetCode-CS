@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-
 namespace LeetCode._486._Predict_the_Winner;
 
 public class Solution
@@ -9,7 +6,7 @@ public class Solution
   {
     var n = nums.Length;
     var dp = InitDp(n);
-    
+
     // Calculate last move (1-length segments).
     var firstPlayerMovesLast = n % 2 != 0;
     if (firstPlayerMovesLast)
@@ -17,7 +14,7 @@ public class Solution
       for (var i = 0; i < n; i++)
         dp[i][i] = nums[i];
     }
-    
+
     for (var move = n - 2; move >= 0; move--)
     {
       var firstPlayerMove = move % 2 == 0;
@@ -58,7 +55,7 @@ public class Solution
       return Math.Max(
         nums[l] + CalculatePoints(nums, l + 1, r, false),
         nums[r] + CalculatePoints(nums, l, r - 1, false));
-    
+
     return Math.Min(
       CalculatePoints(nums, l + 1, r, true),
       CalculatePoints(nums, l, r - 1, true));

@@ -1,7 +1,3 @@
-using System;
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode.__DP._3040._Maximum_Number_of_Operations;
 
 public class Solution

@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1335._Minimum_Difficulty_of_a_Job_Schedule;
 
 public class DpSolution
@@ -11,7 +9,7 @@ public class DpSolution
       return -1;
 
     const int inf = (int)1e6;
-    
+
     var dp = new int[m];
     dp[m - 1] = jobDifficulty[m - 1];
     for (var j = m - 2; j >= 0; j--)

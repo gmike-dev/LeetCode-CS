@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LeetCode.__Graphs._1631._Path_With_Minimum_Effort;
+﻿namespace LeetCode.__Graphs._1631._Path_With_Minimum_Effort;
 
 public class DijkstraSolution
 {

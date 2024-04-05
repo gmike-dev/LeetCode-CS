@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode.__Strings._2707._Extra_Characters_in_a_String;
 
 public class Solution

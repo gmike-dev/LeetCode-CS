@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._200._Number_of_Islands;
 
 public class Solution

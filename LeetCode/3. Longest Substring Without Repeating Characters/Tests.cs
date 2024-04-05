@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._3._Longest_Substring_Without_Repeating_Characters;
 
 [TestFixture]

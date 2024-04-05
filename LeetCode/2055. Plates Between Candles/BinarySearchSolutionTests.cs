@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._2055._Plates_Between_Candles;
+﻿namespace LeetCode._2055._Plates_Between_Candles;
 
 [TestFixture]
 public class BinarySearchSolutionTests
@@ -52,7 +49,7 @@ public class BinarySearchSolutionTests
       new[] { 0, 3 },
     }).Should().BeEquivalentTo(new[] { 0, 0, 0, 0, 0 }, options => options.WithStrictOrdering());
   }
-  
+
   [Test]
   public void Test5()
   {
@@ -61,7 +58,7 @@ public class BinarySearchSolutionTests
       new[] { 0, 0 },
     }).Should().BeEquivalentTo(new[] { 0 }, options => options.WithStrictOrdering());
   }
-  
+
   [Test]
   public void Test6()
   {

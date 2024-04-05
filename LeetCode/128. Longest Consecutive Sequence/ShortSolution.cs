@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode._128._Longest_Consecutive_Sequence;
 
 public class ShortSolution

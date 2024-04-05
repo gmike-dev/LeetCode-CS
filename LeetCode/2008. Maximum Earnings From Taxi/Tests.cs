@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2008._Maximum_Earnings_From_Taxi;
 
 [TestFixture]

@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._719._Find_K_th_Smallest_Pair_Distance;
 
 public class Solution

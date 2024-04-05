@@ -1,7 +1,3 @@
-using System.Text;
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode.__LinkedLists._445._Add_Two_Numbers_II;
 
 public class Tests
@@ -20,7 +16,7 @@ public class Tests
     var result = sln.AddTwoNumbers(num1, num2);
     ToString(result).Should().Be("7807");
   }
-  
+
   [Test]
   public void Test2()
   {
@@ -30,7 +26,7 @@ public class Tests
     var result = sln.AddTwoNumbers(num1, num2);
     ToString(result).Should().Be("10");
   }
-  
+
   private static string ToString(ListNode list)
   {
     var sb = new StringBuilder();

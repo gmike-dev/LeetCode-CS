@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._128._Longest_Consecutive_Sequence;
 
 [TestFixture]

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode._1630._Arithmetic_Subarrays;
 
 public class Solution

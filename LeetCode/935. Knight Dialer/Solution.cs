@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LeetCode._935._Knight_Dialer;
+﻿namespace LeetCode._935._Knight_Dialer;
 
 public class Solution
 {
@@ -17,12 +14,12 @@ public class Solution
     [7] = new[] { 2, 6 },
     [8] = new[] { 1, 3 },
     [9] = new[] { 2, 4 }
-  }; 
+  };
 
   public int KnightDialer(int n)
   {
     const int mod = (int)1e9 + 7;
-    
+
     var prev = new int[10];
     var curr = new int[10];
     Array.Fill(prev, 1);

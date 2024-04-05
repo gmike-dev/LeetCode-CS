@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1743._Restore_the_Array_From_Adjacent_Pairs;
 
 [TestFixture]

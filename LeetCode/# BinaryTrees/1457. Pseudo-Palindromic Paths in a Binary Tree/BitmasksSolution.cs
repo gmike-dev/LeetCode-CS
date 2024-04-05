@@ -1,8 +1,4 @@
-﻿using System.Numerics;
-using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode.__BinaryTrees._1457._Pseudo_Palindromic_Paths_in_a_Binary_Tree;
+﻿namespace LeetCode.__BinaryTrees._1457._Pseudo_Palindromic_Paths_in_a_Binary_Tree;
 
 public class BitmasksSolution
 {
@@ -54,10 +50,10 @@ public class BitmasksSolutionTests
   {
     new BitmasksSolution().PseudoPalindromicPaths(
         new TreeNode(2,
-          new TreeNode(1, 
-            new TreeNode(1), 
-            new TreeNode(3, 
-              null, 
+          new TreeNode(1,
+            new TreeNode(1),
+            new TreeNode(3,
+              null,
               new TreeNode(1))),
           new TreeNode(1)))
       .Should().Be(1);

@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._1380._Lucky_Numbers_in_a_Matrix;
 
 public class MinMaxSolution

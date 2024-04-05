@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2245._Maximum_Trailing_Zeros;
 
 [TestFixture]

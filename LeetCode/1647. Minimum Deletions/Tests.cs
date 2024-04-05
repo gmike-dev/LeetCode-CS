@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1647._Minimum_Deletions;
 
 [TestFixture]

@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode.__LinkedLists._21._Merge_Two_Sorted_Lists;
 
 [TestFixture]

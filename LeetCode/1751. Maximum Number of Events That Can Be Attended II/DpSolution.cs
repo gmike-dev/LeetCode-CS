@@ -1,8 +1,4 @@
-﻿using System;
-using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._1751._Maximum_Number_of_Events_That_Can_Be_Attended_II;
+﻿namespace LeetCode._1751._Maximum_Number_of_Events_That_Can_Be_Attended_II;
 
 public class DpSolution
 {
@@ -18,7 +14,7 @@ public class DpSolution
 
     var dp = new int[n];
     var prev = new int[n];
-    
+
     prev[0] = events[0][2];
     for (var i = 1; i < n; i++)
       prev[i] = Math.Max(prev[i - 1], events[i][2]);

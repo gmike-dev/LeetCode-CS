@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._47._Permutations_II;
 
 public class Solution

@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._2391._Minimum_Amount_of_Time_to_Collect_Garbage;
+﻿namespace LeetCode._2391._Minimum_Amount_of_Time_to_Collect_Garbage;
 
 [TestFixture]
 public class Tests

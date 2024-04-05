@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._494._Target_Sum;
 
 public class RecursiveSolution

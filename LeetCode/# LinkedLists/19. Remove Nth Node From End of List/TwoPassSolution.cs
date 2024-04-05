@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode.__LinkedLists._19._Remove_Nth_Node_From_End_of_List;
+﻿namespace LeetCode.__LinkedLists._19._Remove_Nth_Node_From_End_of_List;
 
 public class TwoPassSolution
 {
@@ -56,7 +53,7 @@ public class TwoPassSolutionTests
       .Should()
       .BeEquivalentTo(new ListNode(1));
   }
-  
+
   [Test]
   public void Test187()
   {

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode.__LinkedLists._445._Add_Two_Numbers_II;
 
 public class Solution
@@ -14,7 +12,7 @@ public class Solution
     }
     return s;
   }
-  
+
   public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
   {
     var s1 = Reverse(l1);

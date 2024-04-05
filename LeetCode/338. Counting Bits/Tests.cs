@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._338._Counting_Bits;
 
 [TestFixture]
@@ -12,7 +9,7 @@ public class Tests
   [TestCase(0, new[] { 0 })]
   public void Test(int n, int[] expected)
   {
-    new Solution().CountBits(n).Should().BeEquivalentTo(expected, 
+    new Solution().CountBits(n).Should().BeEquivalentTo(expected,
       o => o.WithStrictOrdering());
   }
 }

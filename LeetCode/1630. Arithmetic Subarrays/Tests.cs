@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1630._Arithmetic_Subarrays;
 
 [TestFixture]

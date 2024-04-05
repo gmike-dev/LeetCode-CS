@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LeetCode._1584._Min_Cost_to_Connect_All_Points;
+﻿namespace LeetCode._1584._Min_Cost_to_Connect_All_Points;
 
 public class SolutionUsingKruskalMst
 {
@@ -24,13 +21,13 @@ public class SolutionUsingKruskalMst
         mstWeight += edge.Weight;
     return mstWeight;
   }
-  
+
   private readonly record struct Edge (int From, int To, int Weight)
   {
-    public static Edge Create(int[][] points, int i, int j) => 
+    public static Edge Create(int[][] points, int i, int j) =>
       new(i, j, Math.Abs(points[i][0] - points[j][0]) + Math.Abs(points[i][1] - points[j][1]));
   }
-  
+
   private class Dsu
   {
     private readonly int[] _parent;

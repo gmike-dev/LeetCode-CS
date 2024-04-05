@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2742._Painting_the_Walls;
 
 [TestFixture]

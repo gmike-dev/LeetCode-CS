@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1458._Max_Dot_Product_of_Two_Subsequences;
 
 [TestFixture]

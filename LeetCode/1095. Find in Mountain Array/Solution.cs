@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1095._Find_in_Mountain_Array;
 
 public class MountainArray
@@ -12,7 +10,7 @@ public class MountainArray
   }
 
   public int Get(int index) => array[index];
-  
+
   public int Length() => array.Length;
 }
 
@@ -24,7 +22,7 @@ class Solution
     var index = BinarySearch(mountainArr, target, 0, peakIndex, (x, y) => x.CompareTo(y));
     return index != -1 ? index : BinarySearch(mountainArr, target, peakIndex + 1, mountainArr.Length() - 1, (x, y) => y.CompareTo(x));
   }
-  
+
   private static int BinarySearch(MountainArray a, int target, int start, int end, Comparison<int> comparer)
   {
     var l = start;
@@ -43,7 +41,7 @@ class Solution
     return -1;
   }
 
-  
+
   private static int GetPeakIndex(MountainArray a)
   {
     var n = a.Length();

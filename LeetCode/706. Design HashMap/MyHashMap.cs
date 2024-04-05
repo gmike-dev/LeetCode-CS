@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._706._Design_HashMap;
 
 public class MyHashMap

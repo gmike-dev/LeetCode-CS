@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._446._Arithmetic_Slices_II___Subsequence;
 
 [TestFixture]

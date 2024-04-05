@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode.__LinkedLists._160._Intersection_of_Two_Linked_Lists;
 
 public class Solution
@@ -25,7 +22,7 @@ public class Solution
     }
     return intersection;
   }
-  
+
   public ListNode GetIntersectionNode2(ListNode headA, ListNode headB)
   {
     var listA = new List<ListNode>();

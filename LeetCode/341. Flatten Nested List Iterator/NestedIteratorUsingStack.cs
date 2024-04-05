@@ -1,12 +1,10 @@
-using System.Collections.Generic;
-
 namespace LeetCode._341._Flatten_Nested_List_Iterator;
 
 public class NestedIteratorUsingStack
 {
   private readonly Stack<(IList<NestedInteger> list, int pos)> _states = new();
   private NestedInteger _currentItem;
-  
+
   public NestedIteratorUsingStack(IList<NestedInteger> nestedList)
   {
     if (nestedList.Count > 0)
@@ -15,9 +13,9 @@ public class NestedIteratorUsingStack
       _currentItem = FindNextIntItem();
     }
   }
-  
+
   public bool HasNext() => _currentItem != null;
-  
+
   public int Next()
   {
     var result = _currentItem.GetInteger();

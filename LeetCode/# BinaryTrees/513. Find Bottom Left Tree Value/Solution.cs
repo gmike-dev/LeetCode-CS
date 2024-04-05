@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode.__BinaryTrees._513._Find_Bottom_Left_Tree_Value;
+﻿namespace LeetCode.__BinaryTrees._513._Find_Bottom_Left_Tree_Value;
 
 public class Solution
 {

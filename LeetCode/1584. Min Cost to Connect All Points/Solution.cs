@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode._1584._Min_Cost_to_Connect_All_Points;
+﻿namespace LeetCode._1584._Min_Cost_to_Connect_All_Points;
 
 public class Solution
 {
@@ -10,7 +8,7 @@ public class Solution
     var w = new int[n][];
     for (var i = 0; i < n; i++)
       w[i] = new int[n];
-    
+
     for (var i = 0; i < n - 1; i++)
     for (var j = i + 1; j < n; j++)
       w[i][j] = w[j][i] = Math.Abs(points[i][0] - points[j][0]) + Math.Abs(points[i][1] - points[j][1]);

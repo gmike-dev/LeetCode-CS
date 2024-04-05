@@ -1,5 +1,3 @@
-using System.Linq;
-
 namespace LeetCode._1685._Sum_of_Absolute_Differences_in_a_Sorted_Array;
 
 public class Solution

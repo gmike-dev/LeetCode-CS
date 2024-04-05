@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1125._Smallest_Sufficient_Team;
 
 [TestFixture]

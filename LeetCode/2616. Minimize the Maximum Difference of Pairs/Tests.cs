@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._2616._Minimize_the_Maximum_Difference_of_Pairs;
+﻿namespace LeetCode._2616._Minimize_the_Maximum_Difference_of_Pairs;
 
 [TestFixture]
 public class Tests

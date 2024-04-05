@@ -1,5 +1,3 @@
-using System.Linq;
-
 namespace LeetCode._2233._Maximum_Product_After_K_Increments;
 
 public class HeapSolution

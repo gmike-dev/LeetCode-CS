@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace LeetCode._1706._Where_Will_the_Ball_Fall;
+﻿namespace LeetCode._1706._Where_Will_the_Ball_Fall;
 
 public class Solution
 {

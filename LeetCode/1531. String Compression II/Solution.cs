@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1531._String_Compression_II;
 
 public class Solution

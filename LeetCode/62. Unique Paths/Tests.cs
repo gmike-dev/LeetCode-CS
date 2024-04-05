@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._62._Unique_Paths;
+﻿namespace LeetCode._62._Unique_Paths;
 
 [TestFixture]
 public class Tests

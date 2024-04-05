@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode.__LinkedLists._2._Add_Two_Numbers;
 
 [TestFixture]
@@ -15,13 +12,13 @@ public class Tests
       .BeEquivalentTo(
         new ListNode(7, new ListNode(0, new ListNode(8))));
   }
-  
+
   [Test]
   public void Test2()
   {
     new Solution().AddTwoNumbers(new ListNode(), new ListNode()).Should().BeEquivalentTo(new ListNode());
   }
-  
+
   [Test]
   public void Test3()
   {

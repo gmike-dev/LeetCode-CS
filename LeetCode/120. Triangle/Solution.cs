@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode._120._Triangle;
 
 public class Solution

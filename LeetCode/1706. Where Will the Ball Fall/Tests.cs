@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._1706._Where_Will_the_Ball_Fall;
+﻿namespace LeetCode._1706._Where_Will_the_Ball_Fall;
 
 [TestFixture]
 public class Tests

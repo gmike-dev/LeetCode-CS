@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode.NonOverlappingIntervals;
 
 public class Solution

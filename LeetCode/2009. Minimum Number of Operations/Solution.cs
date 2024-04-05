@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._2009._Minimum_Number_of_Operations;
 
 public class Solution

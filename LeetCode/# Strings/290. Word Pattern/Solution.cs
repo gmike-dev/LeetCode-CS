@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode.__Strings._290._Word_Pattern;
+﻿namespace LeetCode.__Strings._290._Word_Pattern;
 
 public class Solution
 {

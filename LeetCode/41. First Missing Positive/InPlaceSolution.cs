@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-
 namespace LeetCode._41._First_Missing_Positive;
 
 public class InPlaceSolution

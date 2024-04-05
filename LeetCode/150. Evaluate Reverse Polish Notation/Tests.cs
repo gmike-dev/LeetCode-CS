@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._150._Evaluate_Reverse_Polish_Notation;
 
 [TestFixture]

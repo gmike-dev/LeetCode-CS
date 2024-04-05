@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace LeetCode._847._Shortest_Path_Visiting_All_Nodes;
+﻿namespace LeetCode._847._Shortest_Path_Visiting_All_Nodes;
 
 public class Solution
 {

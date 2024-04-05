@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode._1503._Last_Moment;
 
 public class FirstSolution

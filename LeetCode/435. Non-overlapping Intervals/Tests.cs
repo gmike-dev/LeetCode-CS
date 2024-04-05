@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode.NonOverlappingIntervals;
 
 [TestFixture]
@@ -44,7 +41,7 @@ public class Tests
     });
     result.Should().Be(0);
   }
-  
+
   [Test]
   public void Test4()
   {
@@ -58,7 +55,7 @@ public class Tests
     });
     result.Should().Be(2);
   }
-  
+
   [Test]
   public void Test5()
   {

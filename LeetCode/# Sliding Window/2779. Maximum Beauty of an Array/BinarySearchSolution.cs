@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode.__Sliding_Window._2779._Maximum_Beauty_of_an_Array;
 
 public class BinarySearchSolution

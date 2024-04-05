@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1347._Minimum_Number_of_Steps_to_Make_Two_Strings_Anagram;
 
 [TestFixture]

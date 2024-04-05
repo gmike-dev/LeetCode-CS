@@ -1,5 +1,3 @@
-using System.Linq;
-
 namespace LeetCode._767._Reorganize_String;
 
 public class Solution

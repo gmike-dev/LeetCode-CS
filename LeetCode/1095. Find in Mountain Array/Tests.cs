@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1095._Find_in_Mountain_Array;
 
 [TestFixture]

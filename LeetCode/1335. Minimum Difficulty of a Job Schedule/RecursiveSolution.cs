@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1335._Minimum_Difficulty_of_a_Job_Schedule;
 
 public class RecursiveSolution

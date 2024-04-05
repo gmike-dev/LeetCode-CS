@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._66._Plus_One;
+﻿namespace LeetCode._66._Plus_One;
 
 [TestFixture]
 public class Tests

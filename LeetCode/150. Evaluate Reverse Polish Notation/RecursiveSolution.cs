@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._150._Evaluate_Reverse_Polish_Notation;
 
 public class RecursiveSolution

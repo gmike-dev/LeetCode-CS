@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._68._Text_Justification;
 
 [TestFixture]
@@ -41,7 +38,7 @@ public class Tests
   {
     new Solution().FullJustify(new[]
       {
-        "Science", "is", "what", "we", "understand", "well", "enough", 
+        "Science", "is", "what", "we", "understand", "well", "enough",
         "to", "explain", "to", "a", "computer.", "Art",
         "is", "everything", "else", "we", "do"
       }, 20)

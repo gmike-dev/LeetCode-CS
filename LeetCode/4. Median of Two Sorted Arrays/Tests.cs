@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._4._Median_of_Two_Sorted_Arrays;
 
 [TestFixture]

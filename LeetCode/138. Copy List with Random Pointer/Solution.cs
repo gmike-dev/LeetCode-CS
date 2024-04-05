@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._138._Copy_List_with_Random_Pointer;
 
 public class Solution
@@ -8,7 +6,7 @@ public class Solution
   {
     if (head == null)
       return null;
-    
+
     var copies = new Dictionary<Node, Node>();
     for (var node = head; node != null; node = node.next)
       copies[node] = new Node(node.val);

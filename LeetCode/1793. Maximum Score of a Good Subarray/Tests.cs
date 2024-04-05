@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._1793._Maximum_Score_of_a_Good_Subarray;
+﻿namespace LeetCode._1793._Maximum_Score_of_a_Good_Subarray;
 
 [TestFixture]
 public class Tests

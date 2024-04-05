@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1287._Element_Appearing_More_Than_25__In_Sorted_Array;
 
 [TestFixture]

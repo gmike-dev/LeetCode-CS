@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._808._Soup_Servings;
 
 public class Solution

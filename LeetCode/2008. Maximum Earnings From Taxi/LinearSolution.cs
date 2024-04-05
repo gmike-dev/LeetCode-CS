@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode._2008._Maximum_Earnings_From_Taxi;
 
 public class LinearSolution

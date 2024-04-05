@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode.__Sliding_Window._1838._Frequency_of_the_Most_Frequent;
+﻿namespace LeetCode.__Sliding_Window._1838._Frequency_of_the_Most_Frequent;
 
 [TestFixture]
 public class Tests

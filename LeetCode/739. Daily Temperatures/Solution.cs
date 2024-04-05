@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._739._Daily_Temperatures;
 
 public class Solution

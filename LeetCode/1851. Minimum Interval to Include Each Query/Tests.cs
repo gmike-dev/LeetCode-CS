@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1851._Minimum_Interval_to_Include_Each_Query;
 
 [TestFixture]

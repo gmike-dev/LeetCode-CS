@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._46._Permutations;
 
 [TestFixture]
@@ -14,9 +11,9 @@ public class Tests
       {
         new[] { 1, 2, 3 },
         new[] { 1, 3, 2 },
-        new[] { 2, 1, 3 }, 
-        new[] { 2, 3, 1 }, 
-        new[] { 3, 1, 2 }, 
+        new[] { 2, 1, 3 },
+        new[] { 2, 3, 1 },
+        new[] { 3, 1, 2 },
         new[] { 3, 2, 1 }
       });
   }

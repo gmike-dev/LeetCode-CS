@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._2104._Sum_of_Subarray_Ranges;
 
 public class BruteForceSolution

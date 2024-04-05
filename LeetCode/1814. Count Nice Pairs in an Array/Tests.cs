@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1814._Count_Nice_Pairs_in_an_Array;
 
 [TestFixture]

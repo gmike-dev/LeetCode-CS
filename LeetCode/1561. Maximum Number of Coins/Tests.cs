@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1561._Maximum_Number_of_Coins;
 
 [TestFixture]

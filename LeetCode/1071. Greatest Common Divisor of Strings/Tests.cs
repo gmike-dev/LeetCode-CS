@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1071._Greatest_Common_Divisor_of_Strings;
 
 [TestFixture]

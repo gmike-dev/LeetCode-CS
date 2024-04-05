@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._229._Majority_Element_II;
 
 public class Solution

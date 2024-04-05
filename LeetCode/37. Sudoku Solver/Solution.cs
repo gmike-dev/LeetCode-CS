@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._37._Sudoku_Solver;
 
 public class Solution
@@ -9,19 +7,19 @@ public class Solution
     if (!new SudokuOptimizedRecursionSolver(board).Solve(0, 0))
       throw new InvalidOperationException("Solution not found");
   }
-  
+
   public void SolveSudoku_SimpleRecursion(char[][] board)
   {
     if (!new SudokuRecursionSolver(board).Solve())
       throw new InvalidOperationException("Solution not found");
   }
-  
+
   public void SolveSudoku_Bitmasks(char[][] board)
   {
     if (!new SudokuBitmaskSolver(board).Solve(0, 0))
       throw new InvalidOperationException("Solution not found");
   }
-  
+
   private class SudokuOptimizedRecursionSolver
   {
     private readonly char[][] _board;
@@ -65,7 +63,7 @@ public class Solution
     }
   }
 
-  
+
   private class SudokuRecursionSolver
   {
     private readonly char[][] _board;
@@ -137,7 +135,7 @@ public class Solution
         return Solve(row + 1, 0);
       if (_board[row][col] != '.')
         return Solve(row, col + 1);
-      
+
       for (var digit = '1'; digit <= '9'; digit++)
       {
         if (CanSet(row, col, digit))

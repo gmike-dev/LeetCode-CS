@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode._239._Sliding_Window_Maximum;
 
 public class SolutionWithMinMaxQueue
@@ -26,7 +23,7 @@ public class SolutionWithMinMaxQueue
     private readonly record struct StackElement(int Value, int Max);
 
     private readonly Stack<StackElement> _s;
-    
+
     public int Count => _s.Count;
 
     public int Max => _s.TryPeek(out var top) ? top.Max : int.MinValue;
@@ -70,5 +67,5 @@ public class SolutionWithMinMaxQueue
       _back.Pop();
     }
   }
-  
+
 }

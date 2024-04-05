@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode._712._Minimum_ASCII_Delete_Sum_for_Two_Strings;
 
 public class Solution

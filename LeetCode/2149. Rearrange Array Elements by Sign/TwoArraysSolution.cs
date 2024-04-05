@@ -1,5 +1,3 @@
-using System.Linq;
-
 namespace LeetCode._2149._Rearrange_Array_Elements_by_Sign;
 
 public class TwoArraysSolution

@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._33._Search_in_Rotated_Sorted_Array;
+﻿namespace LeetCode._33._Search_in_Rotated_Sorted_Array;
 
 [TestFixture]
 public class Tests

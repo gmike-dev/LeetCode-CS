@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode._67._Add_Binary;
+﻿namespace LeetCode._67._Add_Binary;
 
 public class Solution
 {
@@ -11,7 +9,7 @@ public class Solution
     var i = a.Length - 1;
     var j = b.Length - 1;
     var k = result.Length;
-    
+
     while (i >= 0 || j >= 0)
     {
       var s = carry;

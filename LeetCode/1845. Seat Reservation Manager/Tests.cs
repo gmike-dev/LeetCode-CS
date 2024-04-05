@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._1845._Seat_Reservation_Manager;
+﻿namespace LeetCode._1845._Seat_Reservation_Manager;
 
 [TestFixture]
 public class Tests
@@ -20,7 +17,7 @@ public class Tests
     seatManager.Unreserve(5);
     seatManager.Reserve().Should().Be(5);
   }
-  
+
   [Test]
   public void PriorityQueueTest()
   {

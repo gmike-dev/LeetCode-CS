@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1658._Minimum_Operations_to_Reduce_X_to_Zero;
 
 public class BinarySearchSolution

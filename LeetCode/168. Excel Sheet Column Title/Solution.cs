@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._168._Excel_Sheet_Column_Title;
 
 public class Solution
@@ -7,7 +5,7 @@ public class Solution
   public string ConvertToTitle(int columnNumber)
   {
     var s = new Stack<char>();
-  
+
     while (columnNumber > 0)
     {
       columnNumber--;

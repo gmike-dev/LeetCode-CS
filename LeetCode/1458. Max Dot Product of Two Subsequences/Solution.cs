@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-
 namespace LeetCode._1458._Max_Dot_Product_of_Two_Subsequences;
 
 public class Solution

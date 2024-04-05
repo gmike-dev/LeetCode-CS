@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace LeetCode._78._Subsets;
+﻿namespace LeetCode._78._Subsets;
 
 public class BitmaskSolution
 {

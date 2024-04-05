@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._799._Champagne_Tower;
 
 public class Solution

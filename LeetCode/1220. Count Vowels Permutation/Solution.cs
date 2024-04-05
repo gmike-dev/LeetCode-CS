@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode._1220._Count_Vowels_Permutation;
 
 public class Solution

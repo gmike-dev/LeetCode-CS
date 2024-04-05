@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._739._Daily_Temperatures;
 
 public class StackSolution

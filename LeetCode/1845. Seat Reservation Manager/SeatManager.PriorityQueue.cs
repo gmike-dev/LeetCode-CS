@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace LeetCode._1845._Seat_Reservation_Manager.PriorityQueue;
+﻿namespace LeetCode._1845._Seat_Reservation_Manager.PriorityQueue;
 
 public class SeatManager
 {

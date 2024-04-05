@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode.__Sliding_Window._1425._Constrained_Subsequence_Sum;
+﻿namespace LeetCode.__Sliding_Window._1425._Constrained_Subsequence_Sum;
 
 [TestFixture]
 public class Tests

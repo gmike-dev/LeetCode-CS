@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode.LongestIncreasingSubsequence;
 
 public class BinarySearchSolution
@@ -22,5 +20,5 @@ public class BinarySearchSolution
       }
     }
     return seq.Count;
-  } 
+  }
 }

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._215._Kth_Largest_Element_in_an_Array;
 
 public class Solution

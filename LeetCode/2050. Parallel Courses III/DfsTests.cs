@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2050._Parallel_Courses_III;
 
 [TestFixture]

@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._2810._Faulty_Keyboard;
 
 public class QuadraticSolution

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._1751._Maximum_Number_of_Events_That_Can_Be_Attended_II;
+﻿namespace LeetCode._1751._Maximum_Number_of_Events_That_Can_Be_Attended_II;
 
 public class RecursiveSolution
 {

@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._121._Best_Time_to_Buy_and_Sell_Stock;
 
 [TestFixture]

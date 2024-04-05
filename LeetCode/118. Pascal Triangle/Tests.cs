@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._118._Pascal_Triangle;
 
 [TestFixture]
@@ -19,7 +16,7 @@ public class Tests
       new[] { 1, 5, 10, 10, 5, 1 }
     });
   }
-  
+
   [Test]
   public void Test2()
   {

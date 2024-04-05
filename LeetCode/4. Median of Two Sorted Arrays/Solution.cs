@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._4._Median_of_Two_Sorted_Arrays;
 
 /// <summary>
@@ -22,7 +20,7 @@ public class Solution
       return b[k];
     if (b.IsEmpty)
       return a[k];
-    
+
     var ma = a.Length / 2;
     var mb = b.Length / 2;
 

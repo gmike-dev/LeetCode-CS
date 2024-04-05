@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode.__LinkedLists._148._Sort_List;
 
 [TestFixture]
@@ -16,7 +13,7 @@ public class MergeSortTests
       // -1,0,3,4,5
       new ListNode(-1, new ListNode(0, new ListNode(3, new ListNode(4, new ListNode(5))))));
   }
-  
+
   [Test]
   public void Test2()
   {
@@ -27,14 +24,14 @@ public class MergeSortTests
       // -1
       new ListNode(-1));
   }
-  
+
   [Test]
   public void Test3()
   {
     var result = new MergeSortSolution().SortList(null);
     result.Should().BeNull();
   }
-  
+
   [Test]
   public void Test4()
   {

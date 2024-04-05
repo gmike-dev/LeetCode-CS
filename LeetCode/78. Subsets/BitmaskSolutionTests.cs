@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._78._Subsets;
+﻿namespace LeetCode._78._Subsets;
 
 [TestFixture]
 public class BitmaskSolutionTests

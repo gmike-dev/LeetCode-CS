@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1846._Maximum_Element_After_Decreasing;
 
 [TestFixture]

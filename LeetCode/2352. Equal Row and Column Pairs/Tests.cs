@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2352._Equal_Row_and_Column_Pairs;
 
 [TestFixture]
@@ -22,9 +19,9 @@ public class Tests
   {
     new Solution().EqualPairs(new[]
     {
-      new[] { 3, 1, 2, 2 }, 
-      new[] { 1, 4, 4, 5 }, 
-      new[] { 2, 4, 2, 2 }, 
+      new[] { 3, 1, 2, 2 },
+      new[] { 1, 4, 4, 5 },
+      new[] { 2, 4, 2, 2 },
       new[] { 2, 4, 2, 2 }
     }).Should().Be(3);
   }

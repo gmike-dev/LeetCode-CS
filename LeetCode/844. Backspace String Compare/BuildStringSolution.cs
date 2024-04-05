@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._844._Backspace_String_Compare;
 
 public class BuildStringSolution

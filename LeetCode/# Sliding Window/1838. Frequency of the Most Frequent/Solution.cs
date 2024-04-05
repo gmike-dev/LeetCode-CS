@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode.__Sliding_Window._1838._Frequency_of_the_Most_Frequent;
+﻿namespace LeetCode.__Sliding_Window._1838._Frequency_of_the_Most_Frequent;
 
 public class Solution
 {

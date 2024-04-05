@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._81._Search_in_Rotated_Sorted_Array_II;
 
 public class Solution
@@ -26,7 +24,7 @@ public class Solution
       var m = l + (r - l) / 2;
       return Search(nums, l, m, target) || Search(nums, m + 1, r, target);
     }
-    
+
     return Array.BinarySearch(nums, l, r - l + 1, target) >= 0;
   }
 }

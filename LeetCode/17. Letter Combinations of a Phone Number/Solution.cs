@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._17._Letter_Combinations_of_a_Phone_Number;
 
 public class Solution
@@ -21,7 +17,7 @@ public class Solution
       "ghi", "jkl", "mno",
       "pqrs", "tuv", "wxyz"
     };
-    
+
     private readonly string _digits;
     private readonly char[] _buffer;
 
@@ -29,7 +25,7 @@ public class Solution
     {
       return Generate(0);
     }
-    
+
     private IEnumerable<string> Generate(int i)
     {
       foreach (var d in Letters[_digits[i] - '1'])
@@ -46,7 +42,7 @@ public class Solution
         }
       }
     }
-    
+
     public LetterCombinationGenerator(string digits)
     {
       _digits = digits;

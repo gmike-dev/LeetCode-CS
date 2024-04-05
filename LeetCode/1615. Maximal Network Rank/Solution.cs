@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1615._Maximal_Network_Rank;
 
 public class Solution

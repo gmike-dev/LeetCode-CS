@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._525._Contiguous_Array;
 
 public class Solution

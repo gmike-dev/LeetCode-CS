@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode.__Sliding_Window._713._Subarray_Product_Less_Than_K;
 
 public class Solution

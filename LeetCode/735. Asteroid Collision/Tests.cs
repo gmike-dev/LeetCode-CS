@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._735._Asteroid_Collision;
 
 [TestFixture]

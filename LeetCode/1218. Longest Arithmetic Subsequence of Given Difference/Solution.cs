@@ -1,8 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1218._Longest_Arithmetic_Subsequence_of_Given_Difference;
 
 public class Solution

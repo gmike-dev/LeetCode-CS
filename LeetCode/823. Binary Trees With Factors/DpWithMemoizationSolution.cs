@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._823._Binary_Trees_With_Factors;
 
 public class DpWithMemoizationSolution

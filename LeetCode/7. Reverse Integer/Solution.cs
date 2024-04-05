@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._7._Reverse_Integer;
 
 /// <summary>

@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode._403._Frog_Jump;
 
 public class Solution
 {
   private readonly HashSet<(int length, int k)> _cache = new();
-  
+
   public bool CanCross(int[] stones)
   {
     return stones[1] - stones[0] == 1 && Jump(stones.AsSpan(1), 1);

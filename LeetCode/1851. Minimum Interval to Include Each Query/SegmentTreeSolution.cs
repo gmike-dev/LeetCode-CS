@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1851._Minimum_Interval_to_Include_Each_Query;
 
 public class SegmentTreeSolution

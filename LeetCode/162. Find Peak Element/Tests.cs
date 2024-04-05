@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._162._Find_Peak_Element;
+﻿namespace LeetCode._162._Find_Peak_Element;
 
 [TestFixture]
 public class Tests

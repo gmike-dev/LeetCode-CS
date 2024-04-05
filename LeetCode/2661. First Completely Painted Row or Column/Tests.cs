@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2661._First_Completely_Painted_Row_or_Column;
 
 [TestFixture]

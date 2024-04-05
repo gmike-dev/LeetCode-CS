@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-
 namespace LeetCode._135._Candy;
 
 public class Solution

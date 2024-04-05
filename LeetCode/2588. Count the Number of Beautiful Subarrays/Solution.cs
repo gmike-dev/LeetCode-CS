@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._2588._Count_the_Number_of_Beautiful_Subarrays;
 
 /// <summary>

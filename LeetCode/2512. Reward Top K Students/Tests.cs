@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2512._Reward_Top_K_Students;
 
 [TestFixture]

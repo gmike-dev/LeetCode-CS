@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._43._Multiply_Strings;
 
 [TestFixture]

@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._2008._Maximum_Earnings_From_Taxi;
 
 public class Solution
@@ -24,7 +22,7 @@ public class Solution
     {
       return ride[1] - ride[0] + ride[2];
     }
-    
+
     int ByEndTime(int[] x, int[] y)
     {
       return x[1] - y[1];

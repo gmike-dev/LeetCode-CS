@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._229._Majority_Element_II;
 
 [TestFixture]

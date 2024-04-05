@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using FluentAssertions;
-using NUnit.Framework;
 
 namespace LeetCode._1380._Lucky_Numbers_in_a_Matrix;
 
@@ -14,7 +11,7 @@ public class Tests
     new Solution().LuckyNumbers(matrix).Should().BeEquivalentTo(expected);
     new MinMaxSolution().LuckyNumbers(matrix).Should().BeEquivalentTo(expected);
   }
-  
+
   private static IEnumerable<object[]> testCases = new[]
   {
     new object[]

@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2366._Minimum_Replacements_to_Sort_the_Array;
 
 [TestFixture]

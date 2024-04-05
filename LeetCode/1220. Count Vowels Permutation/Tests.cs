@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1220._Count_Vowels_Permutation;
 
 [TestFixture]

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._169._Majority_Element;
 
 public class SolutionUsingDictionary

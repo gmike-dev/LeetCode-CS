@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._74._Search_a_2D_Matrix;
 
 public class Solution

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._232._Implement_Queue_using_Stacks;
 
 public class MyQueue

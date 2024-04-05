@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace LeetCode._1489._Find_Critical_and_Pseudo_Critical_Edges_in_Minimum_Spanning_Tree;
+﻿namespace LeetCode._1489._Find_Critical_and_Pseudo_Critical_Edges_in_Minimum_Spanning_Tree;
 
 public class Solution
 {
@@ -47,7 +44,7 @@ public class Solution
   {
     private readonly int _vertexCount;
     private readonly Edge[] _edges;
-    
+
     public int WeightWithout(Edge excluded) => Weight(excluded);
 
     public int WeightWithRequired(Edge required) => Weight(null, required);

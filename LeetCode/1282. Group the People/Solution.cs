@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace LeetCode._1282._Group_the_People;
+﻿namespace LeetCode._1282._Group_the_People;
 
 public class Solution
 {

@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1846._Maximum_Element_After_Decreasing;
 
 public class Solution

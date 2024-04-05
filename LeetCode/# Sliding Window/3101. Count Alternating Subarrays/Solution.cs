@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode.__Sliding_Window._3101._Count_Alternating_Subarrays;
 
 public class Solution

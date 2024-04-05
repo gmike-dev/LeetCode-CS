@@ -1,7 +1,3 @@
-using System;
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._15._3Sum;
 
 [TestFixture]

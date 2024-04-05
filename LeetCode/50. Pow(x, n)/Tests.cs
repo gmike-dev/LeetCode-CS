@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._50._Pow_x__n_;
 
 [TestFixture]

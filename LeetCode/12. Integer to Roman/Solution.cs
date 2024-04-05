@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace LeetCode._12._Integer_to_Roman;
 
 public class Solution
@@ -22,7 +20,7 @@ public class Solution
     AppendTo(sb, ref num, 1, "I");
     return sb.ToString();
   }
-  
+
   private static void AppendTo(StringBuilder sb, ref int num, int targetValue, string replacement)
   {
     while (num >= targetValue)

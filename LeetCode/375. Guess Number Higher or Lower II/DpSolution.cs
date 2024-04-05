@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._375._Guess_Number_Higher_or_Lower_II;
 
 public class DpSolution

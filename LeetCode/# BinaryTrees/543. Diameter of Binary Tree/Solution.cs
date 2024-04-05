@@ -1,8 +1,4 @@
-﻿using System;
-using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode.__BinaryTrees._543._Diameter_of_Binary_Tree;
+﻿namespace LeetCode.__BinaryTrees._543._Diameter_of_Binary_Tree;
 
 public class Solution
 {

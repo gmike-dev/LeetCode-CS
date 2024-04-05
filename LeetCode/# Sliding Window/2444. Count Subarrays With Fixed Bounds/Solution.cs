@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode.__Sliding_Window._2444._Count_Subarrays_With_Fixed_Bounds;
 
 public class Solution

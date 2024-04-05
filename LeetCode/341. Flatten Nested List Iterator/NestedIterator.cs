@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._341._Flatten_Nested_List_Iterator;
 
 public class NestedIterator

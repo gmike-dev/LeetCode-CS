@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1235._Maximum_Profit_in_Job_Scheduling;
 
 public class Solution

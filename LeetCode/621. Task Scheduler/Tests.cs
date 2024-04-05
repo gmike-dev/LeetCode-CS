@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._621._Task_Scheduler;
+﻿namespace LeetCode._621._Task_Scheduler;
 
 [TestFixture]
 public class Tests

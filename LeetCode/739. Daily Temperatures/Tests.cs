@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._739._Daily_Temperatures;
 
 [TestFixture]

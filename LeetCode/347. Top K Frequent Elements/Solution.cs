@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._347._Top_K_Frequent_Elements;
 
 public class Solution
@@ -31,7 +27,7 @@ public class Solution
     }
     return result;
   }
-  
+
   public int[] TopKFrequent_Queue(int[] nums, int k)
   {
     var counter = new Dictionary<int, int>();

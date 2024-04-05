@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._912._Sort_an_Array;
 
 [TestFixture]

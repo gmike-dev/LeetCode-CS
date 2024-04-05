@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._454._4Sum_II;
 
 public class Solution

@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._1335._Minimum_Difficulty_of_a_Job_Schedule;
 
 [TestFixture]

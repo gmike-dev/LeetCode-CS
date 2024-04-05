@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1647._Minimum_Deletions;
 
 public class Solution

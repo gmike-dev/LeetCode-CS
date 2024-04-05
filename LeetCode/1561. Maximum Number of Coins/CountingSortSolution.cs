@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1561._Maximum_Number_of_Coins;
 
 public class CountingSortSolution

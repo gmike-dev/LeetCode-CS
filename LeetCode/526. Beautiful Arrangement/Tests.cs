@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._526._Beautiful_Arrangement;
 
 [TestFixture]

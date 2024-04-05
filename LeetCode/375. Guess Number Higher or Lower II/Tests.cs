@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._375._Guess_Number_Higher_or_Lower_II;
 
 [TestFixture]

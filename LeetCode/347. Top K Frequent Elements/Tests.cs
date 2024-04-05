@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._347._Top_K_Frequent_Elements;
 
 [TestFixture]

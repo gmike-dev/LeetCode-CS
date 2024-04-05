@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._239._Sliding_Window_Maximum;
 
 public class SolutionUsingDeque

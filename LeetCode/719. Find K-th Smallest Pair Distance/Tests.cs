@@ -1,7 +1,3 @@
-using System;
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._719._Find_K_th_Smallest_Pair_Distance;
 
 [TestFixture]

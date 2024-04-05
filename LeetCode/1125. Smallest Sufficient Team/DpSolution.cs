@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Numerics;
-
 namespace LeetCode._1125._Smallest_Sufficient_Team;
 
 public class DpSolution
@@ -34,7 +30,7 @@ public class DpSolution
     }
     return GetTeam(dp[^1]);
   }
-  
+
   private static int[] GetTeam(ulong teamMask)
   {
     var result = new List<int>();

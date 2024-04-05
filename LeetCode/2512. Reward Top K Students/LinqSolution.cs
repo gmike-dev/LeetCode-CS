@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._2512._Reward_Top_K_Students;
 
 public class LinqSolution

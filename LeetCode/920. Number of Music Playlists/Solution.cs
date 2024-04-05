@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode._920._Number_of_Music_Playlists;
+﻿namespace LeetCode._920._Number_of_Music_Playlists;
 
 public class Solution
 {
@@ -16,7 +14,7 @@ public class Solution
         dp[i, j] = (int)((long)dp[i - 1, j - 1] * (n - j + 1) % mod);
         if (j > k)
           dp[i, j] = (int)((dp[i, j] + (long)dp[i - 1, j] * (j - k) % mod) % mod);
-        
+
       }
     }
     return dp[goal, n];

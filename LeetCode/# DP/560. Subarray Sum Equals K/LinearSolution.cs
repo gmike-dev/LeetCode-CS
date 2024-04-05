@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode.__DP._560._Subarray_Sum_Equals_K;
 
 public class LinearSolution

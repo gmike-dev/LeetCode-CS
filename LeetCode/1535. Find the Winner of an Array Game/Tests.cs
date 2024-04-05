@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._1535._Find_the_Winner_of_an_Array_Game;
+﻿namespace LeetCode._1535._Find_the_Winner_of_an_Array_Game;
 
 [TestFixture]
 public class Tests

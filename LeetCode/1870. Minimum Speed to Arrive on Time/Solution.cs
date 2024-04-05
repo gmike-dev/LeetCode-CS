@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1870._Minimum_Speed_to_Arrive_on_Time;
 
 public class Solution

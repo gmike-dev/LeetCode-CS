@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode.__Sliding_Window._992._Subarrays_with_K_Different_Integers;
+﻿namespace LeetCode.__Sliding_Window._992._Subarrays_with_K_Different_Integers;
 
 public class Solution
 {

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace LeetCode._1845._Seat_Reservation_Manager.SortedSet;
+﻿namespace LeetCode._1845._Seat_Reservation_Manager.SortedSet;
 
 public class SeatManager
 {

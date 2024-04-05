@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode.__Numbers._268._Missing_Number;
+﻿namespace LeetCode.__Numbers._268._Missing_Number;
 
 [TestFixture]
 public class Tests

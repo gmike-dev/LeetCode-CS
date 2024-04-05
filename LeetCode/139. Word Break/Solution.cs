@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._139._Word_Break;
 
-public class Solution 
+public class Solution
 {
   public bool WordBreak(string s, IList<string> wordDict)
   {
@@ -21,7 +17,7 @@ public class Solution
     }
     return dp[^1];
   }
-  
+
   public bool WordBreak_Recursion(string s, IList<string> wordDict)
   {
     return new WordsChecker(wordDict).CanBuild(s);
@@ -35,7 +31,7 @@ public class Solution
     {
       return CanBuild(s, 0, new bool?[s.Length]);
     }
-    
+
     private bool CanBuild(string s, int start, bool?[] dp)
     {
       if (start >= s.Length)

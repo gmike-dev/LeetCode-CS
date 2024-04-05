@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._2232._Minimize_Result_by_Adding_Parentheses;
 
 public class Solution

@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1143._Longest_Common_Subsequence;
 
 public class Solution

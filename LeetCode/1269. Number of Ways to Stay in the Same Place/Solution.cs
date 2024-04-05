@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1269._Number_of_Ways_to_Stay_in_the_Same_Place;
 
 public class Solution

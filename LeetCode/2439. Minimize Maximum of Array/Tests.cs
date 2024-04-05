@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2439._Minimize_Maximum_of_Array;
 
 [TestFixture]

@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-
 namespace LeetCode._2245._Maximum_Trailing_Zeros;
 
 public class SolutionUsingStruct

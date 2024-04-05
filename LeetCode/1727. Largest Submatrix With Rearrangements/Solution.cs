@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1727._Largest_Submatrix_With_Rearrangements;
 
 public class Solution

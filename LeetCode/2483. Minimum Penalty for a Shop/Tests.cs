@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2483._Minimum_Penalty_for_a_Shop;
 
 [TestFixture]

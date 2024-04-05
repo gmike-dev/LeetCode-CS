@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace LeetCode._43._Multiply_Strings;
 
 public class Solution

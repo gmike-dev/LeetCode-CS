@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LeetCode._935._Knight_Dialer;
+﻿namespace LeetCode._935._Knight_Dialer;
 
 public class SolutionUsingRecursion
 {

@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode.__Graphs._207._Course_Schedule;
 
 public class Solution
@@ -12,7 +9,7 @@ public class Solution
       (next[p[1]] ??= new List<int>()).Add(p[0]);
     var color = new int[numCourses];
     return !Enumerable.Range(0, numCourses).Any(IsCycle);
-    
+
     bool IsCycle(int v)
     {
       if (color[v] == 0)

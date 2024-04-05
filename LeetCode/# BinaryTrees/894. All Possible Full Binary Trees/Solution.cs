@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode.__BinaryTrees._894._All_Possible_Full_Binary_Trees;
 
 public class Solution
 {
-  private readonly Dictionary<int, List<TreeNode>> cache = new(); 
-  
+  private readonly Dictionary<int, List<TreeNode>> cache = new();
+
   public IList<TreeNode> AllPossibleFBT(int n)
   {
     if (n % 2 == 0)

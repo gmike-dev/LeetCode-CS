@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode.__Strings._290._Word_Pattern;
 
 public class TrieSolution

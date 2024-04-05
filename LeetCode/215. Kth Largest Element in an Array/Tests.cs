@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._215._Kth_Largest_Element_in_an_Array;
 
 [TestFixture]

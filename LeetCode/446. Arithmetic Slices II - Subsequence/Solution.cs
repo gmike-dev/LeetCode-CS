@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._446._Arithmetic_Slices_II___Subsequence;
 
 public class Solution

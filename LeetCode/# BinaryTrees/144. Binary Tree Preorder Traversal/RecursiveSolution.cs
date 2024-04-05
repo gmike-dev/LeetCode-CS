@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode.__BinaryTrees._144._Binary_Tree_Preorder_Traversal;
+﻿namespace LeetCode.__BinaryTrees._144._Binary_Tree_Preorder_Traversal;
 
 public class RecursiveSolution
 {
@@ -11,7 +7,7 @@ public class RecursiveSolution
     var result = new List<int>();
     Traverse(root);
     return result;
-    
+
     void Traverse(TreeNode node)
     {
       if (node is null)

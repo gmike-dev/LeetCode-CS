@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._1814._Count_Nice_Pairs_in_an_Array;
 
 public class Solution

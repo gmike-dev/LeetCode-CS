@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode._403._Frog_Jump;
 
 public class SolutionUsingDp

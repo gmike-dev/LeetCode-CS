@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._2147._Number_of_Ways_to_Divide_a_Long_Corridor;
 
 public class Solution
@@ -12,7 +10,7 @@ public class Solution
       if (corridor[i] == 'S')
         seats.Add(i);
     }
-    
+
     if (seats.Count == 0 || seats.Count % 2 != 0)
       return 0;
 

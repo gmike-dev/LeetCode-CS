@@ -1,13 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._1048._Longest_String_Chain;
 
 public class Solution
 {
-  private readonly Dictionary<string, int> _cache = new(); 
-  
+  private readonly Dictionary<string, int> _cache = new();
+
   public int LongestStrChain(string[] words)
   {
     var wordsSet = new HashSet<string>(words);
@@ -18,7 +14,7 @@ public class Solution
   {
     if (_cache.TryGetValue(word, out var maxLength))
       return maxLength;
-    
+
     maxLength = 1;
     for (var i = 0; i < word.Length; i++)
     {
@@ -26,7 +22,7 @@ public class Solution
       if (words.Contains(prev))
         maxLength = Math.Max(maxLength, ChainLength(words, prev) + 1);
     }
-    
+
     _cache.Add(word, maxLength);
     return maxLength;
   }

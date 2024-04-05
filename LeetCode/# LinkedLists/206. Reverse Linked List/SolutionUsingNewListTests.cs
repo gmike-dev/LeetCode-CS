@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode.__LinkedLists._206._Reverse_Linked_List;
 
 [TestFixture]
@@ -22,14 +19,14 @@ public class SolutionUsingNewListTests
               new ListNode(2,
                 new ListNode(1))))));
   }
-  
+
   [Test]
   public void Test2()
   {
     new SolutionUsingNewList().ReverseList(new ListNode(1, new ListNode(2)))
       .Should().BeEquivalentTo(new ListNode(2, new ListNode(1)));
   }
-  
+
   [Test]
   public void Test3()
   {

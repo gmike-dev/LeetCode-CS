@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace LeetCode.__Numbers._268._Missing_Number;
+﻿namespace LeetCode.__Numbers._268._Missing_Number;
 
 public class SumSolution
 {

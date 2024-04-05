@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._2054._Two_Best_Non_Overlapping_Events;
 
 public class Solution
@@ -8,12 +6,12 @@ public class Solution
   {
     var n = events.Length;
     Array.Sort(events, ByEndTime);
-    
+
     var maxValue = new int[n];
     maxValue[0] = events[0][2];
     for (var i = 1; i < n; i++)
       maxValue[i] = Math.Max(events[i][2], maxValue[i - 1]);
-    
+
     var result = maxValue[0];
     for (var i = 1; i < n; i++)
     {

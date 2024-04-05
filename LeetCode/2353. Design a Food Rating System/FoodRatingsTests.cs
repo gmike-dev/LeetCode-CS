@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._2353._Design_a_Food_Rating_System;
+﻿namespace LeetCode._2353._Design_a_Food_Rating_System;
 
 [TestFixture]
 public class FoodRatingsTests
@@ -25,7 +22,7 @@ public class FoodRatingsTests
     // Both "sushi" and "ramen" have a rating of 16.
     // However, "ramen" is lexicographically smaller than "sushi".
   }
-  
+
   [Test]
   public void PriorityQueueTest()
   {

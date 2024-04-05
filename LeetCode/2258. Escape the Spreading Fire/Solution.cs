@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace LeetCode._2258._Escape_the_Spreading_Fire;
 
 public class Solution

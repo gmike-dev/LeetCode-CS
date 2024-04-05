@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode.__LinkedLists._23._Merge_k_Sorted_Lists;
 
 public class Solution
@@ -22,7 +20,7 @@ public class Solution
 
     if (result.Count == 0)
       return null;
-    
+
     result.Sort();
 
     var root = new ListNode(result[0]);
@@ -31,7 +29,7 @@ public class Solution
       current = current.next = new ListNode(result[i]);
     return root;
   }
-  
+
   public ListNode MergeKLists_UseLinkedList(ListNode[] lists)
   {
     if (lists.Length == 0)

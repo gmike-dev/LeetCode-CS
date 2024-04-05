@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace LeetCode._2353._Design_a_Food_Rating_System.SortedSet;
+﻿namespace LeetCode._2353._Design_a_Food_Rating_System.SortedSet;
 
 public class FoodRatings
 {
   private readonly Dictionary<string, string> foodCuisine = new();
   private readonly Dictionary<string, int> foodRating = new();
   private readonly Dictionary<string, SortedSet<(int rating, string food)>> cuisineFoodRatings = new();
-  
+
   public FoodRatings(string[] foods, string[] cuisines, int[] ratings)
   {
     foreach (var (food, cuisine, rating) in foods.Zip(cuisines, ratings))

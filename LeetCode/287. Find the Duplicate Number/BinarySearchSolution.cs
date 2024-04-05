@@ -1,5 +1,3 @@
-using System.Linq;
-
 namespace LeetCode._287._Find_the_Duplicate_Number;
 
 /// <summary>

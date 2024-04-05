@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode.__LinkedLists._160._Intersection_of_Two_Linked_Lists;
 
 [TestFixture]

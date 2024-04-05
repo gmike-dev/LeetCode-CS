@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode.__LinkedLists._143._Reorder_List;
+﻿namespace LeetCode.__LinkedLists._143._Reorder_List;
 
 public class InPlaceSolution
 {

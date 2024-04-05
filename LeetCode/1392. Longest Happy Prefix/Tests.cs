@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._1392._Longest_Happy_Prefix;
+﻿namespace LeetCode._1392._Longest_Happy_Prefix;
 
 [TestFixture]
 public class Tests

@@ -1,11 +1,9 @@
-using System;
-
 namespace LeetCode._2369._Check_if_There_is_a_Valid_Partition_For_The_Array;
 
 public class SolutionUsingMemoization
 {
   private bool?[] _cache;
-  
+
   public bool ValidPartition(int[] nums)
   {
     _cache = new bool?[nums.Length + 1];

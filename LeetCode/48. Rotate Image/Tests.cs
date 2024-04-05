@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._48._Rotate_Image;
 
 [TestFixture]

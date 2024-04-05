@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2149._Rearrange_Array_Elements_by_Sign;
 
 [TestFixture]

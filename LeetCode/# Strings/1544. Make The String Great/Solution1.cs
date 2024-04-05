@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace LeetCode.__Strings._1544._Make_The_String_Great;
+﻿namespace LeetCode.__Strings._1544._Make_The_String_Great;
 
 public class Solution1
 {

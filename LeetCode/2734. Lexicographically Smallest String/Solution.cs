@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._2734._Lexicographically_Smallest_String;
 
 public class Solution

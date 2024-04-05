@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._2709._Greatest_Common_Divisor_Traversal;
 
 public class Solution

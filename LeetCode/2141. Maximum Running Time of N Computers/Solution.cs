@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._2141._Maximum_Running_Time_of_N_Computers;
 
 public class Solution

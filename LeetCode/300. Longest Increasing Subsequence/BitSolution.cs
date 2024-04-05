@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-
 namespace LeetCode.LongestIncreasingSubsequence;
 
 public class BitSolution
@@ -8,7 +5,7 @@ public class BitSolution
   private class MaxBit
   {
     private readonly int[] bit;
-    
+
     public MaxBit(int n) => bit = new int[n + 1];
 
     public int Max(int r)

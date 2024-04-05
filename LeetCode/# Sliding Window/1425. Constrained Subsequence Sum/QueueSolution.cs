@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LeetCode.__Sliding_Window._1425._Constrained_Subsequence_Sum;
+﻿namespace LeetCode.__Sliding_Window._1425._Constrained_Subsequence_Sum;
 
 public class QueueSolution
 {

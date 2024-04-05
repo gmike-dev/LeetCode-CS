@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._239._Sliding_Window_Maximum;
 
 public class SolutionUsingLinkedList
@@ -24,7 +22,7 @@ public class SolutionUsingLinkedList
   private static void AddToWindow(LinkedList<int> deque, int[] nums, int index)
   {
     while (deque.Last is { } lastNode && nums[index] >= nums[lastNode.Value])
-      deque.RemoveLast(); 
+      deque.RemoveLast();
     deque.AddLast(index);
   }
 

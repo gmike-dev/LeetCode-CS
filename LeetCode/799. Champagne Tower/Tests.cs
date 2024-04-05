@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._799._Champagne_Tower;
 
 [TestFixture]

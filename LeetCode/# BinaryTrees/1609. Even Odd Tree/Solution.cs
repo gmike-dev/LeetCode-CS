@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode.__BinaryTrees._1609._Even_Odd_Tree;
+﻿namespace LeetCode.__BinaryTrees._1609._Even_Odd_Tree;
 
 public class Solution
 {

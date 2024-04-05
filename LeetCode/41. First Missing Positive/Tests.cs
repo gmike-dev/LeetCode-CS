@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._41._First_Missing_Positive;
 
 [TestFixture]

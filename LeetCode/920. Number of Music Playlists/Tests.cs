@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._920._Number_of_Music_Playlists;
+﻿namespace LeetCode._920._Number_of_Music_Playlists;
 
 [TestFixture]
 public class Tests

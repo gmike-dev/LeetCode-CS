@@ -1,5 +1,3 @@
-using System.Linq;
-
 namespace LeetCode.__Sliding_Window._2962._Count_Subarrays;
 
 public class SlidingWindowSolution

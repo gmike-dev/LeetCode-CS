@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._729._My_Calendar_I;
 
 public class MyCalendar

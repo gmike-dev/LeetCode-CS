@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace LeetCode._146._LRU_Cache;
 
 public class LRUCache
@@ -15,7 +13,7 @@ public class LRUCache
       Value = value;
     }
   }
-  
+
   private readonly int _capacity;
   private readonly LinkedList<CacheItem> _list = new();
   private readonly Dictionary<int, LinkedListNode<CacheItem>> _dict = new ();
@@ -29,7 +27,7 @@ public class LRUCache
   {
     if (!_dict.TryGetValue(key, out var node))
       return -1;
-    
+
     _list.Remove(node);
     _list.AddFirst(node);
     return node.Value.Value;

@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._1584._Min_Cost_to_Connect_All_Points;
+﻿namespace LeetCode._1584._Min_Cost_to_Connect_All_Points;
 
 [TestFixture]
 public class Tests

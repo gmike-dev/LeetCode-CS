@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._1071._Greatest_Common_Divisor_of_Strings;
 
 public class Solution
@@ -21,7 +19,7 @@ public class Solution
     }
     return a;
   }
-  
+
   public string GcdOfStrings_Bruteforce(string str1, string str2)
   {
     if (str1.Length > str2.Length)

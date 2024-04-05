@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode._62._Unique_Paths;
+﻿namespace LeetCode._62._Unique_Paths;
 
 public class Solution
 {

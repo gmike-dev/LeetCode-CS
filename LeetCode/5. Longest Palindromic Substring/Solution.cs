@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._5._Longest_Palindromic_Substring;
 
 public class Solution

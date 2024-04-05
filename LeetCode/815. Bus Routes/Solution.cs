@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-
 namespace LeetCode._815._Bus_Routes;
 
 public class Solution
@@ -26,7 +23,7 @@ public class Solution
     // Quick check in case when we can use 1 route to target point.
     if (pointRoutes[source].Any(route => containsTarget[route]))
       return 1;
-    
+
     // BFS for routes
     var currentRoutes = new Queue<(int, int)>();
     var routeUsed = new bool[routes.Length];

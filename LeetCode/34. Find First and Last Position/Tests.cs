@@ -1,6 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-
 namespace LeetCode._34._Find_First_and_Last_Position;
 
 [TestFixture]

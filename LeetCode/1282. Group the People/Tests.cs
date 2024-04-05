@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-
-namespace LeetCode._1282._Group_the_People;
+﻿namespace LeetCode._1282._Group_the_People;
 
 [TestFixture]
 public class Tests

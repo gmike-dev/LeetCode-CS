@@ -1,5 +1,3 @@
-using System;
-
 namespace LeetCode._2439._Minimize_Maximum_of_Array;
 
 public class Solution
