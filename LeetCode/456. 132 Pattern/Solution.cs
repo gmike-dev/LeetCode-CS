@@ -1,5 +1,3 @@
-using System.Collections;
-
 namespace LeetCode._456._132_Pattern;
 
 public class Solution

@@ -1,5 +1,3 @@
-using System.Collections;
-
 namespace LeetCode._41._First_Missing_Positive;
 
 public class SolutionUsingMemory

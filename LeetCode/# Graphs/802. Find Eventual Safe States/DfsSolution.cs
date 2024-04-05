@@ -1,5 +1,3 @@
-using System.Collections;
-
 namespace LeetCode.__Graphs._802._Find_Eventual_Safe_States;
 
 public class DfsSolution

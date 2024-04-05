@@ -1,5 +1,3 @@
-using System.Collections;
-
 namespace LeetCode._1380._Lucky_Numbers_in_a_Matrix;
 
 [TestFixture]
