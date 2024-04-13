@@ -8,12 +8,11 @@ public class Solution
     var result = 0L;
     foreach (var x in a)
     {
-      while (s.Count > 0 && s.Peek().val < x)
-        s.Pop();
       var count = 1;
-      if (s.TryPeek(out var item) && item.val == x)
+      while (s.TryPeek(out var item) && item.val <= x)
       {
-        count += item.count;
+        if (item.val == x)
+          count += item.count;
         s.Pop();
       }
       s.Push((x, count));
