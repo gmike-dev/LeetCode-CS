@@ -48,7 +48,7 @@ public class Solution
 }
 
 [TestFixture]
-public class Tests
+public class SolutionTests
 {
   [Test]
   public void Test1()
