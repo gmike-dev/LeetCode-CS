@@ -6,33 +6,30 @@ public class UnionFindSolution
   {
     var n = grid.Length;
     var m = grid[0].Length;
-    var u = new UnionFind(n * m);
+    var u = new UnionFind((n * m + 1) / 2 + 1);
     var s = new int[m];
-    Array.Fill(s, int.MaxValue);
-    var k = 0;
+    var k = 1;
     for (var i = 0; i < n; i++)
+    for (var j = 0; j < m; j++)
     {
-      for (var j = 0; j < m; j++)
+      if (grid[i][j] == '1')
       {
-        if (grid[i][j] == '1')
+        if (j > 0 && s[j - 1] != 0)
         {
-          if (j > 0)
-          {
-            if (s[j] != int.MaxValue && s[j - 1] != int.MaxValue)
-              u.Union(s[j - 1], s[j]);
-            s[j] = Math.Min(s[j - 1], s[j]);
-          }
-          if (s[j] == int.MaxValue)
-          {
-            u.MakeSet(k);
-            s[j] = k;
-            k++;
-          }
+          if (s[j] != 0)
+            u.Union(s[j - 1], s[j]);
+          s[j] = s[j - 1];
         }
-        else
+        else if (s[j] == 0)
         {
-          s[j] = int.MaxValue;
+          u.MakeSet(k);
+          s[j] = k;
+          k++;
         }
+      }
+      else
+      {
+        s[j] = 0;
       }
     }
     return u.GetCount();
@@ -131,6 +128,15 @@ public class UnionFindSolutionTests
       ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'],
       ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'],
       ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1']
+    ]).Should().Be(1);
+  }
+
+  [Test]
+  public void Test4()
+  {
+    new UnionFindSolution().NumIslands(
+    [
+      ['1']
     ]).Should().Be(1);
   }
 }
