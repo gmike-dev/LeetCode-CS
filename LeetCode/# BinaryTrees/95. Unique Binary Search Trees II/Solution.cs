@@ -28,20 +28,22 @@ public class Solution
 [TestFixture]
 public class Tests
 {
-  [Test]
-  public void Test1()
+  [TestCase(1, new[]
   {
-    new Solution().GenerateTrees(1).Should()
-      .BeEquivalentTo(new[] { new TreeNode(1) });
-
-    new Solution().GenerateTrees(3).Should()
-      .BeEquivalentTo(new[]
-      {
-        new TreeNode(1, null, new TreeNode(2, null, new TreeNode(3))),
-        new TreeNode(1, null, new TreeNode(3, new TreeNode(2))),
-        new TreeNode(2, new TreeNode(1), new TreeNode(3)),
-        new TreeNode(3, new TreeNode(2, new TreeNode(1))),
-        new TreeNode(3, new TreeNode(1, null, new TreeNode(2)))
-      }, config => config.WithoutStrictOrdering());
+    "1"
+  })]
+  [TestCase(3, new[]
+  {
+    "1,null,2,null,3",
+    "1,null,3,2",
+    "2,1,3",
+    "3,2,null,1",
+    "3,1,null,null,2"
+  })]
+  public void Test1(int n, string[] trees)
+  {
+    new Solution().GenerateTrees(n).Should().BeEquivalentTo(
+      trees.Select(TreeNode.FromString),
+      config => config.WithoutStrictOrdering());
   }
 }
