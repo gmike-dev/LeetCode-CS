@@ -48,7 +48,7 @@ public class Tests
   [TestCase("1,null,15,14,17,7,null,null,null,2,12,null,3,9,null,null,null,null,11", "9,2,14,1,3,11,15,null,null,null,7,null,12,null,17")]
   public void Test1(string root, string expected)
   {
-    var result = new Solution().BalanceBST(TreeNodeExtensions.FromString(root));
-    TreeNodeExtensions.ToString(result).Should().Be(expected);
+    var result = new Solution().BalanceBST(TreeNode.FromString(root));
+    TreeNode.ToString(result).Should().Be(expected);
   }
 }

@@ -8,10 +8,7 @@ public class TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
   public int val = val;
   public TreeNode left = left;
   public TreeNode right = right;
-}
 
-public static class TreeNodeExtensions
-{
   public static TreeNode FromString(string s)
   {
     if (string.IsNullOrWhiteSpace(s))
@@ -67,15 +64,16 @@ public static class TreeNodeExtensions
       values.RemoveAt(values.Count - 1);
     return string.Join(',', values);
   }
+
 }
 
 [TestFixture]
-public class TreeNodeExtensionsTests
+public class TreeNodeTests
 {
   [Test]
   public void FromStringTest()
   {
-    TreeNodeExtensions.FromString("1,10,4,3,null,7,9,12,8,6,null,null,2").Should().BeEquivalentTo(
+    TreeNode.FromString("1,10,4,3,null,7,9,12,8,6,null,null,2").Should().BeEquivalentTo(
       new TreeNode(1,
         new TreeNode(10,
           new TreeNode(3,
@@ -92,7 +90,7 @@ public class TreeNodeExtensionsTests
   [Test]
   public void FromStringTest_EmptyTree()
   {
-    TreeNodeExtensions.FromString("").Should().BeNull();
+    TreeNode.FromString("").Should().BeNull();
   }
 
   [Test]
@@ -109,12 +107,12 @@ public class TreeNodeExtensionsTests
         new TreeNode(9,
           null,
           new TreeNode(2))));
-    TreeNodeExtensions.ToString(root).Should().Be("1,10,4,3,null,7,9,12,8,6,null,null,2");
+    TreeNode.ToString(root).Should().Be("1,10,4,3,null,7,9,12,8,6,null,null,2");
   }
 
   [Test]
   public void ToStringTest_EmptyTree()
   {
-    TreeNodeExtensions.ToString(null).Should().Be("");
+    TreeNode.ToString(null).Should().Be("");
   }
 }
