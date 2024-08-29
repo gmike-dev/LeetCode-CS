@@ -9,14 +9,10 @@ public class Solution
     var uf = new UnionFind(stones.Length + 1);
     for (var i = 0; i < stones.Length; i++)
     {
-      if (firstStoneInRow.TryGetValue(stones[i][0], out var firstStone))
-        uf.Union(firstStone, i);
-      else
-        firstStoneInRow[stones[i][0]] = i;
-      if (firstStoneInCol.TryGetValue(stones[i][1], out firstStone))
-        uf.Union(firstStone, i);
-      else
-        firstStoneInCol[stones[i][1]] = i;
+      if (!firstStoneInRow.TryAdd(stones[i][0], i))
+        uf.Union(firstStoneInRow[stones[i][0]], i);
+      if (!firstStoneInCol.TryAdd(stones[i][1], i))
+        uf.Union(firstStoneInCol[stones[i][1]], i);
     }
     return stones.Length - uf.GetCount() + 1;
   }
