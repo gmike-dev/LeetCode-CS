@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.__Strings._2213._Longest_Substring_of_One_Repeating_Character;
 
-public class Solution
+public class SegmentTreeSolution
 {
   private class SegmentTreeNode
   {
@@ -86,13 +86,13 @@ public class Solution
 }
 
 [TestFixture]
-public class Tests
+public class SegmentTreeSolutionTests
 {
   [TestCase("babacc", "bcb", new[] { 1, 3, 3 }, new[] { 3, 3, 4 })]
   [TestCase("abyzz", "aa", new[] { 2, 1 }, new[] { 2, 3 })]
   public void Test(string s, string queryCharacters, int[] queryIndices, int[] expected)
   {
-    new Solution().LongestRepeating(s, queryCharacters, queryIndices).Should()
+    new SegmentTreeSolution().LongestRepeating(s, queryCharacters, queryIndices).Should()
       .BeEquivalentTo(expected, o => o.WithStrictOrdering());
   }
 }
