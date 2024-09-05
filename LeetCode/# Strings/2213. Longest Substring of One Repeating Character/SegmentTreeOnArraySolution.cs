@@ -10,7 +10,7 @@ public class SegmentTreeOnArraySolution
     private readonly int[] longestContinues;
     private readonly int n;
 
-    public int GetLongestContinuesSegment()
+    public int GetLongestContinuousSegment()
     {
       return longestContinues[1];
     }
@@ -39,17 +39,13 @@ public class SegmentTreeOnArraySolution
 
     private void Build(int v, int tl, int tr)
     {
-      if (tl == tr)
-      {
-        longestContinues[v] = 1;
-        prefixLength[v] = 1;
-        suffixLength[v] = 1;
-      }
-      else
+      if (tl < tr)
       {
         var tm = tl + (tr - tl) / 2;
-        Build(v * 2, tl, tm);
-        Build(v * 2 + 1, tm + 1, tr);
+        if (tl < tm)
+          Build(v * 2, tl, tm);
+        if (tm + 1 < tr)
+          Build(v * 2 + 1, tm + 1, tr);
         UpdateLength(v, tl, tr, tm);
       }
     }
@@ -78,6 +74,9 @@ public class SegmentTreeOnArraySolution
       prefixLength = new int[4 * n];
       suffixLength = new int[4 * n];
       longestContinues = new int[4 * n];
+      Array.Fill(prefixLength, 1);
+      Array.Fill(suffixLength, 1);
+      Array.Fill(longestContinues, 1);
       Build(1, 0, n - 1);
     }
   }
@@ -90,7 +89,7 @@ public class SegmentTreeOnArraySolution
     for (var i = 0; i < queryIndices.Length; i++)
     {
       t.ReplaceChar(queryIndices[i], queryCharacters[i]);
-      result[i] = t.GetLongestContinuesSegment();
+      result[i] = t.GetLongestContinuousSegment();
     }
     return result;
   }
