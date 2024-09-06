@@ -25,70 +25,16 @@ public class Solution2
 [TestFixture]
 public class Solution2Tests
 {
-  [Test]
-  public void Test1()
+  [TestCase("[1,2,-3,3,1]", "[3,1]")]
+  [TestCase("[1,2,3,-3,4]", "[1,2,4]")]
+  [TestCase("[1,2,3,-3,-2]", "[1]")]
+  [TestCase("[1,-1]", "[]")]
+  [TestCase("[-1,1]", "[]")]
+  [TestCase("[-1,1,2]", "[2]")]
+  [TestCase("[1,3,2,-3,-2,5,5,-5,1]", "[1,5,1]")]
+  [TestCase("[0,0]", "[]")]
+  public void Test1(string list, string expected)
   {
-    new Solution2()
-      .RemoveZeroSumSublists(new ListNode(1, new ListNode(2, new ListNode(-3, new ListNode(3, new ListNode(1))))))
-      .Should().BeEquivalentTo(new ListNode(3, new ListNode(1)));
-  }
-
-  [Test]
-  public void Test2()
-  {
-    new Solution2()
-      .RemoveZeroSumSublists(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(-3, new ListNode(4))))))
-      .Should().BeEquivalentTo(new ListNode(1, new ListNode(2, new ListNode(4))));
-  }
-
-  [Test]
-  public void Test3()
-  {
-    new Solution2()
-      .RemoveZeroSumSublists(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(-3, new ListNode(-2))))))
-      .Should().BeEquivalentTo(new ListNode(1));
-  }
-
-  [Test]
-  public void Test4()
-  {
-    new Solution2()
-      .RemoveZeroSumSublists(new ListNode(1, new ListNode(-1)))
-      .Should().BeNull();
-  }
-
-  [Test]
-  public void Test5()
-  {
-    new Solution2()
-      .RemoveZeroSumSublists(new ListNode(-1, new ListNode(1)))
-      .Should().BeNull();
-  }
-
-  [Test]
-  public void Test6()
-  {
-    new Solution2()
-      .RemoveZeroSumSublists(new ListNode(-1, new ListNode(1, new ListNode(2))))
-      .Should().BeEquivalentTo(new ListNode(2));
-  }
-
-  [Test]
-  public void Test7()
-  {
-    new Solution2()
-      .RemoveZeroSumSublists(new ListNode(1,
-        new ListNode(3,
-          new ListNode(2,
-            new ListNode(-3, new ListNode(-2, new ListNode(5, new ListNode(5, new ListNode(-5, new ListNode(1))))))))))
-      .Should().BeEquivalentTo(new ListNode(1, new ListNode(5, new ListNode(1))));
-  }
-
-  [Test]
-  public void Test8()
-  {
-    new Solution2()
-      .RemoveZeroSumSublists(new ListNode(0, new ListNode(0)))
-      .Should().BeNull();
+    ListNode.ToString(new Solution2().RemoveZeroSumSublists(ListNode.FromString(list))).Should().Be(expected);
   }
 }
