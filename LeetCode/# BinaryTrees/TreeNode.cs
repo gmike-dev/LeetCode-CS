@@ -11,6 +11,7 @@ public class TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
 
   public static TreeNode FromString(string s)
   {
+    s = s.Trim('[', ']');
     if (string.IsNullOrWhiteSpace(s))
       return null;
     var values = s.Split(',');
@@ -88,9 +89,32 @@ public class TreeNodeTests
   }
 
   [Test]
+  public void FromStringTest_Brackets()
+  {
+    TreeNode.FromString("[1,10,4,3,null,7,9,12,8,6,null,null,2]").Should().BeEquivalentTo(
+      new TreeNode(1,
+        new TreeNode(10,
+          new TreeNode(3,
+            new TreeNode(12),
+            new TreeNode(8))),
+        new TreeNode(4,
+          new TreeNode(7,
+            new TreeNode(6)),
+          new TreeNode(9,
+            null,
+            new TreeNode(2)))));
+  }
+
+  [Test]
   public void FromStringTest_EmptyTree()
   {
     TreeNode.FromString("").Should().BeNull();
+  }
+
+  [Test]
+  public void FromStringTest_EmptyTree_Brackets()
+  {
+    TreeNode.FromString("[]").Should().BeNull();
   }
 
   [Test]

@@ -1,4 +1,4 @@
-using LeetCode.Binary_Trees._1367._Linked_List_in_Binary_Tree;
+using LeetCode.__LinkedLists;
 
 namespace LeetCode.__BinaryTrees._1367._Linked_List_in_Binary_Tree;
 
@@ -6,28 +6,29 @@ public class Solution
 {
   public bool IsSubPath(ListNode head, TreeNode root)
   {
-    if (TestPath(head, root))
-      return true;
-    
-    var result = false;
-    if (root.left != null)
-      result = IsSubPath(head, root.left);
-    if (!result && root.right != null)
-      result = IsSubPath(head, root.right);
-    return result;
+    if (root is null)
+      return false;
+    return TestPath(head, root) || IsSubPath(head, root.left) || IsSubPath(head, root.right);
   }
-  
+
   private static bool TestPath(ListNode head, TreeNode root)
   {
-    if (head.val != root.val)
-      return false;
-    if (head.next == null)
+    if (head is null)
       return true;
-    var result = false;
-    if (root.left != null)
-      result = TestPath(head.next, root.left);
-    if (!result && root.right != null)
-      result = TestPath(head.next, root.right);
-    return result;
+    if (root is null)
+      return false;
+    return head.val == root.val && (TestPath(head.next, root.left) || TestPath(head.next, root.right));
+  }
+}
+
+[TestFixture]
+public class Tests
+{
+  [TestCase("[4,2,8]", "[1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]", true)]
+  [TestCase("[1,4,2,6]", "[1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]", true)]
+  [TestCase("[1,4,2,6,8]", "[1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]", false)]
+  public void Test(string list, string tree, bool expected)
+  {
+    new Solution().IsSubPath(ListNode.FromString(list), TreeNode.FromString(tree)).Should().Be(expected);
   }
 }
