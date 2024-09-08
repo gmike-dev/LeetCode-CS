@@ -10,7 +10,7 @@ public class Solution
 
     var result = new ListNode[k];
     var curr = head;
-    var prev = (ListNode)null;
+    ListNode prev = null;
     for (var i = 0; i < k; i++)
     {
       result[i] = curr;
@@ -25,5 +25,20 @@ public class Solution
       length -= partSize;
     }
     return result;
+  }
+}
+
+[TestFixture]
+public class SolutionTests
+{
+  [TestCase("[1,2,3]", 5, new[] { "[1]", "[2]", "[3]", "[]", "[]" })]
+  [TestCase("[1,2,3,4,5,6,7,8,9,10]", 3, new[] { "[1,2,3,4]", "[5,6,7]", "[8,9,10]" })]
+  [TestCase("[]", 3, new[] { "[]", "[]", "[]" })]
+  [TestCase("[1,2,3]", 1, new[] { "[1,2,3]" })]
+  [TestCase("[1,2,3]", 3, new[] { "[1]", "[2]", "[3]" })]
+  public void Test(string list, int k, string[] expected)
+  {
+    var result = new Solution().SplitListToParts(ListNode.FromString(list), k);
+    result.Select(ListNode.ToString).Should().BeEquivalentTo(expected, o => o.WithStrictOrdering());
   }
 }
