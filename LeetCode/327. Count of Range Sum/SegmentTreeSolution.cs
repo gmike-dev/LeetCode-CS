@@ -1,6 +1,6 @@
 namespace LeetCode._327._Count_of_Range_Sum;
 
-public class Solution
+public class SegmentTreeSolution
 {
   public int CountRangeSum(int[] nums, int lower, int upper)
   {
@@ -77,7 +77,7 @@ public class Solution
 }
 
 [TestFixture]
-public class Tests
+public class SegmentTreeSolutionTests
 {
   [TestCase(new[] { -2, 5, -1 }, -2, 2, 3)]
   [TestCase(new[] { 0 }, 0, 0, 1)]
@@ -88,7 +88,7 @@ public class Tests
   [TestCase(new[] { 0, 0, -3, 2, -2, -2 }, -3, 1, 16)]
   public void Test(int[] nums, int lower, int upper, int expected)
   {
-    new Solution().CountRangeSum(nums, lower, upper).Should().Be(expected);
+    new SegmentTreeSolution().CountRangeSum(nums, lower, upper).Should().Be(expected);
   }
 
   [Test]
@@ -96,8 +96,8 @@ public class Tests
   {
     var random = new Random();
     var nums = Enumerable.Range(0, 100000).Select(i => random.Next(-10000, 10000)).ToArray();
-    new Solution().CountRangeSum(nums, -10000, 10000);
-    // new Solution().ExecutionTimeOf(s => s.CountRangeSum(nums, -10000, 10000))
-    //   .Should().BeLessThan(TimeSpan.FromSeconds(2));
+    new SegmentTreeSolution().CountRangeSum(nums, -10000, 10000);
+    new BinarySearchListSolution().ExecutionTimeOf(s => s.CountRangeSum(nums, -10000, 10000))
+      .Should().BeLessThan(TimeSpan.FromSeconds(3));
   }
 }
