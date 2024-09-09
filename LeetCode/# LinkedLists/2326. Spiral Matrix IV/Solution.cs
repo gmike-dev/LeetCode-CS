@@ -4,17 +4,16 @@ public class Solution
 {
   public int[][] SpiralMatrix(int m, int n, ListNode head)
   {
+    var result = Enumerable.Range(0, m).Select(_ => new int[n]).ToArray();
     var dx = new[] { 1, 0, -1, 0 };
     var dy = new[] { 0, 1, 0, -1 };
     var dir = 0;
-
-    var result = Enumerable.Range(0, m).Select(_ => new int[n]).ToArray();
     var topLeftX = 0;
     var topLeftY = 0;
+    var bottomRightX = n - 1;
+    var bottomRightY = m - 1;
     var posX = 0;
     var posY = 0;
-    var width = n;
-    var height = m;
     for (var i = 0; i < m; i++)
     {
       for (var j = 0; j < n; j++)
@@ -29,31 +28,20 @@ public class Solution
           head = head.next;
         }
 
-        if (dir == 0)
+        switch (dir)
         {
-          if (posX == topLeftX + width - 1)
-            dir = 1;
-        }
-        else if (dir == 1)
-        {
-          if (posY == topLeftY + height - 1)
-            dir = 2;
-        }
-        else if (dir == 2)
-        {
-          if (posX == topLeftX)
-            dir = 3;
-        }
-        else if (dir == 3)
-        {
-          if (posY == topLeftY + 1)
-          {
+          case 0 when posX == bottomRightX:
+          case 1 when posY == bottomRightY:
+          case 2 when posX == topLeftX:
+            dir++;
+            break;
+          case 3 when posY == topLeftY + 1:
             dir = 0;
             topLeftX++;
             topLeftY++;
-            width -= 2;
-            height -= 2;
-          }
+            bottomRightX--;
+            bottomRightY--;
+            break;
         }
 
         posX += dx[dir];
