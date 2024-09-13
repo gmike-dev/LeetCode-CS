@@ -1,6 +1,6 @@
 ﻿namespace LeetCode._939._Minimum_Area_Rectangle;
 
-public class Solution
+public class Solution1
 {
   public int MinAreaRect(int[][] points)
   {
@@ -42,17 +42,17 @@ public class Solution
 }
 
 [TestFixture]
-public class SolutionTests
+public class Solution1Tests
 {
   [Test]
   public void Test1()
   {
-    new Solution().MinAreaRect([[1, 1], [1, 3], [3, 1], [3, 3], [2, 2]]).Should().Be(4);
+    new Solution1().MinAreaRect([[1, 1], [1, 3], [3, 1], [3, 3], [2, 2]]).Should().Be(4);
   }
 
   [Test]
   public void Test2()
   {
-    new Solution().MinAreaRect([[1, 1], [1, 3], [3, 1], [3, 3], [4, 1], [4, 3]]).Should().Be(2);
+    new Solution1().MinAreaRect([[1, 1], [1, 3], [3, 1], [3, 3], [4, 1], [4, 3]]).Should().Be(2);
   }
 }
