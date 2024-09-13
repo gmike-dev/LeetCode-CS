@@ -4,13 +4,9 @@ public class Solution
 {
   private const int Mod = (int)1e9 + 7;
 
-  private int minX = int.MaxValue;
-  private int maxX;
-  private int minY = int.MaxValue;
-  private int maxY;
-
   public int RectangleArea(int[][] rectangles)
   {
+    var (minX, maxX, minY, maxY) = (int.MaxValue, 0, int.MaxValue, 0);
     foreach (var r in rectangles)
     {
       minX = Math.Min(minX, r[0] - 1);
@@ -18,41 +14,40 @@ public class Solution
       maxX = Math.Max(maxX, r[2] - 1);
       maxY = Math.Max(maxY, r[3] - 1);
     }
-    var st = new SegmentTreeX(minX, maxX, minY, maxY);
+    var st = new SegmentTree2d(minX, maxX, minY, maxY);
     foreach (var r in rectangles)
-      if (r[0] < r[2] || r[1] < r[3])
-        st.Cover(r[0], r[2] - 1, r[1], r[3] - 1);
+    {
+      var (x1, y1, x2, y2) = (r[0], r[1], r[2], r[3]);
+      if (x1 < x2 || y1 < y2)
+        st.Cover(x1, x2 - 1, y1, y2 - 1);
+    }
     return st.GetArea();
   }
 
-  private class SegmentTreeX(int left, int right, int minY, int maxY)
+  private class SegmentTree2d(int leftX, int rightX, int minY, int maxY)
   {
-    private SegmentTreeX leftTree;
-    private SegmentTreeX rightTree;
-    private SegmentTreeY segmentTreeY;
+    private SegmentTree2d leftTree;
+    private SegmentTree2d rightTree;
+    private SegmentTree1d ySegmentTree;
 
     public void Cover(int x1, int x2, int y1, int y2)
     {
       if (x1 > x2)
         return;
-      if (x1 == left && x2 == right && leftTree == null)
+      if (x1 == leftX && x2 == rightX && leftTree == null)
       {
-        segmentTreeY ??= new SegmentTreeY(minY, maxY);
-        segmentTreeY.Cover(y1, y2);
+        ySegmentTree ??= new SegmentTree1d(minY, maxY);
+        ySegmentTree.Cover(y1, y2);
         return;
       }
-      var m = left + (right - left) / 2;
+      var m = leftX + (rightX - leftX) / 2;
       if (leftTree == null)
       {
-        leftTree = new SegmentTreeX(left, m, minY, maxY)
-        {
-          segmentTreeY = segmentTreeY
-        };
-        rightTree = new SegmentTreeX(m + 1, right, minY, maxY)
-        {
-          segmentTreeY = segmentTreeY?.Clone()
-        };
-        segmentTreeY = null;
+        leftTree = new SegmentTree2d(leftX, m, minY, maxY);
+        rightTree = new SegmentTree2d(m + 1, rightX, minY, maxY);
+        leftTree.ySegmentTree = ySegmentTree;
+        rightTree.ySegmentTree = ySegmentTree?.Clone();
+        ySegmentTree = null;
       }
       leftTree.Cover(x1, Math.Min(x2, m), y1, y2);
       rightTree.Cover(Math.Max(m + 1, x1), x2, y1, y2);
@@ -60,47 +55,41 @@ public class Solution
 
     public int GetArea()
     {
-      if (segmentTreeY != null)
-        return (int)((long)segmentTreeY.GetArea() * (right - left + 1) % Mod);
+      if (ySegmentTree != null)
+        return (int)((long)ySegmentTree.GetArea() * (rightX - leftX + 1) % Mod);
       if (leftTree != null)
         return (leftTree.GetArea() + rightTree.GetArea()) % Mod;
       return 0;
     }
-  }
 
-  private class SegmentTreeY(int bottom, int top)
-  {
-    private SegmentTreeY leftTree;
-    private SegmentTreeY rightTree;
-    private bool covered;
-    private int area;
-
-    public void Cover(int y1, int y2)
+    private class SegmentTree1d(int left, int right)
     {
-      if (covered || y1 > y2)
-        return;
-      if (y1 == bottom && y2 == top)
+      private SegmentTree1d leftTree;
+      private SegmentTree1d rightTree;
+      private bool covered;
+      private int area;
+
+      public void Cover(int l, int r)
       {
-        area = y2 - y1 + 1;
-        covered = true;
-        return;
+        if (covered || l > r)
+          return;
+        if (l == left && r == right)
+        {
+          area = r - l + 1;
+          covered = true;
+          return;
+        }
+        var m = left + (right - left) / 2;
+        leftTree ??= new SegmentTree1d(left, m);
+        rightTree ??= new SegmentTree1d(m + 1, right);
+        leftTree.Cover(l, Math.Min(r, m));
+        rightTree.Cover(Math.Max(l, m + 1), r);
+        area = (leftTree.area + rightTree.area) % Mod;
       }
-      var m = bottom + (top - bottom) / 2;
-      leftTree ??= new SegmentTreeY(bottom, m);
-      rightTree ??= new SegmentTreeY(m + 1, top);
-      leftTree.Cover(y1, Math.Min(y2, m));
-      rightTree.Cover(Math.Max(y1, m + 1), y2);
-      area = (leftTree.area + rightTree.area) % Mod;
-    }
 
-    public int GetArea()
-    {
-      return area;
-    }
+      public int GetArea() => area;
 
-    public SegmentTreeY Clone()
-    {
-      return new SegmentTreeY(bottom, top)
+      public SegmentTree1d Clone() => new(left, right)
       {
         leftTree = leftTree?.Clone(),
         rightTree = rightTree?.Clone(),
