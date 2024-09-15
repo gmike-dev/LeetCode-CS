@@ -6,13 +6,16 @@ public class Solution
   {
     var maxLength = 0;
     var vowel = 0;
+    var mask = new int[26];
+    foreach (var c in "aeiou")
+      mask[c - 'a'] = 1 << (c - 'a');
     var d = new Dictionary<int, int> { { 0, -1 } };
     for (var i = 0; i < s.Length; i++)
     {
-      var c = s[i];
-      if ("aeiou".Contains(c))
+      var m = mask[s[i] - 'a'];
+      if (m != 0)
       {
-        vowel ^= 1 << (c - 'a');
+        vowel ^= m;
         d.TryAdd(vowel, i);
       }
       maxLength = Math.Max(maxLength, i - d.GetValueOrDefault(vowel));
