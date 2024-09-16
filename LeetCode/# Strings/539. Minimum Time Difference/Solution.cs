@@ -7,18 +7,12 @@ public class Solution
     var n = timePoints.Count;
     var time = new int[n];
     for (var i = 0; i < n; i++)
-      time[i] = int.Parse(timePoints[i][..2]) * 60 + int.Parse(timePoints[i][3..]);
+      time[i] = int.Parse(timePoints[i].AsSpan(..2)) * 60 + int.Parse(timePoints[i].AsSpan(3..));
     Array.Sort(time);
-    var minTime = TimeDiff(time[0], time[^1]);
+    var minTime = 1440 - time[^1] + time[0];
     for (var i = 1; i < time.Length; i++)
-      minTime = Math.Min(minTime, TimeDiff(time[i - 1], time[i]));
+      minTime = Math.Min(minTime, time[i] - time[i - 1]);
     return minTime;
-  }
-
-  private static int TimeDiff(int t1, int t2)
-  {
-    var d = Math.Abs(t1 - t2);
-    return Math.Min(d, 1440 - d);
   }
 }
 
