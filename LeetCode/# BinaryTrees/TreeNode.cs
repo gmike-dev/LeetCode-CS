@@ -43,7 +43,7 @@ public class TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
   public static string ToString(TreeNode root)
   {
     if (root == null)
-      return "";
+      return "[]";
     List<string> values = [];
     var q = new Queue<TreeNode>();
     q.Enqueue(root);
@@ -63,7 +63,7 @@ public class TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
     }
     while (values.Count > 0 && values[^1] == "null")
       values.RemoveAt(values.Count - 1);
-    return string.Join(',', values);
+    return $"[{string.Join(',', values)}]";
   }
 
 }
@@ -131,12 +131,12 @@ public class TreeNodeTests
         new TreeNode(9,
           null,
           new TreeNode(2))));
-    TreeNode.ToString(root).Should().Be("1,10,4,3,null,7,9,12,8,6,null,null,2");
+    TreeNode.ToString(root).Should().Be("[1,10,4,3,null,7,9,12,8,6,null,null,2]");
   }
 
   [Test]
   public void ToStringTest_EmptyTree()
   {
-    TreeNode.ToString(null).Should().Be("");
+    TreeNode.ToString(null).Should().Be("[]");
   }
 }
