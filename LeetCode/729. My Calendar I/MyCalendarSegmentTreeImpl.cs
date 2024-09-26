@@ -8,50 +8,59 @@ public class MyCalendarSegmentTreeImpl
 
   public bool Book(int start, int end)
   {
-    if (st.CanBook(start, end - 1))
-    {
+    var canBook = st.CanBook(start, end - 1);
+    if (canBook)
       st.Book(start, end - 1);
-      return true;
-    }
-    return false;
+    return canBook;
   }
 
   private class SegmentTree(int left, int right)
   {
-    private readonly int left = left;
-    private readonly int right = right;
     private SegmentTree leftTree;
     private SegmentTree rightTree;
-    private bool used;
+    private bool allBooked;
+    private bool hasEvent;
 
     public bool CanBook(int l, int r)
     {
-      if (l > r)
-        return true;
-      if (leftTree is null || left == l && right == r)
-        return !used;
-      CreateChild();
-      return leftTree.CanBook(l, Math.Min(r, leftTree.right)) &&
-             rightTree.CanBook(Math.Max(rightTree.left, l), r);
+      if (allBooked)
+        return false;
+      if (left == l && right == r)
+        return !hasEvent;
+      var m = left + (right - left) / 2;
+      var result = true;
+      if (l <= m)
+      {
+        leftTree ??= new SegmentTree(left, m);
+        result = leftTree.CanBook(l, Math.Min(r, m));
+      }
+      if (result && r > m)
+      {
+        rightTree ??= new SegmentTree(m + 1, right);
+        result = rightTree.CanBook(Math.Max(m + 1, l), r);
+      }
+      return result;
     }
 
     public void Book(int l, int r)
     {
-      if (l > r)
-        return;
-      used = true;
+      hasEvent = true;
       if (left == l && right == r)
+      {
+        allBooked = true;
         return;
-      CreateChild();
-      leftTree.Book(l, Math.Min(r, leftTree.right));
-      rightTree.Book(Math.Max(rightTree.left, l), r);
-    }
-
-    private void CreateChild()
-    {
+      }
       var m = left + (right - left) / 2;
-      leftTree ??= new SegmentTree(left, m);
-      rightTree ??= new SegmentTree(m + 1, right);
+      if (l <= m)
+      {
+        leftTree ??= new SegmentTree(left, m);
+        leftTree.Book(l, Math.Min(r, m));
+      }
+      if (r > m)
+      {
+        rightTree ??= new SegmentTree(m + 1, right);
+        rightTree.Book(Math.Max(m + 1, l), r);
+      }
     }
   }
 }
