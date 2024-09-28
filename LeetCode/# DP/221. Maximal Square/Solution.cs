@@ -1,4 +1,4 @@
-namespace LeetCode._221._Maximal_Square;
+namespace LeetCode.__DP._221._Maximal_Square;
 
 public class Solution
 {
