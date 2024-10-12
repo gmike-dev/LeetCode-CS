@@ -11,7 +11,6 @@ public class Solution2
       return [];
     var result = new int[n];
     result.AsSpan().Fill(sn / n);
-    Vector<int> vector;
     for (var i = 0; i < sn % n; i++)
       result[i]++;
     return result;
