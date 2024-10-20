@@ -1,12 +1,12 @@
-namespace LeetCode._2050._Parallel_Courses_III;
+namespace LeetCode.Graphs._2050._Parallel_Courses_III;
 
 [TestFixture]
-public class Tests
+public class BfsTests
 {
   [Test]
   public void Test1()
   {
-    new Solution().MinimumTime(3, new[]
+    new BfsSolution().MinimumTime(3, new[]
     {
       new[] { 1, 3 },
       new[] { 2, 3 }
@@ -16,7 +16,7 @@ public class Tests
   [Test]
   public void Test2()
   {
-    new Solution().MinimumTime(5, new[]
+    new BfsSolution().MinimumTime(5, new[]
     {
       new[] { 1, 5 },
       new[] { 2, 5 },
@@ -29,7 +29,7 @@ public class Tests
   [Test]
   public void Test3()
   {
-    new Solution().MinimumTime(9, new[]
+    new BfsSolution().MinimumTime(9, new[]
     {
       new[] { 9, 3 }, new[] { 2, 3 }, new[] { 9, 5 }, new[] { 2, 5 }, new[] { 3, 5 }, new[] { 2, 8 }, new[] { 3, 8 },
       new[] { 4, 8 }, new[] { 3, 7 }, new[] { 4, 7 }, new[] { 5, 7 }, new[] { 8, 7 }, new[] { 9, 7 }, new[] { 5, 6 },

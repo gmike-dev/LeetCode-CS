@@ -1,4 +1,4 @@
-﻿namespace LeetCode._67._Add_Binary;
+﻿namespace LeetCode.Numbers._67._Add_Binary;
 
 [TestFixture]
 public class Tests

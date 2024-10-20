@@ -1,4 +1,4 @@
-namespace LeetCode._50._Pow_x__n_;
+namespace LeetCode.Numbers._50._Pow_x__n_;
 
 [TestFixture]
 public class Tests

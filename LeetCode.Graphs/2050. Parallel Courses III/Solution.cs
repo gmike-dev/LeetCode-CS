@@ -1,4 +1,4 @@
-namespace LeetCode._2050._Parallel_Courses_III;
+namespace LeetCode.Graphs._2050._Parallel_Courses_III;
 
 public class Solution
 {

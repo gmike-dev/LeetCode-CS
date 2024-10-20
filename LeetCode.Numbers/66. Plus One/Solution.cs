@@ -1,4 +1,4 @@
-﻿namespace LeetCode._66._Plus_One;
+﻿namespace LeetCode.Numbers._66._Plus_One;
 
 public class Solution
 {

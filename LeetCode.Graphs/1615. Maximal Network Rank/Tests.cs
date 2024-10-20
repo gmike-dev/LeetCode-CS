@@ -1,4 +1,4 @@
-namespace LeetCode._1615._Maximal_Network_Rank;
+namespace LeetCode.Graphs._1615._Maximal_Network_Rank;
 
 [TestFixture]
 public class Tests

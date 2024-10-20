@@ -1,6 +1,6 @@
-namespace LeetCode._2050._Parallel_Courses_III;
+namespace LeetCode.Graphs._2050._Parallel_Courses_III;
 
-public class DfsSolution
+public class BfsSolution
 {
   public int MinimumTime(int n, int[][] relations, int[] time)
   {
@@ -13,23 +13,23 @@ public class DfsSolution
     }
     for (var i = 1; i <= n; i++)
       g[i] ??= new List<int> { 0 };
-    var maxTime = new int[n + 1];
+    var q = new Queue<int>();
     foreach (var v in start)
-      Dfs(v);
-    return maxTime[0];
-
-    void Dfs(int v)
+      q.Enqueue(v);
+    var maxTime = new int[n + 1];
+    while (q.Count > 0)
     {
+      var v = q.Dequeue();
       foreach (var next in g[v])
       {
-        var t = maxTime[v] + time[v - 1];
-        if (maxTime[next] < t)
+        if (maxTime[next] < maxTime[v] + time[v - 1])
         {
-          maxTime[next] = t;
+          maxTime[next] = maxTime[v] + time[v - 1];
           if (next != 0)
-            Dfs(next);
+            q.Enqueue(next);
         }
       }
     }
+    return maxTime[0];
   }
 }

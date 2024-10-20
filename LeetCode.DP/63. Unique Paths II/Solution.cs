@@ -1,4 +1,4 @@
-namespace LeetCode._63._Unique_Paths_II;
+namespace LeetCode.DP._63._Unique_Paths_II;
 
 public class Solution
 {
@@ -24,5 +24,5 @@ public class Solution
       }
     }
     return dp[n - 1];
-  }  
+  }
 }

@@ -1,4 +1,4 @@
-namespace LeetCode._63._Unique_Paths_II;
+namespace LeetCode.DP._63._Unique_Paths_II;
 
 public class SolutionClassicDp
 {
