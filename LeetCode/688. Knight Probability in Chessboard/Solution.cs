@@ -2,22 +2,22 @@
 
 public class Solution
 {
-  private readonly (int, int)[] _directions =
+  private readonly (int, int)[] directions =
   {
     (-1, -2), (-2, -1), (-2, 1), (-1, 2),
     (1, 2), (2, 1), (2, -1), (1, -2)
   };
 
-  private double[][][] _cache;
+  private double[][][] cache;
 
   private double Probability(int n, int row, int column, int k)
   {
-    var result = _cache[k - 1][row][column];
-    
+    var result = cache[k - 1][row][column];
+
     if (result != 0)
       return result;
 
-    foreach (var (dr, dc) in _directions)
+    foreach (var (dr, dc) in directions)
     {
       var nextRow = row + dr;
       var nextColumn = column + dc;
@@ -30,8 +30,8 @@ public class Solution
       }
     }
     result /= 8;
-    
-    _cache[k - 1][row][column] = result;
+
+    cache[k - 1][row][column] = result;
     return result;
   }
 
@@ -46,12 +46,12 @@ public class Solution
 
   private void InitCache(int n, int k)
   {
-    _cache = new double[k][][];
+    cache = new double[k][][];
     for (var i = 0; i < k; i++)
     {
-      _cache[i] = new double[n][];
+      cache[i] = new double[n][];
       for (var j = 0; j < n; j++)
-        _cache[i][j] = new double[n];
+        cache[i][j] = new double[n];
     }
   }
 }

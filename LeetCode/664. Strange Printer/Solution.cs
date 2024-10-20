@@ -2,7 +2,7 @@ namespace LeetCode._664._Strange_Printer;
 
 public class Solution
 {
-  private readonly Dictionary<long, int> _cache = new();
+  private readonly Dictionary<long, int> cache = new();
 
   public int StrangePrinter(string s)
   {
@@ -28,10 +28,10 @@ public class Solution
   private int Cached(int l, int r, Func<int> f)
   {
     var cacheKey = ((long)l << 31) + r;
-    if (_cache.TryGetValue(cacheKey, out var result))
+    if (cache.TryGetValue(cacheKey, out var result))
       return result;
     result = f();
-    _cache[cacheKey] = result;
+    cache[cacheKey] = result;
     return result;
   }
 }

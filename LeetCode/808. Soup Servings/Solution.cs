@@ -2,7 +2,7 @@ namespace LeetCode._808._Soup_Servings;
 
 public class Solution
 {
-  private readonly Dictionary<(int, int), double> _cache = new();
+  private readonly Dictionary<(int, int), double> cache = new();
 
   public double SoupServings(int n)
   {
@@ -22,12 +22,12 @@ public class Solution
     if (secondServes <= 0)
       return 0.0;
     var cacheKey = (firstServes, secondServes);
-    if (_cache.TryGetValue(cacheKey, out var dp))
+    if (cache.TryGetValue(cacheKey, out var dp))
       return dp;
-    _cache[cacheKey] = (Probability(firstServes - 4, secondServes) +
+    cache[cacheKey] = (Probability(firstServes - 4, secondServes) +
                         Probability(firstServes - 3, secondServes - 1) +
                         Probability(firstServes - 2, secondServes - 2) +
                         Probability(firstServes - 1, secondServes - 3)) * 0.25;
-    return _cache[cacheKey];
+    return cache[cacheKey];
   }
 }
