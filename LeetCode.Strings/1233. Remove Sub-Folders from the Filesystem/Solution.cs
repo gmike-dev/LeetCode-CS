@@ -4,7 +4,7 @@ public class Solution
 {
   public IList<string> RemoveSubfolders(string[] folders)
   {
-    var root = new Folder("/");
+    var root = new Folder();
     foreach (var path in folders)
     {
       var current = root;
@@ -13,11 +13,10 @@ public class Solution
       {
         if (current.Path != null)
           break;
-        var subFolder = current.SubFolders.FirstOrDefault(f => f.Name == name);
-        if (subFolder == null)
+        if (!current.SubFolders.TryGetValue(name, out var subFolder))
         {
-          subFolder = new Folder(name);
-          current.SubFolders.Add(subFolder);
+          subFolder = new Folder();
+          current.SubFolders.Add(name, subFolder);
         }
         current = subFolder;
       }
@@ -37,17 +36,16 @@ public class Solution
       }
       else
       {
-        foreach (var subFolder in folder.SubFolders)
+        foreach (var subFolder in folder.SubFolders.Values)
           Dfs(subFolder);
       }
     }
   }
 
-  private class Folder(string name)
+  private class Folder
   {
-    public string Name { get; } = name;
     public string Path { get; set; }
-    public List<Folder> SubFolders { get; } = [];
+    public Dictionary<string, Folder> SubFolders { get; } = [];
   }
 }
 
