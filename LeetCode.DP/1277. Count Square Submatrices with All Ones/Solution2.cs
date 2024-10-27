@@ -1,34 +1,23 @@
 ﻿namespace LeetCode.DP._1277._Count_Square_Submatrices_with_All_Ones;
 
+using static System.Math;
+
 public class Solution2
 {
   public int CountSquares(int[][] matrix)
   {
     var m = matrix.Length;
     var n = matrix[0].Length;
-    var prev = new int[n];
-    var curr = new int[n];
+    var prev = new int[n + 1];
+    var curr = new int[n + 1];
     var count = 0;
-    for (var j = 0; j < n; j++)
+    for (var i = 0; i < m; i++)
     {
-      prev[j] = matrix[0][j];
-      count += matrix[0][j];
-    }
-    for (var i = 1; i < m; i++)
-    {
-      curr[0] = matrix[i][0];
-      count += matrix[i][0];
-      for (var j = 1; j < n; j++)
+      for (var j = 0; j < n; j++)
       {
-        if (matrix[i][j] == 0)
-        {
-          curr[j] = 0;
-        }
-        else
-        {
-          curr[j] = Math.Min(curr[j - 1], Math.Min(prev[j - 1], prev[j])) + 1;
-          count += curr[j];
-        }
+        var val = matrix[i][j] == 0 ? 0 : Min(curr[j], Min(prev[j], prev[j + 1])) + 1;
+        curr[j + 1] = val;
+        count += val;
       }
       (prev, curr) = (curr, prev);
     }
