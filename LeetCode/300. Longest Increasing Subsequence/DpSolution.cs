@@ -1,4 +1,4 @@
-namespace LeetCode.LongestIncreasingSubsequence;
+namespace LeetCode._300._Longest_Increasing_Subsequence;
 
 public class DpSolution
 {
