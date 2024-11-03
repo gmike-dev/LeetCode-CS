@@ -11,4 +11,9 @@
     <PackageReference Include="NUnit"/>
     <PackageReference Include="NUnit3TestAdapter"/>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)\GlobalUsings.cs">
+      <Link>GlobalUsings.cs</Link>
+    </Compile>
+  </ItemGroup>
 </Project>
