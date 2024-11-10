@@ -1,4 +1,4 @@
-namespace LeetCode.Numbers._3097._Shortest_Subarray_With_OR_at_Least_K_II;
+namespace LeetCode.SlidingWindow._3097._Shortest_Subarray_With_OR_at_Least_K_II;
 
 public class Solution
 {
