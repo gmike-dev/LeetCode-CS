@@ -7,6 +7,11 @@ public class ListNode(int val = 0, ListNode next = null)
   public int val = val;
   public ListNode next = next;
 
+  public override string ToString()
+  {
+    return val.ToString();
+  }
+
   public static ListNode FromString(string s)
   {
     s = s.Trim('[', ']');
