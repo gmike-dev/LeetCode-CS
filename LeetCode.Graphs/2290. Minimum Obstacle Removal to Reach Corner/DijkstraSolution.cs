@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.Graphs._2290._Minimum_Obstacle_Removal_to_Reach_Corner;
 
-public class BfsSolution
+public class DijkstraSolution
 {
   public int MinimumObstacles(int[][] grid)
   {
@@ -41,12 +41,12 @@ public class BfsSolution
 }
 
 [TestFixture]
-public class BfsSolutionTests
+public class DijkstraSolutionTests
 {
   [Test]
   public void Test1()
   {
-    new BfsSolution().MinimumObstacles([
+    new DijkstraSolution().MinimumObstacles([
       [0, 1, 1],
       [1, 1, 0],
       [1, 1, 0]
@@ -56,7 +56,7 @@ public class BfsSolutionTests
   [Test]
   public void Test2()
   {
-    new BfsSolution().MinimumObstacles([
+    new DijkstraSolution().MinimumObstacles([
       [0, 1, 0, 0, 0],
       [0, 1, 0, 1, 0],
       [0, 0, 0, 1, 0]
