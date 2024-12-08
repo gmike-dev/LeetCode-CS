@@ -1,6 +1,6 @@
 namespace LeetCode._2054._Two_Best_Non_Overlapping_Events;
 
-public class Solution
+public class BinarySearchSolution
 {
   public int MaxTwoEvents(int[][] events)
   {
@@ -43,5 +43,39 @@ public class Solution
       }
       return r;
     }
+  }
+}
+
+[TestFixture]
+public class BinarySearchSolutionTests
+{
+  [Test]
+  public void Test1()
+  {
+    new BinarySearchSolution().MaxTwoEvents([
+      [1, 3, 2],
+      [4, 5, 2],
+      [2, 4, 3]
+    ]).Should().Be(4);
+  }
+
+  [Test]
+  public void Test2()
+  {
+    new BinarySearchSolution().MaxTwoEvents([
+      [1, 3, 2],
+      [4, 5, 2],
+      [1, 5, 5]
+    ]).Should().Be(5);
+  }
+
+  [Test]
+  public void Test3()
+  {
+    new BinarySearchSolution().MaxTwoEvents([
+      [1, 5, 3],
+      [1, 5, 1],
+      [6, 6, 5]
+    ]).Should().Be(8);
   }
 }
