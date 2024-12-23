@@ -17,12 +17,11 @@ public class Solution
       idx.AsSpan().Sort((i, j) => q[i].val - q[j].val);
       for (var i = 0; i < n; i++)
       {
-        if (idx[i] != i)
+        while (idx[i] != i)
         {
           (q[i].val, q[idx[i]].val) = (q[idx[i]].val, q[i].val);
           (idx[i], idx[idx[i]]) = (idx[idx[i]], idx[i]);
           count++;
-          i--;
         }
       }
       for (var i = 0; i < n; i++)
