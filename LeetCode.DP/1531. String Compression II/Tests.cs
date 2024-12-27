@@ -1,4 +1,4 @@
-namespace LeetCode._1531._String_Compression_II;
+namespace LeetCode.DP._1531._String_Compression_II;
 
 [TestFixture]
 public class Tests

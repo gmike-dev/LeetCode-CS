@@ -1,4 +1,4 @@
-namespace LeetCode._808._Soup_Servings;
+namespace LeetCode.DP._808._Soup_Servings;
 
 public class Solution
 {

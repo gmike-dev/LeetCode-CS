@@ -1,4 +1,4 @@
-namespace LeetCode._1220._Count_Vowels_Permutation;
+namespace LeetCode.DP._1220._Count_Vowels_Permutation;
 
 [TestFixture]
 public class Tests
