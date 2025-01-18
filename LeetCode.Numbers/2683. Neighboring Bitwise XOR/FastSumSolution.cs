@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 
@@ -7,26 +8,21 @@ public class FastSumSolution
 {
   public bool DoesValidArrayExist(int[] derived)
   {
-    return FastSumArray(derived) % 2 == 0;
+    return SumIntrinsics(derived) % 2 == 0;
   }
 
-  private static unsafe int FastSumArray(int[] a)
+  public static int SumIntrinsics(ReadOnlySpan<int> a)
   {
-    var v = Vector256<int>.Zero;
-    var blockSize = Vector256<int>.Count;
-    var blockCount = a.Length / blockSize;
-    fixed (int* p = &a[0])
-    {
-      for (int i = 0; i < blockCount; i++)
-        v = Avx2.Add(v, Avx.LoadVector256(p + i * blockSize));
-    }
-    var temp = stackalloc int[blockSize];
-    Avx.Store(temp, v);
+    var vectors = MemoryMarshal.Cast<int, Vector256<int>>(a);
+    var acc = Vector256<int>.Zero;
+    foreach (var v in vectors)
+      acc = Avx2.Add(acc, v);
+    var acc2 = Sse2.Add(acc.GetLower(), acc.GetUpper());
     var result = 0;
-    for (var i = 0; i < blockSize; i++)
-      result ^= temp[i];
-    for (var i = blockSize * blockCount; i < a.Length; i++)
-      result ^= a[i];
+    for (var i = 0; i < 4; i++)
+      result += acc2.GetElement(i);
+    for (var i = vectors.Length * Vector256<int>.Count; i < a.Length; i++)
+      result += a[i];
     return result;
   }
 }
@@ -41,5 +37,14 @@ public class FastSumSolutionTests
   public void Test(int[] derived, bool expected)
   {
     new FastSumSolution().DoesValidArrayExist(derived).Should().Be(expected);
+  }
+
+  [Test]
+  public void Test1()
+  {
+    FastSumSolution.SumIntrinsics([1, 2, 3, 4, 5]).Should().Be(15);
+    FastSumSolution.SumIntrinsics([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).Should().Be(55);
+    FastSumSolution.SumIntrinsics([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]).Should()
+      .Be(210);
   }
 }
