@@ -20,32 +20,28 @@ public class Solution
       }
     }
     var largestIsland = 0;
+    var connected = new HashSet<int>();
     for (var i = 0; i < n; i++)
     {
       for (var j = 0; j < n; j++)
       {
+        if (grid[i][j] != 0)
+          continue;
         var p = n * i + j;
-        if (grid[i][j] == 0)
-        {
-          var size = 1;
-          var connected = new HashSet<int>();
-          if (j > 0 && grid[i][j - 1] != 0 && connected.Add(uf.Find(p - 1)))
-            size += uf.Size(p - 1);
-          if (j + 1 < n && grid[i][j + 1] != 0 && connected.Add(uf.Find(p + 1)))
-            size += uf.Size(p + 1);
-          if (i > 0 && grid[i - 1][j] != 0 && connected.Add(uf.Find(p - n)))
-            size += uf.Size(p - n);
-          if (i + 1 < n && grid[i + 1][j] != 0 && connected.Add(uf.Find(p + n)))
-            size += uf.Size(p + n);
-          largestIsland = Math.Max(largestIsland, size);
-        }
-        else
-        {
-          largestIsland = Math.Max(largestIsland, uf.Size(p));
-        }
+        var size = 1;
+        connected.Clear();
+        if (j > 0 && grid[i][j - 1] != 0 && connected.Add(uf.Find(p - 1)))
+          size += uf.Size(p - 1);
+        if (j + 1 < n && grid[i][j + 1] != 0 && connected.Add(uf.Find(p + 1)))
+          size += uf.Size(p + 1);
+        if (i > 0 && grid[i - 1][j] != 0 && connected.Add(uf.Find(p - n)))
+          size += uf.Size(p - n);
+        if (i + 1 < n && grid[i + 1][j] != 0 && connected.Add(uf.Find(p + n)))
+          size += uf.Size(p + n);
+        largestIsland = Math.Max(largestIsland, size);
       }
     }
-    return largestIsland;
+    return largestIsland == 0 ? n * n : largestIsland;
   }
 
   private class UnionFind
