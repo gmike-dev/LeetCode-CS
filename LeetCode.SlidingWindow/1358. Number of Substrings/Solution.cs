@@ -18,7 +18,7 @@ public class Solution
 }
 
 [TestFixture]
-public class Tests
+public class SolutionTests
 {
   [TestCase("abcabc", 10)]
   [TestCase("aaacb", 3)]
