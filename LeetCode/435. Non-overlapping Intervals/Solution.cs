@@ -1,4 +1,4 @@
-namespace LeetCode.NonOverlappingIntervals;
+namespace LeetCode._435._Non_overlapping_Intervals;
 
 public class Solution
 {

@@ -1,4 +1,4 @@
-namespace LeetCode.NumberOfLongestIncreasingSubsequence;
+namespace LeetCode._673._Number_of_Longest_Increasing_Subsequence;
 
 [TestFixture]
 public class Tests
