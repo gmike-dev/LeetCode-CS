@@ -6,11 +6,11 @@ public class Solution
   {
     var n = nums.Length;
     Array.Sort(nums);
-    var dp = new int[n];
-    var next = new int[n];
+    Span<int> dp = stackalloc int[n];
+    Span<int> next = stackalloc int[n];
+    dp.Fill(1);
     for (var i = n - 1; i >= 0; i--)
     {
-      dp[i] = 1;
       for (var j = i + 1; j < n; j++)
       {
         if (nums[j] % nums[i] == 0 && dp[i] < dp[j] + 1)
@@ -27,9 +27,12 @@ public class Solution
       if (dp[i] > dp[start])
         start = i;
     }
-    var subset = new List<int> { nums[start] };
-    for (var i = next[start]; i != 0; i = next[i])
-      subset.Add(nums[i]);
+    var subset = new int[dp[start]];
+    for (int i = 0, j = start, k = 0; i < dp[start]; i++)
+    {
+      subset[k++] = nums[j];
+      j = next[j];
+    }
     return subset;
   }
 }
