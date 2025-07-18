@@ -2,6 +2,11 @@
   <ItemGroup>
     <ProjectReference Include="..\LeetCode.Common\LeetCode.Common.csproj"/>
   </ItemGroup>
+  <ItemGroup>
+    <None Update="2163. Minimum Difference in Sums After Removal of Elements\TestCases.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
