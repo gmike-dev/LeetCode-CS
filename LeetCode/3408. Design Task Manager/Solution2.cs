@@ -7,49 +7,50 @@ public class TaskManager2
 {
   private const int MaxTaskId = 100000;
 
-  private readonly int[] taskUserId;
-  private readonly int[] taskPriority;
-  private readonly PriorityQueue<int, (int Priority, int Id)> taskQueue;
+  private readonly int[] taskUserId = new int[MaxTaskId + 1];
+  private readonly long[] taskPriority = new long[MaxTaskId + 1];
+  private readonly PriorityQueue<int, long> taskQueue = new(2 * MaxTaskId);
 
   public TaskManager2(IList<IList<int>> tasks)
   {
-    taskUserId = new int[MaxTaskId + 1];
-    taskPriority = new int[MaxTaskId + 1];
-    taskQueue = new PriorityQueue<int, (int Priority, int Id)>(tasks.Count);
-    Array.Fill(taskUserId, -1);
     Array.Fill(taskPriority, -1);
     foreach (var task in tasks)
       Add(task[0], task[1], task[2]);
   }
 
+  private static long Priority(int priority, int taskId)
+  {
+    return -(((long)priority << 30) | (uint)taskId);
+  }
+
   public void Add(int userId, int taskId, int priority)
   {
+    var p = Priority(priority, taskId);
     taskUserId[taskId] = userId;
-    taskPriority[taskId] = priority;
-    taskQueue.Enqueue(taskId, (-priority, -taskId));
+    taskPriority[taskId] = p;
+    taskQueue.Enqueue(taskId, p);
   }
 
   public void Edit(int taskId, int newPriority)
   {
-    taskPriority[taskId] = newPriority;
-    taskQueue.Enqueue(taskId, (-newPriority, -taskId));
+    var p = Priority(newPriority, taskId);
+    taskPriority[taskId] = p;
+    taskQueue.Enqueue(taskId, p);
   }
 
   public void Rmv(int taskId)
   {
     taskPriority[taskId] = -1;
-    taskUserId[taskId] = -1;
   }
 
   public int ExecTop()
   {
-    while (taskQueue.TryDequeue(out var taskId, out var item))
+    while (taskQueue.TryDequeue(out var taskId, out var priority))
     {
-      if (taskPriority[taskId] == -item.Priority)
+      if (taskPriority[taskId] == priority)
       {
-        var userId = taskUserId[taskId];
         Rmv(taskId);
-        return userId;
+        return taskUserId[taskId];
       }
     }
     return -1;
