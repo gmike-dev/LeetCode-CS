@@ -4,27 +4,49 @@ public class MySolution
 {
   public int LeastInterval(char[] tasks, int n)
   {
-    var cnt = new int[128];
+    Span<int> cnt = stackalloc int[128];
     foreach (var t in tasks)
       cnt[t]++;
-    var next = new int[128];
-    var m = tasks.Length;
-    var i = 0;
-    for (; m > 0; i++)
+    Span<int> next = stackalloc int[128];
+    next[0] = int.MaxValue;
+    var time = 0;
+    for (var i = 0; i < tasks.Length; i++)
     {
-      var max = 0;
+      var task = 0;
       for (var t = 'A'; t <= 'Z'; t++)
       {
-        if (cnt[max] < cnt[t] && next[t] <= i)
-          max = t;
+        if (cnt[t] > cnt[task] && next[t] <= time)
+          task = t;
       }
-      if (max != 0)
+      if (task == 0)
       {
-        cnt[max]--;
-        m--;
-        next[max] = i + n + 1;
+        for (var t = 'A'; t <= 'Z'; t++)
+        {
+          if (cnt[t] != 0 && (next[t] < next[task] || next[t] == next[task] && cnt[t] > cnt[task]))
+            task = t;
+        }
+        time = next[task];
       }
+      cnt[task]--;
+      next[task] = time + n + 1;
+      time++;
     }
-    return i;
+    return time;
+  }
+}
+
+[TestFixture]
+public class MySolutionTests
+{
+  [TestCase(new[] { 'A', 'A', 'A', 'B', 'B', 'B' }, 2, 8)]
+  [TestCase(new[] { 'A', 'C', 'A', 'B', 'D', 'B' }, 1, 6)]
+  [TestCase(new[] { 'A' }, 10, 1)]
+  [TestCase(new[] { 'A', 'A' }, 10, 12)]
+  [TestCase(new[] { 'A', 'A' }, 0, 2)]
+  [TestCase(new[] { 'A', 'B' }, 10, 2)]
+  [TestCase(new[] { 'A', 'B' }, 0, 2)]
+  public void Test(char[] tasks, int n, int expected)
+  {
+    new MySolution().LeastInterval(tasks, n).Should().Be(expected);
   }
 }
