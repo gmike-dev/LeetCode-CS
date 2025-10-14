@@ -6,5 +6,8 @@
     <None Update="3408. Design Task Manager\LargeExecTopTestData.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="1488. Avoid Flood in The City\TestCases.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
