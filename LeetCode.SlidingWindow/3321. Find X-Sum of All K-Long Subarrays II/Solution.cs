@@ -119,6 +119,7 @@ public class SolutionTests
 {
   [TestCase("[1,1,2,2,3,4,2,3]", 6, 2, "[6,10,12]")]
   [TestCase("[3,8,7,8,7,5]", 2, 2, "[11,15,15,15,12]")]
+  [TestCase("[4,4,4,10]", 2, 1, "[8,8,10]")]
   public void Test(string nums, int k, int x, string expected)
   {
     var actual = new Solution().FindXSum(nums.Array(), k, x);
