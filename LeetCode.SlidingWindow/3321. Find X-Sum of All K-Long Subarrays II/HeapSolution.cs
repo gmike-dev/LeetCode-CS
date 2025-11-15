@@ -5,227 +5,304 @@ namespace LeetCode.SlidingWindow._3321._Find_X_Sum_of_All_K_Long_Subarrays_II;
 
 public class HeapSolution
 {
-  private class Item(int freq, int val)
-  {
-    public int freq = freq;
-    public int val = val;
-    public int heapIndex;
-
-    public int CompareTo(Item other)
+    public long[] FindXSum(int[] nums, int k, int x)
     {
-      var cmp = freq - other.freq;
-      if (cmp != 0)
-        return cmp;
-      return val - other.val;
-    }
-  }
-
-  private static int MaxHeapComparer(Item x, Item y) => x.CompareTo(y);
-
-  private static int MinHeapComparer(Item x, Item y) => y.CompareTo(x);
-
-  public long[] FindXSum(int[] nums, int k, int x)
-  {
-    var n = nums.Length;
-    var minHeap = new Item[n];
-    var maxHeap = new Item[n];
-    var minHeapSize = 0;
-    var maxHeapSize = 0;
-    var minHeapItems = new Dictionary<int, Item>();
-    var maxHeapItems = new Dictionary<int, Item>();
-    var sum = 0L;
-    var answer = new long[n - k + 1];
-    for (var i = 0; i < n; i++)
-    {
-      var current = nums[i];
-      if (minHeapItems.TryGetValue(current, out var item))
-      {
-        item.freq++;
-        DownHeap(minHeap, item.heapIndex, minHeapSize, MinHeapComparer);
-        sum += current;
-      }
-      else
-      {
-        if (maxHeapItems.TryGetValue(current, out item))
+        var n = nums.Length;
+        var minHeap = new IndexedMaxHeap<int, (int freq, int val)>((x, y) => y.CompareTo(x));
+        var maxHeap = new IndexedMaxHeap<int, (int freq, int val)>((x, y) => x.CompareTo(y));
+        var sum = 0L;
+        var answer = new long[n - k + 1];
+        for (var i = 0; i < n; i++)
         {
-          item.freq++;
-          UpHeap(maxHeap, item.heapIndex, MaxHeapComparer);
+            AddValue(nums[i]);
+            if (i - k + 1 >= 0)
+            {
+                answer[i - k + 1] = sum;
+                RemoveValue(nums[i - k + 1]);
+            }
+        }
+        return answer;
+
+        void AddValue(int value)
+        {
+            if (minHeap.TryGetValue(value, out var item))
+            {
+                item.freq++;
+                minHeap.ChangeValue(value, item);
+                sum += value;
+            }
+            else
+            {
+                if (maxHeap.TryGetValue(value, out item))
+                {
+                    item.freq++;
+                    maxHeap.ChangeValue(value, item);
+                }
+                else
+                {
+                    maxHeap.Push(value, (1, value));
+                }
+
+                if (minHeap.Count < x)
+                {
+                    var topMax = maxHeap.Pop();
+                    minHeap.Push(topMax.val, topMax);
+                    sum += (long)topMax.val * topMax.freq;
+                }
+                else
+                {
+                    BalanceHeaps();
+                }
+            }
+        }
+
+        void RemoveValue(int prev)
+        {
+            if (minHeap.TryGetValue(prev, out var item))
+            {
+                item.freq--;
+                sum -= prev;
+                if (item.freq == 0)
+                {
+                    minHeap.Remove(prev);
+                    if (maxHeap.Count > 0)
+                    {
+                        var topMax = maxHeap.Pop();
+                        minHeap.Push(topMax.val, topMax);
+                        sum += topMax.val;
+                    }
+                }
+                else
+                {
+                    minHeap.ChangeValue(prev, item);
+                    if (maxHeap.Count > 0)
+                    {
+                        BalanceHeaps();
+                    }
+                }
+            }
+            else
+            {
+                maxHeap.TryGetValue(prev, out item);
+                item.freq--;
+                if (item.freq == 0)
+                    maxHeap.Remove(prev);
+                else
+                    maxHeap.ChangeValue(prev, item);
+            }
+        }
+
+        void BalanceHeaps()
+        {
+            var topMin = minHeap.Top();
+            var topMax = maxHeap.Top();
+            if (topMax.CompareTo(topMin) > 0)
+            {
+                minHeap.PushPop(topMax.val, topMax);
+                maxHeap.PushPop(topMin.val, topMin);
+                sum -= (long)topMin.val * topMin.freq;
+                sum += (long)topMax.val * topMax.freq;
+            }
+        }
+    }
+}
+
+public class IndexedMaxHeap<TKey, TValue>(Comparison<TValue> comparer)
+{
+    private class HeapItem(TKey key, TValue value, int index)
+    {
+        public readonly TKey Key = key;
+        public TValue Value = value;
+        public int Index = index;
+    }
+
+    private readonly Dictionary<TKey, HeapItem> items = [];
+    private readonly List<HeapItem> heap = [];
+
+    public int Count => heap.Count;
+
+    public bool Contains(TKey key) => items.ContainsKey(key);
+
+    public bool TryGetValue(TKey key, out TValue value)
+    {
+        if (items.TryGetValue(key, out var item))
+        {
+            value = item.Value;
+            return true;
+        }
+        value = default;
+        return false;
+    }
+
+    public void Push(TKey key, TValue value)
+    {
+        var item = new HeapItem(key, value, heap.Count);
+        items.Add(key, item);
+        heap.Add(item);
+        UpHeap(item.Index);
+    }
+
+    public bool Remove(TKey key)
+    {
+        if (!items.Remove(key, out var removedItem))
+            return false;
+        var index = removedItem.Index;
+        var last = heap.Count - 1;
+        if (index == last)
+        {
+            heap.RemoveAt(last);
         }
         else
         {
-          item = new Item(1, current);
-          PushHeap(maxHeap, item, ref maxHeapSize, MaxHeapComparer);
-          maxHeapItems[current] = item;
+            Swap(index, last);
+            heap.RemoveAt(last);
+            UpHeap(index);
+            DownHeap(index);
         }
-
-        if (minHeapSize < x)
-        {
-          var topMax = PopHeap(maxHeap, ref maxHeapSize, MaxHeapComparer);
-          PushHeap(minHeap, topMax, ref minHeapSize, MinHeapComparer);
-          maxHeapItems.Remove(topMax.val);
-          minHeapItems.Add(topMax.val, topMax);
-          sum += (long)topMax.val * topMax.freq;
-        }
-        else
-        {
-          var topMin = minHeap[0];
-          var topMax = maxHeap[0];
-          if (topMax.CompareTo(topMin) > 0)
-          {
-            minHeap[0] = topMax;
-            topMax.heapIndex = 0;
-            DownHeap(minHeap, 0, minHeapSize, MinHeapComparer);
-            maxHeap[0] = topMin;
-            topMin.heapIndex = 0;
-            DownHeap(maxHeap, 0, maxHeapSize, MaxHeapComparer);
-            minHeapItems.Remove(topMin.val);
-            minHeapItems.Add(topMax.val, topMax);
-            maxHeapItems.Remove(topMax.val);
-            maxHeapItems.Add(topMin.val, topMin);
-            sum -= (long)topMin.val * topMin.freq;
-            sum += (long)topMax.val * topMax.freq;
-          }
-        }
-      }
-
-      if (i < k - 1)
-        continue;
-
-      answer[i - k + 1] = sum;
-
-      var prev = nums[i - k + 1];
-      if (minHeapItems.TryGetValue(prev, out item))
-      {
-        item.freq--;
-        UpHeap(minHeap, item.heapIndex, MinHeapComparer);
-        sum -= prev;
-        if (maxHeapSize > 0)
-        {
-          var topMin = minHeap[0];
-          var topMax = maxHeap[0];
-          if (topMax.CompareTo(topMin) > 0)
-          {
-            minHeap[0] = topMax;
-            topMax.heapIndex = 0;
-            DownHeap(minHeap, 0, minHeapSize, MinHeapComparer);
-            maxHeap[0] = topMin;
-            topMin.heapIndex = 0;
-            DownHeap(maxHeap, 0, maxHeapSize, MaxHeapComparer);
-            minHeapItems.Remove(topMin.val);
-            minHeapItems.Add(topMax.val, topMax);
-            maxHeapItems.Remove(topMax.val);
-            maxHeapItems.Add(topMin.val, topMin);
-            sum -= (long)topMin.val * topMin.freq;
-            sum += (long)topMax.val * topMax.freq;
-          }
-        }
-        else if (item.freq == 0)
-        {
-          var topMin = PopHeap(minHeap, ref minHeapSize, MinHeapComparer);
-          PushHeap(maxHeap, topMin, ref maxHeapSize, MaxHeapComparer);
-          minHeapItems.Remove(topMin.val);
-          maxHeapItems.Add(topMin.val, topMin);
-        }
-      }
-      else
-      {
-        item = maxHeapItems[prev];
-        item.freq--;
-        DownHeap(maxHeap, item.heapIndex, maxHeapSize, MaxHeapComparer);
-        // if (item.freq == 0)
-        // {
-        //   maxHeapItems.Remove(item.val);
-        //   // maxHeapSize--;
-        // }
-      }
+        return true;
     }
-    return answer;
-  }
 
-  private static Item PopHeap(Item[] a, ref int n, Comparison<Item> comparer)
-  {
-    if (n <= 0)
-      throw new InvalidOperationException();
-    var top = a[0];
-    if (n > 1)
+    private void Swap(int i, int j)
     {
-      a[0] = a[n - 1];
-      a[0].heapIndex = 0;
-      DownHeap(a, 0, n - 1, comparer);
+        (heap[i], heap[j]) = (heap[j], heap[i]);
+        heap[i].Index = i;
+        heap[j].Index = j;
     }
-    n--;
-    return top;
-  }
 
-  private static void PushHeap(Item[] a, Item item, ref int n, Comparison<Item> comparer)
-  {
-    a[n] = item;
-    item.heapIndex = n;
-    n++;
-    UpHeap(a, item.heapIndex, comparer);
-  }
-
-  private static void UpHeap(Item[] a, int i, Comparison<Item> comparer)
-  {
-    while (i > 0)
+    public TValue Pop()
     {
-      var p = (i - 1) / 2;
-      if (comparer(a[p], a[i]) >= 0)
-        break;
-      (a[p], a[i]) = (a[i], a[p]);
-      a[i].heapIndex = i;
-      a[p].heapIndex = p;
-      i = p;
+        if (heap.Count == 0)
+            throw new InvalidOperationException("Heap is empty");
+        var top = heap[0];
+        var last = heap.Count - 1;
+        if (last > 0)
+        {
+            heap[0] = heap[last];
+            heap[0].Index = 0;
+            DownHeap(0);
+        }
+        heap.RemoveAt(last);
+        items.Remove(top.Key);
+        return top.Value;
     }
-  }
 
-  private static void DownHeap(Item[] a, int i, int n, Comparison<Item> comparer)
-  {
-    while (true)
+    public TValue Top()
     {
-      var largest = i;
-      var l = (i << 1) + 1; /* 2*id + 1 */
-      var r = (i + 1) << 1; /* 2*id + 2 */
-      if (l < n && comparer(a[l], a[largest]) > 0)
-        largest = l;
-      if (r < n && comparer(a[r], a[largest]) > 0)
-        largest = r;
-      if (largest == i)
-        break;
-      (a[largest], a[i]) = (a[i], a[largest]);
-      a[i].heapIndex = i;
-      a[largest].heapIndex = largest;
-      i = largest;
+        if (heap.Count == 0)
+            throw new InvalidOperationException("Heap is empty");
+        return heap[0].Value;
     }
-  }
+
+    public TValue PushPop(TKey key, TValue value)
+    {
+        if (heap.Count == 0)
+            return value;
+        var top = heap[0];
+        items.Remove(top.Key);
+        var item = new HeapItem(key, value, 0);
+        items.Add(key, item);
+        heap[0] = item;
+        DownHeap(0);
+        return top.Value;
+    }
+
+    public void ChangeValue(TKey key, TValue newValue)
+    {
+        var item = items[key];
+        var oldValue = item.Value;
+        item.Value = newValue;
+        switch (comparer(newValue, oldValue))
+        {
+            case > 0:
+                UpHeap(item.Index);
+                break;
+            case < 0:
+                DownHeap(item.Index);
+                break;
+        }
+    }
+
+    private void UpHeap(int i)
+    {
+        while (i > 0)
+        {
+            var p = (i - 1) / 2;
+            if (comparer(heap[p].Value, heap[i].Value) >= 0)
+                break;
+            Swap(p, i);
+            i = p;
+        }
+    }
+
+    private void DownHeap(int i)
+    {
+        while (true)
+        {
+            var l = 2 * i + 1;
+            if (l >= heap.Count)
+                break;
+            var r = l + 1;
+            var largest = l;
+            if (r < heap.Count && comparer(heap[r].Value, heap[largest].Value) > 0)
+                largest = r;
+            if (comparer(heap[largest].Value, heap[i].Value) <= 0)
+                break;
+            Swap(largest, i);
+            i = largest;
+        }
+    }
+}
+
+[TestFixture]
+public class IndexedHeapTests
+{
+    [Test]
+    public void Test1()
+    {
+        var h = new IndexedMaxHeap<int, int>((x, y) => x.CompareTo(y));
+        h.Push(1, 1);
+        h.Push(2, 2);
+        h.Push(3, 3);
+        h.Push(4, 4);
+        h.Push(5, 5);
+        h.Top().Should().Be(5);
+        h.Count.Should().Be(5);
+        h.Pop().Should().Be(5);
+        h.Count.Should().Be(4);
+        h.PushPop(10, 10).Should().Be(4);
+        h.Top().Should().Be(10);
+        h.Pop().Should().Be(10);
+        h.Top().Should().Be(3);
+        h.Count.Should().Be(3);
+    }
 }
 
 [TestFixture]
 public class HeapSolutionTests
 {
-  [TestCase("[1,1,2,2,3,4,2,3]", 6, 2, "[6,10,12]")]
-  [TestCase("[3,8,7,8,7,5]", 2, 2, "[11,15,15,15,12]")]
-  [TestCase("[4,4,4,10]", 2, 1, "[8,8,10]")]
-  public void Test(string nums, int k, int x, string expected)
-  {
-    var actual = new HeapSolution().FindXSum(nums.Array(), k, x);
-    actual.String().Should().BeEquivalentTo(expected);
-  }
-
-  [Test]
-  public void TestLarge()
-  {
-    var source = Path.Join(TestContext.CurrentContext.WorkDirectory, "3321. Find X-Sum of All K-Long Subarrays II",
-      "TestCases.txt");
-    using var sr = new StreamReader(source);
-    while (!sr.EndOfStream)
+    [TestCase("[1,1,2,2,3,4,2,3]", 6, 2, "[6,10,12]")]
+    [TestCase("[3,8,7,8,7,5]", 2, 2, "[11,15,15,15,12]")]
+    [TestCase("[4,4,4,10]", 2, 1, "[8,8,10]")]
+    public void Test(string nums, int k, int x, string expected)
     {
-      var rains = sr.ReadLine();
-      var k = int.Parse(sr.ReadLine());
-      var x = int.Parse(sr.ReadLine());
-      var expected = sr.ReadLine();
-      var actual = new HeapSolution().FindXSum(rains.Array(), k, x);
-      actual.String().Should().BeEquivalentTo(expected);
+        var actual = new HeapSolution().FindXSum(nums.Array(), k, x);
+        actual.String().Should().BeEquivalentTo(expected);
     }
-  }
+
+    [Test]
+    public void TestLarge()
+    {
+        var source = Path.Join(TestContext.CurrentContext.WorkDirectory, "3321. Find X-Sum of All K-Long Subarrays II",
+            "TestCases.txt");
+        using var sr = new StreamReader(source);
+        while (!sr.EndOfStream)
+        {
+            var rains = sr.ReadLine();
+            var k = int.Parse(sr.ReadLine());
+            var x = int.Parse(sr.ReadLine());
+            var expected = sr.ReadLine();
+            var actual = new HeapSolution().FindXSum(rains.Array(), k, x);
+            actual.String().Should().BeEquivalentTo(expected);
+        }
+    }
 }
