@@ -5,36 +5,41 @@ public class Solution
   public long MinimumCost(string source, string target, char[] original, char[] changed, int[] cost)
   {
     const long maxDistance = long.MaxValue / 2;
-    const int m = 'z' - 'a' + 1;
-    var distance = new long[m][];
-    for (var i = 0; i < m; i++)
+    const int n = 'z' - 'a' + 1;
+    var distance = new long[n][];
+    for (var i = 0; i < n; i++)
     {
-      distance[i] = GC.AllocateUninitializedArray<long>(m);
+      distance[i] = new long[n];
       distance[i].AsSpan().Fill(maxDistance);
     }
     for (var i = 0; i < original.Length; i++)
-      distance[original[i] - 'a'][changed[i] - 'a'] = Math.Min(distance[original[i] - 'a'][changed[i] - 'a'], cost[i]);
-    FloydWarshall(distance);
+    {
+      var u = original[i] - 'a';
+      var v = changed[i] - 'a';
+      distance[u][v] = Math.Min(distance[u][v], cost[i]);
+    }
+    FloydWarshall();
     long ans = 0;
     for (var i = 0; i < source.Length; i++)
     {
       if (source[i] == target[i])
         continue;
-      var d = distance[source[i] - 'a'][target[i] - 'a'];
+      var u = source[i] - 'a';
+      var v = target[i] - 'a';
+      var d = distance[u][v];
       if (d == maxDistance)
         return -1;
       ans += d;
     }
     return ans;
-  }
 
-  private static void FloydWarshall(long[][] distance)
-  {
-    var n = distance.Length;
-    for (var k = 0; k < n; k++)
-    for (var i = 0; i < n; i++)
-    for (var j = 0; j < n; j++)
-      distance[i][j] = Math.Min(distance[i][j], distance[i][k] + distance[k][j]);
+    void FloydWarshall()
+    {
+      for (var k = 0; k < n; k++)
+      for (var i = 0; i < n; i++)
+      for (var j = 0; j < n; j++)
+        distance[i][j] = Math.Min(distance[i][j], distance[i][k] + distance[k][j]);
+    }
   }
 }
 
