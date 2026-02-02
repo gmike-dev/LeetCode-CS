@@ -7,50 +7,62 @@ public class Solution
   public long MinimumCost(int[] nums, int k, int dist)
   {
     var n = nums.Length;
-    var s1 = new SortedSet<(int value, int index)>();
-    var s2 = new SortedSet<(int value, int index)>();
+    var maxQ = new PriorityQueue<int, int>();
+    var maxQItems = new HashSet<int>();
+    var minQ = new PriorityQueue<int, int>();
+    var minQItems = new HashSet<int>();
     var sum = 0L;
     for (var i = 2; i < n && i <= 1 + dist; i++)
     {
-      s1.Add((nums[i], i));
+      maxQ.Enqueue(i, -nums[i]);
+      maxQItems.Add(i);
       sum += nums[i];
-      if (s1.Count > k - 2)
+      if (maxQItems.Count > k - 2)
       {
-        var s1Max = s1.Max;
-        sum -= s1Max.value;
-        s1.Remove(s1Max);
-        s2.Add(s1Max);
+        var max = maxQ.Dequeue();
+        maxQItems.Remove(max);
+        sum -= nums[max];
+        minQ.Enqueue(max, nums[max]);
+        minQItems.Add(max);
       }
     }
     var minSum = nums[1] + sum;
     for (var i = 2; i < n - k + 2; i++)
     {
-      if (s1.Remove((nums[i], i)))
+      if (!minQItems.Remove(i))
       {
+        maxQItems.Remove(i);
         sum -= nums[i];
-        if (s2.Count > 0)
+        while (minQ.Count > 0 && !minQItems.Contains(minQ.Peek()))
         {
-          var s2Min = s2.Min;
-          s1.Add(s2Min);
-          sum += s2Min.value;
-          s2.Remove(s2Min);
+          minQ.Dequeue();
         }
-      }
-      else
-      {
-        s2.Remove((nums[i], i));
+        if (minQ.Count > 0)
+        {
+          var min = minQ.Dequeue();
+          minQItems.Remove(min);
+          maxQ.Enqueue(min, -nums[min]);
+          maxQItems.Add(min);
+          sum += nums[min];
+        }
       }
       var j = i + dist;
       if (j < n)
       {
-        s1.Add((nums[j], j));
+        maxQ.Enqueue(j, -nums[j]);
+        maxQItems.Add(j);
         sum += nums[j];
-        if (s1.Count > k - 2)
+        if (maxQItems.Count > k - 2)
         {
-          var s1Max = s1.Max;
-          sum -= s1Max.value;
-          s1.Remove(s1Max);
-          s2.Add(s1Max);
+          while (maxQ.Count > 0 && !maxQItems.Contains(maxQ.Peek()))
+          {
+            maxQ.Dequeue();
+          }
+          var max = maxQ.Dequeue();
+          maxQItems.Remove(max);
+          sum -= nums[max];
+          minQ.Enqueue(max, nums[max]);
+          minQItems.Add(max);
         }
       }
       minSum = Math.Min(minSum, nums[i] + sum);
@@ -66,6 +78,7 @@ public class SolutionTests
   [TestCase("[10,1,2,2,2,1]", 4, 3, 15)]
   [TestCase("[10,8,18,9]", 3, 1, 36)]
   [TestCase("[1,5,3,6]", 3, 2, 9)]
+  [TestCase("[1024,131072,32768,134217728,16777216,1048576,64,8,8388608,268435456,512,8192,256,2097152,262144,536870912,524288,33554432,32,2048,67108864,4194304,2,65536,4,4096,16384,16,128,1]", 15, 15, 38624439)]
   public void Test(string nums, int k, int dist, long expected)
   {
     new Solution().MinimumCost(nums.Array(), k, dist).Should().Be(expected);
