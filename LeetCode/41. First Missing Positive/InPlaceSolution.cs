@@ -25,5 +25,18 @@ public class InPlaceSolution
     }
     return n + 1;
   }
+}
 
+[TestFixture]
+public class InPlaceSolutionTests
+{
+  [TestCase(new[] { 1, 2, 0 }, 3)]
+  [TestCase(new[] { 3, 4, -1, 1 }, 2)]
+  [TestCase(new[] { 7, 8, 9, 11, 12 }, 1)]
+  [TestCase(new[] { 1, 2, (int)1e6 }, 3)]
+  [TestCase(new[] { 1 }, 2)]
+  public void Test(int[] a, int expected)
+  {
+    new InPlaceSolution().FirstMissingPositive(a).Should().Be(expected);
+  }
 }
