@@ -1,5 +1,8 @@
 namespace LeetCode.___Binary_Search._2226._Maximum_Candies_Allocated_to_K_Children;
 
+/// <summary>
+/// <see href="https://leetcode.com/problems/maximum-candies-allocated-to-k-children/"/>
+/// </summary>
 public class BinarySearchSolution2
 {
   public int MaximumCandies(int[] candies, long k)

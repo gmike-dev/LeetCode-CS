@@ -1,5 +1,8 @@
 namespace LeetCode.___Binary_Search._3356._Zero_Array_Transformation_II;
 
+/// <summary>
+/// <see href="https://leetcode.com/problems/zero-array-transformation-ii/"/>
+/// </summary>
 public class BinarySearchLineSweepSolution
 {
   public int MinZeroArray(int[] nums, int[][] queries)

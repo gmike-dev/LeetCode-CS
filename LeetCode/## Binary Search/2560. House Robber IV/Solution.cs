@@ -1,5 +1,8 @@
 namespace LeetCode.___Binary_Search._2560._House_Robber_IV;
 
+/// <summary>
+/// <see href="https://leetcode.com/problems/house-robber-iv/"/>
+/// </summary>
 public class Solution
 {
   public int MinCapability(int[] nums, int k)

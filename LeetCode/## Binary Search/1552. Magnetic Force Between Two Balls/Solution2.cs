@@ -1,5 +1,8 @@
 namespace LeetCode.___Binary_Search._1552._Magnetic_Force_Between_Two_Balls;
 
+/// <summary>
+/// <see href="https://leetcode.com/problems/magnetic-force-between-two-balls/"/>
+/// </summary>
 public class Solution2
 {
   public int MaxDistance(int[] position, int m)
