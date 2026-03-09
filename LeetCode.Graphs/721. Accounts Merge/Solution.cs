@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._721._Accounts_Merge;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/accounts-merge/">Accounts Merge</see> problem.
+/// </summary>
 public class Solution
 {
   public IList<IList<string>> AccountsMerge(IList<IList<string>> accounts)

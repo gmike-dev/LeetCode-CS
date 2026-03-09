@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._2658._Maximum_Number_of_Fish_in_a_Grid;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/maximum-number-of-fish-in-a-grid/">Maximum Number of Fish in a Grid</see> problem.
+/// </summary>
 public class BfsSolution
 {
   public int FindMaxFish(int[][] grid)

@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._2493._Divide_Nodes_Into_the_Maximum_Number_of_Groups;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/divide-nodes-into-the-maximum-number-of-groups/">Divide Nodes Into the Maximum Number of Groups</see> problem.
+/// </summary>
 public class Solution
 {
   public int MagnificentSets(int n, int[][] edges)

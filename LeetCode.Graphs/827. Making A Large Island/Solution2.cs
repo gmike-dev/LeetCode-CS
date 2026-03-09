@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._827._Making_A_Large_Island;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/making-a-large-island/">Making A Large Island</see> problem.
+/// </summary>
 public class Solution2
 {
   public int LargestIsland(int[][] grid)

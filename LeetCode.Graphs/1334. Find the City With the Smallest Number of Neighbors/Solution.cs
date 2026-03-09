@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._1334._Find_the_City_With_the_Smallest_Number_of_Neighbors;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/">Find the City With the Smallest Number of Neighbors at a Threshold Distance</see> problem.
+/// </summary>
 public class Solution
 {
   public int FindTheCity(int n, int[][] edges, int distanceThreshold)

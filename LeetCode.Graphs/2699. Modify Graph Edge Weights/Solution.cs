@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._2699._Modify_Graph_Edge_Weights;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/modify-graph-edge-weights/">Modify Graph Edge Weights</see> problem.
+/// </summary>
 public class Solution
 {
   public int[][] ModifiedGraphEdges(int n, int[][] edges, int source, int destination, int target)

@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._1462._Course_Schedule_IV;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/course-schedule-iv/">Course Schedule IV</see> problem.
+/// </summary>
 public class Solution
 {
   public IList<bool> CheckIfPrerequisite(int numCourses, int[][] prerequisites, int[][] queries)

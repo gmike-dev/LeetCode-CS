@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._2577._Minimum_Time_to_Visit_a_Cell_In_a_Grid;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/minimum-time-to-visit-a-cell-in-a-grid/">Minimum Time to Visit a Cell In a Grid</see> problem.
+/// </summary>
 public class Solution
 {
   public int MinimumTime(int[][] grid)

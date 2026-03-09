@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._407._Trapping_Rain_Water_II;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/trapping-rain-water-ii/">Trapping Rain Water II</see> problem.
+/// </summary>
 public class Solution
 {
   public int TrapRainWater(int[][] heightMap)

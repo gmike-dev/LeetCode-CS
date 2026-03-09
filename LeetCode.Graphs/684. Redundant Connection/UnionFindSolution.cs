@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._684._Redundant_Connection;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/redundant-connection/">Redundant Connection</see> problem.
+/// </summary>
 public class UnionFindSolution
 {
   public int[] FindRedundantConnection(int[][] edges)

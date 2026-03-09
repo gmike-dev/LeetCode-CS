@@ -2,6 +2,9 @@ using LeetCode.__Graphs._590._N_ary_Tree_Postorder_Traversal;
 
 namespace LeetCode.Graphs._590._N_ary_Tree_Postorder_Traversal;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/n-ary-tree-postorder-traversal/">N-ary Tree Postorder Traversal</see> problem.
+/// </summary>
 public class RecursiveSolution
 {
   public IList<int> Postorder(Node root)

@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._3311._Construct_2D_Grid_Matching_Graph_Layout;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/construct-2d-grid-matching-graph-layout/">Construct 2D Grid Matching Graph Layout</see> problem.
+/// </summary>
 public class Solution
 {
   public int[][] ConstructGridLayout(int n, int[][] edges)

@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Graphs._2290._Minimum_Obstacle_Removal_to_Reach_Corner;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/">Minimum Obstacle Removal to Reach Corner</see> problem.
+/// </summary>
 public class LinearSolution
 {
   public int MinimumObstacles(int[][] grid)

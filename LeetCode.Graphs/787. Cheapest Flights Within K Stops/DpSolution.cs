@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Graphs._787._Cheapest_Flights_Within_K_Stops;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/cheapest-flights-within-k-stops/">Cheapest Flights Within K Stops</see> problem.
+/// </summary>
 public class DpSolution
 {
   public int FindCheapestPrice(int n, int[][] flights, int src, int dst, int k)

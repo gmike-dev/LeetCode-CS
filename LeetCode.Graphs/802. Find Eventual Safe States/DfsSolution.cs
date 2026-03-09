@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._802._Find_Eventual_Safe_States;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/find-eventual-safe-states/">Find Eventual Safe States</see> problem.
+/// </summary>
 public class DfsSolution
 {
   public IList<int> EventualSafeNodes(int[][] graph)

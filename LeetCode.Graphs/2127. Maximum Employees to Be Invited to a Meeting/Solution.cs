@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._2127._Maximum_Employees_to_Be_Invited_to_a_Meeting;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/maximum-employees-to-be-invited-to-a-meeting/">Maximum Employees to Be Invited to a Meeting</see> problem.
+/// </summary>
 public class Solution
 {
   public int MaximumInvitations(int[] favorite)

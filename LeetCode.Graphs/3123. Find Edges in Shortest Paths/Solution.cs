@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._3123._Find_Edges_in_Shortest_Paths;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/find-edges-in-shortest-paths/">Find Edges in Shortest Paths</see> problem.
+/// </summary>
 public class Solution
 {
   public bool[] FindAnswer(int n, int[][] edges)

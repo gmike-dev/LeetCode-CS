@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.Graphs._3651._Minimum_Cost_Path_with_Teleportations;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/minimum-cost-path-with-teleportations/">Minimum Cost Path with Teleportations</see> problem.
+/// </summary>
 public class Solution
 {
   public int MinCost(int[][] grid, int k)

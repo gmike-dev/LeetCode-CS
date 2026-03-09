@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._2924._Find_Champion_II;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/find-champion-ii/">Find Champion II</see> problem.
+/// </summary>
 public class Solution2
 {
   public int FindChampion(int n, int[][] edges)

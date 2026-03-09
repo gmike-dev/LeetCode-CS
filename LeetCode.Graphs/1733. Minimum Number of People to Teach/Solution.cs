@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.Graphs._1733._Minimum_Number_of_People_to_Teach;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/minimum-number-of-people-to-teach/">Minimum Number of People to Teach</see> problem.
+/// </summary>
 public class Solution
 {
   public int MinimumTeachings(int langCount, int[][] languages, int[][] friendships)

@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._3310._Remove_Methods_From_Project;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/remove-methods-from-project/">Remove Methods From Project</see> problem.
+/// </summary>
 public class Solution
 {
   public IList<int> RemainingMethods(int n, int k, int[][] invocations)

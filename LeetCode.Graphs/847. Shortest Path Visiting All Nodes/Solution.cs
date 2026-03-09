@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Graphs._847._Shortest_Path_Visiting_All_Nodes;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/shortest-path-visiting-all-nodes/">Shortest Path Visiting All Nodes</see> problem.
+/// </summary>
 public class Solution
 {
   public int ShortestPathLength(int[][] graph)

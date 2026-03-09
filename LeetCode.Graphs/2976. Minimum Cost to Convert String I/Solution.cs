@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._2976._Minimum_Cost_to_Convert_String_I;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/minimum-cost-to-convert-string-i/">Minimum Cost to Convert String I</see> problem.
+/// </summary>
 public class Solution
 {
   public long MinimumCost(string source, string target, char[] original, char[] changed, int[] cost)

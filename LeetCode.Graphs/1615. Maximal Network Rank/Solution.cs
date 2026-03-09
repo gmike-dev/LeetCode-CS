@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._1615._Maximal_Network_Rank;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/maximal-network-rank/">Maximal Network Rank</see> problem.
+/// </summary>
 public class Solution
 {
   public int MaximalNetworkRank(int n, int[][] roads)

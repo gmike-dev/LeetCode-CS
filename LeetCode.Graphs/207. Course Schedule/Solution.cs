@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._207._Course_Schedule;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/course-schedule/">Course Schedule</see> problem.
+/// </summary>
 public class Solution
 {
   public bool CanFinish(int numCourses, int[][] prerequisites)

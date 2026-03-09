@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._3243._Shortest_Distance_After_Road_Addition_Queries_I;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/shortest-distance-after-road-addition-queries-i/">Shortest Distance After Road Addition Queries I</see> problem.
+/// </summary>
 public class DpSolution
 {
   public int[] ShortestDistanceAfterQueries(int n, int[][] queries)

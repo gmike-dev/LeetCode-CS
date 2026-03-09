@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._1976._Number_of_Ways_to_Arrive_at_Destination;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/">Number of Ways to Arrive at Destination</see> problem.
+/// </summary>
 public class DijkstraSolution
 {
   public int CountPaths(int n, int[][] roads)

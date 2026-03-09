@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._1368._Minimum_Cost_to_Make_at_Least_One_Valid_Path_in_a_Grid;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/">Minimum Cost to Make at Least One Valid Path in a Grid</see> problem.
+/// </summary>
 public class BfsSolution2
 {
   public int MinCost(int[][] grid)

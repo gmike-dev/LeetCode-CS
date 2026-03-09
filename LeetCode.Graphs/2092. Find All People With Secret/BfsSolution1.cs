@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Graphs._2092._Find_All_People_With_Secret;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/find-all-people-with-secret/">Find All People With Secret</see> problem.
+/// </summary>
 public class BfsSolution1
 {
   public IList<int> FindAllPeople(int n, int[][] meetings, int firstPerson)

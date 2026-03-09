@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._1971._Find_if_Path_Exists_in_Graph;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/find-if-path-exists-in-graph/">Find if Path Exists in Graph</see> problem.
+/// </summary>
 public class BfsSolution
 {
   public bool ValidPath(int n, int[][] edges, int source, int destination)

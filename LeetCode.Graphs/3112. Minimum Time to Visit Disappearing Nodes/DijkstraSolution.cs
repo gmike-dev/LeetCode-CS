@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._3112._Minimum_Time_to_Visit_Disappearing_Nodes;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/minimum-time-to-visit-disappearing-nodes/">Minimum Time to Visit Disappearing Nodes</see> problem.
+/// </summary>
 public class DijkstraSolution
 {
   public int[] MinimumTime(int n, int[][] edges, int[] disappear)

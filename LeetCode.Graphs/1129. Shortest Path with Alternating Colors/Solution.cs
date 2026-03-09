@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.Graphs._1129._Shortest_Path_with_Alternating_Colors;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/shortest-path-with-alternating-colors/">Shortest Path with Alternating Colors</see> problem.
+/// </summary>
 public class Solution
 {
   public int[] ShortestAlternatingPaths(int n, int[][] redEdges, int[][] blueEdges)

@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._1765._Map_of_Highest_Peak;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/map-of-highest-peak/">Map of Highest Peak</see> problem.
+/// </summary>
 public class Solution
 {
   public int[][] HighestPeak(int[][] isWater)

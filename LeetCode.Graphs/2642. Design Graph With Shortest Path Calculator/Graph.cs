@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._2642._Design_Graph_With_Shortest_Path_Calculator;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/design-graph-with-shortest-path-calculator/">Design Graph With Shortest Path Calculator</see> problem.
+/// </summary>
 public class Graph
 {
   private int[,] g;

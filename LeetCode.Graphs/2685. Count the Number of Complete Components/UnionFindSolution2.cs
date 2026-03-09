@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Graphs._2685._Count_the_Number_of_Complete_Components;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/count-the-number-of-complete-components/">Count the Number of Complete Components</see> problem.
+/// </summary>
 public class UnionFindSolution2
 {
   public int CountCompleteComponents(int n, int[][] edges)

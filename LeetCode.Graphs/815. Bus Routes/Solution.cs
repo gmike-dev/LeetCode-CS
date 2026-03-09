@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.Graphs._815._Bus_Routes;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/bus-routes/">Bus Routes</see> problem.
+/// </summary>
 public class Solution
 {
   public int NumBusesToDestination(int[][] routes, int source, int target)

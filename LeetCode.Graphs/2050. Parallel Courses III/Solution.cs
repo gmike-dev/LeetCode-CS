@@ -1,5 +1,8 @@
 namespace LeetCode.Graphs._2050._Parallel_Courses_III;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/parallel-courses-iii/">Parallel Courses III</see> problem.
+/// </summary>
 public class Solution
 {
   public int MinimumTime(int n, int[][] relations, int[] time)
