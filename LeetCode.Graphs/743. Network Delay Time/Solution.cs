@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.Graphs._743._Network_Delay_Time;
 
+/// <summary>
+/// Solution for <see href="https://leetcode.com/problems/network-delay-time/">Network Delay Time</see> problem.
+/// </summary>
 public class Solution
 {
   public int NetworkDelayTime(int[][] times, int n, int k)
@@ -22,8 +25,12 @@ public class Solution
       g[u][v] = t;
     }
     FloydWarshall();
-    int minTime = g[k - 1].Max();
-    return minTime == inf ? -1 : minTime;
+    int maxTime = 0;
+    for (var i = 0; i < n; i++)
+    {
+      maxTime = Math.Max(maxTime, g[k - 1][i]);
+    }
+    return maxTime == inf ? -1 : maxTime;
 
     void FloydWarshall()
     {
