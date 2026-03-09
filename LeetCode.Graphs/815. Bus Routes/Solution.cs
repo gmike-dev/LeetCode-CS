@@ -10,41 +10,58 @@ public class Solution
   public int NumBusesToDestination(int[][] routes, int source, int target)
   {
     if (source == target)
-      return 0;
-    var pointRoutes = new Dictionary<int, List<int>>();
-    var containsTarget = new bool[routes.Length];
-    for (var route = 0; route < routes.Length; route++)
     {
-      foreach (var point in routes[route])
+      return 0;
+    }
+    Dictionary<int, List<int>> pointRoutes = new();
+    bool[] containsTarget = new bool[routes.Length];
+    for (int route = 0; route < routes.Length; route++)
+    {
+      foreach (int point in routes[route])
       {
-        if (pointRoutes.TryGetValue(point, out var list))
+        if (pointRoutes.TryGetValue(point, out List<int> list))
+        {
           list.Add(route);
+        }
         else
+        {
           pointRoutes[point] = [route];
+        }
         if (point == target)
+        {
           containsTarget[route] = true;
+        }
       }
     }
-    // Quick check in case when we can use 1 route to target point.
-    if (pointRoutes[source].Any(route => containsTarget[route]))
+
+    if (!pointRoutes.TryGetValue(source, out List<int> sourceRoutes))
+    {
+      return -1;
+    }
+
+    if (sourceRoutes.Any(route => containsTarget[route]))
+    {
       return 1;
+    }
 
     // BFS for routes
-    var currentRoutes = new Queue<(int, int)>();
-    var routeUsed = new bool[routes.Length];
-    foreach (var route in pointRoutes[source])
+    Queue<(int, int)> currentRoutes = new();
+    bool[] routeUsed = new bool[routes.Length];
+    foreach (int route in sourceRoutes)
     {
       currentRoutes.Enqueue((route, 1));
       routeUsed[route] = true;
     }
     while (currentRoutes.Count > 0)
     {
-      var (route, busCount) = currentRoutes.Dequeue();
+      (int route, int busCount) = currentRoutes.Dequeue();
       if (containsTarget[route])
-        return busCount;
-      foreach (var point in routes[route])
       {
-        foreach (var nextRoute in pointRoutes[point])
+        return busCount;
+      }
+      foreach (int point in routes[route])
+      {
+        foreach (int nextRoute in pointRoutes[point])
         {
           if (!routeUsed[nextRoute])
           {
@@ -68,6 +85,7 @@ public class SolutionTests
   [TestCase("[[1,2,3],[2,4,3],[1,2,5,4]]", 1, 4, 1)]
   [TestCase("[[1,2,3]]", 1, 3, 1)]
   [TestCase("[[1,2,3]]", 3, 3, 0)]
+  [TestCase("[[1,2,7],[3,6,7]]", 8, 6, -1)]
   public void Test(string routes, int source, int target, int expected)
   {
     new Solution().NumBusesToDestination(routes.Array2(), source, target).Should().Be(expected);
