@@ -1,4 +1,6 @@
-namespace LeetCode._815._Bus_Routes;
+using LeetCode.Common;
+
+namespace LeetCode.Graphs._815._Bus_Routes;
 
 public class Solution
 {
@@ -15,7 +17,7 @@ public class Solution
         if (pointRoutes.TryGetValue(point, out var list))
           list.Add(route);
         else
-          pointRoutes[point] = new List<int> { route };
+          pointRoutes[point] = [route];
         if (point == target)
           containsTarget[route] = true;
       }
@@ -50,5 +52,21 @@ public class Solution
       }
     }
     return -1;
+  }
+}
+
+[TestFixture]
+public class SolutionTests
+{
+  [TestCase("[[1,2,7],[3,6,7]]", 1, 6, 2)]
+  [TestCase("[[7,12],[4,5,15],[6],[15,19],[9,12,13]]", 15, 12, -1)]
+  [TestCase("[[1,2,3,4,5],[1,6,7],[7,5,8]]", 1, 5, 1)]
+  [TestCase("[[1,5,4],[5,3,4],[3,5,1,2]]", 1, 3, 1)]
+  [TestCase("[[1,2,3],[2,4,3],[1,2,5,4]]", 1, 4, 1)]
+  [TestCase("[[1,2,3]]", 1, 3, 1)]
+  [TestCase("[[1,2,3]]", 3, 3, 0)]
+  public void Test(string routes, int source, int target, int expected)
+  {
+    new Solution().NumBusesToDestination(routes.Array2(), source, target).Should().Be(expected);
   }
 }
