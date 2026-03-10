@@ -5,20 +5,29 @@ namespace LeetCode.Graphs._2642._Design_Graph_With_Shortest_Path_Calculator;
 /// </summary>
 public class Graph
 {
-  private int[,] g;
-  private int n;
+  private readonly List<(int, int)>[] g;
+  private readonly int n;
 
   public Graph(int n, int[][] edges)
   {
     this.n = n;
-    g = new int[n, n];
-    foreach (var edge in edges)
+    g = new List<(int, int)>[n];
+    for (var i = 0; i < n; i++)
+    {
+      g[i] = [];
+    }
+    foreach (int[] edge in edges)
+    {
       AddEdge(edge);
+    }
   }
 
   public void AddEdge(int[] edge)
   {
-    g[edge[0], edge[1]] = edge[2];
+    int u = edge[0];
+    int v = edge[1];
+    int w = edge[2];
+    g[u].Add((v, w));
   }
 
   public int ShortestPath(int node1, int node2)
@@ -28,27 +37,70 @@ public class Graph
 
   private int Dijkstra(int from, int to)
   {
-    var used = new bool[n];
-    var dist = new int[n];
-    Array.Fill(dist, int.MaxValue);
+    Span<int> dist = stackalloc int[n];
+    dist.Fill(int.MaxValue);
     dist[from] = 0;
-    for (var i = 0; i < n; i++)
+    PriorityQueue<int, int> queue = new();
+    queue.Enqueue(from, 0);
+    while (queue.TryDequeue(out int u, out int d))
     {
-      var v = -1;
-      for (var j = 0; j < n; j++)
+      if (d > dist[u])
       {
-        if (!used[j] && (v == -1 || dist[j] < dist[v]))
-          v = j;
+        continue;
       }
-      if (dist[v] == int.MaxValue)
-        break;
-      used[v] = true;
-      for (var j = 0; j < n; j++)
+      if (u == to)
       {
-        if (g[v, j] != 0)
-          dist[j] = Math.Min(dist[j], dist[v] + g[v, j]);
+        return d;
+      }
+      foreach ((int v, int w) in g[u])
+      {
+        int newDist = d + w;
+        if (newDist < dist[v])
+        {
+          dist[v] = newDist;
+          queue.Enqueue(v, newDist);
+        }
       }
     }
-    return dist[to] == int.MaxValue ? -1 : dist[to];
+    return -1;
+  }
+}
+
+[TestFixture]
+public class GraphTests
+{
+  [Test]
+  public void Test1()
+  {
+    Graph g = new(4, [
+      [0, 2, 5],
+      [0, 1, 2],
+      [1, 2, 1],
+      [3, 0, 3]
+    ]);
+    g.ShortestPath(3, 2).Should().Be(6);
+    g.ShortestPath(0, 3).Should().Be(-1);
+    g.AddEdge([1, 3, 4]);
+    g.ShortestPath(0, 3).Should().Be(6);
+  }
+
+  [Test]
+  public void Test2()
+  {
+    Graph g = new(6, [
+      [3, 5, 990551],
+      [1, 3, 495721],
+      [0, 1, 985797],
+      [4, 5, 422863],
+      [4, 1, 505663]
+    ]);
+    g.ShortestPath(0, 1).Should().Be(985797);
+    g.ShortestPath(3, 5).Should().Be(990551);
+    g.ShortestPath(4, 4).Should().Be(0);
+    g.ShortestPath(0, 3).Should().Be(1481518);
+    g.AddEdge([5, 0, 250117]);
+    g.ShortestPath(4, 5).Should().Be(422863);
+    g.AddEdge([3, 1, 142005]);
+    g.ShortestPath(4, 0).Should().Be(672980);
   }
 }
