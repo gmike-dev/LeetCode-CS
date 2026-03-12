@@ -2,6 +2,9 @@
 
 namespace LeetCode.BinaryTrees._144._Binary_Tree_Preorder_Traversal;
 
+/// <summary>
+/// https://leetcode.com/problems/binary-tree-preorder-traversal/
+/// </summary>
 public class RecursiveSolution2
 {
   public IList<int> PreorderTraversal(TreeNode root)

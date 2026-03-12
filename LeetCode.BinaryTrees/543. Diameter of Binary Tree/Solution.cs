@@ -1,7 +1,10 @@
-﻿using LeetCode.Common;
+using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._543._Diameter_of_Binary_Tree;
 
+/// <summary>
+/// https://leetcode.com/problems/diameter-of-binary-tree/
+/// </summary>
 public class Solution
 {
   public int DiameterOfBinaryTree(TreeNode root)

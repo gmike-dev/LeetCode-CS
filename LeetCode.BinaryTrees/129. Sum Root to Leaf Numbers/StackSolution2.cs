@@ -2,6 +2,9 @@
 
 namespace LeetCode.BinaryTrees._129._Sum_Root_to_Leaf_Numbers;
 
+/// <summary>
+/// https://leetcode.com/problems/sum-root-to-leaf-numbers/
+/// </summary>
 public class StackSolution2
 {
   public int SumNumbers(TreeNode root)

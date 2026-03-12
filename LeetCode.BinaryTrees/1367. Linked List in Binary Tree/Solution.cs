@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._1367._Linked_List_in_Binary_Tree;
 
+/// <summary>
+/// https://leetcode.com/problems/linked-list-in-binary-tree/
+/// </summary>
 public class Solution
 {
   public bool IsSubPath(ListNode head, TreeNode root)

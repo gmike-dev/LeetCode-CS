@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._226._Invert_Binary_Tree;
 
+/// <summary>
+/// https://leetcode.com/problems/invert-binary-tree/
+/// </summary>
 public class Solution
 {
   public TreeNode InvertTree(TreeNode root)

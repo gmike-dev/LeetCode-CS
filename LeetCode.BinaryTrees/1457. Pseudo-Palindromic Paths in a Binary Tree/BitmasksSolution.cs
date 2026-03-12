@@ -2,6 +2,9 @@
 
 namespace LeetCode.BinaryTrees._1457._Pseudo_Palindromic_Paths_in_a_Binary_Tree;
 
+/// <summary>
+/// https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/
+/// </summary>
 public class BitmasksSolution
 {
   public int PseudoPalindromicPaths(TreeNode root)

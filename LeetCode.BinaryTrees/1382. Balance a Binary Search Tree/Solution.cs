@@ -2,6 +2,9 @@
 
 namespace LeetCode.BinaryTrees._1382._Balance_a_Binary_Search_Tree;
 
+/// <summary>
+/// https://leetcode.com/problems/balance-a-binary-search-tree/
+/// </summary>
 public class Solution
 {
   // ReSharper disable once InconsistentNaming

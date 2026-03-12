@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._94._Binary_Tree_Inorder_Traversal;
 
+/// <summary>
+/// https://leetcode.com/problems/binary-tree-inorder-traversal/
+/// </summary>
 public class RecursiveSolution
 {
   public IList<int> InorderTraversal(TreeNode root)

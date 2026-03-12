@@ -2,6 +2,9 @@
 
 namespace LeetCode.BinaryTrees._1609._Even_Odd_Tree;
 
+/// <summary>
+/// https://leetcode.com/problems/even-odd-tree/
+/// </summary>
 public class Solution
 {
   private readonly List<int> prev = new();

@@ -1,7 +1,10 @@
-﻿using LeetCode.Common;
+using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._623._Add_One_Row_to_Tree;
 
+/// <summary>
+/// https://leetcode.com/problems/add-one-row-to-tree/
+/// </summary>
 public class Solution
 {
   public TreeNode AddOneRow(TreeNode root, int val, int depth)

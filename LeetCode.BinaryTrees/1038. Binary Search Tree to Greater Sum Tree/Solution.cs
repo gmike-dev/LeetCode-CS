@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._1038._Binary_Search_Tree_to_Greater_Sum_Tree;
 
+/// <summary>
+/// https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
+/// </summary>
 public class Solution
 {
   public TreeNode BstToGst(TreeNode root)

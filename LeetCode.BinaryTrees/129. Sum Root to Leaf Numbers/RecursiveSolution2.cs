@@ -2,12 +2,15 @@
 
 namespace LeetCode.BinaryTrees._129._Sum_Root_to_Leaf_Numbers;
 
+/// <summary>
+/// https://leetcode.com/problems/sum-root-to-leaf-numbers/
+/// </summary>
 public class RecursiveSolution2
 {
   public int SumNumbers(TreeNode node, int s = 0)
   {
     s = s * 10 + node.val;
-    
+
     if (node.left == null && node.right == null)
       return s;
 

@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._894._All_Possible_Full_Binary_Trees;
 
+/// <summary>
+/// https://leetcode.com/problems/all-possible-full-binary-trees/
+/// </summary>
 public class Solution
 {
   private readonly Dictionary<int, List<TreeNode>> cache = new();

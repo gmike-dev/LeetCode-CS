@@ -1,7 +1,10 @@
-﻿using LeetCode.Common;
+using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._95._Unique_Binary_Search_Trees_II;
 
+/// <summary>
+/// https://leetcode.com/problems/unique-binary-search-trees-ii/
+/// </summary>
 public class Solution
 {
   public IList<TreeNode> GenerateTrees(int n)

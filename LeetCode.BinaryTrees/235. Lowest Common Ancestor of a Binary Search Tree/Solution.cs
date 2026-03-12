@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._235._Lowest_Common_Ancestor_of_a_Binary_Search_Tree;
 
+/// <summary>
+/// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+/// </summary>
 public class Solution
 {
   public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)

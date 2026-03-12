@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._2458._Height_of_Binary_Tree_After_Subtree_Removal_Queries;
 
+/// <summary>
+/// https://leetcode.com/problems/height-of-binary-tree-after-subtree-removal-queries/
+/// </summary>
 public class Solution
 {
   public int[] TreeQueries(TreeNode root, int[] queries)

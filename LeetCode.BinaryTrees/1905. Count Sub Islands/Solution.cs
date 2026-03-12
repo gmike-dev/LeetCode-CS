@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.BinaryTrees._1905._Count_Sub_Islands;
 
+/// <summary>
+/// https://leetcode.com/problems/count-sub-islands/
+/// </summary>
 public class Solution
 {
   public int CountSubIslands(int[][] grid1, int[][] grid2)

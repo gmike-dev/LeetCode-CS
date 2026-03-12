@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._687._Longest_Univalue_Path;
 
+/// <summary>
+/// https://leetcode.com/problems/longest-univalue-path/
+/// </summary>
 public class Solution2
 {
   public int LongestUnivaluePath(TreeNode root)

@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._106._Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal;
 
+/// <summary>
+/// https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+/// </summary>
 public class Solution2
 {
   public TreeNode BuildTree(int[] inorder, int[] postorder)

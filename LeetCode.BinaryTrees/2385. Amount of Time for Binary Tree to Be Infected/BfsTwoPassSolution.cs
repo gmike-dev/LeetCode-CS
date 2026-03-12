@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._2385._Amount_of_Time_for_Binary_Tree_to_Be_Infected;
 
+/// <summary>
+/// https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/
+/// </summary>
 public class BfsTwoPassSolution
 {
   private Dictionary<TreeNode, TreeNode> parent;

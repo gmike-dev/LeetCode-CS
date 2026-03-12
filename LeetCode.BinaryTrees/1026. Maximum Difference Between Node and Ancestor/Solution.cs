@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._1026._Maximum_Difference_Between_Node_and_Ancestor;
 
+/// <summary>
+/// https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/
+/// </summary>
 public class Solution
 {
   private int maxAncestorDiff;

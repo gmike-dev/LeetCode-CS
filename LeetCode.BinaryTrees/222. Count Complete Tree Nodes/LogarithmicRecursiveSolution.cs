@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._222._Count_Complete_Tree_Nodes;
 
+/// <summary>
+/// https://leetcode.com/problems/count-complete-tree-nodes/
+/// </summary>
 public class LogarithmicRecursiveSolution
 {
   public int CountNodes(TreeNode root)
