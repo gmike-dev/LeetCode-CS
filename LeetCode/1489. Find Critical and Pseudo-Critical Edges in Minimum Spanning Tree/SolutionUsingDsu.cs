@@ -1,4 +1,6 @@
-﻿namespace LeetCode._1489._Find_Critical_and_Pseudo_Critical_Edges_in_Minimum_Spanning_Tree;
+﻿using LeetCode.Common;
+
+namespace LeetCode._1489._Find_Critical_and_Pseudo_Critical_Edges_in_Minimum_Spanning_Tree;
 
 public class SolutionUsingDsu
 {
@@ -40,33 +42,28 @@ public class SolutionUsingDsu
 
   private readonly record struct Edge(int Index, int From, int To, int Weight);
 
-  /// <summary>
-  /// Disjoint-set.
-  /// </summary>
-  /// <remarks>Union–find data structure.</remarks>
   private class Dsu
   {
-    private readonly int[] _parent;
-    private readonly int[] _size;
-    private int _count;
+    private readonly int[] parent;
+    private readonly int[] size;
+    private int count;
 
-    public int Count => _count;
+    public int Count => count;
 
-    public void MakeSet(int x)
+    private void MakeSet(int x)
     {
-      _parent[x] = x;
-      _size[x] = 1;
-      _count++;
+      parent[x] = x;
+      size[x] = 1;
+      count++;
     }
 
-    public int Find(int x)
+    private int Find(int x)
     {
-      while (_parent[x] != x)
+      if (parent[x] != x)
       {
-        _parent[x] = _parent[_parent[x]];
-        x = _parent[x];
+        parent[x] = Find(parent[x]);
       }
-      return x;
+      return parent[x];
     }
 
     public bool Union(int x, int y)
@@ -75,19 +72,19 @@ public class SolutionUsingDsu
       y = Find(y);
       if (x != y)
       {
-        if (_size[x] < _size[y])
+        if (size[x] < size[y])
           (x, y) = (y, x);
-        _parent[y] = x; // Always add a smaller set to a larger set.
-        _size[x] += _size[y];
-        _count--;
+        parent[y] = x;
+        size[x] += size[y];
+        count--;
       }
       return x != y;
     }
 
     public Dsu(int n)
     {
-      _parent = new int[n];
-      _size = new int[n];
+      parent = new int[n];
+      size = new int[n];
       for (var i = 0; i < n; i++)
         MakeSet(i);
     }
@@ -96,18 +93,21 @@ public class SolutionUsingDsu
   /// <summary>
   /// MST weight finder using Kruskal algo.
   /// </summary>
-  private class Mst
+  private class Mst(Edge[] sortedByWeightEdges, int vertexCount)
   {
-    private readonly int _vertexCount;
-    private readonly Edge[] _edges;
+    public int WeightWithout(Edge excluded)
+    {
+      return Weight(excluded);
+    }
 
-    public int WeightWithout(Edge excluded) => Weight(excluded);
-
-    public int WeightWithRequired(Edge required) => Weight(null, required);
+    public int WeightWithRequired(Edge required)
+    {
+      return Weight(null, required);
+    }
 
     public int Weight(Edge? excluded = null, Edge? required = null)
     {
-      var dsu = new Dsu(_vertexCount);
+      var dsu = new Dsu(vertexCount);
       var weight = 0;
       if (required != null)
       {
@@ -115,7 +115,7 @@ public class SolutionUsingDsu
         weight += edge.Weight;
         dsu.Union(edge.From, edge.To);
       }
-      foreach (var edge in _edges)
+      foreach (var edge in sortedByWeightEdges)
       {
         if (edge.Index != excluded?.Index)
         {
@@ -125,11 +125,16 @@ public class SolutionUsingDsu
       }
       return dsu.Count > 1 ? -1 : weight;
     }
+  }
+}
 
-    public Mst(Edge[] sortedByWeightEdges, int vertexCount)
-    {
-      _vertexCount = vertexCount;
-      _edges = sortedByWeightEdges;
-    }
+[TestFixture]
+public class SolutionUsingDsuTests
+{
+  [TestCase(5, "[[0,1,1],[1,2,1],[2,3,2],[0,3,2],[0,4,3],[3,4,3],[1,4,6]]", "[[0,1],[2,3,4,5]]")]
+  [TestCase(4, "[[0,1,1],[1,2,1],[2,3,1],[0,3,1]]", "[[],[0,1,2,3]]")]
+  public void Test(int n, string edges, string expected)
+  {
+    new SolutionUsingDsu().FindCriticalAndPseudoCriticalEdges(5, edges.Array2()).Should().BeEquivalentTo(expected.Array2());
   }
 }

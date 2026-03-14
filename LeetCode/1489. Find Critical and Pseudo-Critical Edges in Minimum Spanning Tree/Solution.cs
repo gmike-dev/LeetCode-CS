@@ -1,4 +1,6 @@
-﻿namespace LeetCode._1489._Find_Critical_and_Pseudo_Critical_Edges_in_Minimum_Spanning_Tree;
+﻿using LeetCode.Common;
+
+namespace LeetCode._1489._Find_Critical_and_Pseudo_Critical_Edges_in_Minimum_Spanning_Tree;
 
 public class Solution
 {
@@ -40,20 +42,23 @@ public class Solution
 
   private readonly record struct Edge(int Index, int From, int To, int Weight);
 
-  private class Mst
+  private class Mst(Edge[] sortedByWeightEdges, int vertexCount)
   {
-    private readonly int _vertexCount;
-    private readonly Edge[] _edges;
+    public int WeightWithout(Edge excluded)
+    {
+      return Weight(excluded);
+    }
 
-    public int WeightWithout(Edge excluded) => Weight(excluded);
-
-    public int WeightWithRequired(Edge required) => Weight(null, required);
+    public int WeightWithRequired(Edge required)
+    {
+      return Weight(null, required);
+    }
 
     public int Weight(Edge? excluded = null, Edge? required = null)
     {
-      var treeIds = new int[_vertexCount];
-      var treesCount = _vertexCount;
-      for (var i = 0; i < _vertexCount; i++)
+      var treeIds = new int[vertexCount];
+      var treesCount = vertexCount;
+      for (var i = 0; i < vertexCount; i++)
         treeIds[i] = i;
       var weight = 0;
       if (required != null)
@@ -63,7 +68,7 @@ public class Solution
         treeIds[edge.From] = treeIds[edge.To];
         treesCount--;
       }
-      foreach (var edge in _edges)
+      foreach (var edge in sortedByWeightEdges)
       {
         if (edge.Index != excluded?.Index)
         {
@@ -72,7 +77,7 @@ public class Solution
           if (fromTree != toTree)
           {
             weight += edge.Weight;
-            for (var j = 0; j < _vertexCount; j++)
+            for (var j = 0; j < vertexCount; j++)
               if (treeIds[j] == fromTree)
                 treeIds[j] = toTree;
             treesCount--;
@@ -81,11 +86,16 @@ public class Solution
       }
       return treesCount > 1 ? -1 : weight;
     }
+  }
+}
 
-    public Mst(Edge[] sortedByWeightEdges, int vertexCount)
-    {
-      _vertexCount = vertexCount;
-      _edges = sortedByWeightEdges;
-    }
+[TestFixture]
+public class SolutionTests
+{
+  [TestCase(5, "[[0,1,1],[1,2,1],[2,3,2],[0,3,2],[0,4,3],[3,4,3],[1,4,6]]", "[[0,1],[2,3,4,5]]")]
+  [TestCase(4, "[[0,1,1],[1,2,1],[2,3,1],[0,3,1]]", "[[],[0,1,2,3]]")]
+  public void Test(int n, string edges, string expected)
+  {
+    new Solution().FindCriticalAndPseudoCriticalEdges(5, edges.Array2()).Should().BeEquivalentTo(expected.Array2());
   }
 }
