@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Strings._2213._Longest_Substring_of_One_Repeating_Character;
 
+/// <summary>
+/// https://leetcode.com/problems/longest-substring-of-one-repeating-character/
+/// </summary>
 public class SegmentTreeOnArraySolution
 {
   private class ArraySegmentTree

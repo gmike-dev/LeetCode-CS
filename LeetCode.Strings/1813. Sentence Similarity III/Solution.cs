@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._1813._Sentence_Similarity_III;
 
+/// <summary>
+/// https://leetcode.com/problems/sentence-similarity-iii/
+/// </summary>
 public class Solution
 {
   public bool AreSentencesSimilar(string sentence1, string sentence2)

@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._3043._Find_the_Length_of_the_Longest_Common_Prefix;
 
+/// <summary>
+/// https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/
+/// </summary>
 public class Solution
 {
   public int LongestCommonPrefix(int[] arr1, int[] arr2)

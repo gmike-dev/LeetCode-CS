@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._1415._The_k_th_Lexicographical_String_of_All_Happy_Strings_of_Length_n;
 
+/// <summary>
+/// https://leetcode.com/problems/the-k-th-lexicographical-string-of-all-happy-strings-of-length-n/
+/// </summary>
 public class Solution
 {
   public string GetHappyString(int n, int k)

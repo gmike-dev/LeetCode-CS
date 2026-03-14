@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._567._Permutation_in_String;
 
+/// <summary>
+/// https://leetcode.com/problems/permutation-in-string/
+/// </summary>
 public class Solution
 {
   public bool CheckInclusion(string s1, string s2)

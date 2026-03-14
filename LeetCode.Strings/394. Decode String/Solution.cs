@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._394._Decode_String;
 
+/// <summary>
+/// https://leetcode.com/problems/decode-string/
+/// </summary>
 public class Solution
 {
   public string DecodeString(string s)

@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._647._Palindromic_Substrings;
 
+/// <summary>
+/// https://leetcode.com/problems/palindromic-substrings/
+/// </summary>
 public class Solution
 {
   public int CountSubstrings(string s)

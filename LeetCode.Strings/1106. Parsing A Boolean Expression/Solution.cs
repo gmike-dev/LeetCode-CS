@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._1106._Parsing_A_Boolean_Expression;
 
+/// <summary>
+/// https://leetcode.com/problems/parsing-a-boolean-expression/
+/// </summary>
 public class Solution
 {
   public bool ParseBoolExpr(ReadOnlySpan<char> expr)

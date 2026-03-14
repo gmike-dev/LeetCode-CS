@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._539._Minimum_Time_Difference;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-time-difference/
+/// </summary>
 public class Solution
 {
   public int FindMinDifference(IList<string> timePoints)

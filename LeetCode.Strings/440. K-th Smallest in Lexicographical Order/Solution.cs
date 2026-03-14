@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._440._K_th_Smallest_in_Lexicographical_Order;
 
+/// <summary>
+/// https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/
+/// </summary>
 public class Solution
 {
   public int FindKthNumber(int n, int k)

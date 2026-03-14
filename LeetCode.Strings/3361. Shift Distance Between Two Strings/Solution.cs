@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._3361._Shift_Distance_Between_Two_Strings;
 
+/// <summary>
+/// https://leetcode.com/problems/shift-distance-between-two-strings/
+/// </summary>
 public class Solution
 {
   public long ShiftDistance(string s, string t, int[] nextCost, int[] previousCost)

@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Strings._1455._Check_If_a_Word_Occurs_As_a_Prefix;
 
+/// <summary>
+/// https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix/
+/// </summary>
 public class Solution2
 {
   public int IsPrefixOfWord(string sentence, string searchWord)

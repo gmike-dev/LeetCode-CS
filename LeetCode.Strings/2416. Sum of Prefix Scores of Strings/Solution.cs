@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._2416._Sum_of_Prefix_Scores_of_Strings;
 
+/// <summary>
+/// https://leetcode.com/problems/sum-of-prefix-scores-of-strings/
+/// </summary>
 public class Solution
 {
   public int[] SumPrefixScores(string[] words)

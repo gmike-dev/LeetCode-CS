@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._2381._Shifting_Letters_II;
 
+/// <summary>
+/// https://leetcode.com/problems/shifting-letters-ii/
+/// </summary>
 public class Solution
 {
   public string ShiftingLetters(string s, int[][] shifts)

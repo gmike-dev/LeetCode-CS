@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._796._Rotate_String;
 
+/// <summary>
+/// https://leetcode.com/problems/rotate-string/
+/// </summary>
 public class DoubleStringSolution
 {
   public bool RotateString(string s, string goal)

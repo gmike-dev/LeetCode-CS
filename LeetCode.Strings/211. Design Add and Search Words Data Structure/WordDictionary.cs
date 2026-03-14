@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._211._Design_Add_and_Search_Words_Data_Structure;
 
+/// <summary>
+/// https://leetcode.com/problems/design-add-and-search-words-data-structure/
+/// </summary>
 public class WordDictionary
 {
   private readonly TrieNode trie = new();

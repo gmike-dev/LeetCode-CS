@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._290._Word_Pattern;
 
+/// <summary>
+/// https://leetcode.com/problems/word-pattern/
+/// </summary>
 public class TrieSolution
 {
   public bool WordPattern(string pattern, string s)

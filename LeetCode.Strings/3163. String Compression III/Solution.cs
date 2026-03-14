@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._3163._String_Compression_III;
 
+/// <summary>
+/// https://leetcode.com/problems/string-compression-iii/
+/// </summary>
 public class Solution
 {
   public string CompressedString(string word)

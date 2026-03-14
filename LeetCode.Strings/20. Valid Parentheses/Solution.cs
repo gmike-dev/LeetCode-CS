@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._20._Valid_Parentheses;
 
+/// <summary>
+/// https://leetcode.com/problems/valid-parentheses/
+/// </summary>
 public class Solution
 {
   public bool IsValid(string s)

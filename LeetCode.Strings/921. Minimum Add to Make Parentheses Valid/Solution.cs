@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._921._Minimum_Add_to_Make_Parentheses_Valid;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+/// </summary>
 public class Solution
 {
   public int MinAddToMakeValid(string s)

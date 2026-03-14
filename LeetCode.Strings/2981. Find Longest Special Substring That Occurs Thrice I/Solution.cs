@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._2981._Find_Longest_Special_Substring_That_Occurs_Thrice_I;
 
+/// <summary>
+/// https://leetcode.com/problems/find-longest-special-substring-that-occurs-thrice-i/
+/// </summary>
 public class Solution
 {
   public int MaximumLength(string s)

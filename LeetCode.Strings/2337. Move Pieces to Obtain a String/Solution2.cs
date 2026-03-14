@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._2337._Move_Pieces_to_Obtain_a_String;
 
+/// <summary>
+/// https://leetcode.com/problems/move-pieces-to-obtain-a-string/
+/// </summary>
 public class Solution2
 {
   public bool CanChange(string start, string target)

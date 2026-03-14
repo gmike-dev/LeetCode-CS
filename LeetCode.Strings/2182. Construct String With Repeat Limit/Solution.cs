@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._2182._Construct_String_With_Repeat_Limit;
 
+/// <summary>
+/// https://leetcode.com/problems/construct-string-with-repeat-limit/
+/// </summary>
 public class Solution
 {
   public string RepeatLimitedString(string s, int repeatLimit)

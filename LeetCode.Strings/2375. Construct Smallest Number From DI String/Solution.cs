@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._2375._Construct_Smallest_Number_From_DI_String;
 
+/// <summary>
+/// https://leetcode.com/problems/construct-smallest-number-from-di-string/
+/// </summary>
 public class Solution
 {
   public string SmallestNumber(string pattern)

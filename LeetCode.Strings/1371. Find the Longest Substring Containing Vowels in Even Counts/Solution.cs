@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._1371._Find_the_Longest_Substring_Containing_Vowels_in_Even_Counts;
 
+/// <summary>
+/// https://leetcode.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/
+/// </summary>
 public class Solution
 {
   public int FindTheLongestSubstring(string s)

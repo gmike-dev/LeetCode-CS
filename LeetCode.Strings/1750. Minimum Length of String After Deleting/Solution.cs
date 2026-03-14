@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._1750._Minimum_Length_of_String_After_Deleting;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-length-of-string-after-deleting-similar-ends/
+/// </summary>
 public class Solution
 {
   public int MinimumLength(string s)

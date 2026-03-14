@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._2707._Extra_Characters_in_a_String;
 
+/// <summary>
+/// https://leetcode.com/problems/extra-characters-in-a-string/
+/// </summary>
 public class RecursiveSolution
 {
   private string[] dict;

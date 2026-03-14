@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._2914._Minimum_Number_of_Changes_to_Make_Binary_String_Beautiful;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-number-of-changes-to-make-binary-string-beautiful/
+/// </summary>
 public class Solution
 {
   public int MinChanges(string s)

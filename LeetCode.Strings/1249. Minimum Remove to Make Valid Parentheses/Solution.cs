@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Strings._1249._Minimum_Remove_to_Make_Valid_Parentheses;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
+/// </summary>
 public class Solution
 {
   public string MinRemoveToMakeValid(string s)

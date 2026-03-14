@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._386._Lexicographical_Numbers;
 
+/// <summary>
+/// https://leetcode.com/problems/lexicographical-numbers/
+/// </summary>
 public class BucketSolution
 {
   public IList<int> LexicalOrder(int n)

@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Strings._1684._Count_the_Number_of_Consistent_Strings;
 
+/// <summary>
+/// https://leetcode.com/problems/count-the-number-of-consistent-strings/
+/// </summary>
 public class Solution
 {
   public int CountConsistentStrings(string allowed, string[] words)

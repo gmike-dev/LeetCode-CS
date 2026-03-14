@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._432._All_One_Data_Structure;
 
+/// <summary>
+/// https://leetcode.com/problems/all-oone-data-structure/
+/// </summary>
 public class AllOne
 {
   private readonly TrieNode trie = new();

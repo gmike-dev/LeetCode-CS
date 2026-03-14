@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._1233._Remove_Sub_Folders_from_the_Filesystem;
 
+/// <summary>
+/// https://leetcode.com/problems/remove-sub-folders-from-the-filesystem/
+/// </summary>
 public class Solution
 {
   public IList<string> RemoveSubfolders(string[] folders)

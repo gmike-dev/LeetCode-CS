@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._2825._Make_String_a_Subsequence_Using_Cyclic_Increments;
 
+/// <summary>
+/// https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/
+/// </summary>
 public class Solution
 {
   public bool CanMakeSubsequence(string s, string t)

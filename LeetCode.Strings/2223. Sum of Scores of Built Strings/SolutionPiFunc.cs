@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._2223._Sum_of_Scores_of_Built_Strings;
 
+/// <summary>
+/// https://leetcode.com/problems/sum-of-scores-of-built-strings/
+/// </summary>
 public class SolutionPiFunc
 {
   public long SumScores(string s)

@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Strings._2696._Minimum_String_Length_After_Removing_Substrings;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-string-length-after-removing-substrings/
+/// </summary>
 public class StringReplaceSolution
 {
   public int MinLength(string s)

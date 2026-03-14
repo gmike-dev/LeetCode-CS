@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._1769._Minimum_Number_of_Operations_to_Move_All_Balls_to_Each_Box;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/
+/// </summary>
 public class OnePassSolution
 {
   public int[] MinOperations(string boxes)

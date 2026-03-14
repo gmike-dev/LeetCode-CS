@@ -1,5 +1,8 @@
 ﻿namespace LeetCode.Strings._791._Custom_Sort_String;
 
+/// <summary>
+/// https://leetcode.com/problems/custom-sort-string/
+/// </summary>
 public class CountingSolution
 {
   public string CustomSortString(string order, string s)
