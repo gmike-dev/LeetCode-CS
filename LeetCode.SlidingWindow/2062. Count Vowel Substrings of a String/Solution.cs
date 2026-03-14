@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._2062._Count_Vowel_Substrings_of_a_String;
 
+/// <summary>
+/// https://leetcode.com/problems/count-vowel-substrings-of-a-string/
+/// </summary>
 public class Solution
 {
   public int CountVowelSubstrings(string word)

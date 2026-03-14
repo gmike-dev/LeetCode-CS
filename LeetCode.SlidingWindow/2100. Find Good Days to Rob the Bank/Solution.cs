@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._2100._Find_Good_Days_to_Rob_the_Bank;
 
+/// <summary>
+/// https://leetcode.com/problems/find-good-days-to-rob-the-bank/
+/// </summary>
 public class Solution
 {
   public IList<int> GoodDaysToRobBank(int[] security, int time)

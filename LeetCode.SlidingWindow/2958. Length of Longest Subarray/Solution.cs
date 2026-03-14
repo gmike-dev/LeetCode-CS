@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._2958._Length_of_Longest_Subarray;
 
+/// <summary>
+/// https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/
+/// </summary>
 public class Solution
 {
   public int MaxSubarrayLength(int[] a, int k)

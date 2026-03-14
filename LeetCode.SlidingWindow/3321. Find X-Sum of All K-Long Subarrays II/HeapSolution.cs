@@ -3,6 +3,9 @@ using LeetCode.Common;
 
 namespace LeetCode.SlidingWindow._3321._Find_X_Sum_of_All_K_Long_Subarrays_II;
 
+/// <summary>
+/// https://leetcode.com/problems/find-x-sum-of-all-k-long-subarrays-ii/
+/// </summary>
 public class HeapSolution
 {
     public long[] FindXSum(int[] nums, int k, int x)

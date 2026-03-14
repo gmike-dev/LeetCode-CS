@@ -1,5 +1,8 @@
-﻿namespace LeetCode.SlidingWindow._2537._Count_the_Number_of_Good_Subarrays;
+namespace LeetCode.SlidingWindow._2537._Count_the_Number_of_Good_Subarrays;
 
+/// <summary>
+/// https://leetcode.com/problems/count-the-number-of-good-subarrays/
+/// </summary>
 public class Solution
 {
   public long CountGood(int[] nums, int k)

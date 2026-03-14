@@ -1,5 +1,8 @@
-﻿namespace LeetCode.SlidingWindow._3306._Count_of_Substrings_Containing_Every_Vowel_and_K_Consonants_II;
+namespace LeetCode.SlidingWindow._3306._Count_of_Substrings_Containing_Every_Vowel_and_K_Consonants_II;
 
+/// <summary>
+/// https://leetcode.com/problems/count-of-substrings-containing-every-vowel-and-k-consonants-ii/
+/// </summary>
 public class Solution2
 {
   public long CountOfSubstrings(string word, int k)

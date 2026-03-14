@@ -1,5 +1,8 @@
-﻿namespace LeetCode.SlidingWindow._2762._Continuous_Subarrays;
+namespace LeetCode.SlidingWindow._2762._Continuous_Subarrays;
 
+/// <summary>
+/// https://leetcode.com/problems/continuous-subarrays/
+/// </summary>
 public class Solution
 {
   public long ContinuousSubarrays(int[] nums)

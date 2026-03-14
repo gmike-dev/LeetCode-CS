@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._2444._Count_Subarrays_With_Fixed_Bounds;
 
+/// <summary>
+/// https://leetcode.com/problems/count-subarrays-with-fixed-bounds/
+/// </summary>
 public class Solution
 {
   public long CountSubarrays(int[] a, int minK, int maxK)

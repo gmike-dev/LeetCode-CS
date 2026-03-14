@@ -1,5 +1,8 @@
-﻿namespace LeetCode.SlidingWindow._992._Subarrays_with_K_Different_Integers;
+namespace LeetCode.SlidingWindow._992._Subarrays_with_K_Different_Integers;
 
+/// <summary>
+/// https://leetcode.com/problems/subarrays-with-k-different-integers/
+/// </summary>
 public class Solution
 {
   public int SubarraysWithKDistinct(int[] a, int k)

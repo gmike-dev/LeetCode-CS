@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._3439._Reschedule_Meetings_for_Maximum_Free_Time_I;
 
+/// <summary>
+/// https://leetcode.com/problems/reschedule-meetings-for-maximum-free-time-i/
+/// </summary>
 public class Solution2
 {
   public int MaxFreeTime(int eventTime, int k, int[] startTime, int[] endTime)

@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._2516._Take_K_of_Each_Character_From_Left_and_Right;
 
+/// <summary>
+/// https://leetcode.com/problems/take-k-of-each-character-from-left-and-right/
+/// </summary>
 public class Solution
 {
   public int TakeCharacters(string s, int k)

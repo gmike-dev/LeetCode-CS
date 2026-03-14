@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._2461._Maximum_Sum_of_Distinct_Subarrays_With_Length_K;
 
+/// <summary>
+/// https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/
+/// </summary>
 public class Solution
 {
   public long MaximumSubarraySum(int[] nums, int k)

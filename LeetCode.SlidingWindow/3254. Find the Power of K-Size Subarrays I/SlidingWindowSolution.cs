@@ -1,5 +1,8 @@
-﻿namespace LeetCode.SlidingWindow._3254._Find_the_Power_of_K_Size_Subarrays_I;
+namespace LeetCode.SlidingWindow._3254._Find_the_Power_of_K_Size_Subarrays_I;
 
+/// <summary>
+/// https://leetcode.com/problems/find-the-power-of-k-size-subarrays-i/
+/// </summary>
 public class SlidingWindowSolution
 {
   public int[] ResultsArray(int[] nums, int k)

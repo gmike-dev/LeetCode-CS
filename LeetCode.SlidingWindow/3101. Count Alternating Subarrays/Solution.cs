@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._3101._Count_Alternating_Subarrays;
 
+/// <summary>
+/// https://leetcode.com/problems/count-alternating-subarrays/
+/// </summary>
 public class Solution
 {
   public long CountAlternatingSubarrays(int[] a)

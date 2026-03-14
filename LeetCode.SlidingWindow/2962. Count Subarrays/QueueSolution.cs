@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._2962._Count_Subarrays;
 
+/// <summary>
+/// https://leetcode.com/problems/count-subarrays-where-max-element-appears-at-least-k-times/
+/// </summary>
 public class QueueSolution
 {
   public long CountSubarrays(int[] a, int k)

@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._1652._Defuse_the_Bomb;
 
+/// <summary>
+/// https://leetcode.com/problems/defuse-the-bomb/
+/// </summary>
 public class Solution
 {
   public int[] Decrypt(int[] code, int k)

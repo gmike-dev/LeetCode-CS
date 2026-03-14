@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._1358._Number_of_Substrings;
 
+/// <summary>
+/// https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/
+/// </summary>
 public class Solution
 {
   public int NumberOfSubstrings(string s)

@@ -1,5 +1,8 @@
-﻿namespace LeetCode.SlidingWindow._1695._Maximum_Erasure_Value;
+namespace LeetCode.SlidingWindow._1695._Maximum_Erasure_Value;
 
+/// <summary>
+/// https://leetcode.com/problems/maximum-erasure-value/
+/// </summary>
 public class Solution
 {
   public int MaximumUniqueSubarray(int[] nums)

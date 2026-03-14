@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._209._Minimum_Size_Subarray_Sum;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-size-subarray-sum/
+/// </summary>
 public class Solution
 {
   public int MinSubArrayLen(int target, int[] nums)

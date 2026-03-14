@@ -1,5 +1,8 @@
-﻿namespace LeetCode.SlidingWindow._930._Binary_Subarrays_With_Sum;
+namespace LeetCode.SlidingWindow._930._Binary_Subarrays_With_Sum;
 
+/// <summary>
+/// https://leetcode.com/problems/binary-subarrays-with-sum/
+/// </summary>
 public class Solution
 {
   public int NumSubarraysWithSum(int[] a, int goal)

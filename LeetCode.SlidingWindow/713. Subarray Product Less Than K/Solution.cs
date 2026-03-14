@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._713._Subarray_Product_Less_Than_K;
 
+/// <summary>
+/// https://leetcode.com/problems/subarray-product-less-than-k/
+/// </summary>
 public class Solution
 {
   public int NumSubarrayProductLessThanK(int[] nums, int k)

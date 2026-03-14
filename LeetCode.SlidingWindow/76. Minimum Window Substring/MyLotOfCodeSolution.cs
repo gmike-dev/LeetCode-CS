@@ -1,5 +1,8 @@
-﻿namespace LeetCode.SlidingWindow._76._Minimum_Window_Substring;
+namespace LeetCode.SlidingWindow._76._Minimum_Window_Substring;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-window-substring/
+/// </summary>
 public class MyLotOfCodeSolution
 {
   public string MinWindow(string s, string t)
@@ -65,5 +68,22 @@ public class MyLotOfCodeSolution
         charDiff[c]++;
       diff = t.Length;
     }
+  }
+}
+
+[TestFixture]
+public class MyLotOfCodeSolutionTests
+{
+  [TestCase("ADOBECODEBANC", "ABC", "BANC")]
+  [TestCase("a", "a", "a")]
+  [TestCase("a", "aa", "")]
+  [TestCase("abcdefg", "bf", "bcdef")]
+  [TestCase("abbbbfg", "bf", "bf")]
+  [TestCase("abbbbfg", "g", "g")]
+  [TestCase("ab", "a", "a")]
+  [TestCase("a", "b", "")]
+  public void Test(string s, string t, string expected)
+  {
+    new MyLotOfCodeSolution().MinWindow(s, t).Should().Be(expected);
   }
 }

@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._2563._Count_the_Number_of_Fair_Pairs;
 
+/// <summary>
+/// https://leetcode.com/problems/count-the-number-of-fair-pairs/
+/// </summary>
 public class SlidingWindowSolution
 {
   public long CountFairPairs(int[] nums, int lower, int upper)

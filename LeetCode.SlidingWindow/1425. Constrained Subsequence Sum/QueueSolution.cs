@@ -1,5 +1,8 @@
-﻿namespace LeetCode.SlidingWindow._1425._Constrained_Subsequence_Sum;
+namespace LeetCode.SlidingWindow._1425._Constrained_Subsequence_Sum;
 
+/// <summary>
+/// https://leetcode.com/problems/constrained-subsequence-sum/
+/// </summary>
 public class QueueSolution
 {
   public int ConstrainedSubsetSum(int[] nums, int k)

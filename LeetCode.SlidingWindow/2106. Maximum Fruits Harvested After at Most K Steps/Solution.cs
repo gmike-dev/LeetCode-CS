@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._2106._Maximum_Fruits_Harvested_After_at_Most_K_Steps;
 
+/// <summary>
+/// https://leetcode.com/problems/maximum-fruits-harvested-after-at-most-k-steps/
+/// </summary>
 public class Solution
 {
   public int MaxTotalFruits(int[][] fruits, int startPos, int k)

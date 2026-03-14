@@ -1,5 +1,8 @@
-﻿namespace LeetCode.SlidingWindow._1838._Frequency_of_the_Most_Frequent;
+namespace LeetCode.SlidingWindow._1838._Frequency_of_the_Most_Frequent;
 
+/// <summary>
+/// https://leetcode.com/problems/frequency-of-the-most-frequent-element/
+/// </summary>
 public class Solution
 {
   public int MaxFrequency(int[] nums, int k)

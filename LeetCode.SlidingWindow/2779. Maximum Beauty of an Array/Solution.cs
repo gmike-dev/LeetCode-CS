@@ -1,5 +1,8 @@
 namespace LeetCode.SlidingWindow._2779._Maximum_Beauty_of_an_Array;
 
+/// <summary>
+/// https://leetcode.com/problems/maximum-beauty-of-an-array/
+/// </summary>
 public class Solution
 {
   public int MaximumBeauty(int[] nums, int k)
