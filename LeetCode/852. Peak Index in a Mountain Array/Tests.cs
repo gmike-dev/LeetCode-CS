@@ -1,4 +1,4 @@
-﻿namespace LeetCode._852._Peak_Index_in_a_Mountain_Array;
+namespace LeetCode._852._Peak_Index_in_a_Mountain_Array;
 
 [TestFixture]
 public class Tests

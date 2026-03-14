@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Strings._1910._Remove_All_Occurrences_of_a_Substring;
+namespace LeetCode.Strings._1910._Remove_All_Occurrences_of_a_Substring;
 
 /// <summary>
 /// https://leetcode.com/problems/remove-all-occurrences-of-a-substring/

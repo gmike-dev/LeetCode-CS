@@ -1,4 +1,4 @@
-﻿namespace LeetCode._162._Find_Peak_Element;
+namespace LeetCode._162._Find_Peak_Element;
 
 public class Solution
 {

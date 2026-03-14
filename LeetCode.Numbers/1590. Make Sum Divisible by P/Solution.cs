@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Numbers._1590._Make_Sum_Divisible_by_P;
+namespace LeetCode.Numbers._1590._Make_Sum_Divisible_by_P;
 
 public class Solution
 {

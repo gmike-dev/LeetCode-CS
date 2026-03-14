@@ -1,4 +1,4 @@
-﻿namespace LeetCode._26._Remove_Duplicates_from_Sorted_Array;
+namespace LeetCode._26._Remove_Duplicates_from_Sorted_Array;
 
 public class Tests
 {

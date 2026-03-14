@@ -1,4 +1,4 @@
-﻿namespace LeetCode.DP._2466._Count_Ways_To_Build_Good_Strings;
+namespace LeetCode.DP._2466._Count_Ways_To_Build_Good_Strings;
 
 public class Solution2
 {

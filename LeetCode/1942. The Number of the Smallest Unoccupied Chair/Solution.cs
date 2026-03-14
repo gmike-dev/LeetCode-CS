@@ -1,4 +1,4 @@
-﻿namespace LeetCode._1942._The_Number_of_the_Smallest_Unoccupied_Chair;
+namespace LeetCode._1942._The_Number_of_the_Smallest_Unoccupied_Chair;
 
 public class Solution
 {

@@ -1,4 +1,4 @@
-﻿namespace LeetCode._2055._Plates_Between_Candles;
+namespace LeetCode._2055._Plates_Between_Candles;
 
 public class BinarySearchSolution
 {

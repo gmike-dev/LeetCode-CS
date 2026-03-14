@@ -1,4 +1,4 @@
-﻿namespace LeetCode._200._Number_of_Islands;
+namespace LeetCode._200._Number_of_Islands;
 
 public class UnionFindSolution
 {

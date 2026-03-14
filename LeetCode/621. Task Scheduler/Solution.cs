@@ -1,4 +1,4 @@
-﻿namespace LeetCode._621._Task_Scheduler;
+namespace LeetCode._621._Task_Scheduler;
 
 public class Solution
 {

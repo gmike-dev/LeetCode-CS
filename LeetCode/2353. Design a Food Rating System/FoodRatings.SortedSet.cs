@@ -1,4 +1,4 @@
-﻿namespace LeetCode._2353._Design_a_Food_Rating_System.SortedSet;
+namespace LeetCode._2353._Design_a_Food_Rating_System.SortedSet;
 
 public class FoodRatings
 {

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.DP._1671._Minimum_Number_of_Removals_to_Make_Mountain_Array;
+namespace LeetCode.DP._1671._Minimum_Number_of_Removals_to_Make_Mountain_Array;
 
 public class Solution
 {

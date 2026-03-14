@@ -1,4 +1,4 @@
-﻿using LeetCode.Common;
+using LeetCode.Common;
 
 namespace LeetCode._1489._Find_Critical_and_Pseudo_Critical_Edges_in_Minimum_Spanning_Tree;
 

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Numbers._670._Maximum_Swap;
+namespace LeetCode.Numbers._670._Maximum_Swap;
 
 public class Solution2
 {

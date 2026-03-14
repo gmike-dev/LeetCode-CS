@@ -1,4 +1,4 @@
-﻿namespace LeetCode._2353._Design_a_Food_Rating_System;
+namespace LeetCode._2353._Design_a_Food_Rating_System;
 
 [TestFixture]
 public class FoodRatingsTests

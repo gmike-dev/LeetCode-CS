@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Strings._1544._Make_The_String_Great;
+namespace LeetCode.Strings._1544._Make_The_String_Great;
 
 /// <summary>
 /// https://leetcode.com/problems/make-the-string-great/

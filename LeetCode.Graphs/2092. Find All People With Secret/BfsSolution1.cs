@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Graphs._2092._Find_All_People_With_Secret;
+namespace LeetCode.Graphs._2092._Find_All_People_With_Secret;
 
 /// <summary>
 /// Solution for <see href="https://leetcode.com/problems/find-all-people-with-secret/">Find All People With Secret</see> problem.

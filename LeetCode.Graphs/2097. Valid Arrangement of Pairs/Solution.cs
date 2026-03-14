@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Graphs._2097._Valid_Arrangement_of_Pairs;
+namespace LeetCode.Graphs._2097._Valid_Arrangement_of_Pairs;
 
 /// <summary>
 /// Solution for <see href="https://leetcode.com/problems/valid-arrangement-of-pairs/">Valid Arrangement of Pairs</see> problem.

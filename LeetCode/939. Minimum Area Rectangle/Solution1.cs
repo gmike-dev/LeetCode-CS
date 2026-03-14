@@ -1,4 +1,4 @@
-﻿namespace LeetCode._939._Minimum_Area_Rectangle;
+namespace LeetCode._939._Minimum_Area_Rectangle;
 
 public class Solution1
 {

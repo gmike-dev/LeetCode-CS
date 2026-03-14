@@ -1,4 +1,4 @@
-﻿namespace LeetCode._862._Shortest_Subarray_with_Sum_at_Least_K;
+namespace LeetCode._862._Shortest_Subarray_with_Sum_at_Least_K;
 
 public class PriorityQueueSolution
 {

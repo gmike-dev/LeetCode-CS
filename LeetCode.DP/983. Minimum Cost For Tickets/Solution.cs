@@ -1,4 +1,4 @@
-﻿namespace LeetCode.DP._983._Minimum_Cost_For_Tickets;
+namespace LeetCode.DP._983._Minimum_Cost_For_Tickets;
 
 public class Solution
 {

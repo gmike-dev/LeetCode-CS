@@ -1,4 +1,4 @@
-﻿namespace LeetCode.DP._935._Knight_Dialer;
+namespace LeetCode.DP._935._Knight_Dialer;
 
 public class Solution
 {

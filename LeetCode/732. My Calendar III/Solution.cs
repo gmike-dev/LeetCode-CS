@@ -1,4 +1,4 @@
-﻿namespace LeetCode._732._My_Calendar_III;
+namespace LeetCode._732._My_Calendar_III;
 
 public class MyCalendarThree
 {

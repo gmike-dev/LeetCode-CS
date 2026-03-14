@@ -1,4 +1,4 @@
-﻿using LeetCode.Common;
+using LeetCode.Common;
 
 namespace LeetCode.BinaryTrees._1382._Balance_a_Binary_Search_Tree;
 

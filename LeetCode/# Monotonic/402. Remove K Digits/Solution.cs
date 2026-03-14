@@ -1,4 +1,4 @@
-﻿namespace LeetCode.__Monotonic._402._Remove_K_Digits;
+namespace LeetCode.__Monotonic._402._Remove_K_Digits;
 
 public class Solution
 {

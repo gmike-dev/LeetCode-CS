@@ -1,4 +1,4 @@
-﻿namespace LeetCode._332._Reconstruct_Itinerary;
+namespace LeetCode._332._Reconstruct_Itinerary;
 
 public class Solution
 {

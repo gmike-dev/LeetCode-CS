@@ -1,4 +1,4 @@
-﻿namespace LeetCode._2530._Maximal_Score_After_Applying_K_Operations;
+namespace LeetCode._2530._Maximal_Score_After_Applying_K_Operations;
 
 public class Solution
 {

@@ -1,4 +1,4 @@
-﻿namespace LeetCode._1331._Rank_Transform_of_an_Array;
+namespace LeetCode._1331._Rank_Transform_of_an_Array;
 
 public class Solution1
 {

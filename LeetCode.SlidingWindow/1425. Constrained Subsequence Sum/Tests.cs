@@ -1,4 +1,4 @@
-﻿namespace LeetCode.SlidingWindow._1425._Constrained_Subsequence_Sum;
+namespace LeetCode.SlidingWindow._1425._Constrained_Subsequence_Sum;
 
 [TestFixture]
 public class Tests

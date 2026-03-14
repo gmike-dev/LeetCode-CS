@@ -1,4 +1,4 @@
-﻿namespace LeetCode._688._Knight_Probability_in_Chessboard;
+namespace LeetCode._688._Knight_Probability_in_Chessboard;
 
 [TestFixture]
 public class Tests

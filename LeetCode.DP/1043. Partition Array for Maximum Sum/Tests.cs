@@ -1,4 +1,4 @@
-﻿namespace LeetCode.DP._1043._Partition_Array_for_Maximum_Sum;
+namespace LeetCode.DP._1043._Partition_Array_for_Maximum_Sum;
 
 [TestFixture]
 public class Tests

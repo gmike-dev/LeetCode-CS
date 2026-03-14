@@ -1,4 +1,4 @@
-﻿using LeetCode.Common;
+using LeetCode.Common;
 
 namespace LeetCode.LinkedLists._1669._Merge_In_Between_Linked_Lists;
 

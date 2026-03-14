@@ -1,4 +1,4 @@
-﻿namespace LeetCode._2948._Make_Lexicographically_Smallest_Array_by_Swapping_Elements;
+namespace LeetCode._2948._Make_Lexicographically_Smallest_Array_by_Swapping_Elements;
 
 public class Solution
 {

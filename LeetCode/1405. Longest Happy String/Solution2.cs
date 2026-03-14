@@ -1,4 +1,4 @@
-﻿namespace LeetCode._1405._Longest_Happy_String;
+namespace LeetCode._1405._Longest_Happy_String;
 
 public class Solution2
 {

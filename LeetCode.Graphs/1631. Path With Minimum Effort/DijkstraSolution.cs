@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Graphs._1631._Path_With_Minimum_Effort;
+namespace LeetCode.Graphs._1631._Path_With_Minimum_Effort;
 
 public class DijkstraSolution
 {

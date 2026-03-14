@@ -1,4 +1,4 @@
-﻿namespace LeetCode._140._Word_Break_II;
+namespace LeetCode._140._Word_Break_II;
 
 public class Solution
 {

@@ -1,4 +1,4 @@
-﻿namespace LeetCode._70._Climbing_Stairs;
+namespace LeetCode._70._Climbing_Stairs;
 
 [TestFixture]
 public class Tests

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.BinaryTrees._1905._Count_Sub_Islands;
+namespace LeetCode.BinaryTrees._1905._Count_Sub_Islands;
 
 /// <summary>
 /// https://leetcode.com/problems/count-sub-islands/

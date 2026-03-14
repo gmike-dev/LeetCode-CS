@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Strings._791._Custom_Sort_String;
+namespace LeetCode.Strings._791._Custom_Sort_String;
 
 /// <summary>
 /// https://leetcode.com/problems/custom-sort-string/

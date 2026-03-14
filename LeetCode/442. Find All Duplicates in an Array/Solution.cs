@@ -1,4 +1,4 @@
-﻿namespace LeetCode._442._Find_All_Duplicates_in_an_Array;
+namespace LeetCode._442._Find_All_Duplicates_in_an_Array;
 
 public class Solution
 {

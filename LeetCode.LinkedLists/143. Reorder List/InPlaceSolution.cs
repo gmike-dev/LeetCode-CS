@@ -1,4 +1,4 @@
-﻿using LeetCode.Common;
+using LeetCode.Common;
 
 namespace LeetCode.LinkedLists._143._Reorder_List;
 

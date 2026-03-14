@@ -1,4 +1,4 @@
-﻿namespace LeetCode.DP._552._Student_Attendance_Record_II;
+namespace LeetCode.DP._552._Student_Attendance_Record_II;
 
 public class Solution
 {

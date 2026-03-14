@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Strings._2116._Check_if_a_Parentheses_String_Can_Be_Valid;
+namespace LeetCode.Strings._2116._Check_if_a_Parentheses_String_Can_Be_Valid;
 
 /// <summary>
 /// https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid/

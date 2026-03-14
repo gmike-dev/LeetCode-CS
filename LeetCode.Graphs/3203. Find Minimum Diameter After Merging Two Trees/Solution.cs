@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Graphs._3203._Find_Minimum_Diameter_After_Merging_Two_Trees;
+namespace LeetCode.Graphs._3203._Find_Minimum_Diameter_After_Merging_Two_Trees;
 
 /// <summary>
 /// Solution for <see href="https://leetcode.com/problems/find-minimum-diameter-after-merging-two-trees/">Find Minimum Diameter After Merging Two Trees</see> problem.

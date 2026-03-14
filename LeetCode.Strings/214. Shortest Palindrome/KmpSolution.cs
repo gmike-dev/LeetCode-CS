@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Strings._214._Shortest_Palindrome;
+namespace LeetCode.Strings._214._Shortest_Palindrome;
 
 /// <summary>
 /// https://leetcode.com/problems/shortest-palindrome/

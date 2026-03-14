@@ -1,4 +1,4 @@
-﻿namespace LeetCode.DP._1277._Count_Square_Submatrices_with_All_Ones;
+namespace LeetCode.DP._1277._Count_Square_Submatrices_with_All_Ones;
 
 using static System.Math;
 

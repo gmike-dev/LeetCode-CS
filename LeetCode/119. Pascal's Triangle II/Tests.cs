@@ -1,4 +1,4 @@
-﻿namespace LeetCode._119._Pascal_s_Triangle_II;
+namespace LeetCode._119._Pascal_s_Triangle_II;
 
 [TestFixture]
 public class Tests

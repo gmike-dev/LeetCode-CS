@@ -1,4 +1,4 @@
-﻿namespace LeetCode._2251._Number_of_Flowers_in_Full_Bloom;
+namespace LeetCode._2251._Number_of_Flowers_in_Full_Bloom;
 
 public class BinarySearchSolution
 {

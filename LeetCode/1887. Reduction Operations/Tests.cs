@@ -1,4 +1,4 @@
-﻿namespace LeetCode._1887._Reduction_Operations;
+namespace LeetCode._1887._Reduction_Operations;
 
 [TestFixture]
 public class Tests

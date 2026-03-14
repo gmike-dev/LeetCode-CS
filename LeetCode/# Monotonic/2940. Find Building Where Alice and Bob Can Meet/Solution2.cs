@@ -1,4 +1,4 @@
-﻿namespace LeetCode.__Monotonic._2940._Find_Building_Where_Alice_and_Bob_Can_Meet;
+namespace LeetCode.__Monotonic._2940._Find_Building_Where_Alice_and_Bob_Can_Meet;
 
 public class Solution2
 {

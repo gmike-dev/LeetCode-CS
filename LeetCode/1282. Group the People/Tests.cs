@@ -1,4 +1,4 @@
-﻿namespace LeetCode._1282._Group_the_People;
+namespace LeetCode._1282._Group_the_People;
 
 [TestFixture]
 public class Tests

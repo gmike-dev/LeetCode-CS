@@ -1,4 +1,4 @@
-﻿using LeetCode.Common;
+using LeetCode.Common;
 
 namespace LeetCode._679._24_Game;
 

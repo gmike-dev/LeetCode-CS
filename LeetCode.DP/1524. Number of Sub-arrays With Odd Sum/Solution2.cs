@@ -1,4 +1,4 @@
-﻿namespace LeetCode.DP._1524._Number_of_Sub_arrays_With_Odd_Sum;
+namespace LeetCode.DP._1524._Number_of_Sub_arrays_With_Odd_Sum;
 
 public class Solution2
 {

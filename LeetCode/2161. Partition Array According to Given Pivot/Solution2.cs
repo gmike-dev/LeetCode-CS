@@ -1,4 +1,4 @@
-﻿namespace LeetCode._2161._Partition_Array_According_to_Given_Pivot;
+namespace LeetCode._2161._Partition_Array_According_to_Given_Pivot;
 
 public class Solution2
 {

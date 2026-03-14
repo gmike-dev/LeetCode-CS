@@ -1,4 +1,4 @@
-﻿namespace LeetCode._1535._Find_the_Winner_of_an_Array_Game;
+namespace LeetCode._1535._Find_the_Winner_of_an_Array_Game;
 
 public class Solution
 {

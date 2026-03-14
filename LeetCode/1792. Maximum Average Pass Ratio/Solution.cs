@@ -1,4 +1,4 @@
-﻿namespace LeetCode._1792._Maximum_Average_Pass_Ratio;
+namespace LeetCode._1792._Maximum_Average_Pass_Ratio;
 
 public class Solution
 {

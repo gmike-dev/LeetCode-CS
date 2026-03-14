@@ -1,4 +1,4 @@
-﻿namespace LeetCode.DP._1751._Maximum_Number_of_Events_That_Can_Be_Attended_II;
+namespace LeetCode.DP._1751._Maximum_Number_of_Events_That_Can_Be_Attended_II;
 
 public class RecursiveSolution
 {

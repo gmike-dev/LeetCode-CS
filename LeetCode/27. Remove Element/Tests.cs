@@ -1,4 +1,4 @@
-﻿namespace LeetCode._27._Remove_Element;
+namespace LeetCode._27._Remove_Element;
 
 [TestFixture]
 public class Tests

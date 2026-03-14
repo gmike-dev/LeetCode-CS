@@ -1,4 +1,4 @@
-﻿namespace LeetCode._1845._Seat_Reservation_Manager;
+namespace LeetCode._1845._Seat_Reservation_Manager;
 
 [TestFixture]
 public class Tests

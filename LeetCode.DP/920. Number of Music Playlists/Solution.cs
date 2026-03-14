@@ -1,4 +1,4 @@
-﻿namespace LeetCode.DP._920._Number_of_Music_Playlists;
+namespace LeetCode.DP._920._Number_of_Music_Playlists;
 
 public class Solution
 {

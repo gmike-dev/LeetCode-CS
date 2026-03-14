@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Graphs._947._Most_Stones_Removed_with_Same_Row_or_Column;
+namespace LeetCode.Graphs._947._Most_Stones_Removed_with_Same_Row_or_Column;
 
 /// <summary>
 /// Solution for <see href="https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/">Most Stones Removed with Same Row or Column</see> problem.

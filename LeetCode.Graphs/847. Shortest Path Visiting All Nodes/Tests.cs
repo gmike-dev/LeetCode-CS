@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Graphs._847._Shortest_Path_Visiting_All_Nodes;
+namespace LeetCode.Graphs._847._Shortest_Path_Visiting_All_Nodes;
 
 [TestFixture]
 public class Tests

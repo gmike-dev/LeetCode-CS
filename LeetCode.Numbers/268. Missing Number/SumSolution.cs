@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Numbers._268._Missing_Number;
+namespace LeetCode.Numbers._268._Missing_Number;
 
 public class SumSolution
 {

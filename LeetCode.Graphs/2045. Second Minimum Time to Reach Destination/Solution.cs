@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Graphs._2045._Second_Minimum_Time_to_Reach_Destination;
+namespace LeetCode.Graphs._2045._Second_Minimum_Time_to_Reach_Destination;
 
 /// <summary>
 /// Solution for <see href="https://leetcode.com/problems/second-minimum-time-to-reach-destination/">Second Minimum Time to Reach Destination</see> problem.

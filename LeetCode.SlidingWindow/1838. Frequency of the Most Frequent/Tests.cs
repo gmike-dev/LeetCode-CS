@@ -1,4 +1,4 @@
-﻿namespace LeetCode.SlidingWindow._1838._Frequency_of_the_Most_Frequent;
+namespace LeetCode.SlidingWindow._1838._Frequency_of_the_Most_Frequent;
 
 [TestFixture]
 public class Tests

@@ -1,4 +1,4 @@
-﻿namespace LeetCode._962._Maximum_Width_Ramp;
+namespace LeetCode._962._Maximum_Width_Ramp;
 
 public class Solution
 {

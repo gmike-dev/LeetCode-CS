@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Graphs._1514._Path_with_Maximum_Probability;
+namespace LeetCode.Graphs._1514._Path_with_Maximum_Probability;
 
 public class Solution
 {

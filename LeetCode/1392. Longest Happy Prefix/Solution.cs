@@ -1,4 +1,4 @@
-﻿namespace LeetCode._1392._Longest_Happy_Prefix;
+namespace LeetCode._1392._Longest_Happy_Prefix;
 
 public class Solution
 {

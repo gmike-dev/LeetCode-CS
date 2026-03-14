@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Strings._1963._Minimum_Number_of_Swaps_to_Make_the_String_Balanced;
+namespace LeetCode.Strings._1963._Minimum_Number_of_Swaps_to_Make_the_String_Balanced;
 
 /// <summary>
 /// https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/

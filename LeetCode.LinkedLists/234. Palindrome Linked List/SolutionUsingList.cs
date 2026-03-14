@@ -1,4 +1,4 @@
-﻿using LeetCode.Common;
+using LeetCode.Common;
 
 namespace LeetCode.LinkedLists._234._Palindrome_Linked_List;
 

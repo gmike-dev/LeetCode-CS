@@ -1,4 +1,4 @@
-﻿namespace LeetCode._977._Squares_of_a_Sorted_Array;
+namespace LeetCode._977._Squares_of_a_Sorted_Array;
 
 public class TwoPointersSolution
 {

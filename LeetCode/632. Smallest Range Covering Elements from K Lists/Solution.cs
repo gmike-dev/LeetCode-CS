@@ -1,4 +1,4 @@
-﻿namespace LeetCode._632._Smallest_Range_Covering_Elements_from_K_Lists;
+namespace LeetCode._632._Smallest_Range_Covering_Elements_from_K_Lists;
 
 public class Solution
 {

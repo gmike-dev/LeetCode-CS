@@ -1,4 +1,4 @@
-﻿namespace LeetCode._2353._Design_a_Food_Rating_System.PriorityQueue;
+namespace LeetCode._2353._Design_a_Food_Rating_System.PriorityQueue;
 
 public class FoodRatings
 {

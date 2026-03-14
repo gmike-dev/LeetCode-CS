@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Graphs._787._Cheapest_Flights_Within_K_Stops;
+namespace LeetCode.Graphs._787._Cheapest_Flights_Within_K_Stops;
 
 /// <summary>
 /// Solution for <see href="https://leetcode.com/problems/cheapest-flights-within-k-stops/">Cheapest Flights Within K Stops</see> problem.

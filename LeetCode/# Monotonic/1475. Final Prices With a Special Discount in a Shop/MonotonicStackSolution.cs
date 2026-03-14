@@ -1,4 +1,4 @@
-﻿namespace LeetCode.__Monotonic._1475._Final_Prices_With_a_Special_Discount_in_a_Shop;
+namespace LeetCode.__Monotonic._1475._Final_Prices_With_a_Special_Discount_in_a_Shop;
 
 public class MonotonicStackSolution
 {

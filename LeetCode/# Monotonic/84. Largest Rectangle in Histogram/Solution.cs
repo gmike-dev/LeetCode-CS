@@ -1,4 +1,4 @@
-﻿using LeetCode.Common;
+using LeetCode.Common;
 
 namespace LeetCode.__Monotonic._84._Largest_Rectangle_in_Histogram;
 

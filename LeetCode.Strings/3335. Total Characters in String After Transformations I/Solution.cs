@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Strings._3335._Total_Characters_in_String_After_Transformations_I;
+namespace LeetCode.Strings._3335._Total_Characters_in_String_After_Transformations_I;
 
 /// <summary>
 /// https://leetcode.com/problems/total-characters-in-string-after-transformations-i/

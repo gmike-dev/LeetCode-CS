@@ -1,4 +1,4 @@
-﻿namespace LeetCode.DP._416._Partition_Equal_Subset_Sum;
+namespace LeetCode.DP._416._Partition_Equal_Subset_Sum;
 
 public class Solution
 {

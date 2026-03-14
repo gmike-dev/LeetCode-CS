@@ -1,4 +1,4 @@
-﻿namespace LeetCode._241._Different_Ways_to_Add_Parentheses;
+namespace LeetCode._241._Different_Ways_to_Add_Parentheses;
 
 public class Solution
 {

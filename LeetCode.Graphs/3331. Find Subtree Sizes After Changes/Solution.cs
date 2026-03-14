@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Graphs._3331._Find_Subtree_Sizes_After_Changes;
+namespace LeetCode.Graphs._3331._Find_Subtree_Sizes_After_Changes;
 
 /// <summary>
 /// Solution for <see href="https://leetcode.com/problems/find-subtree-sizes-after-changes/">Find Subtree Sizes After Changes</see> problem.

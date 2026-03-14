@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Graphs._2467._Most_Profitable_Path_in_a_Tree;
+namespace LeetCode.Graphs._2467._Most_Profitable_Path_in_a_Tree;
 
 /// <summary>
 /// Solution for <see href="https://leetcode.com/problems/most-profitable-path-in-a-tree/">Most Profitable Path in a Tree</see> problem.

@@ -1,4 +1,4 @@
-﻿using LeetCode.Common;
+using LeetCode.Common;
 
 namespace LeetCode.LinkedLists._19._Remove_Nth_Node_From_End_of_List;
 
