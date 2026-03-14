@@ -1,6 +1,6 @@
 ﻿using LeetCode.Common;
 
-namespace LeetCode._1584._Min_Cost_to_Connect_All_Points;
+namespace LeetCode.Graphs._1584._Min_Cost_to_Connect_All_Points;
 
 public class SolutionUsingKruskalMst
 {
@@ -32,21 +32,21 @@ public class SolutionUsingKruskalMst
 
   private class Dsu
   {
-    private readonly int[] _parent;
-    private readonly int[] _size;
+    private readonly int[] parent;
+    private readonly int[] size;
 
-    public void MakeSet(int x)
+    private void MakeSet(int x)
     {
-      _parent[x] = x;
-      _size[x] = 1;
+      parent[x] = x;
+      size[x] = 1;
     }
 
-    public int Find(int x)
+    private int Find(int x)
     {
-      while (_parent[x] != x)
+      while (parent[x] != x)
       {
-        _parent[x] = _parent[_parent[x]];
-        x = _parent[x];
+        parent[x] = parent[parent[x]];
+        x = parent[x];
       }
       return x;
     }
@@ -57,18 +57,18 @@ public class SolutionUsingKruskalMst
       y = Find(y);
       if (x != y)
       {
-        if (_size[x] < _size[y])
+        if (size[x] < size[y])
           (x, y) = (y, x);
-        _parent[y] = x; // Always add a smaller set to a larger set.
-        _size[x] += _size[y];
+        parent[y] = x; // Always add a smaller set to a larger set.
+        size[x] += size[y];
       }
       return x != y;
     }
 
     public Dsu(int n)
     {
-      _parent = new int[n];
-      _size = new int[n];
+      parent = new int[n];
+      size = new int[n];
       for (var i = 0; i < n; i++)
         MakeSet(i);
     }
