@@ -1,4 +1,6 @@
-﻿namespace LeetCode._1584._Min_Cost_to_Connect_All_Points;
+﻿using LeetCode.Common;
+
+namespace LeetCode._1584._Min_Cost_to_Connect_All_Points;
 
 public class SolutionUsingKruskalMst
 {
@@ -22,7 +24,7 @@ public class SolutionUsingKruskalMst
     return mstWeight;
   }
 
-  private readonly record struct Edge (int From, int To, int Weight)
+  private readonly record struct Edge(int From, int To, int Weight)
   {
     public static Edge Create(int[][] points, int i, int j) =>
       new(i, j, Math.Abs(points[i][0] - points[j][0]) + Math.Abs(points[i][1] - points[j][1]));
@@ -71,5 +73,15 @@ public class SolutionUsingKruskalMst
         MakeSet(i);
     }
   }
+}
 
+[TestFixture]
+public class SolutionUsingKruskalMstTests
+{
+  [TestCase("[[0,0],[2,2],[3,10],[5,2],[7,0]]", 20)]
+  [TestCase("[[3,12],[-2,5],[-4,1]]", 18)]
+  public void Test(string points, int expected)
+  {
+    new SolutionUsingKruskalMst().MinCostConnectPoints(points.Array2()).Should().Be(expected);
+  }
 }

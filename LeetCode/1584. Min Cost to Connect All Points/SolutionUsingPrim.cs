@@ -1,6 +1,8 @@
-﻿namespace LeetCode._1584._Min_Cost_to_Connect_All_Points;
+﻿using LeetCode.Common;
 
-public class Solution
+namespace LeetCode._1584._Min_Cost_to_Connect_All_Points;
+
+public class SolutionUsingPrim
 {
   public int MinCostConnectPoints(int[][] points)
   {
@@ -40,5 +42,16 @@ public class Solution
       }
     }
     return result;
+  }
+}
+
+[TestFixture]
+public class SolutionUsingPrimTests
+{
+  [TestCase("[[0,0],[2,2],[3,10],[5,2],[7,0]]", 20)]
+  [TestCase("[[3,12],[-2,5],[-4,1]]", 18)]
+  public void Test(string points, int expected)
+  {
+    new SolutionUsingPrim().MinCostConnectPoints(points.Array2()).Should().Be(expected);
   }
 }
