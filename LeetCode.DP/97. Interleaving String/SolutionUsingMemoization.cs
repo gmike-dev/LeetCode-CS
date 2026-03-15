@@ -2,35 +2,49 @@ namespace LeetCode.DP._97._Interleaving_String;
 
 public class SolutionUsingMemoization
 {
-  private readonly HashSet<(int, int, bool)> _cache = new();
-
   public bool IsInterleave(string s1, string s2, string s3)
   {
-    return IsInterleave(s1.AsSpan(), s2.AsSpan(), s3.AsSpan(), true) ||
-           IsInterleave(s2.AsSpan(), s1.AsSpan(), s3.AsSpan(), false);
-  }
-
-  private bool IsInterleave(ReadOnlySpan<char> s1, ReadOnlySpan<char> s2, ReadOnlySpan<char> s3, bool first)
-  {
-    var key = (s1.Length, s2.Length, first);
-    if (_cache.Contains(key))
-      return false;
-
-    if (s1.Length + s2.Length == s3.Length)
+    int n = s1.Length;
+    int m = s2.Length;
+    int k = s3.Length;
+    if (n + m != k)
     {
-      if (s2.IsEmpty)
-      {
-        if (s1.SequenceEqual(s3))
-          return true;
-      }
-      else
-      {
-        for (var i = 0; i < Math.Min(s1.Length, s3.Length) && s1[i] == s3[i]; i++)
-          if (IsInterleave(s2, s1.Slice(i + 1), s3.Slice(i + 1), !first))
-            return true;
-      }
+      return false;
     }
-    _cache.Add(key);
-    return false;
+    int[,] dp = new int[n + 1, m + 1];
+    return F(0, 0);
+
+    bool F(int i, int j)
+    {
+      if (i + j == k)
+      {
+        return true;
+      }
+      if (dp[i, j] != 0)
+      {
+        return dp[i, j] == 1;
+      }
+      bool result = i < n && s1[i] == s3[i + j] && F(i + 1, j) ||
+                    j < m && s2[j] == s3[i + j] && F(i, j + 1);
+      dp[i, j] = result ? 1 : 2;
+      return result;
+    }
+  }
+}
+
+[TestFixture]
+public class SolutionUsingMemoizationTests
+{
+  [TestCase("aabcc", "dbbca", "aadbbcbcac", true)]
+  [TestCase("aabcc", "dbbca", "aadbbbaccc", false)]
+  [TestCase("", "", "", true)]
+  [TestCase("aabcc", "dbbca", "aadbbcbacc", true)]
+  [TestCase("abababababababababababababababababababababababababababababababababababababababababababababababababbb",
+    "babababababababababababababababababababababababababababababababababababababababababababababababaaaba",
+    "abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababbb",
+    false)]
+  public void Test(string s1, string s2, string s3, bool expected)
+  {
+    new SolutionUsingMemoization().IsInterleave(s1, s2, s3).Should().Be(expected);
   }
 }

@@ -4,8 +4,8 @@ public class Solution
 {
   public bool IsInterleave(string s1, string s2, string s3)
   {
-    var m = s1.Length;
-    var n = s2.Length;
+    int m = s1.Length;
+    int n = s2.Length;
     if (m + n != s3.Length)
       return false;
     var dp = new bool[n + 1];
@@ -22,5 +22,22 @@ public class Solution
       }
     }
     return dp[n];
+  }
+}
+
+[TestFixture]
+public class SolutionTests
+{
+  [TestCase("aabcc", "dbbca", "aadbbcbcac", true)]
+  [TestCase("aabcc", "dbbca", "aadbbbaccc", false)]
+  [TestCase("", "", "", true)]
+  [TestCase("aabcc", "dbbca", "aadbbcbacc", true)]
+  [TestCase("abababababababababababababababababababababababababababababababababababababababababababababababababbb",
+    "babababababababababababababababababababababababababababababababababababababababababababababababaaaba",
+    "abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababbb",
+    false)]
+  public void Test(string s1, string s2, string s3, bool expected)
+  {
+    new Solution().IsInterleave(s1, s2, s3).Should().Be(expected);
   }
 }
