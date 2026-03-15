@@ -4,37 +4,34 @@ public class Solution
 {
   public bool WordBreak(string s, IList<string> wordDict)
   {
-    var dp = new bool[s.Length + 1];
+    int n = s.Length;
+    Span<bool> dp = stackalloc bool[n + 1];
     dp[0] = true;
-    for (var i = 0; i < s.Length; i++)
+    for (int i = 0; i < n; i++)
     {
       if (dp[i])
       {
-        foreach (var word in wordDict)
+        foreach (string word in wordDict)
+        {
           if (s.AsSpan(i).StartsWith(word))
+          {
             dp[i + word.Length] = true;
+          }
+        }
       }
     }
-    return dp[^1];
+    return dp[n];
   }
+}
 
-  public bool WordBreak_Recursion(string s, IList<string> wordDict)
+[TestFixture]
+public class SolutionTests
+{
+  [TestCase("leetcode", new[] { "leet", "code" }, true)]
+  [TestCase("applepenapple", new[] { "apple", "pen" }, true)]
+  [TestCase("catsandog", new[] { "cats", "dog", "sand", "and", "cat" }, false)]
+  public void Test1(string s, IList<string> wordDict, bool expected)
   {
-    return new WordsChecker(wordDict).CanBuild(s);
-  }
-
-  private class WordsChecker(IList<string> wordDict)
-  {
-    public bool CanBuild(string s)
-    {
-      return CanBuild(s, 0, new bool?[s.Length]);
-    }
-
-    private bool CanBuild(string s, int start, bool?[] dp)
-    {
-      if (start >= s.Length)
-        return true;
-      return dp[start] ??= wordDict.Any(word => s.AsSpan(start).StartsWith(word) && CanBuild(s, start + word.Length, dp));
-    }
+    new Solution().WordBreak(s, wordDict).Should().Be(expected);
   }
 }
