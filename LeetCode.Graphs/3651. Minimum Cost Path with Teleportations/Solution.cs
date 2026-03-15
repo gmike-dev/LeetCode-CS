@@ -9,83 +9,94 @@ public class Solution
 {
   public int MinCost(int[][] grid, int k)
   {
-    var n = grid.Length;
-    var m = grid[0].Length;
-    var cost = new int[n, m, k + 1];
+    int n = grid.Length;
+    int m = grid[0].Length;
+    int[,] cost = new int[n, m];
     var pointGroups = GetPointsGroupedByValue();
-    for (var i = 1; i < n; i++)
+    FillInitialCosts();
+    for (int t = 1; t <= k; t++)
     {
-      cost[i, 0, 0] = cost[i - 1, 0, 0] + grid[i][0];
+      UpdateCostsWithTeleports();
+      UpdateCosts();
     }
-    for (var j = 1; j < m; j++)
-    {
-      cost[0, j, 0] = cost[0, j - 1, 0] + grid[0][j];
-    }
-    for (var i = 1; i < n; i++)
-    {
-      for (var j = 1; j < m; j++)
-      {
-        cost[i, j, 0] = Math.Min(cost[i - 1, j, 0], cost[i, j - 1, 0]) + grid[i][j];
-      }
-    }
-    for (var t = 1; t <= k; t++)
-    {
-      var minCost = int.MaxValue;
-      foreach (var (val, list) in pointGroups)
-      {
-        foreach (var p in list)
-        {
-          minCost = Math.Min(minCost, cost[p.i, p.j, t - 1]);
-        }
-        foreach (var p in list)
-        {
-          cost[p.i, p.j, t] = minCost;
-        }
-      }
-      UpdateCost(t);
-    }
-    var result = cost[n - 1, m - 1, 0];
-    for (var t = 1; t <= k; t++)
-    {
-      result = Math.Min(result, cost[n - 1, m - 1, t]);
-    }
-    return result;
+    return cost[n - 1, m - 1];
 
-    KeyValuePair<int, List<(int i, int j)>>[] GetPointsGroupedByValue()
+    List<(int i, int j)>[] GetPointsGroupedByValue()
     {
       var points = new Dictionary<int, List<(int, int)>>();
-      for (var i = 0; i < n; i++)
+      for (int i = 0; i < n; i++)
       {
-        for (var j = 0; j < m; j++)
+        for (int j = 0; j < m; j++)
         {
-          if (points.TryGetValue(grid[i][j], out var list))
+          int key = grid[i][j];
+          if (points.TryGetValue(key, out var list))
           {
             list.Add((i, j));
           }
           else
           {
-            points[grid[i][j]] = [(i, j)];
+            points[key] = [(i, j)];
           }
         }
       }
-      return points.OrderByDescending(g => g.Key).ToArray();
+      int[] keys = points.Keys.ToArray();
+      Array.Sort(keys, (x, y) => y - x);
+      var result = new List<(int, int)>[keys.Length];
+      for (int i = 0; i < keys.Length; i++)
+        result[i] = points[keys[i]];
+      return result;
     }
 
-    void UpdateCost(int t)
+    void FillInitialCosts()
     {
-      for (var i = 1; i < n; i++)
+      for (int i = 1; i < n; i++)
       {
-        cost[i, 0, t] = Math.Min(cost[i, 0, t], cost[i - 1, 0, t] + grid[i][0]);
+        cost[i, 0] = cost[i - 1, 0] + grid[i][0];
       }
-      for (var j = 1; j < m; j++)
+      for (int j = 1; j < m; j++)
       {
-        cost[0, j, t] = Math.Min(cost[0, j, t], cost[0, j - 1, t] + grid[0][j]);
+        cost[0, j] = cost[0, j - 1] + grid[0][j];
       }
-      for (var i = 1; i < n; i++)
+      for (int i = 1; i < n; i++)
       {
-        for (var j = 1; j < m; j++)
+        for (int j = 1; j < m; j++)
         {
-          cost[i, j, t] = Math.Min(cost[i, j, t], Math.Min(cost[i - 1, j, t], cost[i, j - 1, t]) + grid[i][j]);
+          cost[i, j] = Math.Min(cost[i - 1, j], cost[i, j - 1]) + grid[i][j];
+        }
+      }
+    }
+
+    void UpdateCostsWithTeleports()
+    {
+      int minCost = int.MaxValue;
+      foreach (var list in pointGroups)
+      {
+        foreach (var p in list)
+        {
+          minCost = Math.Min(minCost, cost[p.i, p.j]);
+        }
+        foreach (var p in list)
+        {
+          cost[p.i, p.j] = minCost;
+        }
+      }
+    }
+
+    void UpdateCosts()
+    {
+      for (int i = 1; i < n; i++)
+      {
+        cost[i, 0] = Math.Min(cost[i, 0], cost[i - 1, 0] + grid[i][0]);
+      }
+      for (int j = 1; j < m; j++)
+      {
+        cost[0, j] = Math.Min(cost[0, j], cost[0, j - 1] + grid[0][j]);
+      }
+      for (int i = 1; i < n; i++)
+      {
+        for (int j = 1; j < m; j++)
+        {
+          cost[i, j] = Math.Min(cost[i, j], Math.Min(cost[i - 1, j], cost[i, j - 1]) + grid[i][j]);
         }
       }
     }
