@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1155._Number_of_Dice_Rolls_With_Target_Sum;
 
+/// <summary>
+/// https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/
+/// </summary>
 public class SolutionUsingOptimizedDp
 {
   public int NumRollsToTarget(int n, int k, int target)

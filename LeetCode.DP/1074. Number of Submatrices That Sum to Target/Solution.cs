@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1074._Number_of_Submatrices_That_Sum_to_Target;
 
+/// <summary>
+/// https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/
+/// </summary>
 public class Solution
 {
   public int NumSubmatrixSumTarget(int[][] matrix, int target)

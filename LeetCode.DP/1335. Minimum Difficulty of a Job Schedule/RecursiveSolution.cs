@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1335._Minimum_Difficulty_of_a_Job_Schedule;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/
+/// </summary>
 public class RecursiveSolution
 {
   private int[][] dp;

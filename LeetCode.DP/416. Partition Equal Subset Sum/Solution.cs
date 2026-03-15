@@ -1,5 +1,8 @@
 namespace LeetCode.DP._416._Partition_Equal_Subset_Sum;
 
+/// <summary>
+/// https://leetcode.com/problems/partition-equal-subset-sum/
+/// </summary>
 public class Solution
 {
   public bool CanPartition(int[] nums)

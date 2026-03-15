@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1048._Longest_String_Chain;
 
+/// <summary>
+/// https://leetcode.com/problems/longest-string-chain/
+/// </summary>
 public class Solution
 {
   private readonly Dictionary<string, int> cache = new();

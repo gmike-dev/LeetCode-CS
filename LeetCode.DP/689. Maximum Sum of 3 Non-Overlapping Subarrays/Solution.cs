@@ -1,5 +1,8 @@
 namespace LeetCode.DP._689._Maximum_Sum_of_3_Non_Overlapping_Subarrays;
 
+/// <summary>
+/// https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/
+/// </summary>
 public class Solution
 {
   public int[] MaxSumOfThreeSubarrays(int[] nums, int k)

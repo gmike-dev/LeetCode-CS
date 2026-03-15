@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.DP._1504._Count_Submatrices_With_All_Ones;
 
+/// <summary>
+/// https://leetcode.com/problems/count-submatrices-with-all-ones/
+/// </summary>
 public class MonotonicStackSolution
 {
   private struct StackItem(int val, int count, int sum)

@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1593._Split_a_String_Into_the_Max_Number_of_Unique_Substrings;
 
+/// <summary>
+/// https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings/
+/// </summary>
 public class Solution
 {
   public int MaxUniqueSplit(string s)

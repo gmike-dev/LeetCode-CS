@@ -1,5 +1,8 @@
 namespace LeetCode.DP._629._K_Inverse_Pairs_Array;
 
+/// <summary>
+/// https://leetcode.com/problems/k-inverse-pairs-array/
+/// </summary>
 public class Solution
 {
   public int KInversePairs(int n, int k)

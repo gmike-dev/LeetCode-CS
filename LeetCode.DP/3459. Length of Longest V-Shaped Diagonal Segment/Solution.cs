@@ -3,6 +3,9 @@ using LeetCode.Common;
 
 namespace LeetCode.DP._3459._Length_of_Longest_V_Shaped_Diagonal_Segment;
 
+/// <summary>
+/// https://leetcode.com/problems/length-of-longest-v-shaped-diagonal-segment/
+/// </summary>
 public class Solution
 {
   private static readonly int[] dr = [1, 1, -1, -1];

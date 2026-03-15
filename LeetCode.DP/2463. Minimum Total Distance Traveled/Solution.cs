@@ -1,5 +1,8 @@
 namespace LeetCode.DP._2463._Minimum_Total_Distance_Traveled;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-total-distance-traveled/
+/// </summary>
 public class Solution
 {
   public long MinimumTotalDistance(IList<int> robot, int[][] factory)

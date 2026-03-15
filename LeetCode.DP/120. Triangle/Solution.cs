@@ -1,5 +1,8 @@
 namespace LeetCode.DP._120._Triangle;
 
+/// <summary>
+/// https://leetcode.com/problems/triangle/
+/// </summary>
 public class Solution
 {
   public int MinimumTotal(IList<IList<int>> triangle)

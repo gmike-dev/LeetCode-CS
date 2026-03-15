@@ -1,5 +1,8 @@
 namespace LeetCode.DP._279._Perfect_Squares;
 
+/// <summary>
+/// https://leetcode.com/problems/perfect-squares/
+/// </summary>
 public class Solution
 {
   public int NumSquares(int n)

@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1125._Smallest_Sufficient_Team;
 
+/// <summary>
+/// https://leetcode.com/problems/smallest-sufficient-team/
+/// </summary>
 public class DpSolution
 {
   public int[] SmallestSufficientTeam(string[] reqSkills, IList<IList<string>> people)

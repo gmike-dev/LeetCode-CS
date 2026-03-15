@@ -1,5 +1,8 @@
 namespace LeetCode.DP._920._Number_of_Music_Playlists;
 
+/// <summary>
+/// https://leetcode.com/problems/number-of-music-playlists/
+/// </summary>
 public class Solution
 {
   public int NumMusicPlaylists(int n, int goal, int k)

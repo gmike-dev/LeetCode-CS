@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1531._String_Compression_II;
 
+/// <summary>
+/// https://leetcode.com/problems/string-compression-ii/
+/// </summary>
 public class Solution
 {
   private int[][] dp;

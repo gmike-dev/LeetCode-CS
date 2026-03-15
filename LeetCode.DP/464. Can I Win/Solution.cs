@@ -1,5 +1,8 @@
 namespace LeetCode.DP._464._Can_I_Win;
 
+/// <summary>
+/// https://leetcode.com/problems/can-i-win/
+/// </summary>
 public class Solution
 {
   public bool CanIWin(int maxChoosableInteger, int desiredTotal)

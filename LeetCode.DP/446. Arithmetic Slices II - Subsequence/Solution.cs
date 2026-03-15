@@ -1,5 +1,8 @@
 namespace LeetCode.DP._446._Arithmetic_Slices_II___Subsequence;
 
+/// <summary>
+/// https://leetcode.com/problems/arithmetic-slices-ii-subsequence/
+/// </summary>
 public class Solution
 {
   public int NumberOfArithmeticSlices(int[] a)

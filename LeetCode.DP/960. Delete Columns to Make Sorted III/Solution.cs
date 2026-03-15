@@ -1,5 +1,8 @@
 namespace LeetCode.DP._960._Delete_Columns_to_Make_Sorted_III;
 
+/// <summary>
+/// https://leetcode.com/problems/delete-columns-to-make-sorted-iii/
+/// </summary>
 public class Solution
 {
   public int MinDeletionSize(string[] strs)

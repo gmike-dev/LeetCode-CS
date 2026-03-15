@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1277._Count_Square_Submatrices_with_All_Ones;
 
+/// <summary>
+/// https://leetcode.com/problems/count-square-submatrices-with-all-ones/
+/// </summary>
 public class Solution
 {
   public int CountSquares(int[][] matrix)

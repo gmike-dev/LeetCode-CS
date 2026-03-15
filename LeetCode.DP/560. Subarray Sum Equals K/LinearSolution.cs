@@ -1,5 +1,8 @@
 namespace LeetCode.DP._560._Subarray_Sum_Equals_K;
 
+/// <summary>
+/// https://leetcode.com/problems/subarray-sum-equals-k/
+/// </summary>
 public class LinearSolution
 {
   public int SubarraySum(int[] nums, int k)

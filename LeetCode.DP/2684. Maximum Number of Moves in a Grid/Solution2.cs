@@ -1,5 +1,8 @@
 namespace LeetCode.DP._2684._Maximum_Number_of_Moves_in_a_Grid;
 
+/// <summary>
+/// https://leetcode.com/problems/maximum-number-of-moves-in-a-grid/
+/// </summary>
 public class Solution2
 {
   public int MaxMoves(int[][] grid)

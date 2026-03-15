@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1524._Number_of_Sub_arrays_With_Odd_Sum;
 
+/// <summary>
+/// https://leetcode.com/problems/number-of-sub-arrays-with-odd-sum/
+/// </summary>
 public class Solution2
 {
   public int NumOfSubarrays(int[] arr)

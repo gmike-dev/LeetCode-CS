@@ -1,5 +1,8 @@
 namespace LeetCode.DP._3040._Maximum_Number_of_Operations;
 
+/// <summary>
+/// https://leetcode.com/problems/maximum-number-of-operations/
+/// </summary>
 public class Solution
 {
   public int MaxOperations(int[] a)

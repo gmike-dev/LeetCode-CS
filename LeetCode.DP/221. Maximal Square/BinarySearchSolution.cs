@@ -1,5 +1,8 @@
 namespace LeetCode.DP._221._Maximal_Square;
 
+/// <summary>
+/// https://leetcode.com/problems/maximal-square/
+/// </summary>
 public class BinarySearchSolution
 {
   public int MaximalSquare(char[][] matrix)

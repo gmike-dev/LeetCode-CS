@@ -1,5 +1,8 @@
 namespace LeetCode.DP._2742._Painting_the_Walls;
 
+/// <summary>
+/// https://leetcode.com/problems/painting-the-walls/
+/// </summary>
 public class DpWithMemoizationSolution
 {
   private int[] cost;

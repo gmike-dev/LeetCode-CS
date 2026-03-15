@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1014._Best_Sightseeing_Pair;
 
+/// <summary>
+/// https://leetcode.com/problems/best-sightseeing-pair/
+/// </summary>
 public class Solution
 {
   public int MaxScoreSightseeingPair(int[] values)

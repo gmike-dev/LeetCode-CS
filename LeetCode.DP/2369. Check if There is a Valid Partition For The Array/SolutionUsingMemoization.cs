@@ -1,5 +1,8 @@
 namespace LeetCode.DP._2369._Check_if_There_is_a_Valid_Partition_For_The_Array;
 
+/// <summary>
+/// https://leetcode.com/problems/check-if-there-is-a-valid-partition-for-the-array/
+/// </summary>
 public class SolutionUsingMemoization
 {
   private bool?[] _cache;

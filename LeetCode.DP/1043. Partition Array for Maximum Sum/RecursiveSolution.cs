@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1043._Partition_Array_for_Maximum_Sum;
 
+/// <summary>
+/// https://leetcode.com/problems/partition-array-for-maximum-sum/
+/// </summary>
 public class RecursiveSolution
 {
   public int MaxSumAfterPartitioning(int[] a, int k)

@@ -1,5 +1,8 @@
 namespace LeetCode.DP._139._Word_Break;
 
+/// <summary>
+/// https://leetcode.com/problems/word-break/
+/// </summary>
 public class Solution
 {
   public bool WordBreak(string s, IList<string> wordDict)

@@ -1,5 +1,8 @@
 namespace LeetCode.DP._403._Frog_Jump;
 
+/// <summary>
+/// https://leetcode.com/problems/frog-jump/
+/// </summary>
 public class SolutionUsingDp
 {
   public bool CanCross(int[] stones)

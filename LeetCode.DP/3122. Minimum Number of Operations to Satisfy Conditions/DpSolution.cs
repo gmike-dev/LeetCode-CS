@@ -1,5 +1,8 @@
 namespace LeetCode.DP._3122._Minimum_Number_of_Operations_to_Satisfy_Conditions;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-number-of-operations-to-satisfy-conditions/
+/// </summary>
 public class DpSolution
 {
   public int MinimumOperations(int[][] grid)

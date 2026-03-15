@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1420._Build_Array;
 
+/// <summary>
+/// https://leetcode.com/problems/build-array/
+/// </summary>
 public class Solution
 {
   public int NumOfArrays(int n, int m, int k)

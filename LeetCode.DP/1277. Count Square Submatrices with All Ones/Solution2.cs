@@ -2,6 +2,9 @@ namespace LeetCode.DP._1277._Count_Square_Submatrices_with_All_Ones;
 
 using static System.Math;
 
+/// <summary>
+/// https://leetcode.com/problems/count-square-submatrices-with-all-ones/
+/// </summary>
 public class Solution2
 {
   public int CountSquares(int[][] matrix)

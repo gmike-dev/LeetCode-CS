@@ -1,5 +1,8 @@
 namespace LeetCode.DP._3302._Find_the_Lexicographically_Smallest_Valid_Sequence;
 
+/// <summary>
+/// https://leetcode.com/problems/find-the-lexicographically-smallest-valid-sequence/
+/// </summary>
 public class Solution
 {
   public int[] ValidSequence(string word1, string word2)

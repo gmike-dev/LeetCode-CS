@@ -1,5 +1,8 @@
 namespace LeetCode.DP._552._Student_Attendance_Record_II;
 
+/// <summary>
+/// https://leetcode.com/problems/student-attendance-record-ii/
+/// </summary>
 public class Solution
 {
   public int CheckRecord(int n)

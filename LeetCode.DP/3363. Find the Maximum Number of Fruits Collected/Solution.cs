@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.DP._3363._Find_the_Maximum_Number_of_Fruits_Collected;
 
+/// <summary>
+/// https://leetcode.com/problems/find-the-maximum-number-of-fruits-collected/
+/// </summary>
 public class Solution
 {
   public int MaxCollectedFruits(int[][] fruits)

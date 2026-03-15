@@ -1,5 +1,8 @@
 namespace LeetCode.DP._983._Minimum_Cost_For_Tickets;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-cost-for-tickets/
+/// </summary>
 public class Solution
 {
   public int MincostTickets(int[] days, int[] costs)

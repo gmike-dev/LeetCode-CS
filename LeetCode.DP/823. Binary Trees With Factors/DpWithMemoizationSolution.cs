@@ -1,5 +1,8 @@
 namespace LeetCode.DP._823._Binary_Trees_With_Factors;
 
+/// <summary>
+/// https://leetcode.com/problems/binary-trees-with-factors/
+/// </summary>
 public class DpWithMemoizationSolution
 {
   public int NumFactoredBinaryTrees(int[] arr)

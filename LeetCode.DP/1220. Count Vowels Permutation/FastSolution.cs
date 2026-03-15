@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1220._Count_Vowels_Permutation;
 
+/// <summary>
+/// https://leetcode.com/problems/count-vowels-permutation/
+/// </summary>
 public class FastSolution
 {
   public int CountVowelPermutation(int n)

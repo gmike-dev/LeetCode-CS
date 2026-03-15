@@ -1,5 +1,8 @@
 namespace LeetCode.DP._486._Predict_the_Winner;
 
+/// <summary>
+/// https://leetcode.com/problems/predict-the-winner/
+/// </summary>
 public class Solution
 {
   public bool PredictTheWinner(int[] nums)

@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1092._Shortest_Common_Supersequence;
 
+/// <summary>
+/// https://leetcode.com/problems/shortest-common-supersequence/
+/// </summary>
 public class Solution
 {
   public string ShortestCommonSupersequence(string str1, string str2)

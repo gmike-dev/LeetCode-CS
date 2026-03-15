@@ -1,5 +1,8 @@
 namespace LeetCode.DP._3394._Check_if_Grid_can_be_Cut_into_Sections;
 
+/// <summary>
+/// https://leetcode.com/problems/check-if-grid-can-be-cut-into-sections/
+/// </summary>
 public class Solution
 {
   public int CountPathsWithXorValue(int[][] grid, int k)

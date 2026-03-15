@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1671._Minimum_Number_of_Removals_to_Make_Mountain_Array;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-number-of-removals-to-make-mountain-array/
+/// </summary>
 public class BinarySearchSolution
 {
   public int MinimumMountainRemovals(int[] nums)

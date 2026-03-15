@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1639._Number_of_Ways_to_Form_a_Target_String_Given_a_Dictionary;
 
+/// <summary>
+/// https://leetcode.com/problems/number-of-ways-to-form-a-target-string-given-a-dictionary/
+/// </summary>
 public class Solution
 {
   public int NumWays(string[] words, string target)

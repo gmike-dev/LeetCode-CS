@@ -1,5 +1,8 @@
 namespace LeetCode.DP._1458._Max_Dot_Product_of_Two_Subsequences;
 
+/// <summary>
+/// https://leetcode.com/problems/max-dot-product-of-two-subsequences/
+/// </summary>
 public class Solution
 {
   public int MaxDotProduct(int[] a, int[] b)

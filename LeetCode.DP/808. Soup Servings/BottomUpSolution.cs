@@ -1,5 +1,8 @@
 namespace LeetCode.DP._808._Soup_Servings;
 
+/// <summary>
+/// https://leetcode.com/problems/soup-servings/
+/// </summary>
 public class BottomUpSolution
 {
   public double SoupServings(int n)

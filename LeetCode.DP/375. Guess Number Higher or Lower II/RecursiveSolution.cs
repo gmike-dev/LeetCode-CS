@@ -1,5 +1,8 @@
 namespace LeetCode.DP._375._Guess_Number_Higher_or_Lower_II;
 
+/// <summary>
+/// https://leetcode.com/problems/guess-number-higher-or-lower-ii/
+/// </summary>
 public class RecursiveSolution
 {
   public int GetMoneyAmount(int n)

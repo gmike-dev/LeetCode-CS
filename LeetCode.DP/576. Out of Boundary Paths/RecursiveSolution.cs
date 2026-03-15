@@ -1,5 +1,8 @@
 namespace LeetCode.DP._576._Out_of_Boundary_Paths;
 
+/// <summary>
+/// https://leetcode.com/problems/out-of-boundary-paths/
+/// </summary>
 public class RecursiveSolution
 {
   public int FindPaths(int m, int n, int maxMove, int startRow, int startColumn)
