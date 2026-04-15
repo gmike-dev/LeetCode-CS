@@ -27,9 +27,9 @@ public class Solution2
     Span<int> firstIndex = stackalloc int[2 * zero + 1];
     Span<int> firstIndexWith1 = stackalloc int[2 * zero + 1];
     Span<int> firstIndexWith0 = stackalloc int[2 * zero + 1];
-    firstIndex.Fill(-1);
-    firstIndexWith1.Fill(-1);
-    firstIndexWith0.Fill(-1);
+    firstIndex.Fill(int.MaxValue);
+    firstIndexWith1.Fill(int.MaxValue);
+    firstIndexWith0.Fill(int.MaxValue);
     firstIndex[zero] = 0;
     int maxLen = 0;
     for (int i = 1; i <= n; i++)
@@ -38,57 +38,23 @@ public class Solution2
       int rightOnes = prefix[n] - prefix[i];
       int rightZeroes = n - i - rightOnes;
 
-      int j = firstIndex[balance];
-      if (j >= 0)
+      int j1 = firstIndex[balance];
+      int j2 = rightZeroes > 0 ? firstIndex[balance - 2] : firstIndexWith0[balance - 2];
+      int j3 = rightOnes > 0 ? firstIndex[balance + 2] : firstIndexWith1[balance + 2];
+      int j = Math.Min(j1, Math.Min(j2, j3));
+      if (j != int.MaxValue)
       {
         maxLen = Math.Max(maxLen, i - j);
       }
 
-      j = firstIndex[balance - 2];
-      if (j >= 0)
+      firstIndex[balance] = Math.Min(firstIndex[balance], i);
+      if (prefix[i] > 0)
       {
-        if (rightZeroes > 0)
-        {
-          maxLen = Math.Max(maxLen, i - j);
-        }
-        else
-        {
-          j = firstIndexWith0[balance - 2];
-          if (j >= 0)
-          {
-            maxLen = Math.Max(maxLen, i - j);
-          }
-        }
+        firstIndexWith1[balance] = Math.Min(firstIndexWith1[balance], i);
       }
-
-      j = firstIndex[balance + 2];
-      if (j >= 0)
+      if (prefix[i] != i)
       {
-        if (rightOnes > 0)
-        {
-          maxLen = Math.Max(maxLen, i - j);
-        }
-        else
-        {
-          j = firstIndexWith1[balance + 2];
-          if (j >= 0)
-          {
-            maxLen = Math.Max(maxLen, i - j);
-          }
-        }
-      }
-
-      if (firstIndex[balance] < 0)
-      {
-        firstIndex[balance] = i;
-      }
-      if (prefix[i] > 0 && firstIndexWith1[balance] < 0)
-      {
-        firstIndexWith1[balance] = i;
-      }
-      if (prefix[i] != i && firstIndexWith0[balance] < 0)
-      {
-        firstIndexWith0[balance] = i;
+        firstIndexWith0[balance] = Math.Min(firstIndexWith0[balance], i);
       }
     }
     return maxLen;
