@@ -7,13 +7,13 @@ public class DpSolution
 {
   public int MaximalSquare(char[][] matrix)
   {
-    var n = matrix.Length;
-    var m = matrix[0].Length;
-    var dp = new int[n + 1, m + 1];
-    var size = 0;
-    for (var i = 0; i < n; i++)
+    int n = matrix.Length;
+    int m = matrix[0].Length;
+    int[,] dp = new int[n + 1, m + 1];
+    int size = 0;
+    for (int i = 0; i < n; i++)
     {
-      for (var j = 0; j < m; j++)
+      for (int j = 0; j < m; j++)
       {
         if (matrix[i][j] == '1')
         {
