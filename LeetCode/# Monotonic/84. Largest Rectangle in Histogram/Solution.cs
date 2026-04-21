@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode.__Monotonic._84._Largest_Rectangle_in_Histogram;
 
+/// <summary>
+/// https://leetcode.com/problems/largest-rectangle-in-histogram
+/// </summary>
 public class Solution
 {
   public int LargestRectangleArea(int[] heights)

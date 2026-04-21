@@ -1,5 +1,8 @@
 namespace LeetCode.__Monotonic._2940._Find_Building_Where_Alice_and_Bob_Can_Meet;
 
+/// <summary>
+/// https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet
+/// </summary>
 public class SegmentTreeSolution
 {
   public int[] LeftmostBuildingQueries(int[] heights, int[][] queries)

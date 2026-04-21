@@ -1,5 +1,8 @@
 namespace LeetCode.__Monotonic._3113._Find_the_Number_of_Subarrays;
 
+/// <summary>
+/// https://leetcode.com/problems/find-the-number-of-subarrays
+/// </summary>
 public class Solution
 {
   public long NumberOfSubarrays(int[] a)

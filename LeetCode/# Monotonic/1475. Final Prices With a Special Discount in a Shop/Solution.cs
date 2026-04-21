@@ -1,5 +1,8 @@
 namespace LeetCode.__Monotonic._1475._Final_Prices_With_a_Special_Discount_in_a_Shop;
 
+/// <summary>
+/// https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop
+/// </summary>
 public class Solution
 {
   public int[] FinalPrices(int[] prices)
