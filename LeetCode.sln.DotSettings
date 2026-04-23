@@ -26,11 +26,7 @@ public class SolutionTests
   [TestCase()]
   public void Test()
   {
-  }
-
-  [Test]
-  public void Test1()
-  {
+    new Solution().
   }
 }</s:String>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=68FA74F8D4330A42BEFB3E08129F1F35/Text/@EntryValue">for (var $INDEX$ = 0; $INDEX$ &lt; $UPPER$; $INDEX$++)
