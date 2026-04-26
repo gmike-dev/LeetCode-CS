@@ -9,5 +9,8 @@
     <None Update="1488. Avoid Flood in The City\TestCases.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="## Binary Search\3464. Maximize the Distance Between Points on a Square\TestCases.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
