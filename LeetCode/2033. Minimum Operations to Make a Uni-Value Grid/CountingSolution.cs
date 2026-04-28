@@ -2,6 +2,9 @@ using LeetCode.Common;
 
 namespace LeetCode._2033._Minimum_Operations_to_Make_a_Uni_Value_Grid;
 
+/// <summary>
+/// https://leetcode.com/problems/minimum-operations-to-make-a-uni-value-grid/
+/// </summary>
 public class CountingSolution
 {
   public int MinOperations(int[][] grid, int x)
