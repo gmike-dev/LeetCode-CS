@@ -29,11 +29,11 @@ public class SolutionTests
     new Solution().
   }
 }</s:String>
-	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=68FA74F8D4330A42BEFB3E08129F1F35/Text/@EntryValue">for (var $INDEX$ = 0; $INDEX$ &lt; $UPPER$; $INDEX$++)
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=68FA74F8D4330A42BEFB3E08129F1F35/Text/@EntryValue">for (int $INDEX$ = 0; $INDEX$ &lt; $UPPER$; $INDEX$++)
 {
   $SELECTION$$END$
 }</s:String>
-	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D8FBD7D188BBCE4ABB40D540E00A273B/Text/@EntryValue">for (var $index$ = $max$ - 1; $index$ &gt;= 0 ; $index$--)
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D8FBD7D188BBCE4ABB40D540E00A273B/Text/@EntryValue">for (int $index$ = $max$ - 1; $index$ &gt;= 0 ; $index$--)
       {
        $END$
       }</s:String>
