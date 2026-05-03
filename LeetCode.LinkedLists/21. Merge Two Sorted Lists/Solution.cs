@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.LinkedLists._21._Merge_Two_Sorted_Lists;
 
 public class Solution

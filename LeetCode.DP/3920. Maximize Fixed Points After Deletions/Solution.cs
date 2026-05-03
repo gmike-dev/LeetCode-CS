@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.DP._3920._Maximize_Fixed_Points_After_Deletions;
 
 /// <summary>

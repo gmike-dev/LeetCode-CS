@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.Numbers._421._Maximum_XOR_of_Two_Numbers_in_an_Array;
 
 public class TrieSolution

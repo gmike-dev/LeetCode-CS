@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.LinkedLists._141._Linked_List_Cycle;
 
 public class Solution

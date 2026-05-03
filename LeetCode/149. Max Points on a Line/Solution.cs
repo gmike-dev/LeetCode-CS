@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode._149._Max_Points_on_a_Line;
 
 /// <summary>

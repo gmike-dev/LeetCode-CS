@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.BinaryTrees._687._Longest_Univalue_Path;
 
 /// <summary>

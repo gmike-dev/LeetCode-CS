@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.BinaryTrees._2583._Kth_Largest_Sum_in_a_Binary_Tree;
 
 /// <summary>

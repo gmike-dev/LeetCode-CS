@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.DP._3742._Maximum_Path_Score_in_a_Grid;
 
 /// <summary>

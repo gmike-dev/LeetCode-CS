@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode._2615._Sum_of_Distances;
 
 public class Solution

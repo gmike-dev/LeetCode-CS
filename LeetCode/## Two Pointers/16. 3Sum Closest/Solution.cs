@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.___Two_Pointers._16._3Sum_Closest;
 
 public class Solution

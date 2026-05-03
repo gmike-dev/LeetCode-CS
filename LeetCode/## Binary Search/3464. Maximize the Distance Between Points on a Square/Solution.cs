@@ -1,5 +1,4 @@
 using System.IO;
-using LeetCode.Common;
 
 namespace LeetCode.___Binary_Search._3464._Maximize_the_Distance_Between_Points_on_a_Square;
 

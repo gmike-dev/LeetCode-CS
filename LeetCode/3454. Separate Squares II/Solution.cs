@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode._3454._Separate_Squares_II;
 
 public class Solution

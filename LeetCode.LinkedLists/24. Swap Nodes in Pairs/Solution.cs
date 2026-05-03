@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.LinkedLists._24._Swap_Nodes_in_Pairs;
 
 public class Solution

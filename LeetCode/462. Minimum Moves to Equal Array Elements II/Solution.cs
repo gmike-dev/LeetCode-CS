@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode._462._Minimum_Moves_to_Equal_Array_Elements_II;
 
 /// <summary>

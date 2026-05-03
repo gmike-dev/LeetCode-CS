@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.BinaryTrees._144._Binary_Tree_Preorder_Traversal;
 
 /// <summary>

@@ -1,6 +1,4 @@
-﻿using LeetCode.Common;
-
-namespace LeetCode._396._Rotate_Function;
+﻿namespace LeetCode._396._Rotate_Function;
 
 /// <summary>
 /// https://leetcode.com/problems/rotate-function

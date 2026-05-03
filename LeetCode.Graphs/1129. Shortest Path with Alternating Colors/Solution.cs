@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.Graphs._1129._Shortest_Path_with_Alternating_Colors;
 
 /// <summary>

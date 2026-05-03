@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode._3027._Find_the_Number_of_Ways_to_Place_People_II;
 
 public class Solution

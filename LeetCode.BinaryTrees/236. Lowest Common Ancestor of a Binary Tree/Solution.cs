@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.BinaryTrees._236._Lowest_Common_Ancestor_of_a_Binary_Tree;
 
 /// <summary>

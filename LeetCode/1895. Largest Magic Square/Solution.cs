@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode._1895._Largest_Magic_Square;
 
 public class Solution

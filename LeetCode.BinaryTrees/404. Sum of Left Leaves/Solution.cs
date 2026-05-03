@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.BinaryTrees._404._Sum_of_Left_Leaves;
 
 /// <summary>

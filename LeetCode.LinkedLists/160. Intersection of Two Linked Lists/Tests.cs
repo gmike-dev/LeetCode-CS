@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.LinkedLists._160._Intersection_of_Two_Linked_Lists;
 
 [TestFixture]

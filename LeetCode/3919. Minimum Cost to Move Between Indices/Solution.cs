@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode._3919._Minimum_Cost_to_Move_Between_Indices;
 
 /// <summary>

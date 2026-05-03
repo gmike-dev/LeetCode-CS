@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.LinkedLists._148._Sort_List;
 
 public class InsertionSortSolution

@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.BinaryTrees._1123._Lowest_Common_Ancestor_of_Deepest_Leaves;
 
 /// <summary>

@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.LinkedLists._23._Merge_k_Sorted_Lists;
 
 public class Solution

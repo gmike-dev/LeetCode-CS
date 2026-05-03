@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.BinaryTrees._2458._Height_of_Binary_Tree_After_Subtree_Removal_Queries;
 
 /// <summary>

@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.LinkedLists._206._Reverse_Linked_List;
 
 public class SolutionUsingNewList

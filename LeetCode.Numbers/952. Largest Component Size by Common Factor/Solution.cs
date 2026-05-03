@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.Numbers._952._Largest_Component_Size_by_Common_Factor;
 
 public class Solution

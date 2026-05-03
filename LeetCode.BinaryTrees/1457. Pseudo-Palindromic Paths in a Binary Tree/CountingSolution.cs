@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.BinaryTrees._1457._Pseudo_Palindromic_Paths_in_a_Binary_Tree;
 
 /// <summary>

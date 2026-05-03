@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode._679._24_Game;
 
 public class Solution

@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.Graphs._1584._Min_Cost_to_Connect_All_Points;
 
 public class SolutionUsingPrimPriorityQueue

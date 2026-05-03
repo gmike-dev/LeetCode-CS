@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.BinaryTrees._226._Invert_Binary_Tree;
 
 /// <summary>

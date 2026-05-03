@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.BinaryTrees._222._Count_Complete_Tree_Nodes;
 
 /// <summary>

@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.Graphs._1733._Minimum_Number_of_People_to_Teach;
 
 /// <summary>

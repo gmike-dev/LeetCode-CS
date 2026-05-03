@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode._3748._Count_Stable_Subarrays;
 
 public class Solution

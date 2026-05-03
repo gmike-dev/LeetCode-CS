@@ -1,5 +1,3 @@
-using System.Runtime.Intrinsics;
-
 namespace LeetCode.Numbers._2425._Bitwise_XOR_of_All_Pairings;
 
 public class Solution2

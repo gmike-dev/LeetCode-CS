@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.DP._1504._Count_Submatrices_With_All_Ones;
 
 /// <summary>

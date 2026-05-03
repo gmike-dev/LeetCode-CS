@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.BinaryTrees._543._Diameter_of_Binary_Tree;
 
 /// <summary>

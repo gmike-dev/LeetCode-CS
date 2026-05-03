@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode.LinkedLists._2._Add_Two_Numbers;
 
 public class Solution

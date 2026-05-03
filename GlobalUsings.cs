@@ -6,3 +6,5 @@ global using System.Numerics;
 global using System.Text;
 global using FluentAssertions;
 global using NUnit.Framework;
+
+global using LeetCode.Common;

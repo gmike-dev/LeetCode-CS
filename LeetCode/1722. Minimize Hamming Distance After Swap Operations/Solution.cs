@@ -1,5 +1,3 @@
-using LeetCode.Common;
-
 namespace LeetCode._1722._Minimize_Hamming_Distance_After_Swap_Operations;
 
 /// <summary>
