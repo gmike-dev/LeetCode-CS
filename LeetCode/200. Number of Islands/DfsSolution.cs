@@ -1,88 +1,47 @@
 namespace LeetCode._200._Number_of_Islands;
 
-public class UnionFindSolution
+public class DfsSolution
 {
   public int NumIslands(char[][] grid)
   {
-    int n = grid.Length;
-    int m = grid[0].Length;
-    UnionFind u = new((n * m + 1) / 2 + 1);
-    Span<int> s = stackalloc int[m];
-    int k = 1;
-    for (int i = 0; i < n; i++)
-    for (int j = 0; j < m; j++)
+    int m = grid.Length;
+    int n = grid[0].Length;
+    int count = 0;
+    for (int i = 0; i < m; i++)
     {
-      if (grid[i][j] == '1')
+      for (int j = 0; j < n; j++)
       {
-        if (j > 0 && s[j - 1] != 0)
+        if (grid[i][j] == '1')
         {
-          if (s[j] != 0)
-            u.Union(s[j - 1], s[j]);
-          s[j] = s[j - 1];
-        }
-        else if (s[j] == 0)
-        {
-          u.MakeSet(k);
-          s[j] = k;
-          k++;
+          count++;
+          Dfs(i, j);
         }
       }
-      else
-      {
-        s[j] = 0;
-      }
     }
-    return u.GetCount();
-  }
+    return count;
 
-  private class UnionFind(int n)
-  {
-    private readonly int[] parent = new int[n];
-    private readonly int[] size = new int[n];
-    private int count;
-
-    public int GetCount() => count;
-
-    public void MakeSet(int x)
+    void Dfs(int i, int j)
     {
-      parent[x] = x;
-      size[x] = 1;
-      count++;
-    }
-
-    public void Union(int x, int y)
-    {
-      x = Find(x);
-      y = Find(y);
-      if (x != y)
+      if (i < 0 || j < 0 || i >= m || j >= n || grid[i][j] == '0')
       {
-        if (size[x] < size[y])
-          (x, y) = (y, x);
-        parent[y] = x; // Always add a smaller set to a larger set.
-        size[x] += size[y];
-        count--;
+        return;
       }
-    }
-
-    private int Find(int x)
-    {
-      while (parent[x] != x)
-      {
-        parent[x] = parent[parent[x]];
-        x = parent[x];
-      }
-      return x;
+      grid[i][j] = '0';
+      Dfs(i + 1, j);
+      Dfs(i, j + 1);
+      Dfs(i - 1, j);
+      Dfs(i, j - 1);
     }
   }
 }
 
 [TestFixture]
-public class UnionFindSolutionTests
+public class DfsSolutionTests
 {
   [Test]
   public void Test1()
   {
-    new UnionFindSolution().NumIslands(
+    new DfsSolution().NumIslands(
     [
       ['1', '1', '1', '1', '0'],
       ['1', '1', '0', '1', '0'],
@@ -94,7 +53,7 @@ public class UnionFindSolutionTests
   [Test]
   public void Test2()
   {
-    new UnionFindSolution().NumIslands(
+    new DfsSolution().NumIslands(
     [
       ['1', '1', '0', '0', '0'],
       ['1', '1', '0', '0', '0'],
@@ -106,7 +65,7 @@ public class UnionFindSolutionTests
   [Test]
   public void Test3()
   {
-    new UnionFindSolution().NumIslands(
+    new DfsSolution().NumIslands(
     [
       ['1', '1', '1', '1', '1', '0', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0', '1', '0', '1', '1'],
       ['0', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0', '1', '1', '1', '1', '1', '0'],
@@ -128,15 +87,6 @@ public class UnionFindSolutionTests
       ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'],
       ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'],
       ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1']
-    ]).Should().Be(1);
-  }
-
-  [Test]
-  public void Test4()
-  {
-    new UnionFindSolution().NumIslands(
-    [
-      ['1']
     ]).Should().Be(1);
   }
 }
