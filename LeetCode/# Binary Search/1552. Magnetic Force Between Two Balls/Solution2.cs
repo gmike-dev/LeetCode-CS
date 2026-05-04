@@ -1,9 +1,9 @@
-namespace LeetCode.___Binary_Search._1552._Magnetic_Force_Between_Two_Balls;
+namespace LeetCode.__Binary_Search._1552._Magnetic_Force_Between_Two_Balls;
 
 /// <summary>
 /// <see href="https://leetcode.com/problems/magnetic-force-between-two-balls/"/>
 /// </summary>
-public class Solution
+public class Solution2
 {
   public int MaxDistance(int[] position, int m)
   {
@@ -28,17 +28,25 @@ public class Solution
 
     bool CanPlace(int dist)
     {
-      var prevPos = position[0];
       var balls = m - 1;
-      for (var i = 1; i < position.Length; i++)
+      for (var i = 0; i < position.Length;)
       {
-        if (position[i] - prevPos >= dist)
+        var l = i + 1;
+        var r = position.Length - 1;
+        while (l < r)
         {
-          balls--;
-          if (balls == 0)
-            return true;
-          prevPos = position[i];
+          var mid = l + (r - l) / 2;
+          if (position[mid] - position[i] < dist)
+            l = mid + 1;
+          else
+            r = mid;
         }
+        if (position[r] - position[i] < dist)
+          return false;
+        balls--;
+        if (balls == 0)
+          return true;
+        i = r;
       }
       return false;
     }
@@ -46,12 +54,12 @@ public class Solution
 }
 
 [TestFixture]
-public class Tests
+public class Solution2Tests
 {
   [TestCase(new[] { 1, 2, 3, 4, 7 }, 3, 3)]
   [TestCase(new[] { 5, 4, 3, 2, 1, 1000000000 }, 2, 999999999)]
   public void Test(int[] position, int m, int expected)
   {
-    new Solution().MaxDistance(position, m).Should().Be(expected);
+    new Solution2().MaxDistance(position, m).Should().Be(expected);
   }
 }

@@ -1,4 +1,4 @@
-namespace LeetCode.___Binary_Search._2594._Minimum_Time_to_Repair_Cars;
+namespace LeetCode.__Binary_Search._2594._Minimum_Time_to_Repair_Cars;
 
 /// <summary>
 /// <see href="https://leetcode.com/problems/minimum-time-to-repair-cars/"/>

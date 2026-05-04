@@ -1,4 +1,4 @@
-namespace LeetCode.___Binary_Search._3356._Zero_Array_Transformation_II;
+namespace LeetCode.__Binary_Search._3356._Zero_Array_Transformation_II;
 
 /// <summary>
 /// <see href="https://leetcode.com/problems/zero-array-transformation-ii/"/>

@@ -1,4 +1,4 @@
-namespace LeetCode.___Binary_Search._2560._House_Robber_IV;
+namespace LeetCode.__Binary_Search._2560._House_Robber_IV;
 
 /// <summary>
 /// <see href="https://leetcode.com/problems/house-robber-iv/"/>

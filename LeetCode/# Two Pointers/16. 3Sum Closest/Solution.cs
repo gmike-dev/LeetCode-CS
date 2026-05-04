@@ -1,4 +1,4 @@
-namespace LeetCode.___Two_Pointers._16._3Sum_Closest;
+namespace LeetCode.__Two_Pointers._16._3Sum_Closest;
 
 public class Solution
 {

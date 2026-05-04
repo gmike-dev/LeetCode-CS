@@ -1,42 +1,47 @@
-namespace LeetCode.___Binary_Search._2594._Minimum_Time_to_Repair_Cars;
+namespace LeetCode.__Binary_Search._2594._Minimum_Time_to_Repair_Cars;
 
 /// <summary>
 /// <see href="https://leetcode.com/problems/minimum-time-to-repair-cars/"/>
 /// </summary>
-public class HeapSolution
+public class Solution2
 {
   public long RepairCars(int[] ranks, int cars)
   {
+    var minRank = ranks[0];
+    var maxRank = ranks[0];
     var rankFreq = new int[101];
     foreach (var rank in ranks)
+    {
       rankFreq[rank]++;
-
-    var repairedByRank = new long[101];
-    repairedByRank.AsSpan().Fill(1L);
-
-    var heap = new PriorityQueue<int, long>();
-    for (var rank = 1; rank <= 100; rank++)
-    {
-      if (rankFreq[rank] != 0)
-        heap.Enqueue(rank, rank);
+      if (rank > maxRank)
+        maxRank = rank;
+      else if (rank < minRank)
+        minRank = rank;
     }
-
-    long minRepairTime = 0;
-    long totalRepairedCars = 0;
-    while (totalRepairedCars < cars)
+    long minTime = 0;
+    long maxTime = (long)ranks.Max() * cars * cars;
+    while (minTime < maxTime)
     {
-      heap.TryDequeue(out var rank, out minRepairTime);
-      totalRepairedCars += rankFreq[rank];
-      repairedByRank[rank]++;
-      var nextRepairTime = rank * repairedByRank[rank] * repairedByRank[rank];
-      heap.Enqueue(rank, nextRepairTime);
+      var time = minTime + (maxTime - minTime) / 2;
+      if (CanRepair(time))
+        maxTime = time;
+      else
+        minTime = time + 1;
     }
-    return minRepairTime;
+    return maxTime;
+
+    bool CanRepair(long time)
+    {
+      long repaired = 0;
+      for (var rank = minRank; rank <= maxRank; rank++)
+        repaired += rankFreq[rank] * (long)Math.Sqrt((double)time / rank);
+      return repaired >= cars;
+    }
   }
 }
 
 [TestFixture]
-public class HeapSolutionTests
+public class Solution2Tests
 {
   [TestCase(new[] { 4, 2, 3, 1 }, 10, 16)]
   [TestCase(new[] { 5, 1, 8 }, 6, 16)]
@@ -113,6 +118,6 @@ public class HeapSolutionTests
     }, 986873, 3543876)]
   public void Test(int[] ranks, int cars, long expected)
   {
-    new HeapSolution().RepairCars(ranks, cars).Should().Be(expected);
+    new Solution2().RepairCars(ranks, cars).Should().Be(expected);
   }
 }

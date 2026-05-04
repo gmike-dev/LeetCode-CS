@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace LeetCode.___Binary_Search._3464._Maximize_the_Distance_Between_Points_on_a_Square;
+namespace LeetCode.__Binary_Search._3464._Maximize_the_Distance_Between_Points_on_a_Square;
 
 public class Solution
 {
