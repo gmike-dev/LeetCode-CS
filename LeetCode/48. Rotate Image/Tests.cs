@@ -5,8 +5,8 @@ public class Tests
 {
   private static IEnumerable<object[]> TestsCases()
   {
-    yield return new object[]
-    {
+    yield return
+    [
       new[]
       {
         new[] { 1, 2, 3 },
@@ -19,9 +19,9 @@ public class Tests
         new[] { 8, 5, 2 },
         new[] { 9, 6, 3 }
       }
-    };
-    yield return new object[]
-    {
+    ];
+    yield return
+    [
       new[]
       {
         new[] { 5, 1, 9, 11 },
@@ -36,7 +36,7 @@ public class Tests
         new[] { 12, 6, 8, 9 },
         new[] { 16, 7, 10, 11 }
       }
-    };
+    ];
   }
 
   [TestCaseSource(nameof(TestsCases))]
@@ -50,6 +50,13 @@ public class Tests
   public void Test2(int[][] matrix, int[][] expected)
   {
     new Solution().Rotate2(matrix);
+    matrix.Should().BeEquivalentTo(expected);
+  }
+
+  [TestCaseSource(nameof(TestsCases))]
+  public void Test3(int[][] matrix, int[][] expected)
+  {
+    new Solution().Rotate3(matrix);
     matrix.Should().BeEquivalentTo(expected);
   }
 }
