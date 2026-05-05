@@ -1,16 +1,49 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <ProjectReference Include="..\LeetCode.Common\LeetCode.Common.csproj"/>
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="3408. Design Task Manager\LargeExecTopTestData.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="1488. Avoid Flood in The City\TestCases.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="## Binary Search\3464. Maximize the Distance Between Points on a Square\TestCases.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\LeetCode.Common\LeetCode.Common.csproj"/>
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="3408. Design Task Manager\LargeExecTopTestData.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="1488. Avoid Flood in The City\TestCases.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="# Binary Search\3464. Maximize the Distance Between Points on a Square\TestCases.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="3347. Maximum Frequency of an Element After Performing Operations II\TestCases.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="1561. Maximum Number of Coins\TestCases.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="# Binary Search\2560. House Robber IV\TestCases.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="# Binary Search\2594. Minimum Time to Repair Cars\TestCases.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="719. Find K-th Smallest Pair Distance\TestCases.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="3510. Minimum Pair Removal to Sort Array II\TestCases.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="1722. Minimize Hamming Distance After Swap Operations\TestCases.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="3508. Implement Router\TestCases.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="1072. Flip Columns For Maximum Number of Equal Rows\TestCases.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="1642. Furthest Building You Can Reach\TestCases.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="# Binary Search\3464. Maximize the Distance Between Points on a Square\TestCases.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
 </Project>

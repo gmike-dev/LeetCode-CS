@@ -5,32 +5,32 @@ namespace LeetCode.DP._518._Coin_Change_II;
 /// </summary>
 public class SolutionUsingMemoization
 {
-  private int[][] _cache;
+    private int[][] _cache;
 
-  public int Change(int amount, int[] coins)
-  {
-    _cache = new int[amount + 1][];
-    for (var i = 0; i < _cache.Length; i++)
+    public int Change(int amount, int[] coins)
     {
-      _cache[i] = new int[coins.Length + 1];
-      _cache[i].AsSpan().Fill(-1);
+        _cache = new int[amount + 1][];
+        for (var i = 0; i < _cache.Length; i++)
+        {
+            _cache[i] = new int[coins.Length + 1];
+            _cache[i].AsSpan().Fill(-1);
+        }
+        return Combinations(amount, coins);
     }
-    return Combinations(amount, coins);
-  }
 
-  private int Combinations(int amount, Span<int> coins)
-  {
-    if (coins.Length == 1)
-      return amount % coins[0] == 0 ? 1 : 0;
+    private int Combinations(int amount, Span<int> coins)
+    {
+        if (coins.Length == 1)
+            return amount % coins[0] == 0 ? 1 : 0;
 
-    if (_cache[amount][coins.Length] != -1)
-      return _cache[amount][coins.Length];
+        if (_cache[amount][coins.Length] != -1)
+            return _cache[amount][coins.Length];
 
-    var result = 0;
-    for (var i = 0; i <= amount; i += coins[0])
-      result += Combinations(amount - i, coins[1..]);
+        var result = 0;
+        for (var i = 0; i <= amount; i += coins[0])
+            result += Combinations(amount - i, coins[1..]);
 
-    _cache[amount][coins.Length] = result;
-    return result;
-  }
+        _cache[amount][coins.Length] = result;
+        return result;
+    }
 }

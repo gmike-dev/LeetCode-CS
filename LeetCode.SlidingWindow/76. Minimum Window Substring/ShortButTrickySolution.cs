@@ -5,57 +5,57 @@ namespace LeetCode.SlidingWindow._76._Minimum_Window_Substring;
 /// </summary>
 public class ShortButTrickySolution
 {
-  public string MinWindow(string s, string t)
-  {
-    if (s.Length < t.Length)
-      return "";
-
-    var tc = new int[128];
-    foreach (var c in t)
-      tc[c]++;
-
-    var count = t.Length;
-    var start = 0;
-    var end = 0;
-    var minLen = int.MaxValue;
-    var startIndex = 0;
-    while (end < s.Length)
+    public string MinWindow(string s, string t)
     {
-      if (tc[s[end]] > 0)
-        count--;
-      tc[s[end]]--;
-      end++;
-      while (count == 0)
-      {
-        var len = end - start;
-        if (len < minLen)
+        if (s.Length < t.Length)
+            return "";
+
+        var tc = new int[128];
+        foreach (var c in t)
+            tc[c]++;
+
+        var count = t.Length;
+        var start = 0;
+        var end = 0;
+        var minLen = int.MaxValue;
+        var startIndex = 0;
+        while (end < s.Length)
         {
-          minLen = len;
-          startIndex = start;
+            if (tc[s[end]] > 0)
+                count--;
+            tc[s[end]]--;
+            end++;
+            while (count == 0)
+            {
+                var len = end - start;
+                if (len < minLen)
+                {
+                    minLen = len;
+                    startIndex = start;
+                }
+                if (tc[s[start]] == 0)
+                    count++;
+                tc[s[start]]++;
+                start++;
+            }
         }
-        if (tc[s[start]] == 0)
-          count++;
-        tc[s[start]]++;
-        start++;
-      }
+        return minLen == int.MaxValue ? "" : s.Substring(startIndex, minLen);
     }
-    return minLen == int.MaxValue ? "" : s.Substring(startIndex, minLen);
-  }
 }
 
 [TestFixture]
 public class ShortButTrickySolutionTests
 {
-  [TestCase("ADOBECODEBANC", "ABC", "BANC")]
-  [TestCase("a", "a", "a")]
-  [TestCase("a", "aa", "")]
-  [TestCase("abcdefg", "bf", "bcdef")]
-  [TestCase("abbbbfg", "bf", "bf")]
-  [TestCase("abbbbfg", "g", "g")]
-  [TestCase("ab", "a", "a")]
-  [TestCase("a", "b", "")]
-  public void Test(string s, string t, string expected)
-  {
-    new ShortButTrickySolution().MinWindow(s, t).Should().Be(expected);
-  }
+    [TestCase("ADOBECODEBANC", "ABC", "BANC")]
+    [TestCase("a", "a", "a")]
+    [TestCase("a", "aa", "")]
+    [TestCase("abcdefg", "bf", "bcdef")]
+    [TestCase("abbbbfg", "bf", "bf")]
+    [TestCase("abbbbfg", "g", "g")]
+    [TestCase("ab", "a", "a")]
+    [TestCase("a", "b", "")]
+    public void Test(string s, string t, string expected)
+    {
+        new ShortButTrickySolution().MinWindow(s, t).Should().Be(expected);
+    }
 }

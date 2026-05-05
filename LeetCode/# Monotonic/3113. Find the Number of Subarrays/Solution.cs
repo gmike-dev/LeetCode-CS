@@ -5,37 +5,37 @@ namespace LeetCode.__Monotonic._3113._Find_the_Number_of_Subarrays;
 /// </summary>
 public class Solution
 {
-  public long NumberOfSubarrays(int[] a)
-  {
-    var s = new Stack<(int val, int count)>();
-    var result = 0L;
-    foreach (var x in a)
+    public long NumberOfSubarrays(int[] a)
     {
-      var count = 1;
-      while (s.TryPeek(out var item) && item.val <= x)
-      {
-        if (item.val == x)
-          count += item.count;
-        s.Pop();
-      }
-      s.Push((x, count));
-      result += count;
+        var s = new Stack<(int val, int count)>();
+        var result = 0L;
+        foreach (var x in a)
+        {
+            var count = 1;
+            while (s.TryPeek(out var item) && item.val <= x)
+            {
+                if (item.val == x)
+                    count += item.count;
+                s.Pop();
+            }
+            s.Push((x, count));
+            result += count;
+        }
+        return result;
     }
-    return result;
-  }
 }
 
 [TestFixture]
 public class Tests
 {
-  [TestCase(new[] { 1, 4, 3, 3, 2 }, 6)]
-  [TestCase(new[] { 3, 3, 3 }, 6)]
-  [TestCase(new[] { 1 }, 1)]
-  public void Test1(int[] a, long expected)
-  {
-    new Solution()
-      .NumberOfSubarrays([1, 4, 3, 3, 2])
-      .Should()
-      .Be(6);
-  }
+    [TestCase(new[] { 1, 4, 3, 3, 2 }, 6)]
+    [TestCase(new[] { 3, 3, 3 }, 6)]
+    [TestCase(new[] { 1 }, 1)]
+    public void Test1(int[] a, long expected)
+    {
+        new Solution()
+            .NumberOfSubarrays([1, 4, 3, 3, 2])
+            .Should()
+            .Be(6);
+    }
 }

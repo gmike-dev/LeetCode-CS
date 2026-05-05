@@ -5,50 +5,50 @@ namespace LeetCode.Strings._3163._String_Compression_III;
 /// </summary>
 public class Solution
 {
-  public string CompressedString(string word)
-  {
-    var sb = new StringBuilder();
-    var prev = '\0';
-    var count = 0;
-    foreach (var c in word)
+    public string CompressedString(string word)
     {
-      if (c == prev)
-      {
-        count++;
-        if (count == 9)
+        var sb = new StringBuilder();
+        var prev = '\0';
+        var count = 0;
+        foreach (var c in word)
         {
-          sb.Append(count);
-          sb.Append(prev);
-          count = 0;
+            if (c == prev)
+            {
+                count++;
+                if (count == 9)
+                {
+                    sb.Append(count);
+                    sb.Append(prev);
+                    count = 0;
+                }
+            }
+            else
+            {
+                if (count > 0)
+                {
+                    sb.Append(count);
+                    sb.Append(prev);
+                }
+                count = 1;
+                prev = c;
+            }
         }
-      }
-      else
-      {
         if (count > 0)
         {
-          sb.Append(count);
-          sb.Append(prev);
+            sb.Append(count);
+            sb.Append(prev);
         }
-        count = 1;
-        prev = c;
-      }
+        return sb.ToString();
     }
-    if (count > 0)
-    {
-      sb.Append(count);
-      sb.Append(prev);
-    }
-    return sb.ToString();
-  }
 }
 
 [TestFixture]
 public class SolutionTests
 {
-  [TestCase("abcde", "1a1b1c1d1e")]
-  [TestCase("aaaaaaaaaaaaaabb", "9a5a2b")]
-  public void Test(string word, string expected)
-  {
-    new Solution().CompressedString(word).Should().Be(expected);
-  }
+    [TestCase("abcde", "1a1b1c1d1e")]
+    [TestCase("aaaaaaaaaaaaaabb", "9a5a2b")]
+    public void Test(string word, string expected)
+    {
+        new Solution().CompressedString(word).Should().Be(expected);
+    }
 }

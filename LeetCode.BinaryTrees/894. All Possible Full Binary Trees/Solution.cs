@@ -5,37 +5,37 @@ namespace LeetCode.BinaryTrees._894._All_Possible_Full_Binary_Trees;
 /// </summary>
 public class Solution
 {
-  private readonly Dictionary<int, List<TreeNode>> cache = new();
+    private readonly Dictionary<int, List<TreeNode>> cache = new();
 
-  public IList<TreeNode> AllPossibleFBT(int n)
-  {
-    if (n % 2 == 0)
-      return Array.Empty<TreeNode>();
-
-    if (cache.TryGetValue(n, out var result))
-      return result;
-
-    if (n == 1)
+    public IList<TreeNode> AllPossibleFBT(int n)
     {
-      result = new List<TreeNode> { new() };
-    }
-    else
-    {
-      result = new List<TreeNode>();
-      for (var i = 1; i < n - 1; i += 2)
-      {
-        var leftNodes = AllPossibleFBT(i);
-        var rightNodes = AllPossibleFBT(n - 1 - i);
-        foreach (var leftNode in leftNodes)
+        if (n % 2 == 0)
+            return Array.Empty<TreeNode>();
+
+        if (cache.TryGetValue(n, out var result))
+            return result;
+
+        if (n == 1)
         {
-          foreach (var rightNode in rightNodes)
-          {
-            result.Add(new TreeNode(0, leftNode, rightNode));
-          }
+            result = new List<TreeNode> { new() };
         }
-      }
+        else
+        {
+            result = new List<TreeNode>();
+            for (var i = 1; i < n - 1; i += 2)
+            {
+                var leftNodes = AllPossibleFBT(i);
+                var rightNodes = AllPossibleFBT(n - 1 - i);
+                foreach (var leftNode in leftNodes)
+                {
+                    foreach (var rightNode in rightNodes)
+                    {
+                        result.Add(new TreeNode(0, leftNode, rightNode));
+                    }
+                }
+            }
+        }
+        cache[n] = result;
+        return result;
     }
-    cache[n] = result;
-    return result;
-  }
 }

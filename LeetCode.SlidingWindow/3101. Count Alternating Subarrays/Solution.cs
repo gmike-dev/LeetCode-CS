@@ -5,29 +5,29 @@ namespace LeetCode.SlidingWindow._3101._Count_Alternating_Subarrays;
 /// </summary>
 public class Solution
 {
-  public long CountAlternatingSubarrays(int[] a)
-  {
-    var n = a.Length;
-    long answer = n;
-    var left = 0;
-    for (var right = 1; right < n; right++)
+    public long CountAlternatingSubarrays(int[] a)
     {
-      if (a[right - 1] == a[right])
-        left = right;
-      else
-        answer += right - left;
+        var n = a.Length;
+        long answer = n;
+        var left = 0;
+        for (var right = 1; right < n; right++)
+        {
+            if (a[right - 1] == a[right])
+                left = right;
+            else
+                answer += right - left;
+        }
+        return answer;
     }
-    return answer;
-  }
 }
 
 [TestFixture]
 public class Tests
 {
-  [TestCase(new[] { 0, 1, 1, 1 }, 5)]
-  [TestCase(new[] { 1, 0, 1, 0 }, 10)]
-  public void Test(int[] a, long expected)
-  {
-    new Solution().CountAlternatingSubarrays(a).Should().Be(expected);
-  }
+    [TestCase(new[] { 0, 1, 1, 1 }, 5)]
+    [TestCase(new[] { 1, 0, 1, 0 }, 10)]
+    public void Test(int[] a, long expected)
+    {
+        new Solution().CountAlternatingSubarrays(a).Should().Be(expected);
+    }
 }

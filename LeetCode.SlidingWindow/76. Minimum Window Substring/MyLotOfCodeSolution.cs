@@ -5,85 +5,85 @@ namespace LeetCode.SlidingWindow._76._Minimum_Window_Substring;
 /// </summary>
 public class MyLotOfCodeSolution
 {
-  public string MinWindow(string s, string t)
-  {
-    if (t.Length > s.Length)
-      return "";
-
-    var minSubstring = ReadOnlySpan<char>.Empty;
-    var window = new SubstringWindow(s, t);
-    while (window.MoveRightBorder())
+    public string MinWindow(string s, string t)
     {
-      while (window.ContainsSubstring())
-      {
-        if (minSubstring.IsEmpty || minSubstring.Length > window.Substring.Length)
-          minSubstring = window.Substring;
-        window.MoveLeftBorder();
-      }
-    }
-    return minSubstring.ToString();
-  }
+        if (t.Length > s.Length)
+            return "";
 
-  private class SubstringWindow
-  {
-    private readonly string s;
-    private readonly int[] charDiff = new int[128];
-
-    private int left;
-    private int right;
-    private int diff;
-
-    public ReadOnlySpan<char> Substring => s.AsSpan(left, right - left);
-
-    public bool ContainsSubstring()
-    {
-      return diff == 0;
+        var minSubstring = ReadOnlySpan<char>.Empty;
+        var window = new SubstringWindow(s, t);
+        while (window.MoveRightBorder())
+        {
+            while (window.ContainsSubstring())
+            {
+                if (minSubstring.IsEmpty || minSubstring.Length > window.Substring.Length)
+                    minSubstring = window.Substring;
+                window.MoveLeftBorder();
+            }
+        }
+        return minSubstring.ToString();
     }
 
-    public bool MoveRightBorder()
+    private class SubstringWindow
     {
-      if (right >= s.Length)
-        return false;
-      if (charDiff[s[right]] > 0)
-        diff--;
-      charDiff[s[right]]--;
-      right++;
-      return true;
-    }
+        private readonly string s;
+        private readonly int[] charDiff = new int[128];
 
-    public void MoveLeftBorder()
-    {
-      if (left >= right)
-        return;
-      if (charDiff[s[left]] >= 0)
-        diff++;
-      charDiff[s[left]]++;
-      left++;
-    }
+        private int left;
+        private int right;
+        private int diff;
 
-    public SubstringWindow(string s, string t)
-    {
-      this.s = s;
-      foreach (var c in t)
-        charDiff[c]++;
-      diff = t.Length;
+        public ReadOnlySpan<char> Substring => s.AsSpan(left, right - left);
+
+        public bool ContainsSubstring()
+        {
+            return diff == 0;
+        }
+
+        public bool MoveRightBorder()
+        {
+            if (right >= s.Length)
+                return false;
+            if (charDiff[s[right]] > 0)
+                diff--;
+            charDiff[s[right]]--;
+            right++;
+            return true;
+        }
+
+        public void MoveLeftBorder()
+        {
+            if (left >= right)
+                return;
+            if (charDiff[s[left]] >= 0)
+                diff++;
+            charDiff[s[left]]++;
+            left++;
+        }
+
+        public SubstringWindow(string s, string t)
+        {
+            this.s = s;
+            foreach (var c in t)
+                charDiff[c]++;
+            diff = t.Length;
+        }
     }
-  }
 }
 
 [TestFixture]
 public class MyLotOfCodeSolutionTests
 {
-  [TestCase("ADOBECODEBANC", "ABC", "BANC")]
-  [TestCase("a", "a", "a")]
-  [TestCase("a", "aa", "")]
-  [TestCase("abcdefg", "bf", "bcdef")]
-  [TestCase("abbbbfg", "bf", "bf")]
-  [TestCase("abbbbfg", "g", "g")]
-  [TestCase("ab", "a", "a")]
-  [TestCase("a", "b", "")]
-  public void Test(string s, string t, string expected)
-  {
-    new MyLotOfCodeSolution().MinWindow(s, t).Should().Be(expected);
-  }
+    [TestCase("ADOBECODEBANC", "ABC", "BANC")]
+    [TestCase("a", "a", "a")]
+    [TestCase("a", "aa", "")]
+    [TestCase("abcdefg", "bf", "bcdef")]
+    [TestCase("abbbbfg", "bf", "bf")]
+    [TestCase("abbbbfg", "g", "g")]
+    [TestCase("ab", "a", "a")]
+    [TestCase("a", "b", "")]
+    public void Test(string s, string t, string expected)
+    {
+        new MyLotOfCodeSolution().MinWindow(s, t).Should().Be(expected);
+    }
 }

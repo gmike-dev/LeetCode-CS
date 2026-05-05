@@ -2,23 +2,23 @@ namespace LeetCode._300._Longest_Increasing_Subsequence;
 
 public class BinarySearchSolution
 {
-  public int LengthOfLIS(int[] nums)
-  {
-    var seq = new List<int>(nums.Length) { nums[0] };
-    foreach (var x in nums)
+    public int LengthOfLIS(int[] nums)
     {
-      if (seq[^1] < x)
-      {
-        seq.Add(x);
-      }
-      else
-      {
-        var pos = seq.BinarySearch(x);
-        if (pos < 0)
-          pos = ~pos;
-        seq[pos] = x;
-      }
+        var seq = new List<int>(nums.Length) { nums[0] };
+        foreach (var x in nums)
+        {
+            if (seq[^1] < x)
+            {
+                seq.Add(x);
+            }
+            else
+            {
+                var pos = seq.BinarySearch(x);
+                if (pos < 0)
+                    pos = ~pos;
+                seq[pos] = x;
+            }
+        }
+        return seq.Count;
     }
-    return seq.Count;
-  }
 }

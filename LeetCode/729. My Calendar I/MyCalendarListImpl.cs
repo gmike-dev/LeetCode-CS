@@ -2,35 +2,35 @@ namespace LeetCode._729._My_Calendar_I;
 
 public class MyCalendarListImpl
 {
-  private readonly List<(int start, int end)> _events = new();
+    private readonly List<(int start, int end)> _events = new();
 
-  public bool Book(int start, int end)
-  {
-    var index = _events.BinarySearch((start, end));
-    if (index >= 0)
-      return false;
-    index = ~index;
-    if (_events.Count == 0 ||
-        index == 0 && end <= _events[index].start ||
-        index == _events.Count && _events[^1].end <= start ||
-        index > 0 && index < _events.Count && _events[index - 1].end <= start && end <= _events[index].start)
+    public bool Book(int start, int end)
     {
-      _events.Insert(index, (start, end));
-      return true;
+        var index = _events.BinarySearch((start, end));
+        if (index >= 0)
+            return false;
+        index = ~index;
+        if (_events.Count == 0 ||
+            index == 0 && end <= _events[index].start ||
+            index == _events.Count && _events[^1].end <= start ||
+            index > 0 && index < _events.Count && _events[index - 1].end <= start && end <= _events[index].start)
+        {
+            _events.Insert(index, (start, end));
+            return true;
+        }
+        return false;
     }
-    return false;
-  }
 }
 
 [TestFixture]
 public class MyCalendarListImplTests
 {
-  [Test]
-  public void Test1()
-  {
-    var calendar = new MyCalendarListImpl();
-    calendar.Book(10, 20).Should().BeTrue();
-    calendar.Book(15, 25).Should().BeFalse();
-    calendar.Book(20, 30).Should().BeTrue();
-  }
+    [Test]
+    public void Test1()
+    {
+        var calendar = new MyCalendarListImpl();
+        calendar.Book(10, 20).Should().BeTrue();
+        calendar.Book(15, 25).Should().BeFalse();
+        calendar.Book(20, 30).Should().BeTrue();
+    }
 }

@@ -3,12 +3,12 @@ namespace LeetCode._673._Number_of_Longest_Increasing_Subsequence;
 [TestFixture]
 public class Tests
 {
-  [Test]
-  public void Test1()
-  {
-    var sln = new Solution();
-    sln.FindNumberOfLIS(new[] { 1, 3, 5, 4, 7 }).Should().Be(2);
-    sln.FindNumberOfLIS(new[] { 2, 2, 2, 2, 2 }).Should().Be(5);
-    sln.FindNumberOfLIS(new[] { 1, 2, 4, 3, 5, 4, 7, 2 }).Should().Be(3);
-  }
+    [Test]
+    public void Test1()
+    {
+        var sln = new Solution();
+        sln.FindNumberOfLIS(new[] { 1, 3, 5, 4, 7 }).Should().Be(2);
+        sln.FindNumberOfLIS(new[] { 2, 2, 2, 2, 2 }).Should().Be(5);
+        sln.FindNumberOfLIS(new[] { 1, 2, 4, 3, 5, 4, 7, 2 }).Should().Be(3);
+    }
 }
