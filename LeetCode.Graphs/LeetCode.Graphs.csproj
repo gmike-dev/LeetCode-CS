@@ -2,9 +2,4 @@
     <ItemGroup>
         <ProjectReference Include="..\LeetCode.Common\LeetCode.Common.csproj"/>
     </ItemGroup>
-    <ItemGroup>
-      <None Update="1345. Jump Game IV\TestCases.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
 </Project>

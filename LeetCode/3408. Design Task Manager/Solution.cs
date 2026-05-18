@@ -82,7 +82,7 @@ public class SolutionTests
     [Test]
     public void LargeExecTopTest()
     {
-        using var input = new StreamReader(@"3408. Design Task Manager/LargeExecTopTestData.txt");
+        using var input = new StreamReader(@"3408. Design Task Manager/TestCases.txt");
         IList<IList<int>> tasks = input.ReadLine().Array2();
         var taskManager = new TaskManager(tasks);
         for (var i = 0; i < tasks.Count * 2; i++)
