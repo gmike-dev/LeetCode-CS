@@ -1,9 +1,9 @@
-namespace LeetCode.Strings._2213._Longest_Substring_of_One_Repeating_Character;
+namespace LeetCode.Strings._2213._Longest_Substring_of_One_Repeating_Character.ArraySegmentTree;
 
 /// <summary>
 /// https://leetcode.com/problems/longest-substring-of-one-repeating-character/
 /// </summary>
-public class SegmentTreeOnArraySolution
+public class Solution
 {
     private class ArraySegmentTree
     {
@@ -31,11 +31,15 @@ public class SegmentTreeOnArraySolution
             }
             else
             {
-                var tm = tl + (tr - tl) / 2;
+                int tm = tl + (tr - tl) / 2;
                 if (pos <= tm)
+                {
                     ReplaceChar(v * 2, tl, tm, pos, value);
+                }
                 else
+                {
                     ReplaceChar(v * 2 + 1, tm + 1, tr, pos, value);
+                }
                 UpdateLength(v, tl, tr, tm);
             }
         }
@@ -44,19 +48,23 @@ public class SegmentTreeOnArraySolution
         {
             if (tl < tr)
             {
-                var tm = tl + (tr - tl) / 2;
+                int tm = tl + (tr - tl) / 2;
                 if (tl < tm)
+                {
                     Build(v * 2, tl, tm);
+                }
                 if (tm + 1 < tr)
+                {
                     Build(v * 2 + 1, tm + 1, tr);
+                }
                 UpdateLength(v, tl, tr, tm);
             }
         }
 
         private void UpdateLength(int v, int tl, int tr, int tm)
         {
-            var vl = 2 * v;
-            var vr = 2 * v + 1;
+            int vl = 2 * v;
+            int vr = 2 * v + 1;
             longestContinues[v] = int.Max(longestContinues[vl], longestContinues[vr]);
             prefixLength[v] = prefixLength[vl];
             suffixLength[v] = suffixLength[vr];
@@ -64,9 +72,13 @@ public class SegmentTreeOnArraySolution
             {
                 longestContinues[v] = int.Max(longestContinues[v], suffixLength[vl] + prefixLength[vr]);
                 if (suffixLength[vl] == tm - tl + 1)
+                {
                     prefixLength[v] += prefixLength[vr];
+                }
                 if (prefixLength[vr] == tr - tm)
+                {
                     suffixLength[v] += suffixLength[vl];
+                }
             }
         }
 
@@ -88,8 +100,8 @@ public class SegmentTreeOnArraySolution
     public int[] LongestRepeating(string s, string queryCharacters, int[] queryIndices)
     {
         var t = new ArraySegmentTree(s.ToCharArray());
-        var result = new int[queryIndices.Length];
-        for (var i = 0; i < queryIndices.Length; i++)
+        int[] result = new int[queryIndices.Length];
+        for (int i = 0; i < queryIndices.Length; i++)
         {
             t.ReplaceChar(queryIndices[i], queryCharacters[i]);
             result[i] = t.GetLongestContinuousSegment();
@@ -99,13 +111,13 @@ public class SegmentTreeOnArraySolution
 }
 
 [TestFixture]
-public class SegmentTreeOnArraySolutionTests
+public class SolutionTests
 {
     [TestCase("babacc", "bcb", new[] { 1, 3, 3 }, new[] { 3, 3, 4 })]
     [TestCase("abyzz", "aa", new[] { 2, 1 }, new[] { 2, 3 })]
     public void Test(string s, string queryCharacters, int[] queryIndices, int[] expected)
     {
-        new SegmentTreeOnArraySolution().LongestRepeating(s, queryCharacters, queryIndices).Should()
+        new Solution().LongestRepeating(s, queryCharacters, queryIndices).Should()
             .BeEquivalentTo(expected, o => o.WithStrictOrdering());
     }
 }
