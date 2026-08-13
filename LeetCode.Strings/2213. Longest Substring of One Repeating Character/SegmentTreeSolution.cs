@@ -18,12 +18,17 @@ public class SegmentTreeSolution
 
         private int Length => right - left + 1;
 
-        public int GetLongestContinuesSegment() => longestContinues;
+        public int GetLongestContinuesSegment()
+        {
+            return longestContinues;
+        }
 
         public void ReplaceChar(int index, char value)
         {
             if (s[index] == value)
+            {
                 return;
+            }
 
             if (left == right)
             {
@@ -32,9 +37,13 @@ public class SegmentTreeSolution
             else
             {
                 if (index <= leftNode.right)
+                {
                     leftNode.ReplaceChar(index, value);
+                }
                 else
+                {
                     rightNode.ReplaceChar(index, value);
+                }
                 UpdateLength();
             }
         }
@@ -48,9 +57,13 @@ public class SegmentTreeSolution
             {
                 longestContinues = int.Max(longestContinues, leftNode.suffixLength + rightNode.prefixLength);
                 if (leftNode.suffixLength == leftNode.Length)
+                {
                     prefixLength += rightNode.prefixLength;
+                }
                 if (rightNode.prefixLength == rightNode.Length)
+                {
                     suffixLength += leftNode.suffixLength;
+                }
             }
         }
 
@@ -67,7 +80,7 @@ public class SegmentTreeSolution
             }
             else
             {
-                var m = left + (right - left) / 2;
+                int m = left + (right - left) / 2;
                 leftNode = new SegmentTreeNode(s, left, m);
                 rightNode = new SegmentTreeNode(s, m + 1, right);
                 UpdateLength();
@@ -78,8 +91,8 @@ public class SegmentTreeSolution
     public int[] LongestRepeating(string s, string queryCharacters, int[] queryIndices)
     {
         var t = new SegmentTreeNode(s.ToCharArray(), 0, s.Length - 1);
-        var result = new int[queryIndices.Length];
-        for (var i = 0; i < queryIndices.Length; i++)
+        int[] result = new int[queryIndices.Length];
+        for (int i = 0; i < queryIndices.Length; i++)
         {
             t.ReplaceChar(queryIndices[i], queryCharacters[i]);
             result[i] = t.GetLongestContinuesSegment();
