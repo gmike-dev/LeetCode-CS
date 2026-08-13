@@ -1,5 +1,8 @@
 namespace LeetCode.Strings._1967._Number_of_Strings_That_Appear_as_Substrings_in_Word;
 
+/// <summary>
+/// https://leetcode.com/problems/number-of-strings-that-appear-as-substrings-in-word/
+/// </summary>
 public class Solution
 {
     public int NumOfStrings(string[] patterns, string word)
