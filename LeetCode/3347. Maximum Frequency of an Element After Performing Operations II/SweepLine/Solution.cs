@@ -1,8 +1,8 @@
 using System.IO;
 
-namespace LeetCode._3347._Maximum_Frequency_of_an_Element_After_Performing_Operations_II;
+namespace LeetCode._3347._Maximum_Frequency_of_an_Element_After_Performing_Operations_II.SweepLine;
 
-public class SweepLineSolution
+public class Solution
 {
     public int MaxFrequency(int[] nums, int k, int numOperations)
     {
@@ -49,13 +49,13 @@ public class SweepLineSolutionTests
     [TestCase(new[] { 15, 113, 122, 102 }, 90, 3, 4)]
     public void Test1(int[] nums, int k, int numOperations, int expected)
     {
-        new SweepLineSolution().MaxFrequency(nums, k, numOperations).Should().Be(expected);
+        new Solution().MaxFrequency(nums, k, numOperations).Should().Be(expected);
     }
 
     [TestCaseSource(nameof(GetTestCases))]
     public void TestLargeInput(string nums, int k, int numOperations, int expected)
     {
-        new SweepLineSolution().MaxFrequency(nums.Array(), k, numOperations).Should().Be(expected);
+        new Solution().MaxFrequency(nums.Array(), k, numOperations).Should().Be(expected);
     }
 
     public static IEnumerable<object> GetTestCases()
