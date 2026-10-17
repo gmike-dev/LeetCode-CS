@@ -7,20 +7,19 @@ public class Solution
     public int SumCounts(int[] nums)
     {
         int n = nums.Length;
-        Span<int> last = new int[100001];
-        last.Fill(-1);
+        int[] last = new int[100001];
         SegmentTree t = new(n);
         long cur = 0;
         long res = 0;
         const long mod = (long)1e9 + 7;
         for (int i = 0; i < n; i++)
         {
-            int j = last[nums[i]] + 1;
+            int j = last[nums[i]];
             long q = t.GetSum(j, i);
             cur = (cur + q * 2 + i - j + 1) % mod;
             res = (res + cur) % mod;
             t.Add(j, i, 1);
-            last[nums[i]] = i;
+            last[nums[i]] = i + 1;
         }
         return (int)res;
     }
