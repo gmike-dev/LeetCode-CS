@@ -1,4 +1,4 @@
-namespace LeetCode.Strings._4091._Count_Magical_Substring_Pairs_II;
+namespace LeetCode.Strings._4091._Count_Magical_Substring_Pairs_II.V1;
 
 public class Solution
 {
@@ -81,6 +81,7 @@ public class SolutionTests
     [TestCase("aba", 2)]
     [TestCase("kkk", 4)]
     [TestCase("abcac", 7)]
+    [TestCase("obdda", 8)]
     public void Test(string s, long expected)
     {
         new Solution().CountMagicalPairs(s).Should().Be(expected);
